@@ -1,0 +1,13 @@
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.frmInicio.resources
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.frmLogin.resources
