@@ -15,6 +15,10 @@ namespace CapaPresentacion
         public frmLogin()
         {
             InitializeComponent();
+
+            Font fuenteComun = new Font("Arial", 10, FontStyle.Regular);
+
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -39,6 +43,16 @@ namespace CapaPresentacion
             txtClave.Text = "";
 
             this.Show();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            Tema.cambiarTema("Dark");
+            this.BackColor = Tema.colorOscuro;
+            this.lblClave.ForeColor = Tema.colorClaro;
+            this.lblEmail.ForeColor = Tema.colorClaro;
+            this.btnCancelar.BackColor = Tema.colorSecundario;
+
         }
     }
 }

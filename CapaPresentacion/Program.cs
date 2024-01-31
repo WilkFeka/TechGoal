@@ -9,6 +9,7 @@ namespace CapaPresentacion
 {
     internal static class Program
     {
+
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -18,6 +19,7 @@ namespace CapaPresentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
+
         }
     }
 }
