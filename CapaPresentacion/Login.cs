@@ -10,49 +10,86 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmLogin : Form
+    public partial class Login : Form
     {
-        public frmLogin()
+        public Login()
         {
             InitializeComponent();
+        }
 
-            Font fuenteComun = new Font("Arial", 10, FontStyle.Regular);
+        private void LoginV2_Load(object sender, EventArgs e)
+        {
+
+            lblCorreo.Select(); // Evita que se seleccione automaticamente el textbox al cargar
+
+        }
+
+        // ---------------------------- PlaceHolders  -------------------------
+        private void txtCorreo_Enter(object sender, EventArgs e)
+        {
+            if (txtCorreo.Text == "ejemplo@gmail.com.ar") 
+            {
+                txtCorreo.Text = "";
+                txtCorreo.ForeColor = Color.FromArgb(0, 23, 49);
+
+            }
+
+        }
+
+        private void txtClave_Enter(object sender, EventArgs e)
+        {
+            if (txtClave.Text == "ejemplo123")
+            {
+                txtClave.Text = "";
+                txtClave.ForeColor = Color.FromArgb(0, 23, 49);
+
+            }
+
+        }
+
+        private void txtCorreo_Leave(object sender, EventArgs e)
+        {
+            if (txtCorreo.Text == "")
+            {
+                txtCorreo.Text = "ejemplo@gmail.com.ar";
+                txtCorreo.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txtClave_Leave(object sender, EventArgs e)
+        {
+            if (txtClave.Text == "")
+            {
+                txtClave.Text = "ejemplo123";
+                txtClave.ForeColor = Color.DimGray;
+            }
+
+        }
+
+        // ---------------------------- Botones  -------------------------
+
+        private void btnIniciarSesion_MouseLeave(object sender, EventArgs e)
+        {
+
+            btnIniciarSesion.ForeColor = Color.FromArgb(31, 201, 236);
+
+        }
 
 
+        private void btnIniciarSesion_MouseEnter(object sender, EventArgs e)
+        {
+
+            btnIniciarSesion.ForeColor = Color.FromArgb(7, 11, 20);
+        }
+
+        private void btnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCancelar.BorderColor = Color.FromArgb(31, 201, 236);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
-
-        }
-
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-            frmInicio frmInicio = new frmInicio();
-            frmInicio.Show();
-            this.Hide();
-
-            frmInicio.FormClosing += frm_closing;
-
-        }
-
-        private void frm_closing(object sender, FormClosingEventArgs e)
-        {
-            txtEmail.Text = "";
-            txtClave.Text = "";
-
-            this.Show();
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-            Tema.cambiarTema("Dark");
-            this.BackColor = Tema.colorOscuro;
-            this.lblClave.ForeColor = Tema.colorClaro;
-            this.lblEmail.ForeColor = Tema.colorClaro;
-            this.btnCancelar.BackColor = Tema.colorSecundario;
-
+            Close();
         }
     }
 }
