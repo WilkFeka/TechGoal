@@ -33,6 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,12 +90,26 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // msButton1
+            // 
+            this.msButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.msButton1.FlatAppearance.BorderSize = 0;
+            this.msButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.msButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.msButton1.Location = new System.Drawing.Point(129, 241);
+            this.msButton1.Name = "msButton1";
+            this.msButton1.Size = new System.Drawing.Size(801, 52);
+            this.msButton1.TabIndex = 1;
+            this.msButton1.Text = "msButton1";
+            this.msButton1.UseVisualStyleBackColor = false;
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(978, 589);
+            this.Controls.Add(this.msButton1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frmInicio";
             this.Text = "Inicio";
@@ -110,6 +125,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private Personalizacion.MSButton msButton1;
     }
 }
 

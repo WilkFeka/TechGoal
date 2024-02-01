@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmLogin
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,188 +28,253 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.imgLogoText = new System.Windows.Forms.PictureBox();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblClave = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnIngresar = new FontAwesome.Sharp.IconButton();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoText)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblClave = new System.Windows.Forms.Label();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.iconKey = new FontAwesome.Sharp.IconPictureBox();
+            this.iconMail = new FontAwesome.Sharp.IconPictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnIniciarSesion = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnCancelar = new CapaPresentacion.Personalizacion.MSButton();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconKey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imgLogoText
-            // 
-            this.imgLogoText.BackColor = System.Drawing.Color.Transparent;
-            this.imgLogoText.Image = global::CapaPresentacion.Properties.Resources.LogoText;
-            this.imgLogoText.Location = new System.Drawing.Point(3, 3);
-            this.imgLogoText.Name = "imgLogoText";
-            this.imgLogoText.Size = new System.Drawing.Size(447, 443);
-            this.imgLogoText.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgLogoText.TabIndex = 6;
-            this.imgLogoText.TabStop = false;
-            // 
-            // txtClave
-            // 
-            this.txtClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
-            this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtClave.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.Location = new System.Drawing.Point(3, 177);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.PasswordChar = '*';
-            this.txtClave.Size = new System.Drawing.Size(477, 46);
-            this.txtClave.TabIndex = 2;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(3, 59);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 10, 3, 20);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(477, 46);
-            this.txtEmail.TabIndex = 1;
-            // 
-            // lblClave
-            // 
-            this.lblClave.AutoSize = true;
-            this.lblClave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblClave.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblClave.Location = new System.Drawing.Point(3, 138);
-            this.lblClave.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(477, 29);
-            this.lblClave.TabIndex = 1;
-            this.lblClave.Text = "Contraseña";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblEmail.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblEmail.Location = new System.Drawing.Point(3, 20);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(477, 29);
-            this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "Correo electronico";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1084, 461);
-            this.flowLayoutPanel1.TabIndex = 7;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.imgLogoText);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(450, 446);
-            this.flowLayoutPanel2.TabIndex = 7;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel3.Controls.Add(this.lblEmail);
-            this.flowLayoutPanel3.Controls.Add(this.txtEmail);
-            this.flowLayoutPanel3.Controls.Add(this.lblClave);
-            this.flowLayoutPanel3.Controls.Add(this.txtClave);
-            this.flowLayoutPanel3.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.SetFlowBreak(this.flowLayoutPanel3, true);
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(506, 47);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(485, 357);
-            this.flowLayoutPanel3.TabIndex = 8;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnIngresar);
-            this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Location = new System.Drawing.Point(3, 222);
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(477, 102);
-            this.panel1.TabIndex = 7;
+            this.panel1.Size = new System.Drawing.Size(444, 550);
+            this.panel1.TabIndex = 0;
+            this.panel1.TabStop = true;
             // 
-            // btnIngresar
+            // lblCorreo
             // 
-            this.btnIngresar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnIngresar.IconColor = System.Drawing.Color.Black;
-            this.btnIngresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnIngresar.Location = new System.Drawing.Point(3, 41);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(182, 50);
-            this.btnIngresar.TabIndex = 3;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            this.lblCorreo.AccessibleName = "Correo Electronico";
+            this.lblCorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.lblCorreo.Location = new System.Drawing.Point(534, 132);
+            this.lblCorreo.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(213, 29);
+            this.lblCorreo.TabIndex = 0;
+            this.lblCorreo.Text = "Correo electronico";
+            // 
+            // lblClave
+            // 
+            this.lblClave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblClave.AutoSize = true;
+            this.lblClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.lblClave.Location = new System.Drawing.Point(534, 279);
+            this.lblClave.Margin = new System.Windows.Forms.Padding(0);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(136, 29);
+            this.lblClave.TabIndex = 3;
+            this.lblClave.Text = "Contraseña";
+            // 
+            // txtClave
+            // 
+            this.txtClave.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtClave.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClave.ForeColor = System.Drawing.Color.DimGray;
+            this.txtClave.Location = new System.Drawing.Point(502, 326);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.PasswordChar = '•';
+            this.txtClave.Size = new System.Drawing.Size(538, 39);
+            this.txtClave.TabIndex = 1;
+            this.txtClave.Text = "ejemplo123";
+            this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
+            this.txtClave.Leave += new System.EventHandler(this.txtClave_Leave);
+            // 
+            // iconKey
+            // 
+            this.iconKey.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconKey.BackColor = System.Drawing.Color.Transparent;
+            this.iconKey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.iconKey.IconChar = FontAwesome.Sharp.IconChar.Key;
+            this.iconKey.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.iconKey.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconKey.Location = new System.Drawing.Point(502, 279);
+            this.iconKey.Margin = new System.Windows.Forms.Padding(0);
+            this.iconKey.Name = "iconKey";
+            this.iconKey.Size = new System.Drawing.Size(32, 32);
+            this.iconKey.TabIndex = 3;
+            this.iconKey.TabStop = false;
+            // 
+            // iconMail
+            // 
+            this.iconMail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconMail.BackColor = System.Drawing.Color.Transparent;
+            this.iconMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.iconMail.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            this.iconMail.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.iconMail.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMail.Location = new System.Drawing.Point(502, 132);
+            this.iconMail.Margin = new System.Windows.Forms.Padding(0);
+            this.iconMail.Name = "iconMail";
+            this.iconMail.Size = new System.Drawing.Size(32, 32);
+            this.iconMail.TabIndex = 1;
+            this.iconMail.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.TextWhite;
+            this.pictureBox2.Location = new System.Drawing.Point(502, 52);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(541, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.LogoGradient;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(444, 550);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnIniciarSesion
+            // 
+            this.btnIniciarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.btnIniciarSesion.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnIniciarSesion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnIniciarSesion.BorderRadius = 60;
+            this.btnIniciarSesion.BorderSize = 2;
+            this.btnIniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnIniciarSesion.FlatAppearance.BorderSize = 0;
+            this.btnIniciarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnIniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIniciarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnIniciarSesion.Location = new System.Drawing.Point(502, 424);
+            this.btnIniciarSesion.Name = "btnIniciarSesion";
+            this.btnIniciarSesion.Size = new System.Drawing.Size(200, 60);
+            this.btnIniciarSesion.TabIndex = 9;
+            this.btnIniciarSesion.Text = "Iniciar Sesión";
+            this.btnIniciarSesion.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnIniciarSesion.UseVisualStyleBackColor = false;
+            this.btnIniciarSesion.MouseEnter += new System.EventHandler(this.btnIniciarSesion_MouseEnter);
+            this.btnIniciarSesion.MouseLeave += new System.EventHandler(this.btnIniciarSesion_MouseLeave);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnCancelar.IconColor = System.Drawing.Color.Black;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.Location = new System.Drawing.Point(302, 41);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnCancelar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnCancelar.BorderRadius = 60;
+            this.btnCancelar.BorderSize = 0;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.btnCancelar.Location = new System.Drawing.Point(840, 424);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(172, 50);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.Size = new System.Drawing.Size(200, 60);
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // frmLogin
+            // txtCorreo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.txtCorreo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCorreo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCorreo.Location = new System.Drawing.Point(502, 180);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 50);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(538, 39);
+            this.txtCorreo.TabIndex = 0;
+            this.txtCorreo.Text = "ejemplo@gmail.com.ar";
+            this.txtCorreo.Enter += new System.EventHandler(this.txtCorreo_Enter);
+            this.txtCorreo.Leave += new System.EventHandler(this.txtCorreo_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(585, 378);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(368, 18);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "¿Olvidaste tu clave? Restablecela haciendo click aqui.";
+            // 
+            // Login
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(19)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1084, 461);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(1100, 500);
-            this.Name = "frmLogin";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.ClientSize = new System.Drawing.Size(1100, 550);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnIniciarSesion);
+            this.Controls.Add(this.lblClave);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.iconKey);
+            this.Controls.Add(this.lblCorreo);
+            this.Controls.Add(this.iconMail);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.txtClave);
+            this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(7);
+            this.MinimumSize = new System.Drawing.Size(1100, 550);
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoText)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
+            this.Text = "Iniciar Sesion";
+            this.Load += new System.EventHandler(this.LoginV2_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconKey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox imgLogoText;
-        private System.Windows.Forms.Label lblClave;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton btnIngresar;
-        private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.Label lblClave;
+        private FontAwesome.Sharp.IconPictureBox iconMail;
+        private FontAwesome.Sharp.IconPictureBox iconKey;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Personalizacion.MSButton btnIniciarSesion;
+        private Personalizacion.MSButton btnCancelar;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.Label label1;
     }
 }
