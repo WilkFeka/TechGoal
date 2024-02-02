@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaControladora;
+using CapaEntidad;
+
 namespace CapaPresentacion
 {
     public partial class Login : Form
@@ -24,7 +27,7 @@ namespace CapaPresentacion
 
         }
 
-        // ---------------------------- PlaceHolders  -------------------------
+        // ---------------------------- PLACEHOLDERS  ----------------------------------------------------
         private void txtCorreo_Enter(object sender, EventArgs e)
         {
             if (txtCorreo.Text == "ejemplo@gmail.com.ar") 
@@ -34,6 +37,13 @@ namespace CapaPresentacion
 
             }
 
+        }
+
+        private void form_closing(object sender, FormClosingEventArgs e)
+        {
+            txtClave.Text = "ejemplo123";
+            txtCorreo.Text = "ejemplo@gmail.com.ar";
+            Show();
         }
 
         private void txtClave_Enter(object sender, EventArgs e)
@@ -66,7 +76,8 @@ namespace CapaPresentacion
 
         }
 
-        // ---------------------------- Botones  -------------------------
+        // ---------------------------- ESTILOS BOTONES  ----------------------------------------------------
+
 
         private void btnIniciarSesion_MouseLeave(object sender, EventArgs e)
         {
@@ -91,5 +102,43 @@ namespace CapaPresentacion
         {
             Close();
         }
+
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+
+
+            // Lista de usuarios de la base de datos
+            List<Usuario> listaUsuarios = new CC_Usuario().Listar();
+
+            //Filtrar usuarios por email y clave proporcionados
+            Usuario usuarioIniciando = new CC_Usuario().Listar().Where(u => u.email == txtCorreo.Text && u.clave == txtClave.Text).FirstOrDefault();
+
+            
+
+            if (usuarioIniciando == null) // Si el usuario NO existe
+            {
+                MessageBox.Show("Correo o contraseña incorrectos. Por favor verifique los mismos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                
+
+            } else // Si el usuario existe
+            {
+
+            Inicio formInicio = new Inicio();
+            formInicio.Show();
+
+            Hide();
+
+            formInicio.FormClosing += form_closing;
+
+            }
+
+
+
+
+
+        }
+
+        
     }
 }
