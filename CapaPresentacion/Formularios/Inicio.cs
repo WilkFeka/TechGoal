@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmInicio : Form
+    public partial class Inicio : Form
     {
-        public frmInicio()
+        public Inicio()
         {
             InitializeComponent();
         }

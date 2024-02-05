@@ -9,5 +9,15 @@ C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
-C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.frmInicio.resources
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Inicio.resources
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\CapaControladora.dll
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\CapaEntidad.dll
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\CapaControladora.pdb
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\CapaEntidad.pdb
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\EntityFramework.dll
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\EntityFramework.xml
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\CapaDatos.pdb
