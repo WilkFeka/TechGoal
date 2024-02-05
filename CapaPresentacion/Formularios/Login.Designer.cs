@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.picLogoTechGoal = new System.Windows.Forms.PictureBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblClave = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
@@ -43,34 +43,34 @@
             this.panelCorreo = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnVerClave = new FontAwesome.Sharp.IconButton();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoTechGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlLogo
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 550);
-            this.panel1.TabIndex = 0;
-            this.panel1.TabStop = true;
+            this.pnlLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pnlLogo.Controls.Add(this.picLogoTechGoal);
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(444, 550);
+            this.pnlLogo.TabIndex = 0;
+            this.pnlLogo.TabStop = true;
             // 
-            // pictureBox1
+            // picLogoTechGoal
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.LogoGradient;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(444, 550);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picLogoTechGoal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picLogoTechGoal.Image = global::CapaPresentacion.Properties.Resources.LogoGradient;
+            this.picLogoTechGoal.Location = new System.Drawing.Point(0, 0);
+            this.picLogoTechGoal.Name = "picLogoTechGoal";
+            this.picLogoTechGoal.Size = new System.Drawing.Size(444, 550);
+            this.picLogoTechGoal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogoTechGoal.TabIndex = 0;
+            this.picLogoTechGoal.TabStop = false;
             // 
             // lblCorreo
             // 
@@ -108,7 +108,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(473, 39);
             this.txtClave.TabIndex = 1;
-            this.txtClave.Text = "ejemplo123";
+            this.txtClave.Text = "admin";
             this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
             this.txtClave.Leave += new System.EventHandler(this.txtClave_Leave);
             // 
@@ -147,10 +147,10 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.TextWhite;
-            this.pictureBox2.Location = new System.Drawing.Point(502, 52);
+            this.pictureBox2.Location = new System.Drawing.Point(603, 52);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 40);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(541, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(378, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -166,7 +166,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(506, 39);
             this.txtCorreo.TabIndex = 0;
-            this.txtCorreo.Text = "ejemplo@gmail.com.ar";
+            this.txtCorreo.Text = "admin@gmail.com";
             this.txtCorreo.Enter += new System.EventHandler(this.txtCorreo_Enter);
             this.txtCorreo.Leave += new System.EventHandler(this.txtCorreo_Leave);
             // 
@@ -282,7 +282,7 @@
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.iconMail);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlLogo);
             this.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -292,8 +292,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion";
             this.Load += new System.EventHandler(this.LoginV2_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
+            this.pnlLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoTechGoal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -304,14 +306,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblClave;
         private FontAwesome.Sharp.IconPictureBox iconMail;
         private FontAwesome.Sharp.IconPictureBox iconKey;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picLogoTechGoal;
         private Personalizacion.MSButton btnIniciarSesion;
         private Personalizacion.MSButton btnCancelar;
         private System.Windows.Forms.TextBox txtCorreo;

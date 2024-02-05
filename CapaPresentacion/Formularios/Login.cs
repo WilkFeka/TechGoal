@@ -205,5 +205,28 @@ namespace CapaPresentacion
 
 
         }
+
+        private Point mousePosicion;
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Left)
+            {
+                mousePosicion = e.Location;
+            }
+
+        }
+
+        private void Login_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                int deltaX = e.X - mousePosicion.X;
+                int deltaY = e.Y - mousePosicion.Y;
+                this.Location = new Point(this.Location.X + deltaX, this.Location.Y + deltaY);
+            }
+
+        }
     }
 }

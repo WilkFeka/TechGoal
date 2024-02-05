@@ -16,5 +16,43 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+
+        // ---------------------------- ESTILOS BOTONES DE NAVEGACION ----------------------------
+        private void btnAjusteUsuario_MouseEnter(object sender, EventArgs e)
+        {
+            btnAjusteUsuario.IconColor = Color.FromArgb(31,200,236);
+            btnAjusteUsuario.IconSize = 70;
+        }
+
+        private void btnAjusteUsuario_MouseLeave(object sender, EventArgs e)
+        {
+            btnAjusteUsuario.IconColor = Color.White;
+            btnAjusteUsuario.IconSize = 64;
+        }
+
+        private void btnSalir_MouseEnter(object sender, EventArgs e)
+        {
+            btnSalir.ForeColor = Color.FromArgb(7,11,20);
+        }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e)
+        {
+            btnSalir.ForeColor = Color.FromArgb(30,200,236) ;
+
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            var a = MessageBox.Show("¿Esta seguro de que desea salir de la aplicacion?", "Saliendo de la aplicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(a == DialogResult.Yes)
+            {
+                Close();
+
+            }
+
+        }
     }
 }
