@@ -79,6 +79,7 @@
     <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personalizacion\Funcionalidades.cs" />
     <Compile Include="Personalizacion\MSButton.cs">
       <SubType>Component</SubType>
     </Compile>

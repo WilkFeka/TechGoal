@@ -12,7 +12,7 @@ namespace CapaDatos.Seguridad
 {
     public class CD_Usuario
     {
-
+        // ---------------------- OBTENER TODOS LOS USUARIOS --------------------
         public List<Usuario> Listar()
         {
             List<Usuario> lista = new List<Usuario>();

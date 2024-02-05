@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 using CapaControladora;
 using CapaEntidad;
+using FontAwesome.Sharp;
 
 namespace CapaPresentacion
 {
     public partial class Login : Form
     {
+
+        private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
+
         public Login()
         {
             InitializeComponent();
@@ -24,16 +28,31 @@ namespace CapaPresentacion
         {
 
             lblCorreo.Select(); // Evita que se seleccione automaticamente el textbox al cargar
+            txtClave.UseSystemPasswordChar = true; // Oculta la contraseña
+
+
+
+
 
         }
 
         // ---------------------------- PLACEHOLDERS  ----------------------------------------------------
         private void txtCorreo_Enter(object sender, EventArgs e)
         {
+
+
             if (txtCorreo.Text == "ejemplo@gmail.com.ar") 
             {
                 txtCorreo.Text = "";
-                txtCorreo.ForeColor = Color.FromArgb(0, 23, 49);
+                txtCorreo.ForeColor = Color.WhiteSmoke;
+
+                if (txtClave.Text == "")
+                {
+                    txtClave.Text = "ejemplo123";
+                    txtClave.ForeColor = Color.DimGray;
+
+                }
+
 
             }
 
@@ -51,9 +70,10 @@ namespace CapaPresentacion
             if (txtClave.Text == "ejemplo123")
             {
                 txtClave.Text = "";
-                txtClave.ForeColor = Color.FromArgb(0, 23, 49);
 
             }
+            
+            txtClave.ForeColor = Color.WhiteSmoke;
 
         }
 
@@ -63,15 +83,19 @@ namespace CapaPresentacion
             {
                 txtCorreo.Text = "ejemplo@gmail.com.ar";
                 txtCorreo.ForeColor = Color.DimGray;
+
             }
         }
 
         private void txtClave_Leave(object sender, EventArgs e)
         {
+
             if (txtClave.Text == "")
             {
+                txtClave.UseSystemPasswordChar = true;
                 txtClave.Text = "ejemplo123";
                 txtClave.ForeColor = Color.DimGray;
+
             }
 
         }
@@ -106,39 +130,80 @@ namespace CapaPresentacion
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
 
+            IniciarSesion();
 
-            // Lista de usuarios de la base de datos
-            List<Usuario> listaUsuarios = new CC_Usuario().Listar();
+        }
 
-            //Filtrar usuarios por email y clave proporcionados
-            Usuario usuarioIniciando = new CC_Usuario().Listar().Where(u => u.email == txtCorreo.Text && u.clave == txtClave.Text).FirstOrDefault();
+        private void btnVerClave_Click(object sender, EventArgs e)
+        {
+            if (btnVerClave.IconChar == IconChar.EyeSlash)
+            {
+                btnVerClave.IconChar = IconChar.Eye;
 
-            
+            } else
+            {
+                btnVerClave.IconChar = IconChar.EyeSlash;
 
-            if (usuarioIniciando == null) // Si el usuario NO existe
+            }
+
+
+            if (txtClave.Text == "ejemplo123")
+            {
+                txtClave.Text = "";
+                txtClave.UseSystemPasswordChar = false; // Muestra contrasenia
+
+            }
+
+            if (txtClave.Text != "" && txtClave.Text != "ejemplo123")
+            {
+
+                if (txtClave.UseSystemPasswordChar == true)
+                {
+                    txtClave.UseSystemPasswordChar = false; // Muestra contrasenia
+                }
+                else
+                {
+                    txtClave.UseSystemPasswordChar = true;
+
+                }
+            }
+
+
+        }
+
+        private void btnVerClave_MouseEnter(object sender, EventArgs e)
+        {
+            btnVerClave.IconFont = IconFont.Solid;
+        }
+
+        private void btnVerClave_MouseLeave(object sender, EventArgs e)
+        {
+            btnVerClave.IconFont = IconFont.Regular;
+
+        }
+
+        private void IniciarSesion()
+        {
+            var usuarioEncontrado = UsuarioControladora.EncontrarUsuario(txtCorreo.Text, txtClave.Text);
+
+            if (usuarioEncontrado)
+            {
+
+                Inicio formInicio = new Inicio();
+                formInicio.Show();
+
+                Hide();
+
+                formInicio.FormClosing += form_closing;
+
+            } else
             {
                 MessageBox.Show("Correo o contraseña incorrectos. Por favor verifique los mismos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                
-
-            } else // Si el usuario existe
-            {
-
-            Inicio formInicio = new Inicio();
-            formInicio.Show();
-
-            Hide();
-
-            formInicio.FormClosing += form_closing;
 
             }
 
 
 
-
-
         }
-
-        
     }
 }
