@@ -38,18 +38,18 @@ namespace CapaControladora
 
         // ---------------------- ENCONTRAR USUARIO EN LA LISTA POR CREDENCIALES OBTENIDAS--------------------
 
-        public bool EncontrarUsuario (string txtCorreo, string txtClave)
+        public Usuario EncontrarUsuario (string txtCorreo, string txtClave)
         {
             //Filtrar usuarios por email y clave proporcionados
             Usuario usuarioIniciando = new CC_Usuario().Listar().Where(u => u.email == txtCorreo && u.clave == txtClave).FirstOrDefault();
 
             if (usuarioIniciando != null)
             {
-                return true;
+                return usuarioIniciando;
             }
             else
             {
-                return false;
+                return usuarioIniciando;
             }
 
 

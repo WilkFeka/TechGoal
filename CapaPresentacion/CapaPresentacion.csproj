@@ -162,5 +162,38 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\football-field_6162391.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\canchaBlanca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophyWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophyBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\genteBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camisetaBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\screenBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\screenBlanca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporteBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoWhite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

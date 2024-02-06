@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,8 @@ namespace CapaPresentacion
     {
 
         private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
+        private CC_Sesion SesionControladora = CC_Sesion.getInstance;
+
 
         public Login()
         {
@@ -46,14 +49,7 @@ namespace CapaPresentacion
                 txtCorreo.Text = "";
                 txtCorreo.ForeColor = Color.WhiteSmoke;
 
-                if (txtClave.Text == "")
-                {
-                    txtClave.Text = "ejemplo123";
-                    txtClave.ForeColor = Color.DimGray;
-
-                }
-
-
+                
             }
 
         }
@@ -62,6 +58,8 @@ namespace CapaPresentacion
         {
             txtClave.Text = "ejemplo123";
             txtCorreo.Text = "ejemplo@gmail.com.ar";
+            txtCorreo.ForeColor = Color.DimGray;
+
             Show();
         }
 
@@ -74,29 +72,6 @@ namespace CapaPresentacion
             }
             
             txtClave.ForeColor = Color.WhiteSmoke;
-
-        }
-
-        private void txtCorreo_Leave(object sender, EventArgs e)
-        {
-            if (txtCorreo.Text == "")
-            {
-                txtCorreo.Text = "ejemplo@gmail.com.ar";
-                txtCorreo.ForeColor = Color.DimGray;
-
-            }
-        }
-
-        private void txtClave_Leave(object sender, EventArgs e)
-        {
-
-            if (txtClave.Text == "")
-            {
-                txtClave.UseSystemPasswordChar = true;
-                txtClave.Text = "ejemplo123";
-                txtClave.ForeColor = Color.DimGray;
-
-            }
 
         }
 
@@ -182,28 +157,89 @@ namespace CapaPresentacion
 
         }
 
+
+        // ---------------------------- FUNCIONALIDAD INICIAR SESION  ----------------------------------------------------
         private void IniciarSesion()
         {
-            var usuarioEncontrado = UsuarioControladora.EncontrarUsuario(txtCorreo.Text, txtClave.Text);
 
-            if (usuarioEncontrado)
+            try
             {
 
-                Inicio formInicio = new Inicio();
-                formInicio.Show();
+                Cursor.Current = Cursors.WaitCursor;
+                SpinWait.SpinUntil(() => false, 500);
 
-                Hide();
+                if (string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtClave.Text))
+                {
+                    MessageBox.Show("Por favor complete todos los campos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                formInicio.FormClosing += form_closing;
 
-            } else
+                } else
+                {
+                    Usuario usuarioEncontrado = UsuarioControladora.EncontrarUsuario(txtCorreo.Text, txtClave.Text);
+
+                    if (usuarioEncontrado != null)
+                    {
+
+                        SesionControladora.Login(usuarioEncontrado);
+
+                        Inicio formInicio = new Inicio(usuarioEncontrado);
+                        formInicio.Show();
+                        Hide();
+
+
+
+
+
+
+                    }
+                    else if (usuarioEncontrado == null)
+                    {
+                        MessageBox.Show("Correo o contraseña incorrectos. Por favor verifique los mismos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+                
+
+
+            } catch (Exception error)
             {
-                MessageBox.Show("Correo o contraseña incorrectos. Por favor verifique los mismos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show($"{error.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
+        }
+
+                        
 
 
+        // ---------------------------- MOVER FORMULARIO  ----------------------------------------------------
+
+        private Point mousePosicion;
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Left)
+            {
+                mousePosicion = e.Location;
+            }
+
+        }
+
+        private void Login_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                int deltaX = e.X - mousePosicion.X;
+                int deltaY = e.Y - mousePosicion.Y;
+                this.Location = new Point(this.Location.X + deltaX, this.Location.Y + deltaY);
+            }
+
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad.Seguridad
 {
-    internal class Sesion
+    public class Sesion
     {
 
         public Usuario Usuario { get; set; }
+        private static Sesion sesion;
 
         private Sesion()
         {
         }
 
-        public static Sesion obtenerSesion
+        public static Sesion getInstance
         {
             get
             {
@@ -23,7 +24,6 @@ namespace CapaEntidad.Seguridad
             }
         }
 
-        private static Sesion sesion;
 
 
         public static void IniciarSesion(Usuario usuario)
