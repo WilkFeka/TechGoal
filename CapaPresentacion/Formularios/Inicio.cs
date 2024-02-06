@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaControladora;
+using CapaEntidad;
 
 namespace CapaPresentacion
 {
     public partial class Inicio : Form
     {
-        public Inicio()
+        CC_Sesion SesionControladora = CC_Sesion.getInstance;
+        CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
+        public Inicio(Usuario usuario)
         {
             InitializeComponent();
+            string nombreUsuario = usuario.nombre;  //
+            lblNombre.Text = nombreUsuario;         // Muestra el nombre del usuario en el label
+
         }
 
 
@@ -43,16 +50,31 @@ namespace CapaPresentacion
 
         }
 
+        // ---------------------------- FUNCIONALIDAD BOTON SALIR ----------------------------
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            var a = MessageBox.Show("¿Esta seguro de que desea salir de la aplicacion?", "Saliendo de la aplicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            Close();
+        }
 
-            if(a == DialogResult.Yes)
+        private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var mensaje = MessageBox.Show("¿Esta seguro de que desea salir de la aplicacion?", "Saliendo de la aplicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (mensaje == DialogResult.No)
             {
-                Close();
-
+                e.Cancel = true;
+            } else
+            {
+                SesionControladora.Logout();
             }
 
+
+        }
+
+        private void Inicio_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.OpenForms["Login"].Show();
+            
         }
     }
 }

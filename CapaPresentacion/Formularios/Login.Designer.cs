@@ -38,11 +38,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancelar = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnIniciarSesion = new CapaPresentacion.Personalizacion.MSButton();
             this.panelCorreo = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnVerClave = new FontAwesome.Sharp.IconButton();
+            this.btnCancelar = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnIniciarSesion = new CapaPresentacion.Personalizacion.MSButton();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogoTechGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconKey)).BeginInit();
@@ -110,7 +110,6 @@
             this.txtClave.TabIndex = 1;
             this.txtClave.Text = "admin";
             this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
-            this.txtClave.Leave += new System.EventHandler(this.txtClave_Leave);
             // 
             // iconKey
             // 
@@ -168,7 +167,6 @@
             this.txtCorreo.TabIndex = 0;
             this.txtCorreo.Text = "admin@gmail.com";
             this.txtCorreo.Enter += new System.EventHandler(this.txtCorreo_Enter);
-            this.txtCorreo.Leave += new System.EventHandler(this.txtCorreo_Leave);
             // 
             // label1
             // 
@@ -181,6 +179,40 @@
             this.label1.Size = new System.Drawing.Size(368, 18);
             this.label1.TabIndex = 11;
             this.label1.Text = "¿Olvidaste tu clave? Restablecela haciendo click aqui.";
+            // 
+            // panelCorreo
+            // 
+            this.panelCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.panelCorreo.Location = new System.Drawing.Point(502, 228);
+            this.panelCorreo.Name = "panelCorreo";
+            this.panelCorreo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.panelCorreo.Size = new System.Drawing.Size(541, 3);
+            this.panelCorreo.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.panel2.Location = new System.Drawing.Point(502, 368);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(542, 3);
+            this.panel2.TabIndex = 13;
+            // 
+            // btnVerClave
+            // 
+            this.btnVerClave.FlatAppearance.BorderSize = 0;
+            this.btnVerClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnVerClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerClave.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            this.btnVerClave.IconColor = System.Drawing.Color.White;
+            this.btnVerClave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVerClave.Location = new System.Drawing.Point(1001, 321);
+            this.btnVerClave.Name = "btnVerClave";
+            this.btnVerClave.Size = new System.Drawing.Size(39, 39);
+            this.btnVerClave.TabIndex = 14;
+            this.btnVerClave.UseVisualStyleBackColor = true;
+            this.btnVerClave.Click += new System.EventHandler(this.btnVerClave_Click);
+            this.btnVerClave.MouseEnter += new System.EventHandler(this.btnVerClave_MouseEnter);
+            this.btnVerClave.MouseLeave += new System.EventHandler(this.btnVerClave_MouseLeave);
             // 
             // btnCancelar
             // 
@@ -229,40 +261,6 @@
             this.btnIniciarSesion.MouseEnter += new System.EventHandler(this.btnIniciarSesion_MouseEnter);
             this.btnIniciarSesion.MouseLeave += new System.EventHandler(this.btnIniciarSesion_MouseLeave);
             // 
-            // panelCorreo
-            // 
-            this.panelCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.panelCorreo.Location = new System.Drawing.Point(502, 228);
-            this.panelCorreo.Name = "panelCorreo";
-            this.panelCorreo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.panelCorreo.Size = new System.Drawing.Size(541, 3);
-            this.panelCorreo.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.panel2.Location = new System.Drawing.Point(502, 368);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(542, 3);
-            this.panel2.TabIndex = 13;
-            // 
-            // btnVerClave
-            // 
-            this.btnVerClave.FlatAppearance.BorderSize = 0;
-            this.btnVerClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnVerClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerClave.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
-            this.btnVerClave.IconColor = System.Drawing.Color.White;
-            this.btnVerClave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVerClave.Location = new System.Drawing.Point(1001, 321);
-            this.btnVerClave.Name = "btnVerClave";
-            this.btnVerClave.Size = new System.Drawing.Size(39, 39);
-            this.btnVerClave.TabIndex = 14;
-            this.btnVerClave.UseVisualStyleBackColor = true;
-            this.btnVerClave.Click += new System.EventHandler(this.btnVerClave_Click);
-            this.btnVerClave.MouseEnter += new System.EventHandler(this.btnVerClave_MouseEnter);
-            this.btnVerClave.MouseLeave += new System.EventHandler(this.btnVerClave_MouseLeave);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -291,6 +289,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.Load += new System.EventHandler(this.LoginV2_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);

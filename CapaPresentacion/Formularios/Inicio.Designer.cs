@@ -86,11 +86,11 @@
             this.flwPanelButons.Controls.Add(this.flowLayoutPanel5);
             this.flwPanelButons.Controls.Add(this.flowLayoutPanel6);
             this.flwPanelButons.Controls.Add(this.flowLayoutPanel7);
-            this.flwPanelButons.Location = new System.Drawing.Point(6, 138);
+            this.flwPanelButons.Location = new System.Drawing.Point(3, 41);
             this.flwPanelButons.MaximumSize = new System.Drawing.Size(778, 0);
             this.flwPanelButons.Name = "flwPanelButons";
             this.flwPanelButons.Padding = new System.Windows.Forms.Padding(10);
-            this.flwPanelButons.Size = new System.Drawing.Size(775, 646);
+            this.flwPanelButons.Size = new System.Drawing.Size(741, 646);
             this.flwPanelButons.TabIndex = 0;
             // 
             // flowLayoutPanel3
@@ -378,17 +378,18 @@
             // 
             this.pnlContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlContainer.BackColor = System.Drawing.Color.White;
-            this.pnlContainer.Controls.Add(this.picLogoText);
             this.pnlContainer.Controls.Add(this.flwPanelButons);
-            this.pnlContainer.Location = new System.Drawing.Point(4, 3);
+            this.pnlContainer.Location = new System.Drawing.Point(4, 128);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(781, 815);
+            this.pnlContainer.Size = new System.Drawing.Size(781, 690);
             this.pnlContainer.TabIndex = 3;
             // 
             // picLogoText
             // 
+            this.picLogoText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picLogoText.Image = global::CapaPresentacion.Properties.Resources.TextDark;
-            this.picLogoText.Location = new System.Drawing.Point(77, 25);
+            this.picLogoText.Location = new System.Drawing.Point(66, 37);
             this.picLogoText.Name = "picLogoText";
             this.picLogoText.Size = new System.Drawing.Size(643, 85);
             this.picLogoText.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -491,6 +492,7 @@
             // pnlGrande
             // 
             this.pnlGrande.BackColor = System.Drawing.Color.White;
+            this.pnlGrande.Controls.Add(this.picLogoText);
             this.pnlGrande.Controls.Add(this.pnlContainer);
             this.pnlGrande.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGrande.Location = new System.Drawing.Point(277, 0);
@@ -515,6 +517,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inicio_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Inicio_FormClosed);
             this.flwPanelButons.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
