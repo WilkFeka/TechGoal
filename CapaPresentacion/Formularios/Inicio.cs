@@ -95,7 +95,6 @@ namespace CapaPresentacion
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
-            formulario.Anchor = AnchorStyles.None;
 
             pnlGrande.Controls.Add(formulario);
             formulario.Show();

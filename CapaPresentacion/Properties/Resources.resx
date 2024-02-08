@@ -130,8 +130,8 @@
   <data name="LogoGradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoGradient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ButtonStroke" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ButtonStroke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="genteBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\genteBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="screenBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\screenBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,6 +148,9 @@
   <data name="trophyBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trophyBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LogoWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BotonFill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonFill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,8 +163,8 @@
   <data name="football-field_6162391" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\football-field_6162391.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="genteBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\genteBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ButtonStroke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ButtonStroke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="reporteBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reporteBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,7 +175,10 @@
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LogoWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LogoWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="userBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="userBlack (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userBlack (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
