@@ -6,21 +6,28 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Input;
 using CapaControladora;
 using CapaEntidad;
 
 namespace CapaPresentacion
 {
-    public partial class Inicio : Form
+    public partial class formInicio : Form
     {
         CC_Sesion SesionControladora = CC_Sesion.getInstance;
         CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
-        public Inicio(Usuario usuario)
+        private static Form formularioActual = null;
+        public static Usuario usuarioActual;
+        public formInicio(Usuario usuario)
         {
             InitializeComponent();
-            string nombreUsuario = usuario.nombre;  //
-            lblNombre.Text = nombreUsuario;         // Muestra el nombre del usuario en el label
+            usuarioActual = usuario;
+            lblNombre.Text = usuarioActual.nombre;         // Muestra el nombre del usuario en el label
+                                                    //
+
+
 
         }
 
@@ -73,8 +80,63 @@ namespace CapaPresentacion
 
         private void Inicio_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.OpenForms["Login"].Show();
+            Application.OpenForms["formLogin"].Show();
             
+        }
+
+        private void AbrirFormulario(Form formulario)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Close();
+            }
+
+            formularioActual = formulario;
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+            formulario.Anchor = AnchorStyles.None;
+
+            pnlGrande.Controls.Add(formulario);
+            formulario.Show();
+            
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new formUsuarios());
+            pnlContainer.Hide();
+            picLogoText.Hide();
+
+
+        }
+
+        private void formInicio_Load(object sender, EventArgs e)
+        {
+
+            // ---------------------------- PERMISOS DE USUARIO ----------------------------
+
+            List<Permiso> listaPermisos = new CC_Permiso().Listar(usuarioActual.id_usuario);
+
+            var panelMenus = flwPanelButons.Controls;
+
+
+
+            foreach (System.Windows.Forms.Control control in panelMenus )
+            {
+                bool encontrado = listaPermisos.Any(p => p.nombreMenu == control.Name);
+
+                if (encontrado)
+                {
+                    control.Visible = true;
+                }
+                else
+                {
+                    control.Visible = false;
+                }
+
+            }
+
         }
     }
 }
