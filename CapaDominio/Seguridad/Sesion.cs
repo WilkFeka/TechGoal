@@ -40,11 +40,11 @@ namespace CapaEntidad.Seguridad
 
             else if (sesion.Usuario.email == usuario.email)
             {
-                throw new Exception("Ya se ha iniciado sesion.");
+                throw new Exception("Ya hay una sesion iniciada.");
             }
             else
             {
-                throw new Exception("Cierre la sesion para poder ingresar con un nuevo usauario.");
+                throw new Exception("Cierre su sesion para poder ingresar con otro usuario.");
             }
         }
 
@@ -57,7 +57,7 @@ namespace CapaEntidad.Seguridad
             }
             else
             {
-                throw new Exception("No hay sesión iniciada.");
+                throw new Exception("No ha sido posible cerrar sesion.");
             }
         }
     }

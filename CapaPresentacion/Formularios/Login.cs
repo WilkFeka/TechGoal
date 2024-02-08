@@ -15,14 +15,14 @@ using FontAwesome.Sharp;
 
 namespace CapaPresentacion
 {
-    public partial class Login : Form
+    public partial class formLogin : Form
     {
 
         private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
         private CC_Sesion SesionControladora = CC_Sesion.getInstance;
 
 
-        public Login()
+        public formLogin()
         {
             InitializeComponent();
         }
@@ -182,7 +182,7 @@ namespace CapaPresentacion
 
                         SesionControladora.Login(usuarioEncontrado);
 
-                        Inicio formInicio = new Inicio(usuarioEncontrado);
+                        formInicio formInicio = new formInicio(usuarioEncontrado);
                         formInicio.Show();
                         Hide();
 
