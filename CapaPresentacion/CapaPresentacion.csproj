@@ -210,5 +210,20 @@
   <ItemGroup>
     <None Include="Resources\userBlack %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_561125.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\broom_6090426.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

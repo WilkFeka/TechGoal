@@ -31,4 +31,10 @@ namespace CapaPresentacion.Personalizacion
 
 
     }
+
+    public class opcionComboEstado
+    {
+        public string texto { get; set; }
+        public object valor { get; set; }
+    }
 }
