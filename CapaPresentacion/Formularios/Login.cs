@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
 
 using CapaControladora;
 using CapaEntidad;
@@ -164,10 +164,6 @@ namespace CapaPresentacion
 
             try
             {
-
-                Cursor.Current = Cursors.WaitCursor;
-                SpinWait.SpinUntil(() => false, 500);
-
                 if (string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtClave.Text))
                 {
                     MessageBox.Show("Por favor complete todos los campos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -175,7 +171,7 @@ namespace CapaPresentacion
 
                 } else
                 {
-                    Usuario usuarioEncontrado = UsuarioControladora.EncontrarUsuario(txtCorreo.Text, txtClave.Text);
+                    Usuario usuarioEncontrado = UsuarioControladora.EncontrarUsuarioLogin(txtCorreo.Text, txtClave.Text);
 
                     if (usuarioEncontrado != null)
                     {

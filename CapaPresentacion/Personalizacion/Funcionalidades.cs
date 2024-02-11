@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaPresentacion.Personalizacion
 {
@@ -13,7 +15,7 @@ namespace CapaPresentacion.Personalizacion
         private Funcionalidades()
         {
         }
-        public static Funcionalidades Instanciar
+        public static Funcionalidades getInstance
         {
 
             // -------------------- SINGLETON ---------------------
@@ -27,8 +29,69 @@ namespace CapaPresentacion.Personalizacion
             }
         }
 
+        public void soloLetras(object sender, KeyPressEventArgs e)
+        {
+            // ---------------------------- SOLO LETRAS ----------------------------
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        public void soloNumeros(object sender, KeyPressEventArgs e)
+        {
+            // ---------------------------- SOLO NUMEROS ----------------------------
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        public string generarClave(int longitud)
+        {
+            Random random = new Random();
+            const string caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            StringBuilder sb = new StringBuilder(longitud);
+
+            for (int i = 0; i < longitud; i++)
+            {
+                // Seleccionar un carácter aleatorio de la cadena de caracteres
+                int indice = random.Next(caracteres.Length);
+                char caracter = caracteres[indice];
+
+                // Agregar el carácter a la clave
+                sb.Append(caracter);
+            }
+
+            return sb.ToString();
+        }
+
+        public bool validarEmail(string correo)
+        {
+            string patron = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            // Crear una instancia de la clase Regex con el patrón
+            Regex regex = new Regex(patron);
+
+            // Verificar si el correo electrónico coincide con el patrón
+            return regex.IsMatch(correo);
+        }
+
+
+
+
+
         
 
 
     }
+
+    public class opcionCombo
+    {
+        public string texto { get; set; }
+        public int valor { get; set; }
+    }
+  
 }
