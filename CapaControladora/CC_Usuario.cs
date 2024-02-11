@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaEntidad;
 using CapaDatos;
+using System.Security.Cryptography;
 
 namespace CapaControladora
 {
@@ -87,6 +88,17 @@ namespace CapaControladora
             }
 
 
+        }
+
+
+        public string EncriptarClave(string str)
+        {
+            SHA256 sha256 = SHA256Managed.Create();
+            byte[] hashValue;
+            UTF8Encoding objUtf8 = new UTF8Encoding();
+            hashValue = sha256.ComputeHash(objUtf8.GetBytes(str));
+            string hashString = BitConverter.ToString(hashValue).Replace("-", "");
+            return hashString;
         }
 
 

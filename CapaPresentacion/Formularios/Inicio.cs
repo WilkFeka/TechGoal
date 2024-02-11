@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
@@ -24,8 +25,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             usuarioActual = usuario;
-            lblNombre.Text = usuarioActual.nombre;         // Muestra el nombre del usuario en el label
-                                                    //
+
 
 
 
@@ -33,17 +33,7 @@ namespace CapaPresentacion
 
 
         // ---------------------------- ESTILOS BOTONES DE NAVEGACION ----------------------------
-        private void btnAjusteUsuario_MouseEnter(object sender, EventArgs e)
-        {
-            btnAjusteUsuario.IconColor = Color.FromArgb(31,200,236);
-            btnAjusteUsuario.IconSize = 70;
-        }
 
-        private void btnAjusteUsuario_MouseLeave(object sender, EventArgs e)
-        {
-            btnAjusteUsuario.IconColor = Color.White;
-            btnAjusteUsuario.IconSize = 64;
-        }
 
         private void btnSalir_MouseEnter(object sender, EventArgs e)
         {
@@ -80,8 +70,8 @@ namespace CapaPresentacion
 
         private void Inicio_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.OpenForms["formLogin"].Show();
-            
+                Application.OpenForms["formLogin"].Show();
+
         }
 
         private void AbrirFormulario(Form formulario)
@@ -103,9 +93,9 @@ namespace CapaPresentacion
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new formUsuarios());
             pnlContainer.Hide();
             picLogoText.Hide();
+            AbrirFormulario(new formUsuarios());
 
 
         }
@@ -137,5 +127,46 @@ namespace CapaPresentacion
             }
 
         }
+
+        private void btnAjusteUsuario_MouseEnter(object sender, EventArgs e)
+        {
+
+            btnAjusteUsuario.IconColor = Color.FromArgb(31, 200, 236);
+            btnAjusteUsuario.IconSize = 70;
+        }
+
+        private void btnAjusteUsuario_MouseLeave(object sender, EventArgs e)
+        {
+            btnAjusteUsuario.IconColor = Color.White;
+            btnAjusteUsuario.IconSize = 64;
+
+
+        }
+
+        private void btnHome_MouseEnter(object sender, EventArgs e)
+        {
+            btnHome.IconColor = Color.FromArgb(31, 200, 236);
+            btnHome.IconSize = 70;
+
+        }
+
+        private void btnHome_MouseLeave(object sender, EventArgs e)
+        {
+            btnHome.IconColor = Color.White;
+            btnHome.IconSize = 64;
+
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            pnlContainer.Show();
+            picLogoText.Show();
+
+            if (formularioActual != null)
+            {
+                formularioActual.Close();
+            }
+        }
+
     }
-}
+    }

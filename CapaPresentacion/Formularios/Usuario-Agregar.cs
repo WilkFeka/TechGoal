@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CapaPresentacion.Formularios
 {
     public partial class formUsuarioAgregar : Form
@@ -23,6 +24,12 @@ namespace CapaPresentacion.Formularios
         public formUsuarioAgregar()
         {
             InitializeComponent();
+        }
+
+        private void formUsuarioAgregar_Load(object sender, EventArgs e)
+        {
+
+            label1.Select(); // Evita que se seleccione automaticamente el textbox al cargar
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -50,8 +57,10 @@ namespace CapaPresentacion.Formularios
 
         private void btnGenerarClave_Click(object sender, EventArgs e)
         {
+            txtClave.ForeColor = Color.FromArgb(50, 50, 50);
             string nuevaClave = funcionalidades.generarClave(8);
             txtClave.Text = nuevaClave;
+
 
         }
 
@@ -63,11 +72,11 @@ namespace CapaPresentacion.Formularios
 
                 foreach (Control control in Controls)
                 {
-                    if (control is TextBox)
+                    if (control is TextBox || control is ComboBox)
                     {
                         if (string.IsNullOrEmpty(control.Text))
                         {
-                            
+
                             MessageBox.Show("Por favor complete todos los campos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
 
@@ -91,16 +100,20 @@ namespace CapaPresentacion.Formularios
                         {
                             MessageBox.Show("Test");
 
-                        } else {
+                        }
+                        else
+                        {
                             MessageBox.Show("El correo ingresado no es valido", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
+                        }
 
-                    } else 
+                    }
+                    else
                     {
                         MessageBox.Show("Ya existe un usuario con ese DNI.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
+
                     }
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Ya existe un usuario con ese correo.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -114,7 +127,10 @@ namespace CapaPresentacion.Formularios
 
             }
         }
+
     }
+
+
 
             
 }

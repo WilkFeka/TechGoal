@@ -50,6 +50,7 @@
             this.txtCorreoFilter = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnExportar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnAgregarUsuario = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
@@ -95,7 +96,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.label2.Location = new System.Drawing.Point(292, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(283, 33);
@@ -108,7 +109,7 @@
             this.cmbEstadoFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbEstadoFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoFilter.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEstadoFilter.ForeColor = System.Drawing.Color.Gray;
+            this.cmbEstadoFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cmbEstadoFilter.FormattingEnabled = true;
             this.cmbEstadoFilter.Location = new System.Drawing.Point(1166, 33);
             this.cmbEstadoFilter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -124,7 +125,7 @@
             this.cmbRolFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbRolFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRolFilter.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRolFilter.ForeColor = System.Drawing.Color.DimGray;
+            this.cmbRolFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cmbRolFilter.FormattingEnabled = true;
             this.cmbRolFilter.Location = new System.Drawing.Point(877, 33);
             this.cmbRolFilter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -146,7 +147,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel2.Controls.Add(this.txtDNIFilter);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(588, 33);
@@ -160,7 +161,7 @@
             this.txtDNIFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDNIFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtDNIFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNIFilter.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDNIFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.txtDNIFilter.Location = new System.Drawing.Point(0, 0);
             this.txtDNIFilter.Name = "txtDNIFilter";
             this.txtDNIFilter.Size = new System.Drawing.Size(269, 29);
@@ -171,7 +172,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.label5.Location = new System.Drawing.Point(1159, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(284, 33);
@@ -183,7 +184,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.label4.Location = new System.Drawing.Point(870, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(283, 33);
@@ -195,7 +196,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.label3.Location = new System.Drawing.Point(581, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(283, 33);
@@ -205,7 +206,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel1.Controls.Add(this.txtNombreFilter);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(299, 33);
@@ -219,7 +220,7 @@
             this.txtNombreFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtNombreFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreFilter.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNombreFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.txtNombreFilter.Location = new System.Drawing.Point(0, 0);
             this.txtNombreFilter.Name = "txtNombreFilter";
             this.txtNombreFilter.Size = new System.Drawing.Size(269, 29);
@@ -229,12 +230,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(90, 39);
+            this.label1.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label1.Location = new System.Drawing.Point(90, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 38);
+            this.label1.Size = new System.Drawing.Size(164, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuarios";
             // 
@@ -268,7 +269,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel3.Controls.Add(this.txtCorreoFilter);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(10, 33);
@@ -282,7 +283,7 @@
             this.txtCorreoFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCorreoFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtCorreoFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoFilter.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCorreoFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.txtCorreoFilter.Location = new System.Drawing.Point(0, 0);
             this.txtCorreoFilter.Name = "txtCorreoFilter";
             this.txtCorreoFilter.Size = new System.Drawing.Size(269, 29);
@@ -293,7 +294,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(283, 33);
@@ -303,6 +304,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnExportar);
             this.panel4.Controls.Add(this.btnAgregarUsuario);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label1);
@@ -315,20 +317,42 @@
             this.panel4.Size = new System.Drawing.Size(1548, 795);
             this.panel4.TabIndex = 18;
             // 
+            // btnExportar
+            // 
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            this.btnExportar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            this.btnExportar.BackgroundImage = global::CapaPresentacion.Properties.Resources.excelBlanco;
+            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExportar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnExportar.BorderRadius = 25;
+            this.btnExportar.BorderSize = 0;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.Location = new System.Drawing.Point(1452, 33);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(64, 64);
+            this.btnExportar.TabIndex = 21;
+            this.btnExportar.TextColor = System.Drawing.Color.White;
+            this.btnExportar.UseVisualStyleBackColor = false;
+            // 
             // btnAgregarUsuario
             // 
             this.btnAgregarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
-            this.btnAgregarUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.btnAgregarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAgregarUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAgregarUsuario.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
             this.btnAgregarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAgregarUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnAgregarUsuario.BorderRadius = 30;
+            this.btnAgregarUsuario.BorderRadius = 25;
             this.btnAgregarUsuario.BorderSize = 0;
+            this.btnAgregarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarUsuario.FlatAppearance.BorderSize = 0;
             this.btnAgregarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(1452, 19);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(1372, 33);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(64, 64);
             this.btnAgregarUsuario.TabIndex = 20;
@@ -364,17 +388,17 @@
             this.dgvUsuarios.AutoGenerateColumns = false;
             this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.DimGray;
+            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dgvUsuarios.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUsuarios.ColumnHeadersHeight = 40;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -394,7 +418,7 @@
             this.dgvUsuarios.DataSource = this.usuariosBindingSource;
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsuarios.EnableHeadersVisualStyles = false;
-            this.dgvUsuarios.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.dgvUsuarios.Location = new System.Drawing.Point(0, 0);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
@@ -546,14 +570,16 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpiar.BackColor = System.Drawing.Color.Silver;
-            this.btnLimpiar.BackgroundColor = System.Drawing.Color.Silver;
-            this.btnLimpiar.BackgroundImage = global::CapaPresentacion.Properties.Resources.clear__1_;
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnLimpiar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnLimpiar.BackgroundImage = global::CapaPresentacion.Properties.Resources.clear__2_;
             this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLimpiar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
             this.btnLimpiar.BorderRadius = 20;
             this.btnLimpiar.BorderSize = 0;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(1476, 156);
@@ -688,5 +714,6 @@
         private System.Windows.Forms.DataGridViewImageColumn editar;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
         private Personalizacion.MSButton btnAgregarUsuario;
+        private Personalizacion.MSButton btnExportar;
     }
 }
