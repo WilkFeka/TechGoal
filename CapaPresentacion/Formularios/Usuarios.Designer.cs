@@ -33,30 +33,26 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.cmbRol = new System.Windows.Forms.ComboBox();
+            this.cmbEstadoFilter = new System.Windows.Forms.ComboBox();
+            this.cmbRolFilter = new System.Windows.Forms.ComboBox();
+            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDNIFilter = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombreFilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtCorreoFilter = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnAgregarUsuario = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
-            this.usuariosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.usuariosTableAdapter();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.msButton3 = new CapaPresentacion.Personalizacion.MSButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.idusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.claveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,16 +65,30 @@
             this.fechaRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
+            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.usuariosTableAdapter();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.rolTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.rolTableAdapter();
+            this.rolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -93,36 +103,51 @@
             this.label2.Text = "Nombre";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cmbEstado
+            // cmbEstadoFilter
             // 
-            this.cmbEstado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstado.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEstado.ForeColor = System.Drawing.Color.Gray;
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(1166, 33);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(270, 31);
-            this.cmbEstado.TabIndex = 16;
+            this.cmbEstadoFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbEstadoFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstadoFilter.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstadoFilter.ForeColor = System.Drawing.Color.Gray;
+            this.cmbEstadoFilter.FormattingEnabled = true;
+            this.cmbEstadoFilter.Location = new System.Drawing.Point(1166, 33);
+            this.cmbEstadoFilter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.cmbEstadoFilter.Name = "cmbEstadoFilter";
+            this.cmbEstadoFilter.Size = new System.Drawing.Size(270, 31);
+            this.cmbEstadoFilter.TabIndex = 16;
+            this.cmbEstadoFilter.SelectedIndexChanged += new System.EventHandler(this.cmbEstadoFilter_SelectedIndexChanged);
             // 
-            // cmbRol
+            // cmbRolFilter
             // 
-            this.cmbRol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRol.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRol.ForeColor = System.Drawing.Color.DimGray;
-            this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(877, 33);
-            this.cmbRol.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(269, 31);
-            this.cmbRol.TabIndex = 11;
+            this.cmbRolFilter.DataSource = this.rolBindingSource;
+            this.cmbRolFilter.DisplayMember = "descripcion";
+            this.cmbRolFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbRolFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRolFilter.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRolFilter.ForeColor = System.Drawing.Color.DimGray;
+            this.cmbRolFilter.FormattingEnabled = true;
+            this.cmbRolFilter.Location = new System.Drawing.Point(877, 33);
+            this.cmbRolFilter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.cmbRolFilter.Name = "cmbRolFilter";
+            this.cmbRolFilter.Size = new System.Drawing.Size(269, 31);
+            this.cmbRolFilter.TabIndex = 11;
+            this.cmbRolFilter.ValueMember = "id_rol";
+            this.cmbRolFilter.SelectedValueChanged += new System.EventHandler(this.cmbRolFilter_SelectedValueChanged);
+            // 
+            // rolBindingSource
+            // 
+            this.rolBindingSource.DataMember = "rol";
+            this.rolBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            // 
+            // dB_TECHGOALDataSet
+            // 
+            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
+            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtDNIFilter);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(588, 33);
             this.panel2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -130,16 +155,17 @@
             this.panel2.Size = new System.Drawing.Size(269, 33);
             this.panel2.TabIndex = 15;
             // 
-            // textBox2
+            // txtDNIFilter
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox2.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(0, 0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 29);
-            this.textBox2.TabIndex = 11;
+            this.txtDNIFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDNIFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtDNIFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNIFilter.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDNIFilter.Location = new System.Drawing.Point(0, 0);
+            this.txtDNIFilter.Name = "txtDNIFilter";
+            this.txtDNIFilter.Size = new System.Drawing.Size(269, 29);
+            this.txtDNIFilter.TabIndex = 11;
+            this.txtDNIFilter.TextChanged += new System.EventHandler(this.txtDNIFilter_TextChanged);
             // 
             // label5
             // 
@@ -180,7 +206,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtNombreFilter);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(299, 33);
             this.panel1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -188,16 +214,17 @@
             this.panel1.Size = new System.Drawing.Size(269, 33);
             this.panel1.TabIndex = 11;
             // 
-            // textBox1
+            // txtNombreFilter
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 29);
-            this.textBox1.TabIndex = 11;
+            this.txtNombreFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtNombreFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreFilter.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNombreFilter.Location = new System.Drawing.Point(0, 0);
+            this.txtNombreFilter.Name = "txtNombreFilter";
+            this.txtNombreFilter.Size = new System.Drawing.Size(269, 29);
+            this.txtNombreFilter.TabIndex = 11;
+            this.txtNombreFilter.TextChanged += new System.EventHandler(this.txtNombreFilter_TextChanged);
             // 
             // label1
             // 
@@ -223,8 +250,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cmbEstado, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cmbRol, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbEstadoFilter, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbRolFilter, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 1);
@@ -239,18 +266,75 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1446, 66);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.panel3.Controls.Add(this.txtCorreoFilter);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(10, 33);
+            this.panel3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(269, 33);
+            this.panel3.TabIndex = 18;
+            // 
+            // txtCorreoFilter
+            // 
+            this.txtCorreoFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCorreoFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCorreoFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreoFilter.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCorreoFilter.Location = new System.Drawing.Point(0, 0);
+            this.txtCorreoFilter.Name = "txtCorreoFilter";
+            this.txtCorreoFilter.Size = new System.Drawing.Size(269, 29);
+            this.txtCorreoFilter.TabIndex = 11;
+            this.txtCorreoFilter.TextChanged += new System.EventHandler(this.txtCorreoFilter_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(283, 33);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "E - mail";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnAgregarUsuario);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.msButton3);
+            this.panel4.Controls.Add(this.btnLimpiar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1548, 795);
             this.panel4.TabIndex = 18;
+            // 
+            // btnAgregarUsuario
+            // 
+            this.btnAgregarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.btnAgregarUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.btnAgregarUsuario.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
+            this.btnAgregarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregarUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnAgregarUsuario.BorderRadius = 30;
+            this.btnAgregarUsuario.BorderSize = 0;
+            this.btnAgregarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnAgregarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(1452, 19);
+            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(64, 64);
+            this.btnAgregarUsuario.TabIndex = 20;
+            this.btnAgregarUsuario.TextColor = System.Drawing.Color.White;
+            this.btnAgregarUsuario.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
             // panel5
             // 
@@ -338,108 +422,6 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(1524, 531);
             this.dgvUsuarios.TabIndex = 18;
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.dB_TECHGOALDataSet;
-            // 
-            // dB_TECHGOALDataSet
-            // 
-            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
-            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewImageColumn1.FillWeight = 126.9036F;
-            this.dataGridViewImageColumn1.HeaderText = "Editar";
-            this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.New_Project;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 64;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewImageColumn2.FillWeight = 97.0107F;
-            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
-            this.dataGridViewImageColumn2.Image = global::CapaPresentacion.Properties.Resources.trash_561125;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.Width = 84;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.userBlack__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // msButton3
-            // 
-            this.msButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.msButton3.BackColor = System.Drawing.Color.Silver;
-            this.msButton3.BackgroundColor = System.Drawing.Color.Silver;
-            this.msButton3.BackgroundImage = global::CapaPresentacion.Properties.Resources.clear__1_;
-            this.msButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.msButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
-            this.msButton3.BorderRadius = 20;
-            this.msButton3.BorderSize = 0;
-            this.msButton3.FlatAppearance.BorderSize = 0;
-            this.msButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton3.ForeColor = System.Drawing.Color.White;
-            this.msButton3.Location = new System.Drawing.Point(1476, 156);
-            this.msButton3.Name = "msButton3";
-            this.msButton3.Size = new System.Drawing.Size(40, 40);
-            this.msButton3.TabIndex = 12;
-            this.msButton3.TextColor = System.Drawing.Color.White;
-            this.msButton3.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(283, 33);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "E - mail";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(10, 33);
-            this.panel3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(269, 33);
-            this.panel3.TabIndex = 18;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox3.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(0, 0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(269, 29);
-            this.textBox3.TabIndex = 11;
-            // 
             // idusuarioDataGridViewTextBoxColumn
             // 
             this.idusuarioDataGridViewTextBoxColumn.DataPropertyName = "id_usuario";
@@ -506,11 +488,13 @@
             // 
             // estadoDataGridViewCheckBoxColumn
             // 
+            this.estadoDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
             this.estadoDataGridViewCheckBoxColumn.FillWeight = 97.0107F;
             this.estadoDataGridViewCheckBoxColumn.HeaderText = "Estado";
             this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
             this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewCheckBoxColumn.Width = 74;
             // 
             // fechaRegistroDataGridViewTextBoxColumn
             // 
@@ -544,6 +528,87 @@
             this.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.eliminar.Width = 5;
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.userBlack__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiar.BackColor = System.Drawing.Color.Silver;
+            this.btnLimpiar.BackgroundColor = System.Drawing.Color.Silver;
+            this.btnLimpiar.BackgroundImage = global::CapaPresentacion.Properties.Resources.clear__1_;
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLimpiar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.btnLimpiar.BorderRadius = 20;
+            this.btnLimpiar.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(1476, 156);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(40, 40);
+            this.btnLimpiar.TabIndex = 12;
+            this.btnLimpiar.TextColor = System.Drawing.Color.White;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // usuariosBindingSource1
+            // 
+            this.usuariosBindingSource1.DataMember = "usuarios";
+            this.usuariosBindingSource1.DataSource = this.dB_TECHGOALDataSet;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewImageColumn1.FillWeight = 126.9036F;
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.New_Project;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewImageColumn2.FillWeight = 97.0107F;
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::CapaPresentacion.Properties.Resources.trash_561125;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // rolTableAdapter
+            // 
+            this.rolTableAdapter.ClearBeforeFill = true;
+            // 
+            // rolBindingSource1
+            // 
+            this.rolBindingSource1.DataMember = "rol";
+            this.rolBindingSource1.DataSource = this.dB_TECHGOALDataSet;
+            // 
+            // usuariosBindingSource2
+            // 
+            this.usuariosBindingSource2.DataMember = "usuarios";
+            this.usuariosBindingSource2.DataSource = this.dB_TECHGOALDataSet;
+            // 
             // formUsuarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -556,21 +621,25 @@
             this.Name = "formUsuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.formUsuarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -580,15 +649,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombreFilter;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbRol;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox cmbEstado;
-        private Personalizacion.MSButton msButton3;
+        private System.Windows.Forms.ComboBox cmbRolFilter;
+        private System.Windows.Forms.TextBox txtDNIFilter;
+        private System.Windows.Forms.ComboBox cmbEstadoFilter;
+        private Personalizacion.MSButton btnLimpiar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvUsuarios;
@@ -599,8 +668,13 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCorreoFilter;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.BindingSource rolBindingSource;
+        private DB_TECHGOALDataSetTableAdapters.rolTableAdapter rolTableAdapter;
+        private System.Windows.Forms.BindingSource usuariosBindingSource1;
+        private System.Windows.Forms.BindingSource rolBindingSource1;
+        private System.Windows.Forms.BindingSource usuariosBindingSource2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idusuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn claveDataGridViewTextBoxColumn;
@@ -613,5 +687,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn editar;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
+        private Personalizacion.MSButton btnAgregarUsuario;
     }
 }

@@ -70,5 +70,7 @@ namespace CapaDatos.Seguridad
             return lista;
         }
 
+        
+
     }
 }

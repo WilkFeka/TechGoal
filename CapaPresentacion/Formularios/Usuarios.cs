@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using CapaPresentacion.Personalizacion;
 using CapaControladora;
 using CapaEntidad;
+using System.Windows.Controls;
+using CapaPresentacion.Formularios;
 
 namespace CapaPresentacion
 {
@@ -22,33 +24,104 @@ namespace CapaPresentacion
 
         private void formUsuarios_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet.permisos' Puede moverla o quitarla según sea necesario.
+            // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet.rol' Puede moverla o quitarla según sea necesario.
+            rolTableAdapter.Fill(dB_TECHGOALDataSet.rol);
             // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet.usuarios' Puede moverla o quitarla según sea necesario.
 
-            foreach (DataGridViewRow row in dgvUsuarios.Rows)
-            {
-                // Establece el alto máximo para cada fila
-                row.Height = 15; // Establece el alto máximo
-            }
-            usuariosTableAdapter.Fill(this.dB_TECHGOALDataSet.usuarios);
+            usuariosTableAdapter.Fill(dB_TECHGOALDataSet.usuarios);
+
 
             // ---------------------------- CARGA DE COMBOBOX ESTADO ----------------------------
-            cmbEstado.Items.Add(new opcionComboEstado { texto = "Activo", valor = 1 });
-            cmbEstado.Items.Add(new opcionComboEstado { texto = "Inactivo", valor = 0 });
-            cmbEstado.DisplayMember = "texto";
-            cmbEstado.ValueMember = "valor";
-
+            cmbEstadoFilter.Items.Add(new opcionCombo { texto = "Activo", valor = 1 });
+            cmbEstadoFilter.Items.Add(new opcionCombo { texto = "Inactivo", valor = 0 });
+            cmbEstadoFilter.DisplayMember = "texto";
+            cmbEstadoFilter.ValueMember = "valor";
 
             List<Rol> listaRoles = new CC_Rol().Listar();
 
-            foreach (Rol item in listaRoles)
+            foreach (Rol rol in listaRoles)
             {
-                cmbRol.Items.Add(new opcionComboEstado { texto = item.descripcion, valor = item.id_rol });
             }
 
-            cmbRol.DisplayMember = "texto";
-            cmbRol.ValueMember = "valor";
+            limpiarFiltros();
+        }
+
+        private void txtCorreoFilter_TextChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+        }
+
+        private void txtNombreFilter_TextChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+        }
+
+        private void txtDNIFilter_TextChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+            
+        }
+
+        private void cmbRolFilter_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+
+        }
+
+        private void cmbEstadoFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+
+        }
+
+        private void Filtrar()
+        {
+            string rolQuery = "";
+            string estadoQuery = "";
 
 
+            if (cmbRolFilter.SelectedValue != null)
+            {
+                string rolID = cmbRolFilter.SelectedValue.ToString();
+                rolQuery = " AND id_rol = " + rolID;
+
+            }
+
+            if (cmbEstadoFilter.SelectedItem != null)
+            {
+                foreach (opcionCombo item in cmbEstadoFilter.Items)
+                {
+                    if (item.texto == cmbEstadoFilter.Text)
+                    {
+                        estadoQuery = " AND estado = " + item.valor;
+                    }
+                }   
+
+            }
+
+
+            usuariosBindingSource.Filter = "email LIKE '%" + txtCorreoFilter.Text + "%' AND nombre LIKE '%" + txtNombreFilter.Text + "%' AND dni LIKE '%" + txtDNIFilter.Text + "%'" + rolQuery + estadoQuery;
+
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarFiltros();
+        }
+
+        private void limpiarFiltros()
+        {
+            txtCorreoFilter.Text = "";
+            txtNombreFilter.Text = "";
+            txtDNIFilter.Text = "";
+            cmbRolFilter.SelectedIndex = -1;
+            cmbEstadoFilter.SelectedIndex = -1;
+        }
+
+        private void btnAgregarUsuario_Click(object sender, EventArgs e)
+        {
+            Form agregar = new formUsuarioAgregar();
+            agregar.ShowDialog();
 
         }
     }
