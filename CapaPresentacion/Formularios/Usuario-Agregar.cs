@@ -17,7 +17,7 @@ namespace CapaPresentacion.Formularios
     public partial class formUsuarioAgregar : Form
     {
 
-        Funcionalidades funcionalidades = Funcionalidades.getInstance;
+        private Funcionalidades funcionalidades = Funcionalidades.getInstance;
         private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
 
 
@@ -28,8 +28,9 @@ namespace CapaPresentacion.Formularios
 
         private void formUsuarioAgregar_Load(object sender, EventArgs e)
         {
+            rolTableAdapter.Fill(dB_TECHGOALDataSet.rol);
 
-            label1.Select(); // Evita que se seleccione automaticamente el textbox al cargar
+
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -57,7 +58,6 @@ namespace CapaPresentacion.Formularios
 
         private void btnGenerarClave_Click(object sender, EventArgs e)
         {
-            txtClave.ForeColor = Color.FromArgb(50, 50, 50);
             string nuevaClave = funcionalidades.generarClave(8);
             txtClave.Text = nuevaClave;
 
@@ -88,36 +88,67 @@ namespace CapaPresentacion.Formularios
 
 
 
-                Usuario correoEncontrado = UsuarioControladora.EncontrarUsuarioCorreo(txtCorreo.Text);
 
-                if (correoEncontrado == null)
+                
+
+                
+                if (funcionalidades.validarEmail(txtCorreo.Text))
                 {
-                    Usuario documentoEncontrado = UsuarioControladora.EncontrarUsuarioDNI(txtDocumento.Text);
-
-                    if (documentoEncontrado == null)
+                    Usuario correoEncontrado = UsuarioControladora.EncontrarUsuarioCorreo(txtCorreo.Text);
+                    if (correoEncontrado == null)
                     {
-                        if (funcionalidades.validarEmail(txtCorreo.Text))
+                        Usuario documentoEncontrado = UsuarioControladora.EncontrarUsuarioDNI(txtDocumento.Text);
+                        if (documentoEncontrado == null)
                         {
-                            MessageBox.Show("Test");
+                            string claveHash = UsuarioControladora.EncriptarClave(txtClave.Text);
+
+                            Usuario nuevoUsuario = new Usuario()
+                            {
+                                email = txtCorreo.Text,
+                                clave = claveHash,
+                                nombre = txtNombre.Text,
+                                apellido = txtApellido.Text,
+                                dni = txtDocumento.Text,
+                                telefono = txtTelefono.Text,
+                                o_rol = new Rol { id_rol = Convert.ToInt32(cmbRoles.SelectedValue) },
+                                estado = true
+                            };
+
+                            bool agregarUsuario = UsuarioControladora.AgregarUsuario(nuevoUsuario);
+
+                            if (agregarUsuario)
+                            {
+                                MessageBox.Show("Test");
+                            } else
+                            {
+                                MessageBox.Show("ERRor");
+                            }
 
                         }
                         else
                         {
-                            MessageBox.Show("El correo ingresado no es valido", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Ya existe un usuario con ese DNI.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         }
 
-                    }
+                    } 
                     else
                     {
-                        MessageBox.Show("Ya existe un usuario con ese DNI.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ya existe un usuario con ese correo.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
                     }
+
+
+
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe un usuario con ese correo.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    MessageBox.Show("El correo ingresado no es valido", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+               
+                
 
             }
             catch (Exception error)
@@ -128,6 +159,18 @@ namespace CapaPresentacion.Formularios
             }
         }
 
+        private void formUsuarioAgregar_Load_1(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet.rol' Puede moverla o quitarla según sea necesario.
+
+        }
+
+        private void formUsuarioAgregar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formUsuarios formUsuarios = new formUsuarios();
+            formUsuarios.RecargarTabla();
+            
+        }
     }
 
 

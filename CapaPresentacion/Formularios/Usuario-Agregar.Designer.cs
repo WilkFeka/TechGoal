@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.msButton5 = new CapaPresentacion.Personalizacion.MSButton();
@@ -54,7 +55,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
+            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.rolTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -327,17 +333,16 @@
             // cmbRoles
             // 
             this.cmbRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.cmbRoles.DataSource = this.rolBindingSource;
+            this.cmbRoles.DisplayMember = "descripcion";
             this.cmbRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.Items.AddRange(new object[] {
-            "Administrador",
-            "Empleado",
-            "Geernete"});
             this.cmbRoles.Location = new System.Drawing.Point(156, 676);
             this.cmbRoles.Name = "cmbRoles";
             this.cmbRoles.Size = new System.Drawing.Size(330, 31);
             this.cmbRoles.TabIndex = 7;
+            this.cmbRoles.ValueMember = "id_rol";
             // 
             // msButton7
             // 
@@ -452,6 +457,20 @@
             this.label5.TabIndex = 59;
             this.label5.Text = "Clave";
             // 
+            // dB_TECHGOALDataSet
+            // 
+            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
+            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rolBindingSource
+            // 
+            this.rolBindingSource.DataMember = "rol";
+            this.rolBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            // 
+            // rolTableAdapter
+            // 
+            this.rolTableAdapter.ClearBeforeFill = true;
+            // 
             // formUsuarioAgregar
             // 
             this.AcceptButton = this.btnAceptar;
@@ -494,7 +513,11 @@
             this.Name = "formUsuarioAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Usuario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formUsuarioAgregar_FormClosed);
+            this.Load += new System.EventHandler(this.formUsuarioAgregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,5 +550,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private DB_TECHGOALDataSet dB_TECHGOALDataSet;
+        private System.Windows.Forms.BindingSource rolBindingSource;
+        private DB_TECHGOALDataSetTableAdapters.rolTableAdapter rolTableAdapter;
     }
 }

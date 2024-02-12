@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using CapaEntidad;
 using CapaDatos;
 using System.Security.Cryptography;
+using System.Data;
 
 namespace CapaControladora
 {
@@ -91,18 +92,42 @@ namespace CapaControladora
         }
 
 
-        public string EncriptarClave(string str)
+        public string EncriptarClave(string clave)
         {
             SHA256 sha256 = SHA256Managed.Create();
             byte[] hashValue;
             UTF8Encoding objUtf8 = new UTF8Encoding();
-            hashValue = sha256.ComputeHash(objUtf8.GetBytes(str));
+            hashValue = sha256.ComputeHash(objUtf8.GetBytes(clave));
             string hashString = BitConverter.ToString(hashValue).Replace("-", "");
             return hashString;
         }
 
+        public DataTable CargarTablaUsuarios(DataTable tablaUsuarios)
+        {
+            tablaUsuarios = new CD_Usuario().CargarTablaUsuarios(tablaUsuarios);
+            return tablaUsuarios;
 
+        }
 
+        public bool AgregarUsuario(Usuario nuevoUsuario)
+        {
+            if (nuevoUsuario != null)
+            {
+                if (CD_Usuario.AgregarUsuario(nuevoUsuario))
+                {
+                    return true;
+
+                }
+                else return false;
+
+            } else
+            {
+                return false;
+            }
+
+            
+        }
 
     }
+
 }
