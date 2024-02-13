@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using CapaEntidad;
 using CapaDatos;
 using System.Security.Cryptography;
+using System.Data;
 
 namespace CapaControladora
 {
@@ -39,10 +40,10 @@ namespace CapaControladora
 
         // ---------------------- ENCONTRAR USUARIO EN LA LISTA POR CREDENCIALES OBTENIDAS--------------------
 
-        public Usuario EncontrarUsuarioLogin (string txtCorreo, string txtClave)
+        public Usuario EncontrarUsuarioLogin (string Correo, string Clave)
         {
             //Filtrar usuarios por email y clave proporcionados
-            Usuario usuarioIniciando = new CC_Usuario().Listar().Where(u => u.email == txtCorreo && u.clave == txtClave).FirstOrDefault();
+            Usuario usuarioIniciando = new CC_Usuario().Listar().Where(u => u.email == Correo && u.clave == Clave).FirstOrDefault();
 
             if (usuarioIniciando != null)
             {
@@ -55,6 +56,8 @@ namespace CapaControladora
 
 
         }
+
+        // -------------------- ENCONTRAR SI EL CORREO YA ESTA EN USO ----------------
 
         public Usuario EncontrarUsuarioCorreo (string txtCorreo)
         {
@@ -73,6 +76,8 @@ namespace CapaControladora
 
         }
 
+
+        // ---------------- ENCONTRAR SI EL DNI YA ESTA EN USO -------------------------
         public Usuario EncontrarUsuarioDNI(string txtDNI)
         {
 
@@ -91,18 +96,53 @@ namespace CapaControladora
         }
 
 
-        public string EncriptarClave(string str)
+        // ----------------- ENCRIPTACION DE CLAVE -----------------
+
+        public string EncriptarClave(string clave)
         {
             SHA256 sha256 = SHA256Managed.Create();
             byte[] hashValue;
             UTF8Encoding objUtf8 = new UTF8Encoding();
-            hashValue = sha256.ComputeHash(objUtf8.GetBytes(str));
+            hashValue = sha256.ComputeHash(objUtf8.GetBytes(clave));
             string hashString = BitConverter.ToString(hashValue).Replace("-", "");
             return hashString;
         }
 
 
+        // ---------------------- CARGAR TABLA DE USUARIOS --------------------------
+        public DataTable CargarTablaUsuarios(DataTable tablaUsuarios, string correoP, string nombreP, string dniP, object rolP, string estadoP)
+        {
+            tablaUsuarios = new CD_Usuario().CargarTablaUsuarios(tablaUsuarios, correoP, nombreP, dniP, rolP, estadoP);
+            return tablaUsuarios;
 
+        }
+
+        // ----------------------- AGREGAR UN NUEVO USUARIO ----------------------------
+
+        public bool AgregarUsuario(Usuario nuevoUsuario)
+        {
+            if (nuevoUsuario != null)
+            {
+                if (CD_Usuario.AgregarUsuario(nuevoUsuario))
+                {
+                    return true;
+
+                }
+                else return false;
+
+            } else
+            {
+                return false;
+            }
+
+            
+        }
+
+        public void Filtrar(string correo, string nombre, string dni, int rol, bool estado)
+        {
+
+        }
 
     }
+
 }

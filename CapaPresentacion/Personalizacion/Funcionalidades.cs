@@ -29,9 +29,10 @@ namespace CapaPresentacion.Personalizacion
             }
         }
 
+            // ---------------------------- SOLO LETRAS ----------------------------
+
         public void soloLetras(object sender, KeyPressEventArgs e)
         {
-            // ---------------------------- SOLO LETRAS ----------------------------
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
@@ -39,14 +40,18 @@ namespace CapaPresentacion.Personalizacion
 
         }
 
+            // ---------------------------- SOLO NUMEROS ----------------------------
+
         public void soloNumeros(object sender, KeyPressEventArgs e)
         {
-            // ---------------------------- SOLO NUMEROS ----------------------------
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
         }
+
+
+        // ----------------- GENERACION DE CLAVE AUTOMATICA -----------------------
 
         public string generarClave(int longitud)
         {
@@ -68,6 +73,8 @@ namespace CapaPresentacion.Personalizacion
             return sb.ToString();
         }
 
+        // ----------- VALIDACION SI EL CORREO ESTA BIEN ESCRITO -----------
+
         public bool validarEmail(string correo)
         {
             string patron = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
@@ -79,14 +86,12 @@ namespace CapaPresentacion.Personalizacion
             return regex.IsMatch(correo);
         }
 
-
-
-
-
-        
+       
 
 
     }
+
+    // --------------- GENERACION PARA LOS COMBO BOX -------------
 
     public class opcionCombo
     {
