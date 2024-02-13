@@ -12,11 +12,14 @@ using CapaControladora;
 using CapaEntidad;
 using System.Windows.Controls;
 using CapaPresentacion.Formularios;
+using System.Data.Common;
 
 namespace CapaPresentacion
 {
     public partial class formUsuarios : Form
     {
+        private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
+        private Funcionalidades funcionalidades = Funcionalidades.getInstance;
         public formUsuarios()
         {
             InitializeComponent();
@@ -24,12 +27,9 @@ namespace CapaPresentacion
 
         private void formUsuarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet.permisos' Puede moverla o quitarla según sea necesario.
             // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet.rol' Puede moverla o quitarla según sea necesario.
-            rolTableAdapter.Fill(dB_TECHGOALDataSet.rol);
-            // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet.usuarios' Puede moverla o quitarla según sea necesario.
+            this.rolTableAdapter.Fill(dB_TECHGOALDataSet.rol);
 
-            usuariosTableAdapter.Fill(dB_TECHGOALDataSet.usuarios);
 
 
             // ---------------------------- CARGA DE COMBOBOX ESTADO ----------------------------
@@ -38,13 +38,77 @@ namespace CapaPresentacion
             cmbEstadoFilter.DisplayMember = "texto";
             cmbEstadoFilter.ValueMember = "valor";
 
-            List<Rol> listaRoles = new CC_Rol().Listar();
-
-            foreach (Rol rol in listaRoles)
-            {
-            }
+            LlenarTabla();
 
             limpiarFiltros();
+        }
+
+        public void LlenarTabla()
+        {
+            string estadoSeleccionado = "";
+
+            if (cmbEstadoFilter.SelectedItem != null)
+            {
+                opcionCombo estado = (opcionCombo)cmbEstadoFilter.SelectedItem;
+                int valorSeleccionado = estado.valor;
+
+                estadoSeleccionado = valorSeleccionado.ToString();
+
+            }
+
+            if (dgvUsuarios.DataSource == null)
+            {
+                DataTable tablaUsuarios = new DataTable();
+                UsuarioControladora.CargarTablaUsuarios(tablaUsuarios, txtCorreoFilter.Text, txtNombreFilter.Text, txtDNIFilter.Text, cmbRolFilter.SelectedValue, estadoSeleccionado);
+                dgvUsuarios.DataSource = tablaUsuarios;
+
+                // / ---------------------------- CARGA DE TABLA SUUARIOS ----------------------------
+
+                dgvUsuarios.Columns["id_usuario"].Visible = false;
+                dgvUsuarios.Columns["id_rol"].Visible = false;
+                dgvUsuarios.Columns["clave"].Visible = false;
+
+
+                dgvUsuarios.Columns["email"].HeaderText = "Correo";
+                dgvUsuarios.Columns["nombre"].HeaderText = "Nombre";
+                dgvUsuarios.Columns["apellido"].HeaderText = "Apellido";
+                dgvUsuarios.Columns["dni"].HeaderText = "Documento";
+                dgvUsuarios.Columns["telefono"].HeaderText = "Telefono";
+                dgvUsuarios.Columns["estado"].HeaderText = "Estado";
+                dgvUsuarios.Columns["fechaRegistro"].HeaderText = "Fecha Registro";
+                dgvUsuarios.Columns["descripcion"].HeaderText = "Rol";
+
+                dgvUsuarios.Columns["estado"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+                // ---------------------------- COLUMNA EDITAR ----------------------------
+
+                DataGridViewImageColumn editarColumn = new DataGridViewImageColumn();
+                editarColumn.HeaderText = "";
+                editarColumn.Name = "editar";
+                editarColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                editarColumn.Image = Properties.Resources.New_Project;
+                editarColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvUsuarios.Columns.Add(editarColumn);
+
+                // ---------------------------- COLUMNA BORRAR ----------------------------
+
+                DataGridViewImageColumn borrarColumn = new DataGridViewImageColumn();
+                borrarColumn.HeaderText = "";
+                borrarColumn.Name = "borrar";
+                borrarColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                borrarColumn.Image = Properties.Resources.trash_561125;
+                borrarColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvUsuarios.Columns.Add(borrarColumn);
+
+            } else
+            {
+                DataTable tablaUsuarios = new DataTable();
+                UsuarioControladora.CargarTablaUsuarios(tablaUsuarios, txtCorreoFilter.Text, txtNombreFilter.Text, txtDNIFilter.Text, cmbRolFilter.SelectedValue, estadoSeleccionado);
+                dgvUsuarios.DataSource = tablaUsuarios;
+            }
+
+
+
         }
 
         private void txtCorreoFilter_TextChanged(object sender, EventArgs e)
@@ -77,32 +141,7 @@ namespace CapaPresentacion
 
         private void Filtrar()
         {
-            string rolQuery = "";
-            string estadoQuery = "";
-
-
-            if (cmbRolFilter.SelectedValue != null)
-            {
-                string rolID = cmbRolFilter.SelectedValue.ToString();
-                rolQuery = " AND id_rol = " + rolID;
-
-            }
-
-            if (cmbEstadoFilter.SelectedItem != null)
-            {
-                foreach (opcionCombo item in cmbEstadoFilter.Items)
-                {
-                    if (item.texto == cmbEstadoFilter.Text)
-                    {
-                        estadoQuery = " AND estado = " + item.valor;
-                    }
-                }   
-
-            }
-
-
-            usuariosBindingSource.Filter = "email LIKE '%" + txtCorreoFilter.Text + "%' AND nombre LIKE '%" + txtNombreFilter.Text + "%' AND dni LIKE '%" + txtDNIFilter.Text + "%'" + rolQuery + estadoQuery;
-
+            LlenarTabla();
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -123,6 +162,23 @@ namespace CapaPresentacion
             Form agregar = new formUsuarioAgregar();
             agregar.ShowDialog();
 
+        }
+
+        private void txtNombreFilter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            funcionalidades.soloLetras(sender, e);
+
+        }
+
+        private void txtDNIFilter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            funcionalidades.soloNumeros(sender, e);
+
+        }
+
+        public void RecargarTabla()
+        {
+            dgvUsuarios.Refresh();
         }
     }
 }

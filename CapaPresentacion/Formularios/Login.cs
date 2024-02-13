@@ -171,7 +171,10 @@ namespace CapaPresentacion
 
                 } else
                 {
-                    Usuario usuarioEncontrado = UsuarioControladora.EncontrarUsuarioLogin(txtCorreo.Text, txtClave.Text);
+
+                   string claveHASH = UsuarioControladora.EncriptarClave(txtClave.Text);
+
+                    Usuario usuarioEncontrado = UsuarioControladora.EncontrarUsuarioLogin(txtCorreo.Text, claveHASH);
 
                     if (usuarioEncontrado != null)
                     {

@@ -108,7 +108,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(473, 39);
             this.txtClave.TabIndex = 1;
-            this.txtClave.Text = "admin";
+            this.txtClave.Text = "YuY0YYtZ";
             this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
             // 
             // iconKey
@@ -165,7 +165,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(506, 39);
             this.txtCorreo.TabIndex = 0;
-            this.txtCorreo.Text = "admin@gmail.com";
+            this.txtCorreo.Text = "Administrador@gmail.com";
             this.txtCorreo.Enter += new System.EventHandler(this.txtCorreo_Enter);
             // 
             // label1
