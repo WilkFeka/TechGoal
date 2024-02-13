@@ -118,7 +118,7 @@ namespace CapaDatos.Seguridad
             return agregar;
         }
 
-        public DataTable CargarTablaUsuarios(DataTable tablaUsuarios)
+        public DataTable CargarTablaUsuarios(DataTable tablaUsuarios, string correoP, string nombreP, string dniP, object rolP, string estadoP)
         {
             try
             {
@@ -126,14 +126,25 @@ namespace CapaDatos.Seguridad
                 {
 
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT u.id_usuario, u.email, u.clave, u.nombre, u.apellido, u.dni, r.descripcion, u.telefono, u.estado, u.fechaRegistro, r.id_rol FROM usuarios u");
+                    query.AppendLine("SELECT u.id_usuario, u.email, u.clave, u.nombre, u.apellido, u.dni, r.descripcion, u.telefono, u.estado, u.fechaRegistro, r.id_rol FROM usuarios u ");
                     query.AppendLine("INNER JOIN rol r ON r.id_rol = u.id_rol");
+                    query.AppendLine("WHERE u.email LIKE @correoP AND u.nombre LIKE @nombreP AND u.dni LIKE @dniP AND r.id_rol LIKE @rolP AND u.estado LIKE @estadoP");
+                    
+
 
                     SqlDataAdapter adapter;
+                        
 
                     using (adapter = new SqlDataAdapter(query.ToString(), conection))
                     {
-                        
+                        adapter.SelectCommand.Parameters.AddWithValue("@correoP", "%" + correoP + "%");
+                        adapter.SelectCommand.Parameters.AddWithValue("@nombreP", "%" + nombreP + "%");
+                        adapter.SelectCommand.Parameters.AddWithValue("@dniP", "%" + dniP + "%");
+                        adapter.SelectCommand.Parameters.AddWithValue("@rolP", "%" + rolP + "%");
+                        adapter.SelectCommand.Parameters.AddWithValue("@estadoP", "%" + estadoP + "%");
+
+
+
                         adapter.Fill(tablaUsuarios);
                         return tablaUsuarios;
                         

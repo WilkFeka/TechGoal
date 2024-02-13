@@ -29,6 +29,8 @@ namespace CapaPresentacion.Formularios
         private void formUsuarioAgregar_Load(object sender, EventArgs e)
         {
             rolTableAdapter.Fill(dB_TECHGOALDataSet.rol);
+            cmbRoles.SelectedIndex = -1;
+
 
 
         }

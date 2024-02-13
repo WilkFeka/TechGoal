@@ -47,6 +47,8 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.msButton4 = new CapaPresentacion.Personalizacion.MSButton();
             this.cmbRoles = new System.Windows.Forms.ComboBox();
+            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
             this.msButton7 = new CapaPresentacion.Personalizacion.MSButton();
             this.btnGenerarClave = new CapaPresentacion.Personalizacion.MSButton();
             this.lblCorreo = new System.Windows.Forms.Label();
@@ -55,12 +57,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
-            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.rolTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -344,6 +344,16 @@
             this.cmbRoles.TabIndex = 7;
             this.cmbRoles.ValueMember = "id_rol";
             // 
+            // rolBindingSource
+            // 
+            this.rolBindingSource.DataMember = "rol";
+            this.rolBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            // 
+            // dB_TECHGOALDataSet
+            // 
+            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
+            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // msButton7
             // 
             this.msButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -457,16 +467,6 @@
             this.label5.TabIndex = 59;
             this.label5.Text = "Clave";
             // 
-            // dB_TECHGOALDataSet
-            // 
-            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
-            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rolBindingSource
-            // 
-            this.rolBindingSource.DataMember = "rol";
-            this.rolBindingSource.DataSource = this.dB_TECHGOALDataSet;
-            // 
             // rolTableAdapter
             // 
             this.rolTableAdapter.ClearBeforeFill = true;
@@ -510,14 +510,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "formUsuarioAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Usuario";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formUsuarioAgregar_FormClosed);
             this.Load += new System.EventHandler(this.formUsuarioAgregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

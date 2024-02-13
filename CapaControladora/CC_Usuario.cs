@@ -40,10 +40,10 @@ namespace CapaControladora
 
         // ---------------------- ENCONTRAR USUARIO EN LA LISTA POR CREDENCIALES OBTENIDAS--------------------
 
-        public Usuario EncontrarUsuarioLogin (string txtCorreo, string txtClave)
+        public Usuario EncontrarUsuarioLogin (string Correo, string Clave)
         {
             //Filtrar usuarios por email y clave proporcionados
-            Usuario usuarioIniciando = new CC_Usuario().Listar().Where(u => u.email == txtCorreo && u.clave == txtClave).FirstOrDefault();
+            Usuario usuarioIniciando = new CC_Usuario().Listar().Where(u => u.email == Correo && u.clave == Clave).FirstOrDefault();
 
             if (usuarioIniciando != null)
             {
@@ -56,6 +56,8 @@ namespace CapaControladora
 
 
         }
+
+        // -------------------- ENCONTRAR SI EL CORREO YA ESTA EN USO ----------------
 
         public Usuario EncontrarUsuarioCorreo (string txtCorreo)
         {
@@ -74,6 +76,8 @@ namespace CapaControladora
 
         }
 
+
+        // ---------------- ENCONTRAR SI EL DNI YA ESTA EN USO -------------------------
         public Usuario EncontrarUsuarioDNI(string txtDNI)
         {
 
@@ -92,6 +96,8 @@ namespace CapaControladora
         }
 
 
+        // ----------------- ENCRIPTACION DE CLAVE -----------------
+
         public string EncriptarClave(string clave)
         {
             SHA256 sha256 = SHA256Managed.Create();
@@ -102,12 +108,16 @@ namespace CapaControladora
             return hashString;
         }
 
-        public DataTable CargarTablaUsuarios(DataTable tablaUsuarios)
+
+        // ---------------------- CARGAR TABLA DE USUARIOS --------------------------
+        public DataTable CargarTablaUsuarios(DataTable tablaUsuarios, string correoP, string nombreP, string dniP, object rolP, string estadoP)
         {
-            tablaUsuarios = new CD_Usuario().CargarTablaUsuarios(tablaUsuarios);
+            tablaUsuarios = new CD_Usuario().CargarTablaUsuarios(tablaUsuarios, correoP, nombreP, dniP, rolP, estadoP);
             return tablaUsuarios;
 
         }
+
+        // ----------------------- AGREGAR UN NUEVO USUARIO ----------------------------
 
         public bool AgregarUsuario(Usuario nuevoUsuario)
         {
@@ -126,6 +136,11 @@ namespace CapaControladora
             }
 
             
+        }
+
+        public void Filtrar(string correo, string nombre, string dni, int rol, bool estado)
+        {
+
         }
 
     }
