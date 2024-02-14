@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
-            this.btnGenerarClave = new CapaPresentacion.Personalizacion.MSButton();
             this.cmbRoles = new System.Windows.Forms.ComboBox();
+            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
             this.msButton7 = new CapaPresentacion.Personalizacion.MSButton();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.msButton4 = new CapaPresentacion.Personalizacion.MSButton();
@@ -48,32 +48,21 @@
             this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             this.btnCancelar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnAceptar = new CapaPresentacion.Personalizacion.MSButton();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.msButton6 = new CapaPresentacion.Personalizacion.MSButton();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.msButton5 = new CapaPresentacion.Personalizacion.MSButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
-            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.rolTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.picEstado = new System.Windows.Forms.PictureBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.msButton6 = new CapaPresentacion.Personalizacion.MSButton();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEstado)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label5.Location = new System.Drawing.Point(48, 563);
-            this.label5.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 29);
-            this.label5.TabIndex = 85;
-            this.label5.Text = "Clave";
             // 
             // label4
             // 
@@ -135,27 +124,6 @@
             this.lblCorreo.TabIndex = 80;
             this.lblCorreo.Text = "Correo";
             // 
-            // btnGenerarClave
-            // 
-            this.btnGenerarClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnGenerarClave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnGenerarClave.BackgroundImage = global::CapaPresentacion.Properties.Resources.generadorContrasenia;
-            this.btnGenerarClave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGenerarClave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnGenerarClave.BorderRadius = 20;
-            this.btnGenerarClave.BorderSize = 0;
-            this.btnGenerarClave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerarClave.FlatAppearance.BorderSize = 0;
-            this.btnGenerarClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarClave.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarClave.Location = new System.Drawing.Point(446, 597);
-            this.btnGenerarClave.Margin = new System.Windows.Forms.Padding(10, 0, 3, 30);
-            this.btnGenerarClave.Name = "btnGenerarClave";
-            this.btnGenerarClave.Size = new System.Drawing.Size(51, 50);
-            this.btnGenerarClave.TabIndex = 79;
-            this.btnGenerarClave.TextColor = System.Drawing.Color.White;
-            this.btnGenerarClave.UseVisualStyleBackColor = false;
-            // 
             // cmbRoles
             // 
             this.cmbRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -164,11 +132,21 @@
             this.cmbRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.Location = new System.Drawing.Point(156, 676);
+            this.cmbRoles.Location = new System.Drawing.Point(136, 587);
             this.cmbRoles.Name = "cmbRoles";
             this.cmbRoles.Size = new System.Drawing.Size(330, 31);
             this.cmbRoles.TabIndex = 66;
             this.cmbRoles.ValueMember = "id_rol";
+            // 
+            // rolBindingSource
+            // 
+            this.rolBindingSource.DataMember = "rol";
+            this.rolBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            // 
+            // dB_TECHGOALDataSet
+            // 
+            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
+            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // msButton7
             // 
@@ -181,7 +159,7 @@
             this.msButton7.FlatAppearance.BorderSize = 0;
             this.msButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.msButton7.ForeColor = System.Drawing.Color.White;
-            this.msButton7.Location = new System.Drawing.Point(144, 665);
+            this.msButton7.Location = new System.Drawing.Point(124, 576);
             this.msButton7.Margin = new System.Windows.Forms.Padding(15, 0, 3, 30);
             this.msButton7.Name = "msButton7";
             this.msButton7.Size = new System.Drawing.Size(353, 50);
@@ -354,43 +332,11 @@
             this.btnAceptar.TextColor = System.Drawing.Color.White;
             this.btnAceptar.UseVisualStyleBackColor = false;
             // 
-            // txtClave
-            // 
-            this.txtClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClave.Enabled = false;
-            this.txtClave.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.txtClave.Location = new System.Drawing.Point(57, 609);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(0);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(365, 29);
-            this.txtClave.TabIndex = 65;
-            // 
-            // msButton6
-            // 
-            this.msButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.msButton6.BorderRadius = 20;
-            this.msButton6.BorderSize = 0;
-            this.msButton6.Enabled = false;
-            this.msButton6.FlatAppearance.BorderSize = 0;
-            this.msButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton6.ForeColor = System.Drawing.Color.White;
-            this.msButton6.Location = new System.Drawing.Point(41, 597);
-            this.msButton6.Margin = new System.Windows.Forms.Padding(15, 0, 3, 30);
-            this.msButton6.Name = "msButton6";
-            this.msButton6.Size = new System.Drawing.Size(392, 50);
-            this.msButton6.TabIndex = 73;
-            this.msButton6.TextColor = System.Drawing.Color.White;
-            this.msButton6.UseVisualStyleBackColor = false;
-            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label7.Location = new System.Drawing.Point(68, 672);
+            this.label7.Location = new System.Drawing.Point(47, 587);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 35);
@@ -451,19 +397,64 @@
             this.pictureBox1.TabIndex = 70;
             this.pictureBox1.TabStop = false;
             // 
-            // dB_TECHGOALDataSet
-            // 
-            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
-            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rolBindingSource
-            // 
-            this.rolBindingSource.DataMember = "rol";
-            this.rolBindingSource.DataSource = this.dB_TECHGOALDataSet;
-            // 
             // rolTableAdapter
             // 
             this.rolTableAdapter.ClearBeforeFill = true;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label6.Location = new System.Drawing.Point(47, 662);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 35);
+            this.label6.TabIndex = 87;
+            this.label6.Text = "Estado:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // picEstado
+            // 
+            this.picEstado.Image = global::CapaPresentacion.Properties.Resources.Active;
+            this.picEstado.Location = new System.Drawing.Point(402, 650);
+            this.picEstado.Name = "picEstado";
+            this.picEstado.Size = new System.Drawing.Size(95, 63);
+            this.picEstado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEstado.TabIndex = 88;
+            this.picEstado.TabStop = false;
+            this.picEstado.Click += new System.EventHandler(this.picEstado_Click);
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtEstado.Location = new System.Drawing.Point(176, 667);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(0);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ReadOnly = true;
+            this.txtEstado.Size = new System.Drawing.Size(197, 29);
+            this.txtEstado.TabIndex = 89;
+            // 
+            // msButton6
+            // 
+            this.msButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.msButton6.BorderRadius = 20;
+            this.msButton6.BorderSize = 0;
+            this.msButton6.Enabled = false;
+            this.msButton6.FlatAppearance.BorderSize = 0;
+            this.msButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.msButton6.ForeColor = System.Drawing.Color.White;
+            this.msButton6.Location = new System.Drawing.Point(160, 656);
+            this.msButton6.Margin = new System.Windows.Forms.Padding(15, 0, 3, 30);
+            this.msButton6.Name = "msButton6";
+            this.msButton6.Size = new System.Drawing.Size(224, 50);
+            this.msButton6.TabIndex = 90;
+            this.msButton6.TextColor = System.Drawing.Color.White;
+            this.msButton6.UseVisualStyleBackColor = false;
             // 
             // formUsuarioModificar
             // 
@@ -471,13 +462,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(544, 806);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.msButton6);
+            this.Controls.Add(this.picEstado);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.btnGenerarClave);
             this.Controls.Add(this.cmbRoles);
             this.Controls.Add(this.msButton7);
             this.Controls.Add(this.txtCorreo);
@@ -490,8 +483,6 @@
             this.Controls.Add(this.msButton1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.txtClave);
-            this.Controls.Add(this.msButton6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.msButton5);
@@ -506,23 +497,21 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moidificar Usuario";
             this.Load += new System.EventHandler(this.formUsuarioModificar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEstado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCorreo;
-        private Personalizacion.MSButton btnGenerarClave;
         private System.Windows.Forms.ComboBox cmbRoles;
         private Personalizacion.MSButton msButton7;
         private System.Windows.Forms.TextBox txtCorreo;
@@ -535,8 +524,6 @@
         private Personalizacion.MSButton msButton1;
         private Personalizacion.MSButton btnCancelar;
         private Personalizacion.MSButton btnAceptar;
-        private System.Windows.Forms.TextBox txtClave;
-        private Personalizacion.MSButton msButton6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTelefono;
         private Personalizacion.MSButton msButton5;
@@ -545,5 +532,9 @@
         private DB_TECHGOALDataSet dB_TECHGOALDataSet;
         private System.Windows.Forms.BindingSource rolBindingSource;
         private DB_TECHGOALDataSetTableAdapters.rolTableAdapter rolTableAdapter;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox picEstado;
+        private System.Windows.Forms.TextBox txtEstado;
+        private Personalizacion.MSButton msButton6;
     }
 }

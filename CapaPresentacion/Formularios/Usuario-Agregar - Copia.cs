@@ -20,21 +20,15 @@ namespace CapaPresentacion.Formularios
         private Funcionalidades funcionalidades = Funcionalidades.getInstance;
         private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
 
-        private formUsuarios recargarTabla;
 
-
-        public formUsuarioAgregar(formUsuarios formUsuarios)
+        public formUsuarioAgregar()
         {
             InitializeComponent();
-            recargarTabla = formUsuarios;
-
         }
 
         private void formUsuarioAgregar_Load(object sender, EventArgs e)
         {
             rolTableAdapter.Fill(dB_TECHGOALDataSet.rol);
-            cmbRoles.SelectedIndex = -1;
-
 
 
         }
@@ -90,6 +84,14 @@ namespace CapaPresentacion.Formularios
                     }
                 }
 
+                // ---------------------------- VALIDACION DE CORREO ----------------------------
+
+
+
+
+                
+
+                
                 if (funcionalidades.validarEmail(txtCorreo.Text))
                 {
                     Usuario correoEncontrado = UsuarioControladora.EncontrarUsuarioCorreo(txtCorreo.Text);
@@ -116,14 +118,10 @@ namespace CapaPresentacion.Formularios
 
                             if (agregarUsuario)
                             {
-                                MessageBox.Show("Usuario agregado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Close();
-
-                            }
-                            else
+                                MessageBox.Show("Test");
+                            } else
                             {
-                                MessageBox.Show("Hubo un error en el agregado. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                                MessageBox.Show("ERRor");
                             }
 
                         }
@@ -140,11 +138,17 @@ namespace CapaPresentacion.Formularios
 
 
                     }
+
+
+
                 }
                 else
                 {
                     MessageBox.Show("El correo ingresado no es valido", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+               
+                
 
             }
             catch (Exception error)
@@ -155,9 +159,17 @@ namespace CapaPresentacion.Formularios
             }
         }
 
+        private void formUsuarioAgregar_Load_1(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet.rol' Puede moverla o quitarla según sea necesario.
+
+        }
+
         private void formUsuarioAgregar_FormClosed(object sender, FormClosedEventArgs e)
         {
-            recargarTabla.LlenarTabla();
+            formUsuarios formUsuarios = new formUsuarios();
+            formUsuarios.RecargarTabla();
+            
         }
     }
 
