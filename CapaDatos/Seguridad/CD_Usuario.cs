@@ -15,6 +15,7 @@ namespace CapaDatos.Seguridad
     public class CD_Usuario
     {
         // ---------------------- OBTENER TODOS LOS USUARIOS --------------------
+
         public List<Usuario> Listar()
         {
             List<Usuario> lista = new List<Usuario>();
@@ -77,6 +78,7 @@ namespace CapaDatos.Seguridad
 
             return lista;
         }
+        // ----------------------- AGREGAR UN NUEVO USUARIO ----------------------------
 
         public static bool AgregarUsuario(Usuario nuevoUsuario)
         {
@@ -117,6 +119,49 @@ namespace CapaDatos.Seguridad
 
             return agregar;
         }
+
+        // ----------------------- MODIFICAR UN USUARIO ----------------------------
+
+        public static bool ModificarUsuario(Usuario nuevoUsuario)
+        {
+            bool modificar = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("UPDATE usuarios SET email = @email,");
+                    query.AppendLine("nombre = @nombre, apellido = @apellido, dni = @dni, telefono = @telefono, id_rol = @id_rol, estado = @estado");
+                    query.AppendLine("WHERE id_usuario = @id_usuario");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+
+                        cmd.Parameters.AddWithValue("@id_usuario", nuevoUsuario.id_usuario);
+                        cmd.Parameters.AddWithValue("@email", nuevoUsuario.email);
+                        cmd.Parameters.AddWithValue("@nombre", nuevoUsuario.nombre);
+                        cmd.Parameters.AddWithValue("@apellido", nuevoUsuario.apellido);
+                        cmd.Parameters.AddWithValue("@dni", nuevoUsuario.dni);
+                        cmd.Parameters.AddWithValue("@telefono", nuevoUsuario.telefono);
+                        cmd.Parameters.AddWithValue("@id_rol", nuevoUsuario.o_rol.id_rol);
+                        cmd.Parameters.AddWithValue("@estado", nuevoUsuario.estado);
+
+                        conection.Open();
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+                        modificar = filasAfectadas > 0;
+                    }
+                }
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+
+            return modificar;
+        }
+        // ----------------------- FILTRAR TABLA USUARIOS ----------------------------
 
         public DataTable CargarTablaUsuarios(DataTable tablaUsuarios, string correoP, string nombreP, string dniP, object rolP, string estadoP)
         {

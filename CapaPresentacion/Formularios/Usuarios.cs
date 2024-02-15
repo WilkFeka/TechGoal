@@ -86,7 +86,7 @@ namespace CapaPresentacion
                 editarColumn.HeaderText = "";
                 editarColumn.Name = "editar";
                 editarColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                editarColumn.Image = Properties.Resources.New_Project;
+               editarColumn.Image = Properties.Resources.New_Project;
                 editarColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgvUsuarios.Columns.Add(editarColumn);
 
@@ -159,7 +159,7 @@ namespace CapaPresentacion
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
-            Form agregar = new formUsuarioAgregar();
+            Form agregar = new formUsuarioAgregar(this);
             agregar.ShowDialog();
 
         }
@@ -179,6 +179,27 @@ namespace CapaPresentacion
         public void RecargarTabla()
         {
             dgvUsuarios.Refresh();
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            
+            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "editar" && e.RowIndex != -1)
+            {
+            // ------------- Obtiene el valor de la celda DOCUMENTO ---------------------
+                DataGridViewRow filaSeleccionada = dgvUsuarios.CurrentRow;
+
+                DataGridViewCell celda = filaSeleccionada.Cells["dni"];
+
+                string dni = celda.Value.ToString();
+
+                Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioDNI(dni);
+
+                formUsuarioModificar formUsuarioModificar = new formUsuarioModificar(this, usuarioSeleccionado);
+                formUsuarioModificar.ShowDialog();
+
+            }
         }
     }
 }
