@@ -121,7 +121,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label7.Location = new System.Drawing.Point(68, 672);
+            this.label7.Location = new System.Drawing.Point(47, 676);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 35);
@@ -173,10 +173,10 @@
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(287, 733);
+            this.btnAceptar.Location = new System.Drawing.Point(277, 733);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(210, 60);
+            this.btnAceptar.Size = new System.Drawing.Size(220, 60);
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
@@ -195,10 +195,10 @@
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(68, 733);
+            this.btnCancelar.Location = new System.Drawing.Point(41, 733);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(210, 60);
+            this.btnCancelar.Size = new System.Drawing.Size(220, 60);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
@@ -339,7 +339,7 @@
             this.cmbRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.Location = new System.Drawing.Point(156, 676);
+            this.cmbRoles.Location = new System.Drawing.Point(156, 681);
             this.cmbRoles.Name = "cmbRoles";
             this.cmbRoles.Size = new System.Drawing.Size(330, 31);
             this.cmbRoles.TabIndex = 7;
@@ -366,7 +366,7 @@
             this.msButton7.FlatAppearance.BorderSize = 0;
             this.msButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.msButton7.ForeColor = System.Drawing.Color.White;
-            this.msButton7.Location = new System.Drawing.Point(144, 665);
+            this.msButton7.Location = new System.Drawing.Point(144, 670);
             this.msButton7.Margin = new System.Windows.Forms.Padding(15, 0, 3, 30);
             this.msButton7.Name = "msButton7";
             this.msButton7.Size = new System.Drawing.Size(353, 50);

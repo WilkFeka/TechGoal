@@ -138,8 +138,24 @@ namespace CapaControladora
             
         }
 
-        public void Filtrar(string correo, string nombre, string dni, int rol, bool estado)
+        // ----------------------- MODIFICAR UN USUARIO ----------------------------
+
+        public bool ModificarUsuario(Usuario usuarioModificar)
         {
+            if (usuarioModificar != null)
+            {
+                if (CD_Usuario.ModificarUsuario(usuarioModificar))
+                {
+                    return true;
+
+                }
+                else return false;
+
+            }
+            else
+            {
+                return false;
+            }
 
         }
 

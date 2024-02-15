@@ -55,13 +55,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rolTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.rolTableAdapter();
             this.label6 = new System.Windows.Forms.Label();
-            this.picEstado = new System.Windows.Forms.PictureBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.msButton6 = new CapaPresentacion.Personalizacion.MSButton();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEstado)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -132,7 +131,7 @@
             this.cmbRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.Location = new System.Drawing.Point(136, 587);
+            this.cmbRoles.Location = new System.Drawing.Point(156, 587);
             this.cmbRoles.Name = "cmbRoles";
             this.cmbRoles.Size = new System.Drawing.Size(330, 31);
             this.cmbRoles.TabIndex = 66;
@@ -159,7 +158,7 @@
             this.msButton7.FlatAppearance.BorderSize = 0;
             this.msButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.msButton7.ForeColor = System.Drawing.Color.White;
-            this.msButton7.Location = new System.Drawing.Point(124, 576);
+            this.msButton7.Location = new System.Drawing.Point(144, 576);
             this.msButton7.Margin = new System.Windows.Forms.Padding(15, 0, 3, 30);
             this.msButton7.Name = "msButton7";
             this.msButton7.Size = new System.Drawing.Size(353, 50);
@@ -209,6 +208,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(429, 29);
             this.txtNombre.TabIndex = 61;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // msButton3
             // 
@@ -240,6 +240,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(429, 29);
             this.txtApellido.TabIndex = 62;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // msButton2
             // 
@@ -271,6 +272,7 @@
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(429, 29);
             this.txtDocumento.TabIndex = 63;
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // msButton1
             // 
@@ -303,10 +305,10 @@
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(68, 733);
+            this.btnCancelar.Location = new System.Drawing.Point(41, 733);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(210, 60);
+            this.btnCancelar.Size = new System.Drawing.Size(220, 60);
             this.btnCancelar.TabIndex = 68;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
@@ -323,14 +325,15 @@
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(287, 733);
+            this.btnAceptar.Location = new System.Drawing.Point(277, 734);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(210, 60);
+            this.btnAceptar.Size = new System.Drawing.Size(220, 60);
             this.btnAceptar.TabIndex = 67;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label7
             // 
@@ -355,6 +358,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(429, 29);
             this.txtTelefono.TabIndex = 64;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // msButton5
             // 
@@ -405,24 +409,13 @@
             // 
             this.label6.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label6.Location = new System.Drawing.Point(47, 662);
+            this.label6.Location = new System.Drawing.Point(47, 667);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 35);
             this.label6.TabIndex = 87;
             this.label6.Text = "Estado:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picEstado
-            // 
-            this.picEstado.Image = global::CapaPresentacion.Properties.Resources.Active;
-            this.picEstado.Location = new System.Drawing.Point(402, 650);
-            this.picEstado.Name = "picEstado";
-            this.picEstado.Size = new System.Drawing.Size(95, 63);
-            this.picEstado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picEstado.TabIndex = 88;
-            this.picEstado.TabStop = false;
-            this.picEstado.Click += new System.EventHandler(this.picEstado_Click);
             // 
             // txtEstado
             // 
@@ -456,15 +449,33 @@
             this.msButton6.TextColor = System.Drawing.Color.White;
             this.msButton6.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::CapaPresentacion.Properties.Resources.Active;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(402, 649);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 65);
+            this.button1.TabIndex = 91;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // formUsuarioModificar
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(544, 806);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.msButton6);
-            this.Controls.Add(this.picEstado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -496,11 +507,10 @@
             this.Name = "formUsuarioModificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moidificar Usuario";
-            this.Load += new System.EventHandler(this.formUsuarioModificar_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formUsuarioModificar_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEstado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,8 +543,8 @@
         private System.Windows.Forms.BindingSource rolBindingSource;
         private DB_TECHGOALDataSetTableAdapters.rolTableAdapter rolTableAdapter;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox picEstado;
         private System.Windows.Forms.TextBox txtEstado;
         private Personalizacion.MSButton msButton6;
+        private System.Windows.Forms.Button button1;
     }
 }

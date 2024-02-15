@@ -95,9 +95,19 @@ namespace CapaPresentacion.Formularios
                     Usuario correoEncontrado = UsuarioControladora.EncontrarUsuarioCorreo(txtCorreo.Text);
                     if (correoEncontrado == null)
                     {
+                        
                         Usuario documentoEncontrado = UsuarioControladora.EncontrarUsuarioDNI(txtDocumento.Text);
                         if (documentoEncontrado == null)
                         {
+
+
+                            var mensaje = MessageBox.Show("¿Esta seguro de que desea agregar este usuario?", "Agregando usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                            if (mensaje == DialogResult.No)
+                            {
+                                return;
+                            }
+
                             string claveHash = UsuarioControladora.EncriptarClave(txtClave.Text);
 
                             Usuario nuevoUsuario = new Usuario()
@@ -122,7 +132,7 @@ namespace CapaPresentacion.Formularios
                             }
                             else
                             {
-                                MessageBox.Show("Hubo un error en el agregado. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Hubo un error eal agregar. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                             }
 

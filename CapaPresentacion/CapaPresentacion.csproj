@@ -290,7 +290,7 @@
     <None Include="Resources\Editar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\agregarBlanco.png" />
+    <None Include="Resources\AgregarBlanco.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\generadorContrasenia.png" />
