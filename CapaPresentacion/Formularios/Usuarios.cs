@@ -80,6 +80,16 @@ namespace CapaPresentacion
 
                 dgvUsuarios.Columns["estado"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
+                // ---------------------------- COLUMNA NUEVA CLAVE ----------------------------
+
+                DataGridViewImageColumn nuevaClave = new DataGridViewImageColumn();
+                nuevaClave.HeaderText = "";
+                nuevaClave.Name = "nuevaClave";
+                nuevaClave.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                nuevaClave.Image = Properties.Resources.GenNuevaClave;
+                nuevaClave.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvUsuarios.Columns.Add(nuevaClave);
+
                 // ---------------------------- COLUMNA EDITAR ----------------------------
 
                 DataGridViewImageColumn editarColumn = new DataGridViewImageColumn();
@@ -99,6 +109,8 @@ namespace CapaPresentacion
                 borrarColumn.Image = Properties.Resources.trash_561125;
                 borrarColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgvUsuarios.Columns.Add(borrarColumn);
+
+                
 
             } else
             {
@@ -187,19 +199,92 @@ namespace CapaPresentacion
             
             if (dgvUsuarios.Columns[e.ColumnIndex].Name == "editar" && e.RowIndex != -1)
             {
-            // ------------- Obtiene el valor de la celda DOCUMENTO ---------------------
+            // ------------- Obtiene el valor de la celda ID ---------------------
                 DataGridViewRow filaSeleccionada = dgvUsuarios.CurrentRow;
 
-                DataGridViewCell celda = filaSeleccionada.Cells["dni"];
+                DataGridViewCell celda = filaSeleccionada.Cells["id_usuario"];
 
-                string dni = celda.Value.ToString();
+                int id = Convert.ToInt32(celda.Value);
 
-                Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioDNI(dni);
+                Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioID(id);
 
                 formUsuarioModificar formUsuarioModificar = new formUsuarioModificar(this, usuarioSeleccionado);
                 formUsuarioModificar.ShowDialog();
 
+            } 
+
+            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "borrar" && e.RowIndex != -1)
+            {
+                // ------------- Obtiene el valor de la celda ID ---------------------
+                DataGridViewRow filaSeleccionada = dgvUsuarios.CurrentRow;
+
+                DataGridViewCell celda = filaSeleccionada.Cells["id_usuario"];
+
+                int id = Convert.ToInt32(celda.Value);
+               
+                Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioID(id);
+                
+                var mensaje = MessageBox.Show("¿Esta seguro de que desea borrar el usuario " + usuarioSeleccionado.email + "?", "Borrando usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+               
+                if (mensaje == DialogResult.No)
+                {
+                    return;
+                } else
+                {
+
+                    bool eliminarUsuario = UsuarioControladora.EliminarUsuario(usuarioSeleccionado.id_usuario);
+
+                    if (eliminarUsuario)
+                    {
+                        MessageBox.Show("Usuario eliminado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LlenarTabla();
+
+                    } else
+                    {
+                        MessageBox.Show("Hubo un error al eliminar usuario. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+
             }
+
+            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "nuevaClave" && e.RowIndex != -1)
+            {
+                // ------------- Obtiene el valor de la celda ID ---------------------
+                DataGridViewRow filaSeleccionada = dgvUsuarios.CurrentRow;
+
+                DataGridViewCell celda = filaSeleccionada.Cells["id_usuario"];
+
+                int id = Convert.ToInt32(celda.Value);
+
+                Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioID(id);
+
+                formUsuarioNuevaClave formUsuarioNuevaClave = new formUsuarioNuevaClave(this, usuarioSeleccionado);
+                formUsuarioNuevaClave.ShowDialog();
+
+            }
+        }
+
+        private void dgvUsuarios_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "nuevaClave" && e.RowIndex != -1 || dgvUsuarios.Columns[e.ColumnIndex].Name == "editar" && e.RowIndex != -1 || dgvUsuarios.Columns[e.ColumnIndex].Name == "borrar" && e.RowIndex != -1)
+            {
+                Cursor = Cursors.Hand;
+            }
+
+        }
+
+        private void dgvUsuarios_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            Hide();
+            formUsuarioRoles formUsuarioRoles = new formUsuarioRoles();
+            formUsuarioRoles.ShowDialog();
         }
     }
 }

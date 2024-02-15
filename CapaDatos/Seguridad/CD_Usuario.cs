@@ -161,6 +161,78 @@ namespace CapaDatos.Seguridad
 
             return modificar;
         }
+
+        public static bool EliminarUsuario(int id)
+        {
+            bool eliminar = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("DELETE FROM usuarios WHERE id_usuario = @id_usuario");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+
+                        cmd.Parameters.AddWithValue("@id_usuario", id);
+
+                        conection.Open();
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+                        eliminar = filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+
+            return eliminar;
+        }
+
+        // ----------------------- GENERAR NUEVA CLAVE ----------------------------
+
+        public static bool NuevaClave(Usuario usuarioModificar)
+        {
+            bool modificar = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("UPDATE usuarios SET clave = @clave");
+                    query.AppendLine("WHERE id_usuario = @id_usuario");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+
+                        cmd.Parameters.AddWithValue("@id_usuario", usuarioModificar.id_usuario);
+                        cmd.Parameters.AddWithValue("@clave", usuarioModificar.clave);
+
+                        conection.Open();
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+                        modificar = filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+
+            return modificar;
+        }
+
+
+
+
         // ----------------------- FILTRAR TABLA USUARIOS ----------------------------
 
         public DataTable CargarTablaUsuarios(DataTable tablaUsuarios, string correoP, string nombreP, string dniP, object rolP, string estadoP)
