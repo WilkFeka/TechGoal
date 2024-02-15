@@ -67,7 +67,6 @@ namespace CapaPresentacion.Formularios
             string nuevaClave = funcionalidades.generarClave(8);
             txtClave.Text = nuevaClave;
 
-
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -132,7 +131,7 @@ namespace CapaPresentacion.Formularios
                             }
                             else
                             {
-                                MessageBox.Show("Hubo un error eal agregar. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Hubo un error al agregar usuario. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                             }
 
