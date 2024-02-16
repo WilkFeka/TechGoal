@@ -62,5 +62,40 @@ namespace CapaDatos
 
             return lista;
         }
+
+        public static bool AgregarRol(Rol nuevoRol)
+        {
+            bool resultado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("INSERT INTO rol (descripcion) VALUES (@descripcion)");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@descripcion", nuevoRol.descripcion);
+
+                        conection.Open();
+
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            resultado = true;
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
     }
 }

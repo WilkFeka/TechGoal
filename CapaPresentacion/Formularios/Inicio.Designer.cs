@@ -563,8 +563,8 @@
         private System.Windows.Forms.FlowLayoutPanel menuReportes;
         private Personalizacion.MSButton btnReportes;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel pnlContainer;
-        private System.Windows.Forms.PictureBox picLogoText;
+        public System.Windows.Forms.Panel pnlContainer;
+        public System.Windows.Forms.PictureBox picLogoText;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton btnHome;
         private Personalizacion.MSButton btnSalir;
