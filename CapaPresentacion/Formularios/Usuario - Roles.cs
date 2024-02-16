@@ -10,11 +10,32 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Formularios
 {
-    public partial class formUsuarioRoles : Form
+    public partial class formRoles : Form
     {
-        public formUsuarioRoles()
+
+        formInicio formInicioC;
+        public formRoles(formInicio formInicio)
         {
             InitializeComponent();
+
+            formInicioC = formInicio;
+        }
+
+        public void formUsuarioRoles_Load(object sender, EventArgs e)
+        {
+            this.rolTableAdapter.Fill(this.dB_TECHGOALDataSet.rol);
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            formInicioC.AbrirFormulario(new formUsuarios(formInicioC)); // Sirve para ocultar el formulario actual y abrir el formulario de usuarios
+        }
+
+        private void btnAgregarRol_Click(object sender, EventArgs e)
+        {
+            formRolesAgregar formRolesAgregar = new formRolesAgregar(this);
+            formRolesAgregar.ShowDialog();
         }
     }
 }

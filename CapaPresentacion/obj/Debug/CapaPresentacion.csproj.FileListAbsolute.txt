@@ -82,4 +82,5 @@ C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\System.Threading.Task
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\bin\Debug\System.ValueTuple.xml
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.formUsuarioModificar.resources
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.formusuarioNuevaClave.resources
-C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.formUsuarioRoles.resources
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.formRolesAgregar.resources
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.formRoles.resources

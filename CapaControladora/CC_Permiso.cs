@@ -27,7 +27,7 @@ namespace CapaControladora
             }
         }
 
-        // ---------------------- OBTENER TODOS LOS USUARIOS --------------------
+        // ---------------------- OBTENER TODOS LOS PERMISOS --------------------
 
         public List<Permiso> Listar(int id_usuario)
         {
@@ -36,6 +36,24 @@ namespace CapaControladora
             return listaPermisos;
 
         }
+
+        // ---------------------- AGREGAR NUEVO ROL --------------------
+
+        public bool AgregarPermiso(Permiso nuevoPermiso)
+        {
+            if (nuevoPermiso != null)
+            {
+                if (CD_Permiso.AgregarPermiso(nuevoPermiso))
+                {
+                    return true;
+
+                }
+                else return false;
+            }
+            else return false;
+        }
+
+
 
     }
 }

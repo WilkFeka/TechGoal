@@ -20,9 +20,11 @@ namespace CapaPresentacion
     {
         private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
         private Funcionalidades funcionalidades = Funcionalidades.getInstance;
-        public formUsuarios()
+        private formInicio formInicioC;
+        public formUsuarios(formInicio formInicio)
         {
             InitializeComponent();
+            formInicioC = formInicio;
         }
 
         private void formUsuarios_Load(object sender, EventArgs e)
@@ -282,9 +284,14 @@ namespace CapaPresentacion
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
-            Hide();
-            formUsuarioRoles formUsuarioRoles = new formUsuarioRoles();
-            formUsuarioRoles.ShowDialog();
+            formInicioC.AbrirFormulario(new formRoles(formInicioC)); // Sirve para que se pueda mostrar el formulario de roles y ocultar el de usuarios
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            formInicioC.pnlContainer.Show();
+            formInicioC.picLogoText.Show();
+            Close();
         }
     }
 }

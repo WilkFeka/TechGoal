@@ -183,6 +183,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eliminarBlanco {
+            get {
+                object obj = ResourceManager.GetObject("eliminarBlanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap excelBlanco {
             get {
                 object obj = ResourceManager.GetObject("excelBlanco", resourceCulture);
@@ -266,6 +276,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap Inactivo {
             get {
                 object obj = ResourceManager.GetObject("Inactivo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lapizBlanco {
+            get {
+                object obj = ResourceManager.GetObject("lapizBlanco", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -74,7 +74,7 @@ namespace CapaPresentacion
 
         }
 
-        private void AbrirFormulario(Form formulario)
+        public void AbrirFormulario(Form formulario)
         {
             if (formularioActual != null)
             {
@@ -95,7 +95,7 @@ namespace CapaPresentacion
         {
             pnlContainer.Hide();
             picLogoText.Hide();
-            AbrirFormulario(new formUsuarios());
+            AbrirFormulario(new formUsuarios(this));
 
 
         }

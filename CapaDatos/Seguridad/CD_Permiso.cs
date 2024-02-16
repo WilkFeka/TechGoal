@@ -11,7 +11,7 @@ namespace CapaDatos
 {
     public class CD_Permiso
     {
-        // ---------------------- OBTENER TODOS LOS PERMISOS --------------------
+        // ---------------------- OBTENER TODOS LOS PERMISOS DE UN USUARIO --------------------
         public List<Permiso> Listar(int id_usuario)
         {
             List<Permiso> lista = new List<Permiso>();
@@ -62,6 +62,41 @@ namespace CapaDatos
 
 
             return lista;
+        }
+
+        // ---------------------- AGREGAR NUEVO PERMISO --------------------
+
+        public static bool AgregarPermiso(Permiso nuevoPermiso)
+        {
+            bool resultado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("INSERT INTO permisos (id_rol, nombreMenu) VALUES (@id_rol, @nombreMenu)");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@id_rol", nuevoPermiso.obj_rol.id_rol);
+                        cmd.Parameters.AddWithValue("@nombreMenu", nuevoPermiso.nombreMenu);
+
+                        conection.Open();
+
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            resultado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
         }
     }
 }

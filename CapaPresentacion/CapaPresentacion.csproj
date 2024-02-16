@@ -179,6 +179,12 @@
     <Compile Include="Formularios\Usuario - Nueva Clave.Designer.cs">
       <DependentUpon>Usuario - Nueva Clave.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Usuario - Roles - Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuario - Roles - Agregar.Designer.cs">
+      <DependentUpon>Usuario - Roles - Agregar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Usuario - Roles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     <EmbeddedResource Include="Formularios\Usuario - Agregar.resx">
       <DependentUpon>Usuario - Agregar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuario - Roles - Agregar.resx">
+      <DependentUpon>Usuario - Roles - Agregar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuario - Roles.resx">
       <DependentUpon>Usuario - Roles.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +245,9 @@
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="DB_TECHGOALDataSet.xsc">
+      <DependentUpon>DB_TECHGOALDataSet.xsd</DependentUpon>
+    </None>
     <None Include="DB_TECHGOALDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DB_TECHGOALDataSet.Designer.cs</LastGenOutput>
@@ -333,6 +345,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RolesWhite1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminarBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapizBlanco.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
