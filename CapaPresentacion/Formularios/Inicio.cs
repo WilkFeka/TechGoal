@@ -105,7 +105,7 @@ namespace CapaPresentacion
 
             // ---------------------------- PERMISOS DE USUARIO ----------------------------
 
-            List<Permiso> listaPermisos = new CC_Permiso().Listar(usuarioActual.id_usuario);
+            List<Permiso> listaPermisos = new CC_Permiso().ListarPermisosUsuario(usuarioActual.id_usuario);
 
             var panelMenus = flwPanelButons.Controls;
 

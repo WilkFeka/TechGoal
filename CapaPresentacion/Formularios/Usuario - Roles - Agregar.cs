@@ -43,7 +43,6 @@ namespace CapaPresentacion.Formularios
             {
                 // ---------------------- VALIDACIONES ----------------------
 
-                MessageBox.Show("Test");
 
                 if (string.IsNullOrEmpty(txtNombre.Text))
                 {
@@ -54,13 +53,15 @@ namespace CapaPresentacion.Formularios
                 bool[] activados = { activadoUsuarios, activadoCanchas, activadoEquipos, activadoPantalla, activadoReportes, activadoRoles, activadoTorneos };
 
 
+                
+
                 if (activados.All(a => !a))
                 {
                     MessageBox.Show("Por favor seleccione al menos un permiso", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                var mensaje = MessageBox.Show("¿Esta seguro de que desea agregar este usuario?", "Agregando usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var mensaje = MessageBox.Show("¿Esta seguro de que desea agregar este Rol?", "Agregando Rol", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (mensaje == DialogResult.No)
                 {
@@ -73,7 +74,7 @@ namespace CapaPresentacion.Formularios
 
                 if (rolEncontrado != null)
                 {
-                    MessageBox.Show("Ya existe un rol con ese nombre.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya existe un Rol con ese nombre.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -86,7 +87,7 @@ namespace CapaPresentacion.Formularios
 
                 if (agregarRol == false)
                 {
-                    MessageBox.Show("Hubo un error al agregar nuevo rol. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo un error al agregar nuevo Rol. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -96,7 +97,7 @@ namespace CapaPresentacion.Formularios
                 Rol buscarRol = rolControladora.BuscarRol(txtNombre.Text);
 
                 // Nombres de los menus. Tienen que tener el mismo index que las variables en 'activados'
-                string[] nombreMenus = { "menuUsuarios", "menuCanchas", "menuTorneos", "menuEquipos", "menuPantalla", "menuReportes", "menuRoles" }; 
+                string[] nombreMenus = { "menuUsuarios", "menuCanchas", "menuEquipos", "menuPantalla", "menuReportes", "menuRoles", "menuTorneos" }; 
 
                 for (int i = 0; i < activados.Length; i++)
                 {
@@ -114,7 +115,7 @@ namespace CapaPresentacion.Formularios
 
                         if (agregarPermiso == false)
                         {
-                            MessageBox.Show("Hubo un error al agregar nuevo perimso. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Hubo un error al agregar nuevo permiso. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
 
