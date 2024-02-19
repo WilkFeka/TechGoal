@@ -198,73 +198,84 @@ namespace CapaPresentacion
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            
-            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "editar" && e.RowIndex != -1)
+            try
             {
-            // ------------- Obtiene el valor de la celda ID ---------------------
-                DataGridViewRow filaSeleccionada = dgvUsuarios.CurrentRow;
-
-                DataGridViewCell celda = filaSeleccionada.Cells["id_usuario"];
-
-                int id = Convert.ToInt32(celda.Value);
-
-                Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioID(id);
-
-                formUsuarioModificar formUsuarioModificar = new formUsuarioModificar(this, usuarioSeleccionado);
-                formUsuarioModificar.ShowDialog();
-
-            } 
-
-            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "borrar" && e.RowIndex != -1)
-            {
-                // ------------- Obtiene el valor de la celda ID ---------------------
-                DataGridViewRow filaSeleccionada = dgvUsuarios.CurrentRow;
-
-                DataGridViewCell celda = filaSeleccionada.Cells["id_usuario"];
-
-                int id = Convert.ToInt32(celda.Value);
-               
-                Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioID(id);
-                
-                var mensaje = MessageBox.Show("¿Esta seguro de que desea borrar el usuario " + usuarioSeleccionado.email + "?", "Borrando usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-               
-                if (mensaje == DialogResult.No)
+                if (dgvUsuarios.Columns[e.ColumnIndex].Name == "editar" && e.RowIndex != -1)
                 {
-                    return;
-                } else
+                    // ------------- Obtiene el valor de la celda ID ---------------------
+                    DataGridViewRow filaSeleccionada = dgvUsuarios.CurrentRow;
+
+                    DataGridViewCell celda = filaSeleccionada.Cells["id_usuario"];
+
+                    int id = Convert.ToInt32(celda.Value);
+
+                    Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioID(id);
+
+                    formUsuarioModificar formUsuarioModificar = new formUsuarioModificar(this, usuarioSeleccionado);
+                    formUsuarioModificar.ShowDialog();
+
+                }
+
+                if (dgvUsuarios.Columns[e.ColumnIndex].Name == "borrar" && e.RowIndex != -1)
                 {
+                    // ------------- Obtiene el valor de la celda ID ---------------------
+                    DataGridViewRow filaSeleccionada = dgvUsuarios.CurrentRow;
 
-                    bool eliminarUsuario = UsuarioControladora.EliminarUsuario(usuarioSeleccionado.id_usuario);
+                    DataGridViewCell celda = filaSeleccionada.Cells["id_usuario"];
 
-                    if (eliminarUsuario)
+                    int id = Convert.ToInt32(celda.Value);
+
+                    Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioID(id);
+
+                    var mensaje = MessageBox.Show("¿Esta seguro de que desea borrar el usuario " + usuarioSeleccionado.email + "?", "Borrando usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (mensaje == DialogResult.No)
                     {
-                        MessageBox.Show("Usuario eliminado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LlenarTabla();
-
-                    } else
+                        return;
+                    }
+                    else
                     {
-                        MessageBox.Show("Hubo un error al eliminar usuario. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        bool eliminarUsuario = UsuarioControladora.EliminarUsuario(usuarioSeleccionado.id_usuario);
+
+                        if (eliminarUsuario)
+                        {
+                            MessageBox.Show("Usuario eliminado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LlenarTabla();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hubo un error al eliminar usuario. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                     }
 
                 }
 
-            }
+                if (dgvUsuarios.Columns[e.ColumnIndex].Name == "nuevaClave" && e.RowIndex != -1)
+                {
+                    // ------------- Obtiene el valor de la celda ID ---------------------
+                    DataGridViewRow filaSeleccionada = dgvUsuarios.CurrentRow;
 
-            if (dgvUsuarios.Columns[e.ColumnIndex].Name == "nuevaClave" && e.RowIndex != -1)
+                    DataGridViewCell celda = filaSeleccionada.Cells["id_usuario"];
+
+                    int id = Convert.ToInt32(celda.Value);
+
+                    Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioID(id);
+
+                    formUsuarioNuevaClave formUsuarioNuevaClave = new formUsuarioNuevaClave(this, usuarioSeleccionado);
+                    formUsuarioNuevaClave.ShowDialog();
+
+                }
+
+            } catch (Exception ex)
             {
-                // ------------- Obtiene el valor de la celda ID ---------------------
-                DataGridViewRow filaSeleccionada = dgvUsuarios.CurrentRow;
-
-                DataGridViewCell celda = filaSeleccionada.Cells["id_usuario"];
-
-                int id = Convert.ToInt32(celda.Value);
-
-                Usuario usuarioSeleccionado = UsuarioControladora.EncontrarUsuarioID(id);
-
-                formUsuarioNuevaClave formUsuarioNuevaClave = new formUsuarioNuevaClave(this, usuarioSeleccionado);
-                formUsuarioNuevaClave.ShowDialog();
-
+                Console.WriteLine(ex.Message);
             }
+
+            
+            
         }
 
         private void dgvUsuarios_CellMouseEnter(object sender, DataGridViewCellEventArgs e)

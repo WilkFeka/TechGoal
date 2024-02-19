@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 using CapaControladora;
 using CapaEntidad;
+using CapaPresentacion.Formularios;
 using FontAwesome.Sharp;
 
 namespace CapaPresentacion
@@ -235,6 +236,13 @@ namespace CapaPresentacion
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
+        }
+
+        private void lblRestablecerClave_Click(object sender, EventArgs e)
+        {
+            formLoginRecuperar formLoginRecuperar = new formLoginRecuperar();
+            Hide();
+            formLoginRecuperar.Show();
         }
     }
 }

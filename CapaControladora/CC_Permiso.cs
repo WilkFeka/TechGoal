@@ -27,11 +27,20 @@ namespace CapaControladora
             }
         }
 
-        // ---------------------- OBTENER TODOS LOS PERMISOS --------------------
+        // ---------------------- OBTENER TODOS LOS PERMISOS DE UN USUARIO  --------------------
 
-        public List<Permiso> Listar(int id_usuario)
+        public List<Permiso> ListarPermisosUsuario(int id_usuario)
         {
-            List<Permiso> listaPermisos = new CD_Permiso().Listar(id_usuario);
+            List<Permiso> listaPermisos = new CD_Permiso().ListarPermisosUsuario(id_usuario);
+
+            return listaPermisos;
+
+        }
+
+        // ---------------------- OBTENER TODOS LOS PERMISOS  --------------------
+        public List<Permiso> Listar()
+        {
+            List<Permiso> listaPermisos = new CD_Permiso().Listar();
 
             return listaPermisos;
 
@@ -49,6 +58,23 @@ namespace CapaControladora
 
                 }
                 else return false;
+            }
+            else return false;
+        }
+
+        public List<Permiso> BuscarPermisoID_Rol(int id_rol)
+        {
+            List<Permiso> listaPermisos = new CC_Permiso().Listar().Where(r => r.obj_rol.id_rol == id_rol).ToList();
+
+            return listaPermisos;
+
+        }
+
+        public bool EliminarPermiso(int id_permiso)
+        {
+            if (CD_Permiso.EliminarPermiso(id_permiso))
+            {
+                return true;
             }
             else return false;
         }
