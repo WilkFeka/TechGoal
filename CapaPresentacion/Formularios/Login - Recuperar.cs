@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion.Personalizacion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,23 +13,25 @@ namespace CapaPresentacion.Formularios
 {
     public partial class formLoginRecuperar : Form
     {
+        Funcionalidades funcionalidades = Funcionalidades.getInstance;
         public formLoginRecuperar()
         {
             InitializeComponent();
         }
 
-        private void lblCorreo_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
+            Application.OpenForms["formLogin"].Show();
+            Close();
 
         }
 
-        private void iconMail_Click(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
         {
+            funcionalidades.EnviarCorreo(txtCorreo.Text);
+            Application.OpenForms["formLogin"].Show();
 
-        }
-
-        private void txtCorreo_TextChanged(object sender, EventArgs e)
-        {
+            Close();
 
         }
     }
