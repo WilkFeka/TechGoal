@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 using CapaControladora;
 using CapaEntidad;
+using CapaPresentacion.Formularios;
 using FontAwesome.Sharp;
 
 namespace CapaPresentacion
@@ -167,6 +168,7 @@ namespace CapaPresentacion
                 if (string.IsNullOrEmpty(txtCorreo.Text) || string.IsNullOrEmpty(txtClave.Text))
                 {
                     MessageBox.Show("Por favor complete todos los campos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
 
 
                 } else
@@ -176,22 +178,17 @@ namespace CapaPresentacion
 
                     Usuario usuarioEncontrado = UsuarioControladora.EncontrarUsuarioLogin(txtCorreo.Text, claveHASH);
 
-                    if (usuarioEncontrado != null)
+                    if (usuarioEncontrado != null && usuarioEncontrado.estado)
                     {
+
 
                         SesionControladora.Login(usuarioEncontrado);
 
                         formInicio formInicio = new formInicio(usuarioEncontrado);
                         formInicio.Show();
                         Hide();
-
-
-
-
-
-
                     }
-                    else if (usuarioEncontrado == null)
+                    else
                     {
                         MessageBox.Show("Correo o contraseña incorrectos. Por favor verifique los mismos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -239,6 +236,13 @@ namespace CapaPresentacion
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
+        }
+
+        private void lblRestablecerClave_Click(object sender, EventArgs e)
+        {
+            formLoginRecuperar formLoginRecuperar = new formLoginRecuperar();
+            Hide();
+            formLoginRecuperar.Show();
         }
     }
 }

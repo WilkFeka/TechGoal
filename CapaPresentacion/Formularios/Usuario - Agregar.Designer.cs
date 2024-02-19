@@ -55,9 +55,9 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.rolTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.rolTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.rolTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.rolTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
@@ -444,12 +444,16 @@
             this.label3.TabIndex = 57;
             this.label3.Text = "Documento";
             // 
+            // rolTableAdapter
+            // 
+            this.rolTableAdapter.ClearBeforeFill = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label4.Location = new System.Drawing.Point(48, 469);
+            this.label4.Location = new System.Drawing.Point(47, 469);
             this.label4.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 29);
@@ -461,16 +465,12 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label5.Location = new System.Drawing.Point(48, 563);
+            this.label5.Location = new System.Drawing.Point(47, 563);
             this.label5.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 29);
             this.label5.TabIndex = 59;
             this.label5.Text = "Clave";
-            // 
-            // rolTableAdapter
-            // 
-            this.rolTableAdapter.ClearBeforeFill = true;
             // 
             // formUsuarioAgregar
             // 
@@ -479,33 +479,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(544, 805);
+            this.ClientSize = new System.Drawing.Size(535, 811);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.btnGenerarClave);
-            this.Controls.Add(this.cmbRoles);
-            this.Controls.Add(this.msButton7);
-            this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.msButton4);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.msButton3);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.msButton2);
-            this.Controls.Add(this.txtDocumento);
-            this.Controls.Add(this.msButton1);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.txtClave);
-            this.Controls.Add(this.msButton6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.msButton5);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblCorreo);
+            this.Controls.Add(this.txtClave);
+            this.Controls.Add(this.txtDocumento);
+            this.Controls.Add(this.btnGenerarClave);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.cmbRoles);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.msButton7);
+            this.Controls.Add(this.msButton4);
+            this.Controls.Add(this.msButton3);
+            this.Controls.Add(this.msButton2);
+            this.Controls.Add(this.msButton1);
+            this.Controls.Add(this.msButton5);
+            this.Controls.Add(this.msButton6);
             this.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -550,10 +550,10 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private DB_TECHGOALDataSet dB_TECHGOALDataSet;
         private System.Windows.Forms.BindingSource rolBindingSource;
         private DB_TECHGOALDataSetTableAdapters.rolTableAdapter rolTableAdapter;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

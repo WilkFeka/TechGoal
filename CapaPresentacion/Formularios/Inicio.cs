@@ -26,6 +26,12 @@ namespace CapaPresentacion
             InitializeComponent();
             usuarioActual = usuario;
 
+            // Obtener el tamaño de la pantalla
+            Size screenSize = Screen.PrimaryScreen.Bounds.Size;
+            // Definir el tamaño del formulario con un pequeño margen para que la barra de tareas sea visible
+            Size = new Size(screenSize.Width, screenSize.Height - SystemInformation.CaptionHeight);
+            // Alinear el formulario en la esquina superior izquierda de la pantalla
+            Location = new Point(0, 0);
 
 
 
@@ -74,7 +80,7 @@ namespace CapaPresentacion
 
         }
 
-        private void AbrirFormulario(Form formulario)
+        public void AbrirFormulario(Form formulario)
         {
             if (formularioActual != null)
             {
@@ -95,7 +101,7 @@ namespace CapaPresentacion
         {
             pnlContainer.Hide();
             picLogoText.Hide();
-            AbrirFormulario(new formUsuarios());
+            AbrirFormulario(new formUsuarios(this));
 
 
         }
@@ -105,7 +111,7 @@ namespace CapaPresentacion
 
             // ---------------------------- PERMISOS DE USUARIO ----------------------------
 
-            List<Permiso> listaPermisos = new CC_Permiso().Listar(usuarioActual.id_usuario);
+            List<Permiso> listaPermisos = new CC_Permiso().ListarPermisosUsuario(usuarioActual.id_usuario);
 
             var panelMenus = flwPanelButons.Controls;
 
@@ -168,5 +174,14 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
     }

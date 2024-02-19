@@ -28,34 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInicio));
             this.flwPanelButons = new System.Windows.Forms.FlowLayoutPanel();
             this.menuUsuarios = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnUsuarios = new CapaPresentacion.Personalizacion.MSButton();
             this.label2 = new System.Windows.Forms.Label();
             this.menuCanchas = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCanchas = new CapaPresentacion.Personalizacion.MSButton();
             this.label1 = new System.Windows.Forms.Label();
             this.menuTorneos = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnTorneos = new CapaPresentacion.Personalizacion.MSButton();
             this.label3 = new System.Windows.Forms.Label();
             this.menuEquipos = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnEquipos = new CapaPresentacion.Personalizacion.MSButton();
             this.label4 = new System.Windows.Forms.Label();
             this.menuPantalla = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnPantalla = new CapaPresentacion.Personalizacion.MSButton();
             this.label5 = new System.Windows.Forms.Label();
             this.menuReportes = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnReportes = new CapaPresentacion.Personalizacion.MSButton();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
-            this.picLogoText = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAjusteUsuario = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pnlGrande = new System.Windows.Forms.Panel();
-            this.btnUsuarios = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnCanchas = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnTorneos = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnEquipos = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnPantalla = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnReportes = new CapaPresentacion.Personalizacion.MSButton();
             this.btnSalir = new CapaPresentacion.Personalizacion.MSButton();
+            this.pnlGrande = new System.Windows.Forms.Panel();
+            this.picLogoText = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCerrar = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnMinimizar = new CapaPresentacion.Personalizacion.MSButton();
             this.flwPanelButons.SuspendLayout();
             this.menuUsuarios.SuspendLayout();
             this.menuCanchas.SuspendLayout();
@@ -64,11 +68,12 @@
             this.menuPantalla.SuspendLayout();
             this.menuReportes.SuspendLayout();
             this.pnlContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogoText)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlGrande.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoText)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // flwPanelButons
@@ -88,7 +93,7 @@
             this.flwPanelButons.MaximumSize = new System.Drawing.Size(778, 0);
             this.flwPanelButons.Name = "flwPanelButons";
             this.flwPanelButons.Padding = new System.Windows.Forms.Padding(10);
-            this.flwPanelButons.Size = new System.Drawing.Size(741, 0);
+            this.flwPanelButons.Size = new System.Drawing.Size(741, 646);
             this.flwPanelButons.TabIndex = 0;
             // 
             // menuUsuarios
@@ -101,6 +106,28 @@
             this.menuUsuarios.Name = "menuUsuarios";
             this.menuUsuarios.Size = new System.Drawing.Size(220, 293);
             this.menuUsuarios.TabIndex = 3;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(120)))), ((int)(((byte)(195)))));
+            this.btnUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(120)))), ((int)(((byte)(195)))));
+            this.btnUsuarios.BackgroundImage = global::CapaPresentacion.Properties.Resources.genteBlanco;
+            this.btnUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUsuarios.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnUsuarios.BorderRadius = 80;
+            this.btnUsuarios.BorderSize = 0;
+            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(0);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(220, 220);
+            this.btnUsuarios.TabIndex = 1;
+            this.btnUsuarios.TextColor = System.Drawing.Color.White;
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // label2
             // 
@@ -126,6 +153,27 @@
             this.menuCanchas.Size = new System.Drawing.Size(220, 293);
             this.menuCanchas.TabIndex = 0;
             // 
+            // btnCanchas
+            // 
+            this.btnCanchas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(220)))), ((int)(((byte)(105)))));
+            this.btnCanchas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(220)))), ((int)(((byte)(105)))));
+            this.btnCanchas.BackgroundImage = global::CapaPresentacion.Properties.Resources.canchaBlanca;
+            this.btnCanchas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCanchas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.btnCanchas.BorderRadius = 80;
+            this.btnCanchas.BorderSize = 0;
+            this.btnCanchas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCanchas.FlatAppearance.BorderSize = 0;
+            this.btnCanchas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCanchas.ForeColor = System.Drawing.Color.White;
+            this.btnCanchas.Location = new System.Drawing.Point(0, 0);
+            this.btnCanchas.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCanchas.Name = "btnCanchas";
+            this.btnCanchas.Size = new System.Drawing.Size(220, 220);
+            this.btnCanchas.TabIndex = 1;
+            this.btnCanchas.TextColor = System.Drawing.Color.White;
+            this.btnCanchas.UseVisualStyleBackColor = false;
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -149,6 +197,27 @@
             this.menuTorneos.Name = "menuTorneos";
             this.menuTorneos.Size = new System.Drawing.Size(220, 293);
             this.menuTorneos.TabIndex = 1;
+            // 
+            // btnTorneos
+            // 
+            this.btnTorneos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
+            this.btnTorneos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
+            this.btnTorneos.BackgroundImage = global::CapaPresentacion.Properties.Resources.trophyBlanco;
+            this.btnTorneos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTorneos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnTorneos.BorderRadius = 80;
+            this.btnTorneos.BorderSize = 0;
+            this.btnTorneos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTorneos.FlatAppearance.BorderSize = 0;
+            this.btnTorneos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTorneos.ForeColor = System.Drawing.Color.White;
+            this.btnTorneos.Location = new System.Drawing.Point(0, 0);
+            this.btnTorneos.Margin = new System.Windows.Forms.Padding(0);
+            this.btnTorneos.Name = "btnTorneos";
+            this.btnTorneos.Size = new System.Drawing.Size(220, 220);
+            this.btnTorneos.TabIndex = 1;
+            this.btnTorneos.TextColor = System.Drawing.Color.White;
+            this.btnTorneos.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -174,6 +243,27 @@
             this.menuEquipos.Size = new System.Drawing.Size(220, 293);
             this.menuEquipos.TabIndex = 3;
             // 
+            // btnEquipos
+            // 
+            this.btnEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(26)))));
+            this.btnEquipos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(26)))));
+            this.btnEquipos.BackgroundImage = global::CapaPresentacion.Properties.Resources.camisetaBlanco;
+            this.btnEquipos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEquipos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnEquipos.BorderRadius = 80;
+            this.btnEquipos.BorderSize = 0;
+            this.btnEquipos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEquipos.FlatAppearance.BorderSize = 0;
+            this.btnEquipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEquipos.ForeColor = System.Drawing.Color.White;
+            this.btnEquipos.Location = new System.Drawing.Point(0, 0);
+            this.btnEquipos.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEquipos.Name = "btnEquipos";
+            this.btnEquipos.Size = new System.Drawing.Size(220, 220);
+            this.btnEquipos.TabIndex = 1;
+            this.btnEquipos.TextColor = System.Drawing.Color.White;
+            this.btnEquipos.UseVisualStyleBackColor = false;
+            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -197,6 +287,27 @@
             this.menuPantalla.Name = "menuPantalla";
             this.menuPantalla.Size = new System.Drawing.Size(220, 293);
             this.menuPantalla.TabIndex = 4;
+            // 
+            // btnPantalla
+            // 
+            this.btnPantalla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(174)))), ((int)(((byte)(255)))));
+            this.btnPantalla.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(174)))), ((int)(((byte)(255)))));
+            this.btnPantalla.BackgroundImage = global::CapaPresentacion.Properties.Resources.screenBlanca;
+            this.btnPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPantalla.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnPantalla.BorderRadius = 80;
+            this.btnPantalla.BorderSize = 0;
+            this.btnPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPantalla.FlatAppearance.BorderSize = 0;
+            this.btnPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPantalla.ForeColor = System.Drawing.Color.White;
+            this.btnPantalla.Location = new System.Drawing.Point(0, 0);
+            this.btnPantalla.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPantalla.Name = "btnPantalla";
+            this.btnPantalla.Size = new System.Drawing.Size(220, 220);
+            this.btnPantalla.TabIndex = 1;
+            this.btnPantalla.TextColor = System.Drawing.Color.White;
+            this.btnPantalla.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -222,6 +333,27 @@
             this.menuReportes.Size = new System.Drawing.Size(220, 293);
             this.menuReportes.TabIndex = 4;
             // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btnReportes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.btnReportes.BackgroundImage = global::CapaPresentacion.Properties.Resources.reporteBlanco;
+            this.btnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReportes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnReportes.BorderRadius = 80;
+            this.btnReportes.BorderSize = 0;
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.ForeColor = System.Drawing.Color.White;
+            this.btnReportes.Location = new System.Drawing.Point(0, 0);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(220, 220);
+            this.btnReportes.TabIndex = 1;
+            this.btnReportes.TextColor = System.Drawing.Color.White;
+            this.btnReportes.UseVisualStyleBackColor = false;
+            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -240,22 +372,10 @@
             this.pnlContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlContainer.BackColor = System.Drawing.Color.White;
             this.pnlContainer.Controls.Add(this.flwPanelButons);
-            this.pnlContainer.Location = new System.Drawing.Point(3, 128);
+            this.pnlContainer.Location = new System.Drawing.Point(134, 175);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(781, 690);
             this.pnlContainer.TabIndex = 3;
-            // 
-            // picLogoText
-            // 
-            this.picLogoText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLogoText.Image = global::CapaPresentacion.Properties.Resources.TextDark;
-            this.picLogoText.Location = new System.Drawing.Point(66, 37);
-            this.picLogoText.Name = "picLogoText";
-            this.picLogoText.Size = new System.Drawing.Size(642, 85);
-            this.picLogoText.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogoText.TabIndex = 0;
-            this.picLogoText.TabStop = false;
             // 
             // panel3
             // 
@@ -264,7 +384,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(277, 821);
+            this.panel3.Size = new System.Drawing.Size(277, 1030);
             this.panel3.TabIndex = 4;
             // 
             // panel1
@@ -278,7 +398,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20, 20, 20, 50);
-            this.panel1.Size = new System.Drawing.Size(269, 821);
+            this.panel1.Size = new System.Drawing.Size(269, 1030);
             this.panel1.TabIndex = 5;
             // 
             // btnAjusteUsuario
@@ -335,144 +455,6 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // pnlGrande
-            // 
-            this.pnlGrande.BackColor = System.Drawing.Color.White;
-            this.pnlGrande.Controls.Add(this.picLogoText);
-            this.pnlGrande.Controls.Add(this.pnlContainer);
-            this.pnlGrande.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlGrande.Location = new System.Drawing.Point(277, 0);
-            this.pnlGrande.Name = "pnlGrande";
-            this.pnlGrande.Size = new System.Drawing.Size(787, 821);
-            this.pnlGrande.TabIndex = 5;
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(120)))), ((int)(((byte)(195)))));
-            this.btnUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(120)))), ((int)(((byte)(195)))));
-            this.btnUsuarios.BackgroundImage = global::CapaPresentacion.Properties.Resources.genteBlanco;
-            this.btnUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUsuarios.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnUsuarios.BorderRadius = 80;
-            this.btnUsuarios.BorderSize = 0;
-            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(0);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(220, 220);
-            this.btnUsuarios.TabIndex = 1;
-            this.btnUsuarios.TextColor = System.Drawing.Color.White;
-            this.btnUsuarios.UseVisualStyleBackColor = false;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // btnCanchas
-            // 
-            this.btnCanchas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(220)))), ((int)(((byte)(105)))));
-            this.btnCanchas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(220)))), ((int)(((byte)(105)))));
-            this.btnCanchas.BackgroundImage = global::CapaPresentacion.Properties.Resources.canchaBlanca;
-            this.btnCanchas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCanchas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
-            this.btnCanchas.BorderRadius = 80;
-            this.btnCanchas.BorderSize = 0;
-            this.btnCanchas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCanchas.FlatAppearance.BorderSize = 0;
-            this.btnCanchas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCanchas.ForeColor = System.Drawing.Color.White;
-            this.btnCanchas.Location = new System.Drawing.Point(0, 0);
-            this.btnCanchas.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCanchas.Name = "btnCanchas";
-            this.btnCanchas.Size = new System.Drawing.Size(220, 220);
-            this.btnCanchas.TabIndex = 1;
-            this.btnCanchas.TextColor = System.Drawing.Color.White;
-            this.btnCanchas.UseVisualStyleBackColor = false;
-            // 
-            // btnTorneos
-            // 
-            this.btnTorneos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.btnTorneos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.btnTorneos.BackgroundImage = global::CapaPresentacion.Properties.Resources.trophyBlanco;
-            this.btnTorneos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTorneos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnTorneos.BorderRadius = 80;
-            this.btnTorneos.BorderSize = 0;
-            this.btnTorneos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTorneos.FlatAppearance.BorderSize = 0;
-            this.btnTorneos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTorneos.ForeColor = System.Drawing.Color.White;
-            this.btnTorneos.Location = new System.Drawing.Point(0, 0);
-            this.btnTorneos.Margin = new System.Windows.Forms.Padding(0);
-            this.btnTorneos.Name = "btnTorneos";
-            this.btnTorneos.Size = new System.Drawing.Size(220, 220);
-            this.btnTorneos.TabIndex = 1;
-            this.btnTorneos.TextColor = System.Drawing.Color.White;
-            this.btnTorneos.UseVisualStyleBackColor = false;
-            // 
-            // btnEquipos
-            // 
-            this.btnEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(26)))));
-            this.btnEquipos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(26)))));
-            this.btnEquipos.BackgroundImage = global::CapaPresentacion.Properties.Resources.camisetaBlanco;
-            this.btnEquipos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEquipos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnEquipos.BorderRadius = 80;
-            this.btnEquipos.BorderSize = 0;
-            this.btnEquipos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEquipos.FlatAppearance.BorderSize = 0;
-            this.btnEquipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEquipos.ForeColor = System.Drawing.Color.White;
-            this.btnEquipos.Location = new System.Drawing.Point(0, 0);
-            this.btnEquipos.Margin = new System.Windows.Forms.Padding(0);
-            this.btnEquipos.Name = "btnEquipos";
-            this.btnEquipos.Size = new System.Drawing.Size(220, 220);
-            this.btnEquipos.TabIndex = 1;
-            this.btnEquipos.TextColor = System.Drawing.Color.White;
-            this.btnEquipos.UseVisualStyleBackColor = false;
-            // 
-            // btnPantalla
-            // 
-            this.btnPantalla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(174)))), ((int)(((byte)(255)))));
-            this.btnPantalla.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(174)))), ((int)(((byte)(255)))));
-            this.btnPantalla.BackgroundImage = global::CapaPresentacion.Properties.Resources.screenBlanca;
-            this.btnPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPantalla.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnPantalla.BorderRadius = 80;
-            this.btnPantalla.BorderSize = 0;
-            this.btnPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPantalla.FlatAppearance.BorderSize = 0;
-            this.btnPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPantalla.ForeColor = System.Drawing.Color.White;
-            this.btnPantalla.Location = new System.Drawing.Point(0, 0);
-            this.btnPantalla.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPantalla.Name = "btnPantalla";
-            this.btnPantalla.Size = new System.Drawing.Size(220, 220);
-            this.btnPantalla.TabIndex = 1;
-            this.btnPantalla.TextColor = System.Drawing.Color.White;
-            this.btnPantalla.UseVisualStyleBackColor = false;
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btnReportes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.btnReportes.BackgroundImage = global::CapaPresentacion.Properties.Resources.reporteBlanco;
-            this.btnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReportes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnReportes.BorderRadius = 80;
-            this.btnReportes.BorderSize = 0;
-            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(0, 0);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(220, 220);
-            this.btnReportes.TabIndex = 1;
-            this.btnReportes.TextColor = System.Drawing.Color.White;
-            this.btnReportes.UseVisualStyleBackColor = false;
-            // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Transparent;
@@ -481,13 +463,14 @@
             this.btnSalir.BorderRadius = 60;
             this.btnSalir.BorderSize = 2;
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(200)))), ((int)(((byte)(236)))));
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(200)))), ((int)(((byte)(236)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(200)))), ((int)(((byte)(236)))));
-            this.btnSalir.Location = new System.Drawing.Point(20, 711);
+            this.btnSalir.Location = new System.Drawing.Point(20, 920);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(229, 60);
             this.btnSalir.TabIndex = 5;
@@ -498,23 +481,105 @@
             this.btnSalir.MouseEnter += new System.EventHandler(this.btnSalir_MouseEnter);
             this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
             // 
+            // pnlGrande
+            // 
+            this.pnlGrande.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlGrande.BackColor = System.Drawing.Color.White;
+            this.pnlGrande.Controls.Add(this.picLogoText);
+            this.pnlGrande.Controls.Add(this.pnlContainer);
+            this.pnlGrande.Location = new System.Drawing.Point(277, 41);
+            this.pnlGrande.Name = "pnlGrande";
+            this.pnlGrande.Size = new System.Drawing.Size(1049, 989);
+            this.pnlGrande.TabIndex = 5;
+            // 
+            // picLogoText
+            // 
+            this.picLogoText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picLogoText.Image = global::CapaPresentacion.Properties.Resources.TextDark;
+            this.picLogoText.Location = new System.Drawing.Point(80, 73);
+            this.picLogoText.Name = "picLogoText";
+            this.picLogoText.Size = new System.Drawing.Size(904, 85);
+            this.picLogoText.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogoText.TabIndex = 0;
+            this.picLogoText.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnCerrar);
+            this.panel2.Controls.Add(this.btnMinimizar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(277, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1049, 44);
+            this.panel2.TabIndex = 4;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            this.btnCerrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            this.btnCerrar.BackgroundImage = global::CapaPresentacion.Properties.Resources.cerrar;
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnCerrar.BorderRadius = 10;
+            this.btnCerrar.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(1012, 5);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(32, 32);
+            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TextColor = System.Drawing.Color.White;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnMinimizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnMinimizar.BackgroundImage = global::CapaPresentacion.Properties.Resources.minimizar;
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimizar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnMinimizar.BorderRadius = 10;
+            this.btnMinimizar.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.ForeColor = System.Drawing.Color.White;
+            this.btnMinimizar.Location = new System.Drawing.Point(974, 5);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(32, 32);
+            this.btnMinimizar.TabIndex = 5;
+            this.btnMinimizar.TextColor = System.Drawing.Color.White;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
             // formInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1064, 821);
+            this.CancelButton = this.btnSalir;
+            this.ClientSize = new System.Drawing.Size(1326, 1030);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlGrande);
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(7);
-            this.MinimumSize = new System.Drawing.Size(1080, 860);
+            this.MaximizeBox = false;
             this.Name = "formInicio";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inicio_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Inicio_FormClosed);
             this.Load += new System.EventHandler(this.formInicio_Load);
@@ -533,11 +598,12 @@
             this.menuReportes.PerformLayout();
             this.pnlContainer.ResumeLayout(false);
             this.pnlContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogoText)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlGrande.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoText)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -563,8 +629,8 @@
         private System.Windows.Forms.FlowLayoutPanel menuReportes;
         private Personalizacion.MSButton btnReportes;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel pnlContainer;
-        private System.Windows.Forms.PictureBox picLogoText;
+        public System.Windows.Forms.Panel pnlContainer;
+        public System.Windows.Forms.PictureBox picLogoText;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton btnHome;
         private Personalizacion.MSButton btnSalir;
@@ -572,6 +638,9 @@
         private System.Windows.Forms.Panel pnlGrande;
         private System.Windows.Forms.PictureBox pictureBox2;
         private FontAwesome.Sharp.IconButton btnAjusteUsuario;
+        private Personalizacion.MSButton btnMinimizar;
+        private System.Windows.Forms.Panel panel2;
+        private Personalizacion.MSButton btnCerrar;
     }
 }
 

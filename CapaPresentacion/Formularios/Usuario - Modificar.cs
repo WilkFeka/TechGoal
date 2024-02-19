@@ -110,7 +110,7 @@ namespace CapaPresentacion.Formularios
                         if(documentoEncontrado == null || documentoEncontrado.dni == usuarioGlobal.dni)
                         {
 
-                            var mensaje = MessageBox.Show("¿Esta seguro de que desea modificar al usuario?", "Modificando usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            var mensaje = MessageBox.Show("¿Esta seguro de que desea modificar al usuario " + usuarioGlobal.email + "?", "Modificando usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                             if (mensaje == DialogResult.No)
                             {
@@ -141,7 +141,7 @@ namespace CapaPresentacion.Formularios
                             }
                             else
                             {
-                                MessageBox.Show("Hubo un error al modificar. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Hubo un error al modificar usuario. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                             }
 
@@ -155,53 +155,6 @@ namespace CapaPresentacion.Formularios
                         MessageBox.Show("Ya existe un usuario con ese correo.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    //if (correoEncontrado == null)
-                    //{
-                    //    Usuario documentoEncontrado = UsuarioControladora.EncontrarUsuarioDNI(txtDocumento.Text);
-                    //    if (documentoEncontrado == null)
-                    //    {
-                    //        string claveHash = UsuarioControladora.EncriptarClave(txtClave.Text);
-
-                    //        Usuario nuevoUsuario = new Usuario()
-                    //        {
-                    //            email = txtCorreo.Text,
-                    //            clave = claveHash,
-                    //            nombre = txtNombre.Text,
-                    //            apellido = txtApellido.Text,
-                    //            dni = txtDocumento.Text,
-                    //            telefono = txtTelefono.Text,
-                    //            o_rol = new Rol { id_rol = Convert.ToInt32(cmbRoles.SelectedValue) },
-                    //            estado = true
-                    //        };
-
-                    //        bool agregarUsuario = UsuarioControladora.AgregarUsuario(nuevoUsuario);
-
-                    //        if (agregarUsuario)
-                    //        {
-                    //            MessageBox.Show("Usuario agregado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //            Close();
-
-                    //        }
-                    //        else
-                    //        {
-                    //            MessageBox.Show("Hubo un error en el agregado. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    //        }
-
-                    //    }
-                    //    else
-                    //    {
-                    //        MessageBox.Show("Ya existe un usuario con ese DNI.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    //    }
-
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Ya existe un usuario con ese correo.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-                    //}
                 }
                 else
                 {

@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.picLogoTechGoal = new System.Windows.Forms.PictureBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblClave = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
-            this.iconKey = new FontAwesome.Sharp.IconPictureBox();
-            this.iconMail = new FontAwesome.Sharp.IconPictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblRestablecerClave = new System.Windows.Forms.Label();
             this.panelCorreo = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnVerClave = new FontAwesome.Sharp.IconButton();
+            this.iconKey = new FontAwesome.Sharp.IconPictureBox();
+            this.iconMail = new FontAwesome.Sharp.IconPictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnIniciarSesion = new CapaPresentacion.Personalizacion.MSButton();
             this.pnlLogo.SuspendLayout();
@@ -108,8 +109,69 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(473, 39);
             this.txtClave.TabIndex = 1;
-            this.txtClave.Text = "YuY0YYtZ";
+            this.txtClave.Text = "KKtIAoKU";
             this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCorreo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCorreo.Location = new System.Drawing.Point(522, 181);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(0);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(506, 39);
+            this.txtCorreo.TabIndex = 0;
+            this.txtCorreo.Text = "Administrador@gmail.com";
+            this.txtCorreo.Enter += new System.EventHandler(this.txtCorreo_Enter);
+            // 
+            // lblRestablecerClave
+            // 
+            this.lblRestablecerClave.AutoSize = true;
+            this.lblRestablecerClave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblRestablecerClave.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRestablecerClave.Location = new System.Drawing.Point(600, 384);
+            this.lblRestablecerClave.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblRestablecerClave.Name = "lblRestablecerClave";
+            this.lblRestablecerClave.Size = new System.Drawing.Size(368, 18);
+            this.lblRestablecerClave.TabIndex = 11;
+            this.lblRestablecerClave.Text = "¿Olvidaste tu clave? Restablecela haciendo click aqui.";
+            this.lblRestablecerClave.Click += new System.EventHandler(this.lblRestablecerClave_Click);
+            // 
+            // panelCorreo
+            // 
+            this.panelCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.panelCorreo.Location = new System.Drawing.Point(502, 228);
+            this.panelCorreo.Name = "panelCorreo";
+            this.panelCorreo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.panelCorreo.Size = new System.Drawing.Size(541, 3);
+            this.panelCorreo.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.panel2.Location = new System.Drawing.Point(502, 368);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(542, 3);
+            this.panel2.TabIndex = 13;
+            // 
+            // btnVerClave
+            // 
+            this.btnVerClave.FlatAppearance.BorderSize = 0;
+            this.btnVerClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnVerClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerClave.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            this.btnVerClave.IconColor = System.Drawing.Color.White;
+            this.btnVerClave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVerClave.Location = new System.Drawing.Point(1001, 321);
+            this.btnVerClave.Name = "btnVerClave";
+            this.btnVerClave.Size = new System.Drawing.Size(39, 39);
+            this.btnVerClave.TabIndex = 14;
+            this.btnVerClave.UseVisualStyleBackColor = true;
+            this.btnVerClave.Click += new System.EventHandler(this.btnVerClave_Click);
+            this.btnVerClave.MouseEnter += new System.EventHandler(this.btnVerClave_MouseEnter);
+            this.btnVerClave.MouseLeave += new System.EventHandler(this.btnVerClave_MouseLeave);
             // 
             // iconKey
             // 
@@ -153,66 +215,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
-            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCorreo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCorreo.Location = new System.Drawing.Point(522, 181);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(0);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(506, 39);
-            this.txtCorreo.TabIndex = 0;
-            this.txtCorreo.Text = "Administrador@gmail.com";
-            this.txtCorreo.Enter += new System.EventHandler(this.txtCorreo_Enter);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(600, 384);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 18);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "¿Olvidaste tu clave? Restablecela haciendo click aqui.";
-            // 
-            // panelCorreo
-            // 
-            this.panelCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.panelCorreo.Location = new System.Drawing.Point(502, 228);
-            this.panelCorreo.Name = "panelCorreo";
-            this.panelCorreo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.panelCorreo.Size = new System.Drawing.Size(541, 3);
-            this.panelCorreo.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.panel2.Location = new System.Drawing.Point(502, 368);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(542, 3);
-            this.panel2.TabIndex = 13;
-            // 
-            // btnVerClave
-            // 
-            this.btnVerClave.FlatAppearance.BorderSize = 0;
-            this.btnVerClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnVerClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerClave.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
-            this.btnVerClave.IconColor = System.Drawing.Color.White;
-            this.btnVerClave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVerClave.Location = new System.Drawing.Point(1001, 321);
-            this.btnVerClave.Name = "btnVerClave";
-            this.btnVerClave.Size = new System.Drawing.Size(39, 39);
-            this.btnVerClave.TabIndex = 14;
-            this.btnVerClave.UseVisualStyleBackColor = true;
-            this.btnVerClave.Click += new System.EventHandler(this.btnVerClave_Click);
-            this.btnVerClave.MouseEnter += new System.EventHandler(this.btnVerClave_MouseEnter);
-            this.btnVerClave.MouseLeave += new System.EventHandler(this.btnVerClave_MouseLeave);
             // 
             // btnCancelar
             // 
@@ -272,7 +274,7 @@
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelCorreo);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblRestablecerClave);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.lblClave);
@@ -284,6 +286,7 @@
             this.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(7);
             this.MinimumSize = new System.Drawing.Size(1100, 550);
             this.Name = "formLogin";
@@ -316,7 +319,7 @@
         private Personalizacion.MSButton btnIniciarSesion;
         private Personalizacion.MSButton btnCancelar;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRestablecerClave;
         private System.Windows.Forms.Panel panelCorreo;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnVerClave;

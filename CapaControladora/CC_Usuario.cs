@@ -95,6 +95,27 @@ namespace CapaControladora
 
         }
 
+        // ----------------- ENCONTRAR USUARIO POR ID -----------------
+
+        public Usuario EncontrarUsuarioID(int id)
+        {
+
+            Usuario buscandoUsuario = new CC_Usuario().Listar().Where(u => u.id_usuario == id).FirstOrDefault();
+
+            if (buscandoUsuario != null)
+            {
+                return buscandoUsuario;
+            }
+            else
+            {
+                return buscandoUsuario;
+            }
+
+
+        }
+
+
+
 
         // ----------------- ENCRIPTACION DE CLAVE -----------------
 
@@ -156,6 +177,46 @@ namespace CapaControladora
             {
                 return false;
             }
+
+        }
+
+        public bool EliminarUsuario(int id)
+        {
+            if (id != 0)
+            {
+                if (CD_Usuario.EliminarUsuario(id))
+                {
+                    return true;
+
+                }
+                else return false;
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool NuevaClave(Usuario usuarioModificar)
+        {
+
+            if (usuarioModificar != null)
+            {
+                if (CD_Usuario.NuevaClave(usuarioModificar))
+                {
+                    return true;
+
+                }
+                else return false;
+
+            }
+            else
+            {
+                return false;
+            }
+
 
         }
 

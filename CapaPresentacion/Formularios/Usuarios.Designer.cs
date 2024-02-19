@@ -55,8 +55,11 @@
             this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnExportar = new CapaPresentacion.Personalizacion.MSButton();
+            this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnRoles = new CapaPresentacion.Personalizacion.MSButton();
             this.btnAgregarUsuario = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnExportar = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -72,6 +75,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.fpnlBotones.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -363,8 +367,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnExportar);
-            this.panel4.Controls.Add(this.btnAgregarUsuario);
+            this.panel4.Controls.Add(this.fpnlBotones);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.tableLayoutPanel1);
@@ -376,26 +379,63 @@
             this.panel4.Size = new System.Drawing.Size(1548, 795);
             this.panel4.TabIndex = 18;
             // 
-            // btnExportar
+            // fpnlBotones
             // 
-            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
-            this.btnExportar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
-            this.btnExportar.BackgroundImage = global::CapaPresentacion.Properties.Resources.excelBlanco;
-            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExportar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnExportar.BorderRadius = 25;
-            this.btnExportar.BorderSize = 0;
-            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportar.FlatAppearance.BorderSize = 0;
-            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.Location = new System.Drawing.Point(1452, 33);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(64, 64);
-            this.btnExportar.TabIndex = 21;
-            this.btnExportar.TextColor = System.Drawing.Color.White;
-            this.btnExportar.UseVisualStyleBackColor = false;
+            this.fpnlBotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fpnlBotones.Controls.Add(this.btnVolver);
+            this.fpnlBotones.Controls.Add(this.btnRoles);
+            this.fpnlBotones.Controls.Add(this.btnAgregarUsuario);
+            this.fpnlBotones.Controls.Add(this.btnExportar);
+            this.fpnlBotones.Location = new System.Drawing.Point(1196, 23);
+            this.fpnlBotones.Name = "fpnlBotones";
+            this.fpnlBotones.Size = new System.Drawing.Size(320, 77);
+            this.fpnlBotones.TabIndex = 71;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundImage = global::CapaPresentacion.Properties.Resources.back;
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnVolver.BorderRadius = 25;
+            this.btnVolver.BorderSize = 0;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(10, 3);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(64, 64);
+            this.btnVolver.TabIndex = 70;
+            this.btnVolver.TextColor = System.Drawing.Color.White;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnRoles
+            // 
+            this.btnRoles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnRoles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnRoles.BackgroundImage = global::CapaPresentacion.Properties.Resources.RolesWhite1;
+            this.btnRoles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRoles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnRoles.BorderRadius = 25;
+            this.btnRoles.BorderSize = 0;
+            this.btnRoles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRoles.FlatAppearance.BorderSize = 0;
+            this.btnRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRoles.ForeColor = System.Drawing.Color.White;
+            this.btnRoles.Location = new System.Drawing.Point(87, 3);
+            this.btnRoles.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnRoles.Name = "btnRoles";
+            this.btnRoles.Size = new System.Drawing.Size(64, 64);
+            this.btnRoles.TabIndex = 22;
+            this.btnRoles.TextColor = System.Drawing.Color.White;
+            this.btnRoles.UseVisualStyleBackColor = false;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // btnAgregarUsuario
             // 
@@ -411,13 +451,36 @@
             this.btnAgregarUsuario.FlatAppearance.BorderSize = 0;
             this.btnAgregarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(1372, 33);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(164, 3);
+            this.btnAgregarUsuario.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(64, 64);
             this.btnAgregarUsuario.TabIndex = 20;
             this.btnAgregarUsuario.TextColor = System.Drawing.Color.White;
             this.btnAgregarUsuario.UseVisualStyleBackColor = false;
             this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            this.btnExportar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            this.btnExportar.BackgroundImage = global::CapaPresentacion.Properties.Resources.excelBlanco;
+            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExportar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnExportar.BorderRadius = 25;
+            this.btnExportar.BorderSize = 0;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.Location = new System.Drawing.Point(241, 3);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(64, 64);
+            this.btnExportar.TabIndex = 21;
+            this.btnExportar.TextColor = System.Drawing.Color.White;
+            this.btnExportar.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -497,6 +560,8 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(1524, 531);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+            this.dgvUsuarios.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellMouseEnter);
+            this.dgvUsuarios.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellMouseLeave);
             // 
             // pictureBox1
             // 
@@ -566,6 +631,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1548, 795);
             this.Controls.Add(this.panel4);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "formUsuarios";
@@ -583,6 +649,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.fpnlBotones.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -622,5 +689,8 @@
         private Personalizacion.MSButton msButton1;
         private Personalizacion.MSButton msButton3;
         private Personalizacion.MSButton msButton2;
+        private Personalizacion.MSButton btnRoles;
+        private Personalizacion.MSButton btnVolver;
+        private System.Windows.Forms.FlowLayoutPanel fpnlBotones;
     }
 }
