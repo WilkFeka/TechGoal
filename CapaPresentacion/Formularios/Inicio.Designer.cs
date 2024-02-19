@@ -419,6 +419,7 @@
             this.btnAjusteUsuario.Size = new System.Drawing.Size(64, 64);
             this.btnAjusteUsuario.TabIndex = 7;
             this.btnAjusteUsuario.UseVisualStyleBackColor = false;
+            this.btnAjusteUsuario.Click += new System.EventHandler(this.btnAjusteUsuario_Click);
             this.btnAjusteUsuario.MouseEnter += new System.EventHandler(this.btnAjusteUsuario_MouseEnter);
             this.btnAjusteUsuario.MouseLeave += new System.EventHandler(this.btnAjusteUsuario_MouseLeave);
             // 
