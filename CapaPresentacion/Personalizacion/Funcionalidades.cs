@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaControladora;
+using CapaEntidad;
+using System.Windows.Documents;
 
 namespace CapaPresentacion.Personalizacion
 {
     public  class Funcionalidades
     {
         private static Funcionalidades instancia = null;
+        CC_Usuario usuarioControladora = new CC_Usuario();
 
         private Funcionalidades()
         {
@@ -84,6 +90,69 @@ namespace CapaPresentacion.Personalizacion
 
             // Verificar si el correo electrónico coincide con el patrón
             return regex.IsMatch(correo);
+        }
+
+        public void EnviarCorreo(string correo)
+        {
+            // ----------------- ENVIO DE CORREO -------------------
+
+
+            try
+            { 
+            
+                if (string.IsNullOrEmpty(correo))
+                {
+                    MessageBox.Show("Por favor complete todos los campos.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (validarEmail(correo) == false)
+                {
+                    MessageBox.Show("Por favor escriba una direccion de correo valida.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Usuario usuarioEncontrado = usuarioControladora.EncontrarUsuarioCorreo(correo);
+
+                if (usuarioEncontrado == null)
+                {
+                MessageBox.Show("No se encontro un usuario con ese cofreo. Por favor escriba un correo existente.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+                }
+
+                string nuevaClave = generarClave(8);
+
+                string claveHash =  usuarioControladora.EncriptarClave(nuevaClave);
+
+                usuarioEncontrado.clave = claveHash;
+
+                usuarioControladora.NuevaClave(usuarioEncontrado);
+
+
+
+                // Configurar el cliente SMTP y el mensaje
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"); // Reemplaza "smtp.example.com" con el servidor SMTP que estés utilizando
+                smtpClient.Port = 587; // Puerto SMTP (generalmente 587 para TLS o 465 para SSL)
+                smtpClient.Credentials = new NetworkCredential("techgoalsistema@gmail.com", "bdqv iefp ntlu cviq");
+                smtpClient.EnableSsl = true; // Habilitar SSL/TLS
+
+
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress("techgoalsistema@gmail.com"); // Remitente
+                message.To.Add(correo); // Destinatario
+                message.Subject = "Recuperar Clave | Sistema TechGoal"; // Asunto
+                message.Body = "Esta es tu nueva clave para el ingreso al sistema TechGoal: " + nuevaClave ; // Contenido
+
+                // Envía el correo
+                smtpClient.Send(message);
+                Console.WriteLine("Correo enviado exitosamente.");
+
+                MessageBox.Show("Se ha enviado un correo con su nueva clave.", "Correo Enviado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al enviar el correo: " + ex.Message);
+            }
         }
 
        

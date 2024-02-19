@@ -36,9 +36,9 @@
             this.lblCorreo = new System.Windows.Forms.Label();
             this.iconMail = new FontAwesome.Sharp.IconPictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
             this.btnEnviar = new CapaPresentacion.Personalizacion.MSButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogoTechGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMail)).BeginInit();
@@ -78,7 +78,6 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(506, 39);
             this.txtCorreo.TabIndex = 13;
-            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // panelCorreo
             // 
@@ -103,7 +102,6 @@
             this.lblCorreo.Size = new System.Drawing.Size(213, 29);
             this.lblCorreo.TabIndex = 14;
             this.lblCorreo.Text = "Correo electronico";
-            this.lblCorreo.Click += new System.EventHandler(this.lblCorreo_Click);
             // 
             // iconMail
             // 
@@ -119,7 +117,6 @@
             this.iconMail.Size = new System.Drawing.Size(32, 32);
             this.iconMail.TabIndex = 15;
             this.iconMail.TabStop = false;
-            this.iconMail.Click += new System.EventHandler(this.iconMail_Click);
             // 
             // pictureBox2
             // 
@@ -133,6 +130,24 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AccessibleName = "";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(525, 142);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(502, 54);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Bienvenido a la seccion de restablecimiento de clave. Para hacerlo debes \r\npropor" +
+    "cionar tu correo electronico y te enviaremos una nueva clave para \r\nque accedas " +
+    "y la cambies.\r\n";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnVolver
             // 
@@ -155,6 +170,7 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnEnviar
             // 
@@ -178,24 +194,7 @@
             this.btnEnviar.Text = "Restablecer";
             this.btnEnviar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
             this.btnEnviar.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AccessibleName = "";
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(532, 142);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(502, 54);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Bienvenido a la seccion de restablecimiento de clave. Para hacerlo debes \r\npropor" +
-    "cionar tu correo electronico y te enviaremos una nueva clave para \r\nque accedas " +
-    "y la cambies.\r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // formLoginRecuperar
             // 
