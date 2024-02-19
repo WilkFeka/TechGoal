@@ -64,13 +64,13 @@ namespace CapaPresentacion.Formularios
                     return;
                 }
 
-                List<Permiso> listaPermisos = permisoControladora.BuscarPermisoID_Rol(rolSeleccionado.id_rol);
+                //List<Permiso> listaPermisos = permisoControladora.BuscarPermisoID_Rol(rolSeleccionado.id_rol);
 
-                if (listaPermisos == null)
-                {
-                    MessageBox.Show("Hubo un error al eliminar permisos. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //if (listaPermisos == null)
+                //{
+                //    MessageBox.Show("Hubo un error al eliminar permisos. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                }
+                //}
 
                 bool eliminarPermisos = permisoControladora.EliminarPermiso(rolSeleccionado.id_rol);
 
@@ -99,6 +99,20 @@ namespace CapaPresentacion.Formularios
             
 
             
+        }
+
+        private void btnModificarRol_Click(object sender, EventArgs e)
+        {
+
+            DataGridViewRow filaSeleccionada = dgvRoles.CurrentRow;
+
+            DataGridViewCell celda = filaSeleccionada.Cells["id_rol"];
+
+            int id = Convert.ToInt32(celda.Value);
+
+            Rol rolSeleccionado = rolControladora.BuscarRolID(id);
+            formRolesModificar formRolesModificar = new formRolesModificar(this, rolSeleccionado);
+            formRolesModificar.ShowDialog();
         }
     }
 }

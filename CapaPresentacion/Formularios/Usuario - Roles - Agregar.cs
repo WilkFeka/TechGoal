@@ -28,14 +28,6 @@ namespace CapaPresentacion.Formularios
             formRolesC = formRoles;
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-
-            btnUsuarios.BackgroundImage = activadoUsuarios ? Properties.Resources.Inactive : Properties.Resources.Active;
-            activadoUsuarios = !activadoUsuarios;
-
-        }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
@@ -61,12 +53,6 @@ namespace CapaPresentacion.Formularios
                     return;
                 }
 
-                var mensaje = MessageBox.Show("¿Esta seguro de que desea agregar este Rol?", "Agregando Rol", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (mensaje == DialogResult.No)
-                {
-                    return;
-                }
 
                 // ---------------------- AGREGAR ROL ----------------------
 
@@ -75,6 +61,13 @@ namespace CapaPresentacion.Formularios
                 if (rolEncontrado != null)
                 {
                     MessageBox.Show("Ya existe un Rol con ese nombre.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var mensaje = MessageBox.Show("¿Esta seguro de que desea agregar este Rol?", "Agregando Rol", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (mensaje == DialogResult.No)
+                {
                     return;
                 }
 
@@ -142,6 +135,14 @@ namespace CapaPresentacion.Formularios
         }
 
         // ---------------------------- FUNCIONALIDADES Y VISTAS DE BOTONES ----------------------------
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+
+            btnUsuarios.BackgroundImage = activadoUsuarios ? Properties.Resources.Inactive : Properties.Resources.Active;
+            activadoUsuarios = !activadoUsuarios;
+
+        }
 
         private void btnCanchas_Click(object sender, EventArgs e)
         {

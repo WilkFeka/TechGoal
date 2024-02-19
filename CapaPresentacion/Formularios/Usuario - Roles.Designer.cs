@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvRoles = new System.Windows.Forms.DataGridView();
+            this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,9 +51,6 @@
             this.btnEliminarRol = new CapaPresentacion.Personalizacion.MSButton();
             this.btnModificarRol = new CapaPresentacion.Personalizacion.MSButton();
             this.btnAgregarRol = new CapaPresentacion.Personalizacion.MSButton();
-            this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
@@ -63,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label1.Location = new System.Drawing.Point(108, 37);
+            this.label1.Location = new System.Drawing.Point(89, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 44);
@@ -76,14 +76,14 @@
             this.dgvRoles.AllowUserToDeleteRows = false;
             this.dgvRoles.AllowUserToResizeColumns = false;
             this.dgvRoles.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvRoles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvRoles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvRoles.AutoGenerateColumns = false;
             this.dgvRoles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRoles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -92,29 +92,29 @@
             this.dgvRoles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dgvRoles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvRoles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_rol,
             this.descripcionDataGridViewTextBoxColumn,
             this.fechaRegistroDataGridViewTextBoxColumn});
             this.dgvRoles.DataSource = this.rolBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRoles.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRoles.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgvRoles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRoles.EnableHeadersVisualStyles = false;
             this.dgvRoles.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -122,27 +122,52 @@
             this.dgvRoles.MultiSelect = false;
             this.dgvRoles.Name = "dgvRoles";
             this.dgvRoles.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRoles.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRoles.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvRoles.RowHeadersVisible = false;
             this.dgvRoles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvRoles.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvRoles.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRoles.Size = new System.Drawing.Size(1043, 647);
+            this.dgvRoles.Size = new System.Drawing.Size(1043, 652);
             this.dgvRoles.TabIndex = 26;
+            // 
+            // id_rol
+            // 
+            this.id_rol.DataPropertyName = "id_rol";
+            this.id_rol.HeaderText = "id_rol";
+            this.id_rol.Name = "id_rol";
+            this.id_rol.ReadOnly = true;
+            this.id_rol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id_rol.Visible = false;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Nombre de Rol";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // fechaRegistroDataGridViewTextBoxColumn
+            // 
+            this.fechaRegistroDataGridViewTextBoxColumn.DataPropertyName = "fechaRegistro";
+            this.fechaRegistroDataGridViewTextBoxColumn.HeaderText = "Fecha de Registro";
+            this.fechaRegistroDataGridViewTextBoxColumn.Name = "fechaRegistroDataGridViewTextBoxColumn";
+            this.fechaRegistroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaRegistroDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // rolBindingSource
             // 
@@ -162,7 +187,7 @@
             this.panel1.Controls.Add(this.dgvRoles);
             this.panel1.Location = new System.Drawing.Point(427, 131);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1043, 647);
+            this.panel1.Size = new System.Drawing.Size(1043, 652);
             this.panel1.TabIndex = 27;
             // 
             // rolTableAdapter
@@ -187,7 +212,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label2.Location = new System.Drawing.Point(143, 381);
+            this.label2.Location = new System.Drawing.Point(143, 384);
             this.label2.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 33);
@@ -200,7 +225,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label3.Location = new System.Drawing.Point(148, 554);
+            this.label3.Location = new System.Drawing.Point(148, 559);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 33);
@@ -209,10 +234,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.userBlack__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 31);
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.rolesOscuro;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 33);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
@@ -254,7 +279,7 @@
             this.btnEliminarRol.FlatAppearance.BorderSize = 0;
             this.btnEliminarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarRol.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarRol.Location = new System.Drawing.Point(144, 598);
+            this.btnEliminarRol.Location = new System.Drawing.Point(144, 603);
             this.btnEliminarRol.Margin = new System.Windows.Forms.Padding(50, 3, 3, 50);
             this.btnEliminarRol.Name = "btnEliminarRol";
             this.btnEliminarRol.Size = new System.Drawing.Size(120, 120);
@@ -277,13 +302,14 @@
             this.btnModificarRol.FlatAppearance.BorderSize = 0;
             this.btnModificarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarRol.ForeColor = System.Drawing.Color.White;
-            this.btnModificarRol.Location = new System.Drawing.Point(144, 425);
+            this.btnModificarRol.Location = new System.Drawing.Point(144, 428);
             this.btnModificarRol.Margin = new System.Windows.Forms.Padding(50, 3, 3, 50);
             this.btnModificarRol.Name = "btnModificarRol";
             this.btnModificarRol.Size = new System.Drawing.Size(120, 120);
             this.btnModificarRol.TabIndex = 24;
             this.btnModificarRol.TextColor = System.Drawing.Color.White;
             this.btnModificarRol.UseVisualStyleBackColor = false;
+            this.btnModificarRol.Click += new System.EventHandler(this.btnModificarRol_Click);
             // 
             // btnAgregarRol
             // 
@@ -307,37 +333,12 @@
             this.btnAgregarRol.UseVisualStyleBackColor = false;
             this.btnAgregarRol.Click += new System.EventHandler(this.btnAgregarRol_Click);
             // 
-            // id_rol
-            // 
-            this.id_rol.DataPropertyName = "id_rol";
-            this.id_rol.HeaderText = "id_rol";
-            this.id_rol.Name = "id_rol";
-            this.id_rol.ReadOnly = true;
-            this.id_rol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id_rol.Visible = false;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Nombre de Rol";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // fechaRegistroDataGridViewTextBoxColumn
-            // 
-            this.fechaRegistroDataGridViewTextBoxColumn.DataPropertyName = "fechaRegistro";
-            this.fechaRegistroDataGridViewTextBoxColumn.HeaderText = "Fecha de Registro";
-            this.fechaRegistroDataGridViewTextBoxColumn.Name = "fechaRegistroDataGridViewTextBoxColumn";
-            this.fechaRegistroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaRegistroDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // formRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1504, 817);
+            this.ClientSize = new System.Drawing.Size(1504, 822);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -349,7 +350,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAgregarRol);
             this.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "formRoles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion de Roles";

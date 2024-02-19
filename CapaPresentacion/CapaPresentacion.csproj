@@ -161,6 +161,12 @@
     <Compile Include="Formularios\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Login - Recuperar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login - Recuperar.Designer.cs">
+      <DependentUpon>Login - Recuperar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,12 @@
     <Compile Include="Formularios\Usuario - Agregar.Designer.cs">
       <DependentUpon>Usuario - Agregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Usuarios - Roles - Modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios - Roles - Modificar.Designer.cs">
+      <DependentUpon>Usuarios - Roles - Modificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personalizacion\Funcionalidades.cs" />
     <Compile Include="Personalizacion\MSButton.cs">
       <SubType>Component</SubType>
@@ -218,6 +230,9 @@
     <EmbeddedResource Include="Formularios\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login - Recuperar.resx">
+      <DependentUpon>Login - Recuperar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuario - Roles.resx">
       <DependentUpon>Usuario - Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios - Roles - Modificar.resx">
+      <DependentUpon>Usuarios - Roles - Modificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -351,6 +369,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lapizBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rolesOscuro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

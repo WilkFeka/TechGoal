@@ -98,6 +98,42 @@ namespace CapaDatos
             return resultado;
         }
 
+        public static bool ModificarRol(Rol rol)
+        {
+            bool resultado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("UPDATE rol SET descripcion = @descripcion WHERE id_rol = @id_rol");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@descripcion", rol.descripcion);
+                        cmd.Parameters.AddWithValue("@id_rol", rol.id_rol);
+
+                        conection.Open();
+
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            resultado = true;
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
+
         public static bool EliminarRol(int id)
         {
             bool resultado = false;

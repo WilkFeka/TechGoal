@@ -26,6 +26,12 @@ namespace CapaPresentacion
             InitializeComponent();
             usuarioActual = usuario;
 
+            // Obtener el tamaño de la pantalla
+            Size screenSize = Screen.PrimaryScreen.Bounds.Size;
+            // Definir el tamaño del formulario con un pequeño margen para que la barra de tareas sea visible
+            Size = new Size(screenSize.Width, screenSize.Height - SystemInformation.CaptionHeight);
+            // Alinear el formulario en la esquina superior izquierda de la pantalla
+            Location = new Point(0, 0);
 
 
 
@@ -168,5 +174,14 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
     }

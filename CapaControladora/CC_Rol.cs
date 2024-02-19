@@ -83,6 +83,25 @@ namespace CapaControladora
 
         }
 
+        public bool ModificarRol(Rol rolModificar)
+        {
+            if (rolModificar != null)
+            {
+                if (CD_Rol.ModificarRol(rolModificar))
+                {
+                    return true;
+
+                }
+                else return false;
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         public bool EliminarRol(int id)
         {
             if (id != 0)
