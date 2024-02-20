@@ -88,7 +88,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(258, 44);
-            this.label1.TabIndex = 65;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Cambiar Clave";
             // 
             // label3
@@ -113,7 +113,7 @@
             this.txtNuevaClave.Margin = new System.Windows.Forms.Padding(0);
             this.txtNuevaClave.Name = "txtNuevaClave";
             this.txtNuevaClave.Size = new System.Drawing.Size(429, 29);
-            this.txtNuevaClave.TabIndex = 61;
+            this.txtNuevaClave.TabIndex = 3;
             // 
             // txtConfNuevaClave
             // 
@@ -125,8 +125,7 @@
             this.txtConfNuevaClave.Margin = new System.Windows.Forms.Padding(0);
             this.txtConfNuevaClave.Name = "txtConfNuevaClave";
             this.txtConfNuevaClave.Size = new System.Drawing.Size(365, 29);
-            this.txtConfNuevaClave.TabIndex = 62;
-            this.txtConfNuevaClave.TabStop = false;
+            this.txtConfNuevaClave.TabIndex = 4;
             // 
             // txtClaveActual
             // 
@@ -138,13 +137,13 @@
             this.txtClaveActual.Margin = new System.Windows.Forms.Padding(0);
             this.txtClaveActual.Name = "txtClaveActual";
             this.txtClaveActual.Size = new System.Drawing.Size(429, 29);
-            this.txtClaveActual.TabIndex = 60;
+            this.txtClaveActual.TabIndex = 2;
             // 
             // btnVerClave
             // 
             this.btnVerClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnVerClave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVerClave.BackgroundImage = global::CapaPresentacion.Properties.Resources.eyeW__1_;
+            this.btnVerClave.BackgroundImage = global::CapaPresentacion.Properties.Resources.eyeSlashW;
             this.btnVerClave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnVerClave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
             this.btnVerClave.BorderRadius = 20;
@@ -157,7 +156,7 @@
             this.btnVerClave.Margin = new System.Windows.Forms.Padding(10, 0, 3, 30);
             this.btnVerClave.Name = "btnVerClave";
             this.btnVerClave.Size = new System.Drawing.Size(51, 50);
-            this.btnVerClave.TabIndex = 70;
+            this.btnVerClave.TabIndex = 5;
             this.btnVerClave.TextColor = System.Drawing.Color.White;
             this.btnVerClave.UseVisualStyleBackColor = false;
             this.btnVerClave.Click += new System.EventHandler(this.btnVerClave_Click);
@@ -177,7 +176,7 @@
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(220, 60);
-            this.btnAceptar.TabIndex = 63;
+            this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -199,7 +198,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(220, 60);
-            this.btnCancelar.TabIndex = 64;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -289,6 +288,7 @@
             this.Name = "formPerfilClave";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambiar Clave";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formPerfilClave_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

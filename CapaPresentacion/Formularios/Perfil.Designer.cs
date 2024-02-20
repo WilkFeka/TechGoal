@@ -121,7 +121,7 @@
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(0);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(429, 29);
-            this.txtTelefono.TabIndex = 75;
+            this.txtTelefono.TabIndex = 6;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtClave
@@ -134,8 +134,7 @@
             this.txtClave.Margin = new System.Windows.Forms.Padding(0);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(350, 29);
-            this.txtClave.TabIndex = 76;
-            this.txtClave.TabStop = false;
+            this.txtClave.TabIndex = 7;
             this.txtClave.Visible = false;
             // 
             // label4
@@ -185,7 +184,7 @@
             this.txtApellido.Margin = new System.Windows.Forms.Padding(0);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(429, 29);
-            this.txtApellido.TabIndex = 73;
+            this.txtApellido.TabIndex = 4;
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // lblNombre
@@ -211,7 +210,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(0);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(429, 29);
-            this.txtNombre.TabIndex = 72;
+            this.txtNombre.TabIndex = 3;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblCorreo
@@ -237,7 +236,7 @@
             this.txtDocumento.Margin = new System.Windows.Forms.Padding(0);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(429, 29);
-            this.txtDocumento.TabIndex = 74;
+            this.txtDocumento.TabIndex = 5;
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // txtCorreo
@@ -251,7 +250,7 @@
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(0);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(429, 29);
-            this.txtCorreo.TabIndex = 71;
+            this.txtCorreo.TabIndex = 2;
             // 
             // label1
             // 
@@ -263,7 +262,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(268, 77);
-            this.label1.TabIndex = 80;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Mi Perfil";
             // 
             // rolTableAdapter
@@ -296,7 +295,7 @@
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(220, 71);
-            this.btnAceptar.TabIndex = 66;
+            this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -435,7 +434,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(220, 71);
-            this.btnCancelar.TabIndex = 67;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -470,7 +469,7 @@
             this.btnVerClave.Margin = new System.Windows.Forms.Padding(10, 0, 3, 30);
             this.btnVerClave.Name = "btnVerClave";
             this.btnVerClave.Size = new System.Drawing.Size(51, 50);
-            this.btnVerClave.TabIndex = 83;
+            this.btnVerClave.TabIndex = 8;
             this.btnVerClave.TextColor = System.Drawing.Color.White;
             this.btnVerClave.UseVisualStyleBackColor = false;
             this.btnVerClave.Click += new System.EventHandler(this.btnVerClave_Click);
@@ -492,7 +491,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 100);
-            this.btnVolver.TabIndex = 70;
+            this.btnVolver.TabIndex = 13;
             this.btnVolver.TextColor = System.Drawing.Color.White;
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -514,7 +513,7 @@
             this.btnEditar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 100);
-            this.btnEditar.TabIndex = 22;
+            this.btnEditar.TabIndex = 12;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -536,7 +535,7 @@
             this.btnNuevaClave.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnNuevaClave.Name = "btnNuevaClave";
             this.btnNuevaClave.Size = new System.Drawing.Size(100, 100);
-            this.btnNuevaClave.TabIndex = 20;
+            this.btnNuevaClave.TabIndex = 11;
             this.btnNuevaClave.TextColor = System.Drawing.Color.White;
             this.btnNuevaClave.UseVisualStyleBackColor = false;
             this.btnNuevaClave.Click += new System.EventHandler(this.btnNuevaClave_Click);

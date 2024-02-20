@@ -29,7 +29,7 @@ namespace CapaPresentacion.Formularios
 
         }
 
-        private void formPerfil_Load(object sender, EventArgs e)
+        public void formPerfil_Load(object sender, EventArgs e)
         {
 
             Usuario cargarUsuario = UsuarioControladora.EncontrarUsuarioID(usuarioActual.id_usuario);
@@ -217,7 +217,9 @@ namespace CapaPresentacion.Formularios
 
         private void btnNuevaClave_Click(object sender, EventArgs e)
         {
-            formPerfilClave formPerfilClave = new formPerfilClave(usuarioActual);
+            formPerfil_Load(sender, e);
+
+            formPerfilClave formPerfilClave = new formPerfilClave(usuarioActual, this);
             formPerfilClave.ShowDialog();
         }
     }
