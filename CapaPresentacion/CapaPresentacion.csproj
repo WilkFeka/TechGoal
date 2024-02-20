@@ -173,6 +173,12 @@
     <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Perfil - Nueva Clave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Perfil - Nueva Clave.Designer.cs">
+      <DependentUpon>Perfil - Nueva Clave.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Perfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Perfil - Nueva Clave.resx">
+      <DependentUpon>Perfil - Nueva Clave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Perfil.resx">
       <DependentUpon>Perfil.cs</DependentUpon>
@@ -390,6 +399,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeSlashW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeW %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

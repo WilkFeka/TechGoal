@@ -187,7 +187,9 @@ namespace CapaPresentacion
 
         private void btnAjusteUsuario_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new formPerfil());
+            pnlContainer.Hide();
+            picLogoText.Hide();
+            AbrirFormulario(new formPerfil(usuarioActual, this));
         }
     }
     }

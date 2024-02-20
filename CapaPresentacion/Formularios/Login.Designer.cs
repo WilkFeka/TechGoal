@@ -224,6 +224,7 @@
             this.btnCancelar.BorderRadius = 60;
             this.btnCancelar.BorderSize = 0;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
@@ -265,9 +266,11 @@
             // 
             // formLogin
             // 
+            this.AcceptButton = this.btnIniciarSesion;
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(1100, 550);
             this.Controls.Add(this.btnVerClave);
             this.Controls.Add(this.txtCorreo);
