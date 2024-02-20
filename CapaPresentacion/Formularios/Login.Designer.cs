@@ -135,7 +135,7 @@
             this.lblRestablecerClave.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.lblRestablecerClave.Name = "lblRestablecerClave";
             this.lblRestablecerClave.Size = new System.Drawing.Size(368, 18);
-            this.lblRestablecerClave.TabIndex = 11;
+            this.lblRestablecerClave.TabIndex = 3;
             this.lblRestablecerClave.Text = "¿Olvidaste tu clave? Restablecela haciendo click aqui.";
             this.lblRestablecerClave.Click += new System.EventHandler(this.lblRestablecerClave_Click);
             // 
@@ -167,7 +167,7 @@
             this.btnVerClave.Location = new System.Drawing.Point(1001, 321);
             this.btnVerClave.Name = "btnVerClave";
             this.btnVerClave.Size = new System.Drawing.Size(39, 39);
-            this.btnVerClave.TabIndex = 14;
+            this.btnVerClave.TabIndex = 2;
             this.btnVerClave.UseVisualStyleBackColor = true;
             this.btnVerClave.Click += new System.EventHandler(this.btnVerClave_Click);
             this.btnVerClave.MouseEnter += new System.EventHandler(this.btnVerClave_MouseEnter);
@@ -224,6 +224,7 @@
             this.btnCancelar.BorderRadius = 60;
             this.btnCancelar.BorderSize = 0;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
@@ -232,7 +233,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(840, 431);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(200, 60);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -255,7 +256,7 @@
             this.btnIniciarSesion.Location = new System.Drawing.Point(502, 431);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(200, 60);
-            this.btnIniciarSesion.TabIndex = 9;
+            this.btnIniciarSesion.TabIndex = 4;
             this.btnIniciarSesion.Text = "Iniciar Sesión";
             this.btnIniciarSesion.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
@@ -265,9 +266,11 @@
             // 
             // formLogin
             // 
+            this.AcceptButton = this.btnIniciarSesion;
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(1100, 550);
             this.Controls.Add(this.btnVerClave);
             this.Controls.Add(this.txtCorreo);

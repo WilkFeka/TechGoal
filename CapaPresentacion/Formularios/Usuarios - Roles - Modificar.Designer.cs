@@ -171,7 +171,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(0);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(429, 29);
-            this.txtNombre.TabIndex = 105;
+            this.txtNombre.TabIndex = 1;
             // 
             // label1
             // 
@@ -182,7 +182,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(236, 44);
-            this.label1.TabIndex = 106;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Modificar Rol";
             // 
             // btnEquipos
@@ -197,7 +197,7 @@
             this.btnEquipos.Location = new System.Drawing.Point(166, 436);
             this.btnEquipos.Name = "btnEquipos";
             this.btnEquipos.Size = new System.Drawing.Size(62, 34);
-            this.btnEquipos.TabIndex = 126;
+            this.btnEquipos.TabIndex = 5;
             this.btnEquipos.UseVisualStyleBackColor = true;
             this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
             // 
@@ -213,7 +213,7 @@
             this.btnReportes.Location = new System.Drawing.Point(392, 384);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(62, 34);
-            this.btnReportes.TabIndex = 124;
+            this.btnReportes.TabIndex = 8;
             this.btnReportes.UseVisualStyleBackColor = true;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
@@ -229,7 +229,7 @@
             this.btnPantalla.Location = new System.Drawing.Point(392, 333);
             this.btnPantalla.Name = "btnPantalla";
             this.btnPantalla.Size = new System.Drawing.Size(62, 34);
-            this.btnPantalla.TabIndex = 122;
+            this.btnPantalla.TabIndex = 7;
             this.btnPantalla.UseVisualStyleBackColor = true;
             this.btnPantalla.Click += new System.EventHandler(this.btnPantalla_Click);
             // 
@@ -245,7 +245,7 @@
             this.btnRoles.Location = new System.Drawing.Point(392, 280);
             this.btnRoles.Name = "btnRoles";
             this.btnRoles.Size = new System.Drawing.Size(62, 34);
-            this.btnRoles.TabIndex = 120;
+            this.btnRoles.TabIndex = 6;
             this.btnRoles.UseVisualStyleBackColor = true;
             this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
@@ -261,7 +261,7 @@
             this.btnTorneos.Location = new System.Drawing.Point(166, 384);
             this.btnTorneos.Name = "btnTorneos";
             this.btnTorneos.Size = new System.Drawing.Size(62, 34);
-            this.btnTorneos.TabIndex = 118;
+            this.btnTorneos.TabIndex = 4;
             this.btnTorneos.UseVisualStyleBackColor = true;
             this.btnTorneos.Click += new System.EventHandler(this.btnTorneos_Click);
             // 
@@ -277,7 +277,7 @@
             this.btnCanchas.Location = new System.Drawing.Point(166, 332);
             this.btnCanchas.Name = "btnCanchas";
             this.btnCanchas.Size = new System.Drawing.Size(62, 34);
-            this.btnCanchas.TabIndex = 116;
+            this.btnCanchas.TabIndex = 3;
             this.btnCanchas.UseVisualStyleBackColor = true;
             this.btnCanchas.Click += new System.EventHandler(this.btnCanchas_Click);
             // 
@@ -293,7 +293,7 @@
             this.btnUsuarios.Location = new System.Drawing.Point(166, 280);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(62, 34);
-            this.btnUsuarios.TabIndex = 114;
+            this.btnUsuarios.TabIndex = 2;
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
@@ -323,7 +323,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(220, 58);
-            this.btnCancelar.TabIndex = 111;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -343,7 +343,7 @@
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(220, 58);
-            this.btnAceptar.TabIndex = 110;
+            this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
             this.btnAceptar.UseVisualStyleBackColor = false;
