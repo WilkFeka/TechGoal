@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CC_Cancha.cs" />
     <Compile Include="CC_Permiso.cs" />
     <Compile Include="CC_Rol.cs" />
     <Compile Include="CC_Sesion.cs" />

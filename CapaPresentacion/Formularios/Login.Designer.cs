@@ -109,7 +109,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(473, 39);
             this.txtClave.TabIndex = 1;
-            this.txtClave.Text = "KKtIAoKU";
+            this.txtClave.Text = "admin";
             this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
             // 
             // txtCorreo

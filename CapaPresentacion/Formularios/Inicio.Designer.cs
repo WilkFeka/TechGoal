@@ -173,6 +173,7 @@
             this.btnCanchas.TabIndex = 1;
             this.btnCanchas.TextColor = System.Drawing.Color.White;
             this.btnCanchas.UseVisualStyleBackColor = false;
+            this.btnCanchas.Click += new System.EventHandler(this.btnCanchas_Click);
             // 
             // label1
             // 

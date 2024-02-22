@@ -191,5 +191,13 @@ namespace CapaPresentacion
             picLogoText.Hide();
             AbrirFormulario(new formPerfil(usuarioActual, this));
         }
+
+        private void btnCanchas_Click(object sender, EventArgs e)
+        {
+            pnlContainer.Hide(); 
+            picLogoText.Hide();
+            AbrirFormulario(new formCanchas());
+
+        }
     }
     }
