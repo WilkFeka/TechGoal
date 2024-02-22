@@ -155,23 +155,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_TECHGOALDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Canchas - Agregar.cs">
+    <Compile Include="Formularios\Canchas\Canchas - Agregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Canchas - Agregar.Designer.cs">
+    <Compile Include="Formularios\Canchas\Canchas - Agregar.Designer.cs">
       <DependentUpon>Canchas - Agregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Canchas - Modificar.cs">
+    <Compile Include="Formularios\Canchas\Canchas - Modificar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Canchas - Modificar.Designer.cs">
+    <Compile Include="Formularios\Canchas\Canchas - Modificar.Designer.cs">
       <DependentUpon>Canchas - Modificar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Canchas.cs">
+    <Compile Include="Formularios\Canchas\Canchas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Canchas.Designer.cs">
+    <Compile Include="Formularios\Canchas\Canchas.Designer.cs">
       <DependentUpon>Canchas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Horarios\Horarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Horarios\Horarios.Designer.cs">
+      <DependentUpon>Horarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Inicio.cs">
       <SubType>Form</SubType>
@@ -191,52 +197,52 @@
     <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Perfil - Nueva Clave.cs">
+    <Compile Include="Formularios\Usuarios\Perfil - Nueva Clave.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Perfil - Nueva Clave.Designer.cs">
+    <Compile Include="Formularios\Usuarios\Perfil - Nueva Clave.Designer.cs">
       <DependentUpon>Perfil - Nueva Clave.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Perfil.cs">
+    <Compile Include="Formularios\Usuarios\Perfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Perfil.Designer.cs">
+    <Compile Include="Formularios\Usuarios\Perfil.Designer.cs">
       <DependentUpon>Perfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuario - Modificar.cs">
+    <Compile Include="Formularios\Usuarios\Usuario - Modificar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuario - Modificar.Designer.cs">
+    <Compile Include="Formularios\Usuarios\Usuario - Modificar.Designer.cs">
       <DependentUpon>Usuario - Modificar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuario - Nueva Clave.cs">
+    <Compile Include="Formularios\Usuarios\Usuario - Nueva Clave.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuario - Nueva Clave.Designer.cs">
+    <Compile Include="Formularios\Usuarios\Usuario - Nueva Clave.Designer.cs">
       <DependentUpon>Usuario - Nueva Clave.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuario - Roles - Agregar.cs">
+    <Compile Include="Formularios\Usuarios\Usuario - Roles - Agregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuario - Roles - Agregar.Designer.cs">
+    <Compile Include="Formularios\Usuarios\Usuario - Roles - Agregar.Designer.cs">
       <DependentUpon>Usuario - Roles - Agregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuario - Roles.cs">
+    <Compile Include="Formularios\Usuarios\Usuario - Roles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuario - Roles.Designer.cs">
+    <Compile Include="Formularios\Usuarios\Usuario - Roles.Designer.cs">
       <DependentUpon>Usuario - Roles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuario - Agregar.cs">
+    <Compile Include="Formularios\Usuarios\Usuario - Agregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuario - Agregar.Designer.cs">
+    <Compile Include="Formularios\Usuarios\Usuario - Agregar.Designer.cs">
       <DependentUpon>Usuario - Agregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuarios - Roles - Modificar.cs">
+    <Compile Include="Formularios\Usuarios\Usuarios - Roles - Modificar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuarios - Roles - Modificar.Designer.cs">
+    <Compile Include="Formularios\Usuarios\Usuarios - Roles - Modificar.Designer.cs">
       <DependentUpon>Usuarios - Roles - Modificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Personalizacion\Funcionalidades.cs" />
@@ -251,20 +257,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Tema.cs" />
-    <Compile Include="Formularios\Usuarios.cs">
+    <Compile Include="Formularios\Usuarios\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuarios.Designer.cs">
+    <Compile Include="Formularios\Usuarios\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Formularios\Canchas - Agregar.resx">
+    <EmbeddedResource Include="Formularios\Canchas\Canchas - Agregar.resx">
       <DependentUpon>Canchas - Agregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Canchas - Modificar.resx">
+    <EmbeddedResource Include="Formularios\Canchas\Canchas - Modificar.resx">
       <DependentUpon>Canchas - Modificar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Canchas.resx">
+    <EmbeddedResource Include="Formularios\Canchas\Canchas.resx">
       <DependentUpon>Canchas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Horarios\Horarios.resx">
+      <DependentUpon>Horarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
@@ -275,28 +284,28 @@
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Perfil - Nueva Clave.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\Perfil - Nueva Clave.resx">
       <DependentUpon>Perfil - Nueva Clave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Perfil.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\Perfil.resx">
       <DependentUpon>Perfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuario - Modificar.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario - Modificar.resx">
       <DependentUpon>Usuario - Modificar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuario - Nueva Clave.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario - Nueva Clave.resx">
       <DependentUpon>Usuario - Nueva Clave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuario - Agregar.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario - Agregar.resx">
       <DependentUpon>Usuario - Agregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuario - Roles - Agregar.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario - Roles - Agregar.resx">
       <DependentUpon>Usuario - Roles - Agregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuario - Roles.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario - Roles.resx">
       <DependentUpon>Usuario - Roles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuarios - Roles - Modificar.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\Usuarios - Roles - Modificar.resx">
       <DependentUpon>Usuarios - Roles - Modificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -304,7 +313,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuarios.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
@@ -436,5 +445,6 @@
   <ItemGroup>
     <None Include="Resources\eyeW %281%29.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

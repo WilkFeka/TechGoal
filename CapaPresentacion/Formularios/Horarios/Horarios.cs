@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Formularios
 {
-    public partial class Horarios : Form
+    public partial class formHorarios : Form
     {
-        public Horarios()
+        public formHorarios()
         {
             InitializeComponent();
+        }
+
+        private void Horarios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
