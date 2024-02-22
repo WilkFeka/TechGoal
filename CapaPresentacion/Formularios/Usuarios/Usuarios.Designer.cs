@@ -106,7 +106,7 @@
             this.cmbEstadoFilter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.cmbEstadoFilter.Name = "cmbEstadoFilter";
             this.cmbEstadoFilter.Size = new System.Drawing.Size(270, 37);
-            this.cmbEstadoFilter.TabIndex = 16;
+            this.cmbEstadoFilter.TabIndex = 9;
             this.cmbEstadoFilter.SelectedIndexChanged += new System.EventHandler(this.cmbEstadoFilter_SelectedIndexChanged);
             // 
             // cmbRolFilter
@@ -124,7 +124,7 @@
             this.cmbRolFilter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.cmbRolFilter.Name = "cmbRolFilter";
             this.cmbRolFilter.Size = new System.Drawing.Size(269, 37);
-            this.cmbRolFilter.TabIndex = 11;
+            this.cmbRolFilter.TabIndex = 8;
             this.cmbRolFilter.ValueMember = "id_rol";
             this.cmbRolFilter.SelectedValueChanged += new System.EventHandler(this.cmbRolFilter_SelectedValueChanged);
             // 
@@ -159,7 +159,7 @@
             this.txtDNIFilter.Location = new System.Drawing.Point(13, 11);
             this.txtDNIFilter.Name = "txtDNIFilter";
             this.txtDNIFilter.Size = new System.Drawing.Size(246, 29);
-            this.txtDNIFilter.TabIndex = 11;
+            this.txtDNIFilter.TabIndex = 7;
             this.txtDNIFilter.TextChanged += new System.EventHandler(this.txtDNIFilter_TextChanged);
             this.txtDNIFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNIFilter_KeyPress);
             // 
@@ -245,7 +245,7 @@
             this.txtNombreFilter.Location = new System.Drawing.Point(13, 10);
             this.txtNombreFilter.Name = "txtNombreFilter";
             this.txtNombreFilter.Size = new System.Drawing.Size(246, 29);
-            this.txtNombreFilter.TabIndex = 11;
+            this.txtNombreFilter.TabIndex = 6;
             this.txtNombreFilter.TextChanged += new System.EventHandler(this.txtNombreFilter_TextChanged);
             this.txtNombreFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreFilter_KeyPress);
             // 
@@ -329,7 +329,7 @@
             this.txtCorreoFilter.Location = new System.Drawing.Point(13, 11);
             this.txtCorreoFilter.Name = "txtCorreoFilter";
             this.txtCorreoFilter.Size = new System.Drawing.Size(246, 29);
-            this.txtCorreoFilter.TabIndex = 11;
+            this.txtCorreoFilter.TabIndex = 5;
             this.txtCorreoFilter.TextChanged += new System.EventHandler(this.txtCorreoFilter_TextChanged);
             // 
             // msButton1
@@ -409,7 +409,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(64, 64);
-            this.btnVolver.TabIndex = 70;
+            this.btnVolver.TabIndex = 1;
             this.btnVolver.TextColor = System.Drawing.Color.White;
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -432,7 +432,7 @@
             this.btnRoles.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.btnRoles.Name = "btnRoles";
             this.btnRoles.Size = new System.Drawing.Size(64, 64);
-            this.btnRoles.TabIndex = 22;
+            this.btnRoles.TabIndex = 2;
             this.btnRoles.TextColor = System.Drawing.Color.White;
             this.btnRoles.UseVisualStyleBackColor = false;
             this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
@@ -455,7 +455,7 @@
             this.btnAgregarUsuario.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(64, 64);
-            this.btnAgregarUsuario.TabIndex = 20;
+            this.btnAgregarUsuario.TabIndex = 3;
             this.btnAgregarUsuario.TextColor = System.Drawing.Color.White;
             this.btnAgregarUsuario.UseVisualStyleBackColor = false;
             this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
@@ -478,7 +478,7 @@
             this.btnExportar.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(64, 64);
-            this.btnExportar.TabIndex = 21;
+            this.btnExportar.TabIndex = 4;
             this.btnExportar.TextColor = System.Drawing.Color.White;
             this.btnExportar.UseVisualStyleBackColor = false;
             // 
@@ -558,7 +558,7 @@
             this.dgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(1524, 531);
-            this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.TabIndex = 11;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             this.dgvUsuarios.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellMouseEnter);
             this.dgvUsuarios.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellMouseLeave);
@@ -591,7 +591,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(1476, 156);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(40, 40);
-            this.btnLimpiar.TabIndex = 12;
+            this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.TextColor = System.Drawing.Color.White;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);

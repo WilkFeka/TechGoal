@@ -68,7 +68,7 @@
             this.btnGenerarClave.Margin = new System.Windows.Forms.Padding(10, 0, 3, 30);
             this.btnGenerarClave.Name = "btnGenerarClave";
             this.btnGenerarClave.Size = new System.Drawing.Size(51, 50);
-            this.btnGenerarClave.TabIndex = 64;
+            this.btnGenerarClave.TabIndex = 2;
             this.btnGenerarClave.TextColor = System.Drawing.Color.White;
             this.btnGenerarClave.UseVisualStyleBackColor = false;
             this.btnGenerarClave.Click += new System.EventHandler(this.btnGenerarClave_Click);
@@ -89,7 +89,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(220, 60);
-            this.btnCancelar.TabIndex = 62;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -109,7 +109,7 @@
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(220, 60);
-            this.btnAceptar.TabIndex = 61;
+            this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -126,7 +126,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.ReadOnly = true;
             this.txtClave.Size = new System.Drawing.Size(365, 29);
-            this.txtClave.TabIndex = 60;
+            this.txtClave.TabIndex = 1;
             this.txtClave.TabStop = false;
             // 
             // msButton6
@@ -157,7 +157,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(362, 44);
-            this.label1.TabIndex = 66;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Generar Nueva Clave";
             // 
             // pictureBox1

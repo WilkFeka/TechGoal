@@ -72,7 +72,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(286, 44);
-            this.label1.TabIndex = 21;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Agregar Usuario";
             // 
             // pictureBox1
@@ -177,7 +177,7 @@
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(220, 60);
-            this.btnAceptar.TabIndex = 8;
+            this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -199,7 +199,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(220, 60);
-            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -342,7 +342,7 @@
             this.cmbRoles.Location = new System.Drawing.Point(156, 681);
             this.cmbRoles.Name = "cmbRoles";
             this.cmbRoles.Size = new System.Drawing.Size(330, 31);
-            this.cmbRoles.TabIndex = 7;
+            this.cmbRoles.TabIndex = 8;
             this.cmbRoles.ValueMember = "id_rol";
             // 
             // rolBindingSource
@@ -391,7 +391,7 @@
             this.btnGenerarClave.Margin = new System.Windows.Forms.Padding(10, 0, 3, 30);
             this.btnGenerarClave.Name = "btnGenerarClave";
             this.btnGenerarClave.Size = new System.Drawing.Size(51, 50);
-            this.btnGenerarClave.TabIndex = 53;
+            this.btnGenerarClave.TabIndex = 7;
             this.btnGenerarClave.TextColor = System.Drawing.Color.White;
             this.btnGenerarClave.UseVisualStyleBackColor = false;
             this.btnGenerarClave.Click += new System.EventHandler(this.btnGenerarClave_Click);

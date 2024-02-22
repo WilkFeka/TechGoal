@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using CapaControladora;
 using CapaEntidad;
+using CapaPresentacion.Formularios;
 
 namespace CapaPresentacion
 {
@@ -182,6 +183,21 @@ namespace CapaPresentacion
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnAjusteUsuario_Click(object sender, EventArgs e)
+        {
+            pnlContainer.Hide();
+            picLogoText.Hide();
+            AbrirFormulario(new formPerfil(usuarioActual, this));
+        }
+
+        private void btnCanchas_Click(object sender, EventArgs e)
+        {
+            pnlContainer.Hide(); 
+            picLogoText.Hide();
+            AbrirFormulario(new formCanchas());
+
         }
     }
     }

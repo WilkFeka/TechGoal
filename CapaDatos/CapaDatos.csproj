@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CD_Cancha.cs" />
     <Compile Include="Seguridad\CD_Permiso.cs" />
     <Compile Include="Seguridad\CD_Rol.cs" />
     <Compile Include="Conection.cs" />

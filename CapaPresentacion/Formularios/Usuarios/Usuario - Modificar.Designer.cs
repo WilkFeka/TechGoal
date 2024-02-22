@@ -134,7 +134,7 @@
             this.cmbRoles.Location = new System.Drawing.Point(156, 587);
             this.cmbRoles.Name = "cmbRoles";
             this.cmbRoles.Size = new System.Drawing.Size(330, 31);
-            this.cmbRoles.TabIndex = 66;
+            this.cmbRoles.TabIndex = 6;
             this.cmbRoles.ValueMember = "id_rol";
             // 
             // rolBindingSource
@@ -176,7 +176,7 @@
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(0);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(429, 29);
-            this.txtCorreo.TabIndex = 60;
+            this.txtCorreo.TabIndex = 1;
             // 
             // msButton4
             // 
@@ -207,7 +207,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(0);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(429, 29);
-            this.txtNombre.TabIndex = 61;
+            this.txtNombre.TabIndex = 2;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // msButton3
@@ -239,7 +239,7 @@
             this.txtApellido.Margin = new System.Windows.Forms.Padding(0);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(429, 29);
-            this.txtApellido.TabIndex = 62;
+            this.txtApellido.TabIndex = 3;
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // msButton2
@@ -271,7 +271,7 @@
             this.txtDocumento.Margin = new System.Windows.Forms.Padding(0);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(429, 29);
-            this.txtDocumento.TabIndex = 63;
+            this.txtDocumento.TabIndex = 4;
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // msButton1
@@ -309,7 +309,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(220, 60);
-            this.btnCancelar.TabIndex = 68;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -329,7 +329,7 @@
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(220, 60);
-            this.btnAceptar.TabIndex = 67;
+            this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -357,7 +357,7 @@
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(0);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(429, 29);
-            this.txtTelefono.TabIndex = 64;
+            this.txtTelefono.TabIndex = 5;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // msButton5
@@ -388,7 +388,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(309, 44);
-            this.label1.TabIndex = 69;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Modificar Usuario";
             // 
             // pictureBox1
@@ -428,7 +428,7 @@
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.ReadOnly = true;
             this.txtEstado.Size = new System.Drawing.Size(197, 29);
-            this.txtEstado.TabIndex = 89;
+            this.txtEstado.TabIndex = 8;
             // 
             // msButton6
             // 
@@ -461,7 +461,7 @@
             this.button1.Location = new System.Drawing.Point(402, 649);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 65);
-            this.button1.TabIndex = 91;
+            this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

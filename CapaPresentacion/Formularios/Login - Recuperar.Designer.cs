@@ -77,7 +77,7 @@
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(0);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(506, 39);
-            this.txtCorreo.TabIndex = 13;
+            this.txtCorreo.TabIndex = 0;
             // 
             // panelCorreo
             // 
@@ -166,7 +166,7 @@
             this.btnVolver.Location = new System.Drawing.Point(842, 451);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(200, 60);
-            this.btnVolver.TabIndex = 19;
+            this.btnVolver.TabIndex = 2;
             this.btnVolver.Text = "Volver";
             this.btnVolver.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -190,7 +190,7 @@
             this.btnEnviar.Location = new System.Drawing.Point(504, 451);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(200, 60);
-            this.btnEnviar.TabIndex = 18;
+            this.btnEnviar.TabIndex = 1;
             this.btnEnviar.Text = "Restablecer";
             this.btnEnviar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
             this.btnEnviar.UseVisualStyleBackColor = false;
