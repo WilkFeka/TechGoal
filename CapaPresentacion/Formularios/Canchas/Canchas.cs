@@ -94,7 +94,7 @@ namespace CapaPresentacion.Formularios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (modoEliminar == true)
+            if (modoEliminar)
             {
                 MessageBox.Show("Salga del modo Eliminar para poder eliminar canchas", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -110,7 +110,7 @@ namespace CapaPresentacion.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (modoModificar == true)
+            if (modoModificar)
             {
                 MessageBox.Show("Salga del modo Modificar para poder eliminar canchas", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

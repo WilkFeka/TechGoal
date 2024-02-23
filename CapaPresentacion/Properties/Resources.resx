@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="eyeSlashW" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eyeSlashW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BotonFill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonFill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,14 +148,14 @@
   <data name="Editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eliminarBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eliminarBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eyeSlashW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eyeSlashW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eyeW (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eyeW (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="canchaBlanca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\canchaBlanca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="trophyBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trophyBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,14 +166,14 @@
   <data name="LogoText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inactive1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inactive1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="userWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\userWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="excelBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\excelBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="userBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inactive1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inactive1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CrearNuevaClave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CrearNuevaClave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +190,14 @@
   <data name="football-field_6162391" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\football-field_6162391.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="excelBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excelBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RolesWhite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RolesWhite1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ButtonStroke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ButtonStroke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="screenBlanca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\screenBlanca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,8 +217,8 @@
   <data name="RolesWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RolesWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="canchaBlanca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\canchaBlanca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rolesOscuro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rolesOscuro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,11 +238,11 @@
   <data name="genteBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\genteBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\userBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eliminarBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminarBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ButtonStroke" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ButtonStroke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Inactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TextDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TextDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,7 +262,10 @@
   <data name="LogoWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eyeW (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eyeW (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clockG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clockG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clockW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clockW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

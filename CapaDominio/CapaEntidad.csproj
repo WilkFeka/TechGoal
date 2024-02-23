@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cancha.cs" />
+    <Compile Include="Horario.cs" />
     <Compile Include="Seguridad\Permiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

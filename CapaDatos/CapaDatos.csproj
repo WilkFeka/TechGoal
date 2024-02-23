@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_Cancha.cs" />
+    <Compile Include="CD_Horario.cs" />
     <Compile Include="Seguridad\CD_Permiso.cs" />
     <Compile Include="Seguridad\CD_Rol.cs" />
     <Compile Include="Conection.cs" />

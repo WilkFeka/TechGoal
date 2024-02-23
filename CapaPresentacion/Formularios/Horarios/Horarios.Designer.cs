@@ -31,7 +31,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.flowBotonesHorarios = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSeleccion = new System.Windows.Forms.Label();
+            this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnEditar = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnAceptar = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnCancelar = new CapaPresentacion.Personalizacion.MSButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.fpnlBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -58,10 +65,126 @@
             // 
             // flowBotonesHorarios
             // 
-            this.flowBotonesHorarios.Location = new System.Drawing.Point(100, 130);
+            this.flowBotonesHorarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowBotonesHorarios.Location = new System.Drawing.Point(100, 183);
             this.flowBotonesHorarios.Name = "flowBotonesHorarios";
             this.flowBotonesHorarios.Size = new System.Drawing.Size(1270, 575);
             this.flowBotonesHorarios.TabIndex = 27;
+            // 
+            // lblSeleccion
+            // 
+            this.lblSeleccion.AutoSize = true;
+            this.lblSeleccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSeleccion.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeleccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.lblSeleccion.Location = new System.Drawing.Point(100, 115);
+            this.lblSeleccion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblSeleccion.Name = "lblSeleccion";
+            this.lblSeleccion.Size = new System.Drawing.Size(805, 53);
+            this.lblSeleccion.TabIndex = 28;
+            this.lblSeleccion.Text = "Seleccione horarios para habilitar/deshabilitar";
+            this.lblSeleccion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblSeleccion.UseCompatibleTextRendering = true;
+            // 
+            // fpnlBotones
+            // 
+            this.fpnlBotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fpnlBotones.Controls.Add(this.btnVolver);
+            this.fpnlBotones.Controls.Add(this.btnEditar);
+            this.fpnlBotones.Location = new System.Drawing.Point(1293, 12);
+            this.fpnlBotones.Name = "fpnlBotones";
+            this.fpnlBotones.Size = new System.Drawing.Size(162, 77);
+            this.fpnlBotones.TabIndex = 73;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundImage = global::CapaPresentacion.Properties.Resources.back;
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnVolver.BorderRadius = 25;
+            this.btnVolver.BorderSize = 0;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(10, 3);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(64, 64);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.TextColor = System.Drawing.Color.White;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnEditar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnEditar.BackgroundImage = global::CapaPresentacion.Properties.Resources.lapizBlanco;
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEditar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnEditar.BorderRadius = 25;
+            this.btnEditar.BorderSize = 0;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(87, 3);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(64, 64);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.TextColor = System.Drawing.Color.White;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnAceptar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnAceptar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnAceptar.BorderRadius = 30;
+            this.btnAceptar.BorderSize = 0;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(1167, 108);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(203, 60);
+            this.btnAceptar.TabIndex = 74;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextColor = System.Drawing.Color.White;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnCancelar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnCancelar.BorderRadius = 30;
+            this.btnCancelar.BorderSize = 0;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(949, 108);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(203, 60);
+            this.btnCancelar.TabIndex = 75;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextColor = System.Drawing.Color.White;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // formHorarios
             // 
@@ -69,6 +192,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1467, 796);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.fpnlBotones);
+            this.Controls.Add(this.lblSeleccion);
             this.Controls.Add(this.flowBotonesHorarios);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -79,6 +206,7 @@
             this.Text = "Horarios";
             this.Load += new System.EventHandler(this.Horarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.fpnlBotones.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,5 +217,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowBotonesHorarios;
+        private System.Windows.Forms.Label lblSeleccion;
+        private System.Windows.Forms.FlowLayoutPanel fpnlBotones;
+        private Personalizacion.MSButton btnVolver;
+        private Personalizacion.MSButton btnEditar;
+        private Personalizacion.MSButton btnAceptar;
+        private Personalizacion.MSButton btnCancelar;
     }
 }
