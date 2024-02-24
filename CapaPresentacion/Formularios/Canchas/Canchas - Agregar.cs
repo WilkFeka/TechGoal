@@ -56,6 +56,16 @@ namespace CapaPresentacion.Formularios
                 return;
             }
 
+            Cancha canchaNueva = CanchaControladora.EncontrarCanchaNum(Convert.ToInt32(txtNumero.Text));
+
+            bool asociarCanchaHorarios = CanchaControladora.AgregarCanchaHorarios(canchaNueva.id_cancha);
+
+            if (asociarCanchaHorarios == false)
+            {
+                MessageBox.Show("Hubo un error al asociar cancha con horarios. Por favor contacte a un administrador", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             MessageBox.Show("Cancha agregada con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
 

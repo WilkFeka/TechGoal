@@ -136,6 +136,16 @@ namespace CapaPresentacion.Formularios
                 return;
             }
 
+            bool eliminarCanchaHorarios = canchaControladora.EliminarCanchaHorarios(cancha.id_cancha);
+
+            if (eliminarCanchaHorarios == false)
+            {
+                MessageBox.Show("No se pudo eliminar la cancha. Por favor contacte un administrador", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+
             bool eliminarCancha = canchaControladora.EliminarCancha(cancha.id_cancha);
 
             if (eliminarCancha == false)
