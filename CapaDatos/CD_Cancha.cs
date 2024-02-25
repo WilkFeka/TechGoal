@@ -99,8 +99,8 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("INSERT INTO CanchasHorarios (id_cancha, id_horario, estado)");
-                    query.AppendLine("SELECT c.id_cancha, h.id_horario, 1");
+                    query.AppendLine("INSERT INTO CanchasHorarios (id_cancha, id_horario, estadoHorario, estado)");
+                    query.AppendLine("SELECT c.id_cancha, h.id_horario, h.estado, 1");
                     query.AppendLine("FROM canchas c");
                     query.AppendLine("CROSS JOIN horarios h");
                     query.AppendLine("WHERE c.id_cancha = @id_cancha");

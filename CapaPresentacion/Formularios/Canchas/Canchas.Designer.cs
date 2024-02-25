@@ -113,6 +113,7 @@
             this.btnVolver.TabIndex = 1;
             this.btnVolver.TextColor = System.Drawing.Color.White;
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnAgregarCancha
             // 

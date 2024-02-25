@@ -20,10 +20,12 @@ namespace CapaPresentacion.Formularios
         CC_Cancha canchaControladora = CC_Cancha.getInstance;
         bool modoModificar  = false;
         bool modoEliminar = false;
+        formInicio formInicioC;
 
-        public formCanchas()
+        public formCanchas(formInicio fomrInicio)
         {
             InitializeComponent();
+            formInicioC = fomrInicio;
         }
 
         public void formCanchas_Load(object sender, EventArgs e)
@@ -136,6 +138,8 @@ namespace CapaPresentacion.Formularios
                 return;
             }
 
+            // Eliminar primero la relacion CanchaHorarios
+
             bool eliminarCanchaHorarios = canchaControladora.EliminarCanchaHorarios(cancha.id_cancha);
 
             if (eliminarCanchaHorarios == false)
@@ -172,8 +176,25 @@ namespace CapaPresentacion.Formularios
                 return;
             }
 
+            modoEliminar = modoEliminar ? false : modoEliminar;
+            modoModificar = modoModificar ? false : modoModificar;
+            lblSeleccion.Text = "Seleccionar Cancha";
+            btnEliminar.BackColor = Color.FromArgb(50, 50, 50);
+            btnEditar.BackColor = Color.FromArgb(50, 50, 50);
+
+
+
+            formCanchas_Load(sender, e);
+
             formCanchasAgregar formCanchasAgregar = new formCanchasAgregar(this);
             formCanchasAgregar.ShowDialog();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            formInicioC.pnlContainer.Show();
+            formInicioC.picLogoText.Show();
+            Close();
         }
     }
 }

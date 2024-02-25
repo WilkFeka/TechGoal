@@ -56,6 +56,9 @@ namespace CapaPresentacion.Formularios
                 return;
             }
 
+
+            // Asociar cancha con horarios
+
             Cancha canchaNueva = CanchaControladora.EncontrarCanchaNum(Convert.ToInt32(txtNumero.Text));
 
             bool asociarCanchaHorarios = CanchaControladora.AgregarCanchaHorarios(canchaNueva.id_cancha);

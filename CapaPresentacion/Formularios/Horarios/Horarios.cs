@@ -18,13 +18,15 @@ namespace CapaPresentacion.Formularios
         CC_Horario horarioControladora = CC_Horario.getInstance;
         bool modoModificar = false;
         List<Horario> listaHorarios;
+        formInicio formInicioC;
 
-        public formHorarios()
+        public formHorarios(formInicio formInicio)
         {
             InitializeComponent();
             lblSeleccion.Visible = false;
             btnAceptar.Visible = false;
             btnCancelar.Visible = false;
+            formInicioC = formInicio;
         }
 
         public void Horarios_Load(object sender, EventArgs e)
@@ -142,6 +144,13 @@ namespace CapaPresentacion.Formularios
             btnCancelar.Visible = !btnCancelar.Visible;
             btnEditar.BackColor = modoModificar ? Color.FromArgb(30, 200, 235) : Color.FromArgb(50, 50, 50);
 
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            formInicioC.pnlContainer.Show();
+            formInicioC.picLogoText.Show();
+            Close();
         }
     }
 }

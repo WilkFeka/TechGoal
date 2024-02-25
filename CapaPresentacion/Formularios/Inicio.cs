@@ -196,7 +196,7 @@ namespace CapaPresentacion
         {
             pnlContainer.Hide(); 
             picLogoText.Hide();
-            AbrirFormulario(new formCanchas());
+            AbrirFormulario(new formCanchas(this));
 
         }
 
@@ -204,7 +204,7 @@ namespace CapaPresentacion
         {
             pnlContainer.Hide();
             picLogoText.Hide();
-            AbrirFormulario(new formHorarios());
+            AbrirFormulario(new formHorarios(this));
         }
     }
     }
