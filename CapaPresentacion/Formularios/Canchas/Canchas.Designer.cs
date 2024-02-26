@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblSeleccion = new System.Windows.Forms.Label();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
             this.btnAgregarCancha = new CapaPresentacion.Personalizacion.MSButton();
             this.btnEditar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnEliminar = new CapaPresentacion.Personalizacion.MSButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnFondo = new CapaPresentacion.Personalizacion.MSButton();
             this.fpnlBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,9 +74,9 @@
             this.lblSeleccion.Location = new System.Drawing.Point(444, 14);
             this.lblSeleccion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblSeleccion.Name = "lblSeleccion";
-            this.lblSeleccion.Size = new System.Drawing.Size(406, 53);
+            this.lblSeleccion.Size = new System.Drawing.Size(352, 53);
             this.lblSeleccion.TabIndex = 25;
-            this.lblSeleccion.Text = "Seleccione una cancha";
+            this.lblSeleccion.Text = "Seleccionar Cancha";
             this.lblSeleccion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblSeleccion.UseCompatibleTextRendering = true;
             // 
@@ -91,6 +91,16 @@
             this.fpnlBotones.Name = "fpnlBotones";
             this.fpnlBotones.Size = new System.Drawing.Size(320, 77);
             this.fpnlBotones.TabIndex = 72;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.football_field_6162391;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // btnVolver
             // 
@@ -184,34 +194,24 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // pictureBox1
+            // btnFondo
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.football_field_6162391;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
-            // msButton1
-            // 
-            this.msButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.msButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.msButton1.BorderRadius = 60;
-            this.msButton1.BorderSize = 0;
-            this.msButton1.Enabled = false;
-            this.msButton1.FlatAppearance.BorderSize = 0;
-            this.msButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton1.ForeColor = System.Drawing.Color.White;
-            this.msButton1.Location = new System.Drawing.Point(154, 80);
-            this.msButton1.Name = "msButton1";
-            this.msButton1.Size = new System.Drawing.Size(1012, 737);
-            this.msButton1.TabIndex = 26;
-            this.msButton1.TextColor = System.Drawing.Color.White;
-            this.msButton1.UseVisualStyleBackColor = false;
+            this.btnFondo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnFondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.btnFondo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.btnFondo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnFondo.BorderRadius = 60;
+            this.btnFondo.BorderSize = 0;
+            this.btnFondo.Enabled = false;
+            this.btnFondo.FlatAppearance.BorderSize = 0;
+            this.btnFondo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFondo.ForeColor = System.Drawing.Color.White;
+            this.btnFondo.Location = new System.Drawing.Point(154, 80);
+            this.btnFondo.Name = "btnFondo";
+            this.btnFondo.Size = new System.Drawing.Size(1012, 737);
+            this.btnFondo.TabIndex = 26;
+            this.btnFondo.TextColor = System.Drawing.Color.White;
+            this.btnFondo.UseVisualStyleBackColor = false;
             // 
             // formCanchas
             // 
@@ -223,7 +223,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowBotonesCanchas);
-            this.Controls.Add(this.msButton1);
+            this.Controls.Add(this.btnFondo);
             this.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "formCanchas";
@@ -242,7 +242,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSeleccion;
-        private Personalizacion.MSButton msButton1;
+        private Personalizacion.MSButton btnFondo;
         private System.Windows.Forms.FlowLayoutPanel fpnlBotones;
         private Personalizacion.MSButton btnVolver;
         private Personalizacion.MSButton btnEditar;

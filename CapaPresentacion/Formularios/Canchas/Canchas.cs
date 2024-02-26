@@ -30,12 +30,32 @@ namespace CapaPresentacion.Formularios
 
         public void formCanchas_Load(object sender, EventArgs e)
         {
+            // Modo normal es 0
+            CargarCanchas(0);
+            
+        }
+
+        public void CargarCanchas(int modo)
+        {
+
             // Limpiamos los controles
             flowBotonesCanchas.Controls.Clear();
 
-            // Obtenemos la lista de canchas
-            List<Cancha> listaCanchas = canchaControladora.Listar();
 
+            // Obtenemos la lista de canchas
+
+            List<Cancha> listaCanchas;
+
+            if (modo == 0)
+            {
+                listaCanchas = canchaControladora.Listar().Where(c => c.estado).ToList();
+
+            }
+            else
+            {
+                listaCanchas = canchaControladora.Listar();
+
+            }
 
 
             foreach (var cancha in listaCanchas)
@@ -43,27 +63,34 @@ namespace CapaPresentacion.Formularios
                 // Crear botones
                 MSButton button = new MSButton();
                 button.Text = Convert.ToString(cancha.numero);
-                button.Size = new Size(200, 200);
-
-
-                // Cambia color dependiendo el modo
-                if (modoModificar)
-                {
-                    button.BackColor = Color.FromArgb(30, 200, 235);
-
-                } else if (modoEliminar)
-                {
-                    button.BackColor = Color.FromArgb(255, 55, 55);
-
-                } else
-                {
-                    button.BackColor = Color.FromArgb(50, 50, 50);
-                }
-
                 button.ForeColor = Color.White;
                 button.BorderRadius = 75;
                 button.Margin = new Padding(20, 20, 20, 20);
                 button.Font = new Font("Roboto", 48, FontStyle.Bold);
+                button.Size = new Size(200, 200);
+
+                // Cambiar color de fondo dependiendo el modo
+                if (modo == 1)
+                {
+                    btnFondo.BackColor = Color.FromArgb(30, 200, 235);
+                    flowBotonesCanchas.BackColor = Color.FromArgb(30, 200, 235);
+                    button.BackColor = cancha.estado ? Color.FromArgb(50, 50, 50) : Color.FromArgb(235, 235, 235);
+                }
+                else if (modo == 2)
+                {
+                    btnFondo.BackColor = Color.FromArgb(250, 95, 95);
+                    flowBotonesCanchas.BackColor = Color.FromArgb(250, 95, 95);
+                    button.BackColor = cancha.estado ? Color.FromArgb(50, 50, 50) : Color.FromArgb(235, 235, 235);
+
+                }
+                else if (modo == 0)
+                {
+                    btnFondo.BackColor = Color.FromArgb(235, 235, 235);
+                    flowBotonesCanchas.BackColor = Color.FromArgb(235, 235, 235);
+                    button.BackColor = Color.FromArgb(50, 50, 50);
+
+
+                }
 
                 // Agregar boton al panel
                 flowBotonesCanchas.Controls.Add(button);
@@ -72,26 +99,25 @@ namespace CapaPresentacion.Formularios
                 button.Click += (senderB, eB) =>
                 {
                     // Si esta en modo modificar
-                    if (modoModificar)
+                    if (modo == 1)
                     {
-                        formCanchasModificar formCanchasOpcion = new formCanchasModificar(cancha);
+                        formCanchasModificar formCanchasOpcion = new formCanchasModificar(cancha, this);
                         formCanchasOpcion.ShowDialog();
                         return;
                     }
 
                     // Si esta en modo eliminar
 
-                    if (modoEliminar)
+                    if (modo == 2)
                     {
                         EliminarCancha(cancha);
-                       
+
                     }
 
                 };
             }
-            
-        
-            
+
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -107,7 +133,11 @@ namespace CapaPresentacion.Formularios
 
             btnEditar.BackColor = modoModificar ? Color.FromArgb(30, 200, 235) : Color.FromArgb(50, 50, 50);
 
-            formCanchas_Load(sender, e);
+            bool modo = modoModificar ? true : false;
+
+            // Modo modificar es 1
+            CargarCanchas(modo ? 1 : 0);
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -122,10 +152,11 @@ namespace CapaPresentacion.Formularios
             lblSeleccion.Text = modoEliminar ? "Seleccionar Cancha (Eliminar)" : "Seleccionar Cancha";
 
 
-            btnEliminar.BackColor = modoEliminar ? Color.FromArgb(255, 55, 55) : Color.FromArgb(50, 50, 50);
+            btnEliminar.BackColor = modoEliminar ? Color.FromArgb(250, 95, 95) : Color.FromArgb(50, 50, 50);
 
-            formCanchas_Load(sender, e);
-
+            bool modo = modoEliminar ? true : false;
+            // Modo eliminar es 2
+            CargarCanchas(modo ? 2 : 0);
 
         }
 
@@ -162,7 +193,7 @@ namespace CapaPresentacion.Formularios
             MessageBox.Show("Cancha eliminada con exito", "Cancha eliminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Recargamos las canchas
-            formCanchas_Load(this, null);
+            CargarCanchas(2);
         }
 
         private void btnAgregarCancha_Click(object sender, EventArgs e)
@@ -196,5 +227,8 @@ namespace CapaPresentacion.Formularios
             formInicioC.picLogoText.Show();
             Close();
         }
+
+
+
     }
 }

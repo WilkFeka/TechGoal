@@ -99,8 +99,8 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("INSERT INTO CanchasHorarios (id_cancha, id_horario, estadoHorario, estado)");
-                    query.AppendLine("SELECT c.id_cancha, h.id_horario, h.estado, 1");
+                    query.AppendLine("INSERT INTO CanchasHorarios (id_cancha, id_horario, estado)");
+                    query.AppendLine("SELECT c.id_cancha, h.id_horario, h.estado");
                     query.AppendLine("FROM canchas c");
                     query.AppendLine("CROSS JOIN horarios h");
                     query.AppendLine("WHERE c.id_cancha = @id_cancha");
@@ -111,6 +111,40 @@ namespace CapaDatos
                         conection.Open();
 
                         cmd.Parameters.AddWithValue("@id_cancha", id_cancha);
+
+                        cmd.ExecuteNonQuery();
+
+                        return true;
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
+        public static bool ModificarCancha(Cancha cancha)
+        {
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("UPDATE canchas SET numero = @numero, estado = @estado WHERE id_cancha = @id_cancha");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        conection.Open();
+
+                        cmd.Parameters.AddWithValue("@id_cancha", cancha.id_cancha);
+                        cmd.Parameters.AddWithValue("@numero", cancha.numero);
+                        cmd.Parameters.AddWithValue("@estado", cancha.estado);
 
                         cmd.ExecuteNonQuery();
 

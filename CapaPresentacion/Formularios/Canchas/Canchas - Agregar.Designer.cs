@@ -33,8 +33,6 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.msButton5 = new CapaPresentacion.Personalizacion.MSButton();
-            this.flowHorarios = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnAceptar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnCancelar = new CapaPresentacion.Personalizacion.MSButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,41 +104,22 @@
             this.msButton5.TextColor = System.Drawing.Color.White;
             this.msButton5.UseVisualStyleBackColor = false;
             // 
-            // flowHorarios
-            // 
-            this.flowHorarios.Location = new System.Drawing.Point(39, 226);
-            this.flowHorarios.Name = "flowHorarios";
-            this.flowHorarios.Size = new System.Drawing.Size(447, 347);
-            this.flowHorarios.TabIndex = 98;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label3.Location = new System.Drawing.Point(50, 179);
-            this.label3.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 29);
-            this.label3.TabIndex = 100;
-            this.label3.Text = "Horarios";
-            // 
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
             this.btnAceptar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
             this.btnAceptar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnAceptar.BorderRadius = 30;
+            this.btnAceptar.BorderRadius = 25;
             this.btnAceptar.BorderSize = 0;
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(289, 579);
+            this.btnAceptar.Location = new System.Drawing.Point(265, 171);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(181, 60);
+            this.btnAceptar.Size = new System.Drawing.Size(181, 55);
             this.btnAceptar.TabIndex = 101;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
@@ -152,7 +131,7 @@
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnCancelar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnCancelar.BorderRadius = 30;
+            this.btnCancelar.BorderRadius = 25;
             this.btnCancelar.BorderSize = 0;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -160,10 +139,10 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(55, 579);
+            this.btnCancelar.Location = new System.Drawing.Point(55, 171);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(181, 60);
+            this.btnCancelar.Size = new System.Drawing.Size(181, 55);
             this.btnCancelar.TabIndex = 102;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
@@ -175,11 +154,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(525, 666);
+            this.ClientSize = new System.Drawing.Size(498, 273);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.flowHorarios);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.msButton5);
@@ -206,8 +183,6 @@
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label label4;
         private Personalizacion.MSButton msButton5;
-        private System.Windows.Forms.FlowLayoutPanel flowHorarios;
-        private System.Windows.Forms.Label label3;
         private Personalizacion.MSButton btnAceptar;
         private Personalizacion.MSButton btnCancelar;
     }

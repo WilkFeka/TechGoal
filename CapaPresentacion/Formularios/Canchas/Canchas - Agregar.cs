@@ -16,7 +16,6 @@ namespace CapaPresentacion.Formularios
     public partial class formCanchasAgregar : Form
     {
         CC_Cancha CanchaControladora = CC_Cancha.getInstance;
-        CC_Horario HorarioControladora = CC_Horario.getInstance;
         Funcionalidades Funcionalidades = Funcionalidades.getInstance;
         formCanchas formCanchasC;
         public formCanchasAgregar(formCanchas formCanchas)
@@ -40,9 +39,9 @@ namespace CapaPresentacion.Formularios
                 return;
             }
 
-            Cancha ecnontrarCancha = CanchaControladora.EncontrarCanchaNum(Convert.ToInt32(txtNumero.Text));
+            Cancha encontrarCancha = CanchaControladora.EncontrarCanchaNum(Convert.ToInt32(txtNumero.Text));
 
-            if (ecnontrarCancha != null)
+            if (encontrarCancha != null)
             {
                 MessageBox.Show("Numero de cancha existente, por favoir ingrese otro numero", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -78,6 +77,15 @@ namespace CapaPresentacion.Formularios
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcionalidades.soloNumeros(sender, e);
+            if (txtNumero.Text.Length == 4)
+            {
+                // Permitir teclas de control como retroceso o eliminar
+                if (!char.IsControl(e.KeyChar))
+                {
+                    // Evitar que se escriba el quinto carácter
+                    e.Handled = true;
+                }
+            }
         }
 
         private void formCanchasAgregar_FormClosed(object sender, FormClosedEventArgs e)
@@ -87,35 +95,7 @@ namespace CapaPresentacion.Formularios
 
         private void formCanchasAgregar_Load(object sender, EventArgs e)
         {
-            List<Horario> listaHorariosActivos = HorarioControladora.ListarHorariosActivos();
-
-            foreach (var horario in listaHorariosActivos)
-            {
-                // Crear botones
-                MSButton button = new MSButton();
-                button.Text = Convert.ToString(horario.hora);
-                button.Size = new Size(75, 75);
-
-                //ESTILOS DE BOTONES
-
-                // cambia el color dependiendo el estado
-                button.BackColor = Color.FromArgb(50, 50, 50);
-
-                button.ForeColor = Color.White;
-                button.BorderRadius = 25;
-                button.Margin = new Padding(5, 5, 5, 5);
-                button.Font = new Font("Roboto", 16, FontStyle.Bold);
-
-                // Agregar boton al panel
-                flowHorarios.Controls.Add(button);
-
-                // Evento click del boton dependiendo el modo
-                button.Click += (senderB, eB) =>
-                {
-                   
-
-                };
-            }
+                       
         }
     }
 }

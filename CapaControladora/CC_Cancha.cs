@@ -56,6 +56,7 @@ namespace CapaControladora
 
         }
 
+        // ---------------------- AGREGAR CANCHA --------------------
         public bool AgregarCancha(int numero)
         {
             if (numero != 0)
@@ -92,6 +93,27 @@ namespace CapaControladora
             }
         }
 
+        // ---------------------- MODIFICAR CANCHA --------------------
+
+        public bool ModificarCancha(Cancha cancha)
+        {
+            if (cancha != null)
+            {
+                if (CD_Cancha.ModificarCancha(cancha))
+                {
+                    return true;
+
+                }
+                else return false;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        // ---------------------- ELIMINAR CANCHA --------------------
         public bool EliminarCancha(int id)
         {
             if (id != 0)
