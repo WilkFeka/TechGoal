@@ -16,6 +16,7 @@ namespace CapaPresentacion.Formularios
     public partial class formCanchasAgregar : Form
     {
         CC_Cancha CanchaControladora = CC_Cancha.getInstance;
+        CC_Horario HorarioControladora = CC_Horario.getInstance;
         Funcionalidades Funcionalidades = Funcionalidades.getInstance;
         formCanchas formCanchasC;
         public formCanchasAgregar(formCanchas formCanchas)
@@ -82,6 +83,39 @@ namespace CapaPresentacion.Formularios
         private void formCanchasAgregar_FormClosed(object sender, FormClosedEventArgs e)
         {
             formCanchasC.formCanchas_Load(sender, e);
+        }
+
+        private void formCanchasAgregar_Load(object sender, EventArgs e)
+        {
+            List<Horario> listaHorariosActivos = HorarioControladora.ListarHorariosActivos();
+
+            foreach (var horario in listaHorariosActivos)
+            {
+                // Crear botones
+                MSButton button = new MSButton();
+                button.Text = Convert.ToString(horario.hora);
+                button.Size = new Size(75, 75);
+
+                //ESTILOS DE BOTONES
+
+                // cambia el color dependiendo el estado
+                button.BackColor = Color.FromArgb(50, 50, 50);
+
+                button.ForeColor = Color.White;
+                button.BorderRadius = 25;
+                button.Margin = new Padding(5, 5, 5, 5);
+                button.Font = new Font("Roboto", 16, FontStyle.Bold);
+
+                // Agregar boton al panel
+                flowHorarios.Controls.Add(button);
+
+                // Evento click del boton dependiendo el modo
+                button.Click += (senderB, eB) =>
+                {
+                   
+
+                };
+            }
         }
     }
 }

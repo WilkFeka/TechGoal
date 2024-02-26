@@ -110,7 +110,7 @@
             // 
             this.flowHorarios.Location = new System.Drawing.Point(39, 226);
             this.flowHorarios.Name = "flowHorarios";
-            this.flowHorarios.Size = new System.Drawing.Size(572, 299);
+            this.flowHorarios.Size = new System.Drawing.Size(447, 347);
             this.flowHorarios.TabIndex = 98;
             // 
             // label3
@@ -137,10 +137,10 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(346, 579);
+            this.btnAceptar.Location = new System.Drawing.Point(289, 579);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(238, 60);
+            this.btnAceptar.Size = new System.Drawing.Size(181, 60);
             this.btnAceptar.TabIndex = 101;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
@@ -163,7 +163,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(55, 579);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(238, 60);
+            this.btnCancelar.Size = new System.Drawing.Size(181, 60);
             this.btnCancelar.TabIndex = 102;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
@@ -175,7 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(664, 666);
+            this.ClientSize = new System.Drawing.Size(525, 666);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label3);
@@ -192,6 +192,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Cancha";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formCanchasAgregar_FormClosed);
+            this.Load += new System.EventHandler(this.formCanchasAgregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
