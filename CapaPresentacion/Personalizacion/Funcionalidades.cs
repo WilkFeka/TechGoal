@@ -92,9 +92,11 @@ namespace CapaPresentacion.Personalizacion
             return regex.IsMatch(correo);
         }
 
-        public void EnviarCorreo(string correo)
+        public bool EnviarCorreo(string correo)
         {
             // ----------------- ENVIO DE CORREO -------------------
+
+            bool respuesta = false;
 
 
             try
@@ -103,21 +105,21 @@ namespace CapaPresentacion.Personalizacion
                 if (string.IsNullOrEmpty(correo))
                 {
                     MessageBox.Show("Por favor complete todos los campos.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    return respuesta;
                 }
 
                 if (validarEmail(correo) == false)
                 {
                     MessageBox.Show("Por favor escriba una direccion de correo valida.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    return respuesta;
                 }
 
                 Usuario usuarioEncontrado = usuarioControladora.EncontrarUsuarioCorreo(correo);
 
                 if (usuarioEncontrado == null)
                 {
-                MessageBox.Show("No se encontro un usuario con ese cofreo. Por favor escriba un correo existente.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("No se encontro un usuario con ese correo. Por favor escriba un correo existente.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return respuesta;
                 }
 
                 string nuevaClave = generarClave(8);
@@ -148,11 +150,15 @@ namespace CapaPresentacion.Personalizacion
                 Console.WriteLine("Correo enviado exitosamente.");
 
                 MessageBox.Show("Se ha enviado un correo con su nueva clave.", "Correo Enviado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                respuesta = true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error al enviar el correo: " + ex.Message);
             }
+
+            return respuesta;
         }
 
        

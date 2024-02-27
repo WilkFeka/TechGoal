@@ -110,28 +110,28 @@ namespace CapaPresentacion
         private void formInicio_Load(object sender, EventArgs e)
         {
 
-            // ---------------------------- PERMISOS DE USUARIO ----------------------------
+            //// ---------------------------- PERMISOS DE USUARIO ----------------------------
 
-            List<Permiso> listaPermisos = new CC_Permiso().ListarPermisosUsuario(usuarioActual.id_usuario);
+            //List<Permiso> listaPermisos = new CC_Permiso().ListarPermisosUsuario(usuarioActual.id_usuario);
 
-            var panelMenus = flwPanelButons.Controls;
+            //var panelMenus = flwPanelButons.Controls;
 
 
 
-            foreach (System.Windows.Forms.Control control in panelMenus )
-            {
-                bool encontrado = listaPermisos.Any(p => p.nombreMenu == control.Name);
+            //foreach (System.Windows.Forms.Control control in panelMenus )
+            //{
+            //    bool encontrado = listaPermisos.Any(p => p.nombreMenu == control.Name);
 
-                if (encontrado)
-                {
-                    control.Visible = true;
-                }
-                else
-                {
-                    control.Visible = false;
-                }
+            //    if (encontrado)
+            //    {
+            //        control.Visible = true;
+            //    }
+            //    else
+            //    {
+            //        control.Visible = false;
+            //    }
 
-            }
+            //}
 
         }
 
@@ -196,8 +196,15 @@ namespace CapaPresentacion
         {
             pnlContainer.Hide(); 
             picLogoText.Hide();
-            AbrirFormulario(new formCanchas());
+            AbrirFormulario(new formCanchas(this));
 
+        }
+
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            pnlContainer.Hide();
+            picLogoText.Hide();
+            AbrirFormulario(new formHorarios(this));
         }
     }
     }

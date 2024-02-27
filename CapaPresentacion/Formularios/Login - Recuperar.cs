@@ -28,10 +28,14 @@ namespace CapaPresentacion.Formularios
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            funcionalidades.EnviarCorreo(txtCorreo.Text);
-            Application.OpenForms["formLogin"].Show();
+            if (funcionalidades.EnviarCorreo(txtCorreo.Text))
+            {
+                Application.OpenForms["formLogin"].Show();
 
-            Close();
+                Close();
+
+            }
+            
 
         }
     }
