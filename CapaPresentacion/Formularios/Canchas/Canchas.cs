@@ -74,13 +74,13 @@ namespace CapaPresentacion.Formularios
                 {
                     btnFondo.BackColor = Color.FromArgb(30, 200, 235);
                     flowBotonesCanchas.BackColor = Color.FromArgb(30, 200, 235);
-                    button.BackColor = cancha.estado ? Color.FromArgb(50, 50, 50) : Color.FromArgb(235, 235, 235);
+                    button.BackColor = cancha.estado ? Color.FromArgb(50, 50, 50) : Color.FromArgb(80,80,80) ;
                 }
                 else if (modo == 2)
                 {
                     btnFondo.BackColor = Color.FromArgb(250, 95, 95);
                     flowBotonesCanchas.BackColor = Color.FromArgb(250, 95, 95);
-                    button.BackColor = cancha.estado ? Color.FromArgb(50, 50, 50) : Color.FromArgb(235, 235, 235);
+                    button.BackColor = cancha.estado ? Color.FromArgb(50, 50, 50) : Color.FromArgb(80, 80, 80);
 
                 }
                 else if (modo == 0)
@@ -129,7 +129,7 @@ namespace CapaPresentacion.Formularios
             }
 
             modoModificar = !modoModificar;
-            lblSeleccion.Text = modoModificar ? "Seleccionar Cancha (Modificar)" : "Seleccionar Cancha";
+            lblSeleccion.Text = modoModificar ? "Modificar Cancha" : "Seleccionar Cancha";
 
             btnEditar.BackColor = modoModificar ? Color.FromArgb(30, 200, 235) : Color.FromArgb(50, 50, 50);
 
@@ -149,7 +149,7 @@ namespace CapaPresentacion.Formularios
             }
 
             modoEliminar = !modoEliminar;
-            lblSeleccion.Text = modoEliminar ? "Seleccionar Cancha (Eliminar)" : "Seleccionar Cancha";
+            lblSeleccion.Text = modoEliminar ? "Eliminar Cancha" : "Seleccionar Cancha";
 
 
             btnEliminar.BackColor = modoEliminar ? Color.FromArgb(250, 95, 95) : Color.FromArgb(50, 50, 50);

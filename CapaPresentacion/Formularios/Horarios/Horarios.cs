@@ -17,13 +17,14 @@ namespace CapaPresentacion.Formularios
     {
         CC_Horario horarioControladora = CC_Horario.getInstance;
         bool modoModificar = false;
+        bool modoEliminar = false;
+
         List<Horario> listaHorarios;
         formInicio formInicioC;
 
         public formHorarios(formInicio formInicio)
         {
             InitializeComponent();
-            lblSeleccion.Visible = false;
             btnAceptar.Visible = false;
             btnCancelar.Visible = false;
             formInicioC = formInicio;
@@ -31,6 +32,7 @@ namespace CapaPresentacion.Formularios
 
         public void Horarios_Load(object sender, EventArgs e)
         {
+
 
             // Limpiamos los controles
             flowBotonesHorarios.Controls.Clear();
@@ -89,9 +91,21 @@ namespace CapaPresentacion.Formularios
         private void btnEditar_Click(object sender, EventArgs e)
         {
 
+/*            if (modoEliminar)
+            {
+                var mensaje = MessageBox.Show("¿Esta seguro de que desea salir del modo Eliminar?", "Horarios", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (mensaje == DialogResult.No)
+                {
+                    return;
+                }
+
+                Horarios_Load(sender, e);
+            }*/
+
             if (modoModificar)
             {
-                var mensaje = MessageBox.Show("¿Esta seguro de que desea salir del modo edicion?", "Horarios", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var mensaje = MessageBox.Show("¿Esta seguro de que desea salir del modo Modificar?", "Horarios", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (mensaje == DialogResult.No)
                 {
@@ -101,11 +115,16 @@ namespace CapaPresentacion.Formularios
                 Horarios_Load(sender, e);
             }
 
+
+
             modoModificar = !modoModificar;
-            lblSeleccion.Visible = !lblSeleccion.Visible;
+            modoEliminar = false;
+            lblSeleccion.Text = modoModificar ? "Seleccione horarios para habilitar/deshabilitar" : "";
             btnAceptar.Visible = !btnAceptar.Visible;
             btnCancelar.Visible = !btnCancelar.Visible;
             btnEditar.BackColor = modoModificar ? Color.FromArgb(30, 200, 235) : Color.FromArgb(50, 50, 50);
+            /*btnEliminar.BackColor = Color.FromArgb(50, 50, 50);*/
+
 
 
         }
@@ -129,20 +148,19 @@ namespace CapaPresentacion.Formularios
 
             if (actualizarHorarios == false)
             {
-                MessageBox.Show("No se pudo eliminar la cancha. Por favor contacte un administrador", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo actualizar el horario. Por favor contacte un administrador", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             MessageBox.Show("Horarios actualizados con exito", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
             Horarios_Load(sender, e);
 
             modoModificar = !modoModificar;
-            lblSeleccion.Visible = !lblSeleccion.Visible;
+            lblSeleccion.Text = "";
             btnAceptar.Visible = !btnAceptar.Visible;
             btnCancelar.Visible = !btnCancelar.Visible;
-            btnEditar.BackColor = modoModificar ? Color.FromArgb(30, 200, 235) : Color.FromArgb(50, 50, 50);
+            btnEditar.BackColor = Color.FromArgb(50, 50, 50);
 
         }
 
@@ -151,6 +169,45 @@ namespace CapaPresentacion.Formularios
             formInicioC.pnlContainer.Show();
             formInicioC.picLogoText.Show();
             Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+           /* if (modoEliminar)
+            {
+                var mensaje = MessageBox.Show("¿Esta seguro de que desea salir del modo Eliminar?", "Horarios", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (mensaje == DialogResult.No)
+                {
+                    return;
+                }
+
+                Horarios_Load(sender, e);
+            }
+
+            if (modoModificar)
+            {
+                var mensaje = MessageBox.Show("¿Esta seguro de que desea salir del modo Modificar?", "Horarios", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (mensaje == DialogResult.No)
+                {
+                    return;
+                }
+
+                Horarios_Load(sender, e);
+            }
+
+
+
+            modoModificar = false;
+            modoEliminar = !modoEliminar;
+            lblSeleccion.Text = modoEliminar ? "Seleccione horarios para eliminar" : "";
+            btnAceptar.Visible = false;
+            btnCancelar.Visible = false;
+            btnEliminar.BackColor = modoEliminar ? Color.FromArgb(250,95,95) : Color.FromArgb(50, 50, 50);
+            btnEditar.BackColor = Color.FromArgb(50, 50, 50);
+*/
+
         }
     }
 }
