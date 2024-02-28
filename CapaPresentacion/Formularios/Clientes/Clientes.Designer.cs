@@ -43,31 +43,31 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNombreFilter = new System.Windows.Forms.TextBox();
-            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtApellidoFilter = new System.Windows.Forms.TextBox();
-            this.msButton2 = new CapaPresentacion.Personalizacion.MSButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtDocumentoFilter = new System.Windows.Forms.TextBox();
-            this.msButton3 = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
+            this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.clientesTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.clientesTableAdapter();
+            this.id_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
-            this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
+            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
+            this.msButton2 = new CapaPresentacion.Personalizacion.MSButton();
+            this.msButton3 = new CapaPresentacion.Personalizacion.MSButton();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
             this.btnAgregarCliente = new CapaPresentacion.Personalizacion.MSButton();
             this.btnExportar = new CapaPresentacion.Personalizacion.MSButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
-            this.clientesTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.clientesTableAdapter();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -215,25 +215,6 @@
             this.txtNombreFilter.TextChanged += new System.EventHandler(this.txtNombreFilter_TextChanged);
             this.txtNombreFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreFilter_KeyPress);
             // 
-            // msButton1
-            // 
-            this.msButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.msButton1.BorderRadius = 20;
-            this.msButton1.BorderSize = 0;
-            this.msButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msButton1.Enabled = false;
-            this.msButton1.FlatAppearance.BorderSize = 0;
-            this.msButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton1.ForeColor = System.Drawing.Color.White;
-            this.msButton1.Location = new System.Drawing.Point(0, 0);
-            this.msButton1.Name = "msButton1";
-            this.msButton1.Size = new System.Drawing.Size(341, 49);
-            this.msButton1.TabIndex = 22;
-            this.msButton1.TextColor = System.Drawing.Color.White;
-            this.msButton1.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -259,25 +240,6 @@
             this.txtApellidoFilter.TextChanged += new System.EventHandler(this.txtApellidoFilter_TextChanged);
             this.txtApellidoFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoFilter_KeyPress);
             // 
-            // msButton2
-            // 
-            this.msButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.msButton2.BorderRadius = 20;
-            this.msButton2.BorderSize = 0;
-            this.msButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msButton2.Enabled = false;
-            this.msButton2.FlatAppearance.BorderSize = 0;
-            this.msButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton2.ForeColor = System.Drawing.Color.White;
-            this.msButton2.Location = new System.Drawing.Point(0, 0);
-            this.msButton2.Name = "msButton2";
-            this.msButton2.Size = new System.Drawing.Size(341, 49);
-            this.msButton2.TabIndex = 22;
-            this.msButton2.TextColor = System.Drawing.Color.White;
-            this.msButton2.UseVisualStyleBackColor = false;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -302,25 +264,6 @@
             this.txtDocumentoFilter.TabIndex = 5;
             this.txtDocumentoFilter.TextChanged += new System.EventHandler(this.txtDocumentoFilter_TextChanged);
             this.txtDocumentoFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumentoFilter_KeyPress);
-            // 
-            // msButton3
-            // 
-            this.msButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.msButton3.BorderRadius = 20;
-            this.msButton3.BorderSize = 0;
-            this.msButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msButton3.Enabled = false;
-            this.msButton3.FlatAppearance.BorderSize = 0;
-            this.msButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton3.ForeColor = System.Drawing.Color.White;
-            this.msButton3.Location = new System.Drawing.Point(0, 0);
-            this.msButton3.Name = "msButton3";
-            this.msButton3.Size = new System.Drawing.Size(341, 49);
-            this.msButton3.TabIndex = 22;
-            this.msButton3.TextColor = System.Drawing.Color.White;
-            this.msButton3.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -365,7 +308,7 @@
             this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idclienteDataGridViewTextBoxColumn,
+            this.id_cliente,
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
             this.dniDataGridViewTextBoxColumn,
@@ -413,14 +356,64 @@
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(1496, 519);
             this.dgvClientes.TabIndex = 77;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
+            this.dgvClientes.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellMouseEnter);
+            this.dgvClientes.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellMouseLeave);
             // 
-            // idclienteDataGridViewTextBoxColumn
+            // clientesBindingSource
             // 
-            this.idclienteDataGridViewTextBoxColumn.DataPropertyName = "id_cliente";
-            this.idclienteDataGridViewTextBoxColumn.HeaderText = "id_cliente";
-            this.idclienteDataGridViewTextBoxColumn.Name = "idclienteDataGridViewTextBoxColumn";
-            this.idclienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idclienteDataGridViewTextBoxColumn.Visible = false;
+            this.clientesBindingSource.DataMember = "clientes";
+            this.clientesBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            // 
+            // dB_TECHGOALDataSet
+            // 
+            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
+            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fpnlBotones
+            // 
+            this.fpnlBotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fpnlBotones.Controls.Add(this.btnVolver);
+            this.fpnlBotones.Controls.Add(this.btnAgregarCliente);
+            this.fpnlBotones.Controls.Add(this.btnExportar);
+            this.fpnlBotones.Location = new System.Drawing.Point(1268, 18);
+            this.fpnlBotones.Name = "fpnlBotones";
+            this.fpnlBotones.Size = new System.Drawing.Size(240, 77);
+            this.fpnlBotones.TabIndex = 76;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.userBlack__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 73;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label1.Location = new System.Drawing.Point(82, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 44);
+            this.label1.TabIndex = 72;
+            this.label1.Text = "Usuarios";
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // id_cliente
+            // 
+            this.id_cliente.DataPropertyName = "id_cliente";
+            this.id_cliente.HeaderText = "id_cliente";
+            this.id_cliente.Name = "id_cliente";
+            this.id_cliente.ReadOnly = true;
+            this.id_cliente.Visible = false;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -459,26 +452,62 @@
             this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
             this.estadoDataGridViewCheckBoxColumn.Width = 85;
             // 
-            // clientesBindingSource
+            // msButton1
             // 
-            this.clientesBindingSource.DataMember = "clientes";
-            this.clientesBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            this.msButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.msButton1.BorderRadius = 20;
+            this.msButton1.BorderSize = 0;
+            this.msButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msButton1.Enabled = false;
+            this.msButton1.FlatAppearance.BorderSize = 0;
+            this.msButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.msButton1.ForeColor = System.Drawing.Color.White;
+            this.msButton1.Location = new System.Drawing.Point(0, 0);
+            this.msButton1.Name = "msButton1";
+            this.msButton1.Size = new System.Drawing.Size(341, 49);
+            this.msButton1.TabIndex = 22;
+            this.msButton1.TextColor = System.Drawing.Color.White;
+            this.msButton1.UseVisualStyleBackColor = false;
             // 
-            // dB_TECHGOALDataSet
+            // msButton2
             // 
-            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
-            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.msButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.msButton2.BorderRadius = 20;
+            this.msButton2.BorderSize = 0;
+            this.msButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msButton2.Enabled = false;
+            this.msButton2.FlatAppearance.BorderSize = 0;
+            this.msButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.msButton2.ForeColor = System.Drawing.Color.White;
+            this.msButton2.Location = new System.Drawing.Point(0, 0);
+            this.msButton2.Name = "msButton2";
+            this.msButton2.Size = new System.Drawing.Size(341, 49);
+            this.msButton2.TabIndex = 22;
+            this.msButton2.TextColor = System.Drawing.Color.White;
+            this.msButton2.UseVisualStyleBackColor = false;
             // 
-            // fpnlBotones
+            // msButton3
             // 
-            this.fpnlBotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.fpnlBotones.Controls.Add(this.btnVolver);
-            this.fpnlBotones.Controls.Add(this.btnAgregarCliente);
-            this.fpnlBotones.Controls.Add(this.btnExportar);
-            this.fpnlBotones.Location = new System.Drawing.Point(1268, 18);
-            this.fpnlBotones.Name = "fpnlBotones";
-            this.fpnlBotones.Size = new System.Drawing.Size(240, 77);
-            this.fpnlBotones.TabIndex = 76;
+            this.msButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.msButton3.BorderRadius = 20;
+            this.msButton3.BorderSize = 0;
+            this.msButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msButton3.Enabled = false;
+            this.msButton3.FlatAppearance.BorderSize = 0;
+            this.msButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.msButton3.ForeColor = System.Drawing.Color.White;
+            this.msButton3.Location = new System.Drawing.Point(0, 0);
+            this.msButton3.Name = "msButton3";
+            this.msButton3.Size = new System.Drawing.Size(341, 49);
+            this.msButton3.TabIndex = 22;
+            this.msButton3.TextColor = System.Drawing.Color.White;
+            this.msButton3.UseVisualStyleBackColor = false;
             // 
             // btnVolver
             // 
@@ -548,28 +577,6 @@
             this.btnExportar.TextColor = System.Drawing.Color.White;
             this.btnExportar.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.userBlack__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 73;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label1.Location = new System.Drawing.Point(82, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 44);
-            this.label1.TabIndex = 72;
-            this.label1.Text = "Usuarios";
-            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -592,10 +599,6 @@
             this.btnLimpiar.TextColor = System.Drawing.Color.White;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // clientesTableAdapter
-            // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
             // 
             // formClientes
             // 
@@ -659,7 +662,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbEstadoFilter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idclienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;

@@ -1,4 +1,6 @@
-﻿using CapaPresentacion.Personalizacion;
+﻿using CapaControladora;
+using CapaEntidad;
+using CapaPresentacion.Personalizacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,7 @@ namespace CapaPresentacion.Formularios.Clientes
     {
         formInicio formInicioC;
         Funcionalidades funcionalidades = Funcionalidades.getInstance;
+        CC_Cliente ClienteControladora = CC_Cliente.getInstance;
         public formClientes(formInicio formInicio)
         {
             InitializeComponent();
@@ -139,6 +142,95 @@ namespace CapaPresentacion.Formularios.Clientes
         private void txtNombreFilter_KeyPress(object sender, KeyPressEventArgs e)
         {
             funcionalidades.soloLetras(sender, e);
+
+        }
+
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                if (dgvClientes.Columns[e.ColumnIndex].Name == "editar" && e.RowIndex != -1)
+                {
+                    // ------------- Obtiene el valor de la celda ID ---------------------
+                    DataGridViewRow filaSeleccionada = dgvClientes.CurrentRow;
+
+                    DataGridViewCell celda = filaSeleccionada.Cells["id_cliente"];
+
+                    int id = Convert.ToInt32(celda.Value);
+
+                    Cliente clienteSeleccionado = ClienteControladora.EncontrarClienteID(id);
+
+                    formClientesModificar formClientesModificar = new formClientesModificar(this, clienteSeleccionado);
+                    formClientesModificar.ShowDialog();
+
+                }
+
+                if (dgvClientes.Columns[e.ColumnIndex].Name == "borrar" && e.RowIndex != -1)
+                {
+                    // ------------- Obtiene el valor de la celda ID ---------------------
+                    DataGridViewRow filaSeleccionada = dgvClientes.CurrentRow;
+
+                    DataGridViewCell celda = filaSeleccionada.Cells["id_cliente"];
+
+                    int id = Convert.ToInt32(celda.Value);
+
+                    Cliente clienteSeleccionado = ClienteControladora.EncontrarClienteID(id);
+
+                    var mensaje = MessageBox.Show("¿Esta seguro de que desea borrar el cliente " + clienteSeleccionado.dni + "?", "Borrando cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (mensaje == DialogResult.No)
+                    {
+                        return;
+                    }
+                    else
+                    {
+
+                        bool eliminarCliente = ClienteControladora.EliminarCliente(clienteSeleccionado.id_cliente);
+
+                        if (eliminarCliente)
+                        {
+                            MessageBox.Show("Cliente eliminado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            llenarTabla();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("El cliente tiene reservas ya hechas, por lo que solo se deshabilitara.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
+                            bool modificado = ClienteControladora.ModificarEstadoCliente(clienteSeleccionado.id_cliente, false);
+
+                            if (modificado == false)
+                            {
+                                MessageBox.Show("Hubo un error al eliminar usuario. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            }
+
+                            MessageBox.Show("Cliente deshabilitado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            llenarTabla();
+                        }
+
+                    }
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+        private void dgvClientes_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvClientes_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

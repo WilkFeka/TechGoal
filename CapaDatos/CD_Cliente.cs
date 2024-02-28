@@ -100,5 +100,118 @@ namespace CapaDatos
 
             return agregado;
         }
+
+        public bool ModificarCliente(Cliente clienteModificar)
+        {
+            bool modificado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("UPDATE clientes SET nombre = @nombre, apellido = @apellido, dni = @dni, telefono = @telefono, estado = @estado");
+                    query.AppendLine("WHERE id_cliente = @id_cliente");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", clienteModificar.nombre);
+                        cmd.Parameters.AddWithValue("@apellido", clienteModificar.apellido);
+                        cmd.Parameters.AddWithValue("@dni", clienteModificar.dni);
+                        cmd.Parameters.AddWithValue("@telefono", clienteModificar.telefono);
+                        cmd.Parameters.AddWithValue("@estado", clienteModificar.estado);
+                        cmd.Parameters.AddWithValue("@id_cliente", clienteModificar.id_cliente);
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            modificado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return modificado;
+        }
+
+        public bool ModificarEstadoCliente(int id, bool estado)
+        {
+            bool modificado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("UPDATE clientes SET estado = @estado");
+                    query.AppendLine("WHERE id_cliente = @id_cliente");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@estado", estado);
+                        cmd.Parameters.AddWithValue("@id_cliente", id);
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            modificado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return modificado;
+        }   
+
+        public bool EliminarCliente(int id)
+        {
+            bool eliminado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("DELETE FROM clientes WHERE id_cliente = @id_cliente");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@id_cliente", id);
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            eliminado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return eliminado;
+        }
     }
 }

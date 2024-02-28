@@ -185,6 +185,12 @@
     <Compile Include="Formularios\Clientes\Clientes - Agregar.Designer.cs">
       <DependentUpon>Clientes - Agregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Clientes\Clientes - Modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\Clientes - Modificar.Designer.cs">
+      <DependentUpon>Clientes - Modificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Clientes\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Clientes\Clientes - Agregar.resx">
       <DependentUpon>Clientes - Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\Clientes - Modificar.resx">
+      <DependentUpon>Clientes - Modificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Clientes\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
