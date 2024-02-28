@@ -1,5 +1,6 @@
 ﻿using CapaControladora;
 using CapaEntidad;
+using CapaPresentacion.Formularios.Canchas;
 using CapaPresentacion.Personalizacion;
 using System;
 using System.Collections.Generic;
@@ -98,6 +99,12 @@ namespace CapaPresentacion.Formularios
                 // Evento click del boton dependiendo el modo
                 button.Click += (senderB, eB) =>
                 {
+
+                    if (modo == 0)
+                    {
+                        formInicioC.AbrirFormulario(new formCanchaIndividual(cancha, formInicioC));
+                        return;
+                    }
                     // Si esta en modo modificar
                     if (modo == 1)
                     {
