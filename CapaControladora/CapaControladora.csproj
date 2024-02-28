@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CC_Cancha.cs" />
+    <Compile Include="CC_CanchaHorario.cs" />
     <Compile Include="CC_Horario.cs" />
     <Compile Include="CC_Permiso.cs" />
+    <Compile Include="CC_Reserva.cs" />
     <Compile Include="CC_Rol.cs" />
     <Compile Include="CC_Sesion.cs" />
     <Compile Include="CC_Usuario.cs" />

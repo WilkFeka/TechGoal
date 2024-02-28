@@ -38,7 +38,7 @@ namespace CapaControladora
 
         public List<Horario> ListarHorariosActivos()
         {
-            List<Horario> listaHorarios = new CD_Horario().Listar().Where(h => h.estado == true).ToList();
+            List<Horario> listaHorarios = new CC_Horario().Listar().Where(h => h.estado == true).ToList();
 
             return listaHorarios;
 
@@ -62,6 +62,7 @@ namespace CapaControladora
             }
 
         }
+
 
 
     }

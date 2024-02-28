@@ -155,6 +155,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_TECHGOALDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Canchas\Cancha - Individual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Canchas\Cancha - Individual.Designer.cs">
+      <DependentUpon>Cancha - Individual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Canchas\Canchas - Agregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     <Compile Include="Formularios\Usuarios\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\Canchas\Cancha - Individual.resx">
+      <DependentUpon>Cancha - Individual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Canchas\Canchas - Agregar.resx">
       <DependentUpon>Canchas - Agregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -450,6 +459,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clockW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forwardW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
