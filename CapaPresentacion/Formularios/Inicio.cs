@@ -13,6 +13,7 @@ using System.Windows.Input;
 using CapaControladora;
 using CapaEntidad;
 using CapaPresentacion.Formularios;
+using CapaPresentacion.Formularios.Clientes;
 
 namespace CapaPresentacion
 {
@@ -205,6 +206,13 @@ namespace CapaPresentacion
             pnlContainer.Hide();
             picLogoText.Hide();
             AbrirFormulario(new formHorarios(this));
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            pnlContainer.Hide();
+            picLogoText.Hide();
+            AbrirFormulario(new formClientes(this));
         }
     }
     }
