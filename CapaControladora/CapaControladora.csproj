@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CC_Cancha.cs" />
     <Compile Include="CC_CanchaHorario.cs" />
+    <Compile Include="CC_Cliente.cs" />
     <Compile Include="CC_Horario.cs" />
     <Compile Include="CC_Permiso.cs" />
     <Compile Include="CC_Reserva.cs" />

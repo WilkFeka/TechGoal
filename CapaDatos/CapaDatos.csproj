@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CD_Cancha.cs" />
     <Compile Include="CD_CanchaHorario.cs" />
+    <Compile Include="CD_Cliente.cs" />
     <Compile Include="CD_Horario.cs" />
     <Compile Include="CD_Reserva.cs" />
     <Compile Include="Seguridad\CD_Permiso.cs" />
