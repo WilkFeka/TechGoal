@@ -26,6 +26,13 @@ namespace CapaPresentacion.Formularios.Clientes
 
         private void Clientes_Load(object sender, EventArgs e)
         {
+            // ---------------------------- CARGA DE COMBOBOX ESTADO ----------------------------
+
+            cmbEstadoFilter.Items.Add(new opcionCombo { texto = "Activo", valor = 1 });
+            cmbEstadoFilter.Items.Add(new opcionCombo { texto = "Inactivo", valor = 0 });
+            cmbEstadoFilter.DisplayMember = "texto";
+            cmbEstadoFilter.ValueMember = "valor";
+
             // ---------------------------- COLUMNA EDITAR ----------------------------
 
             DataGridViewImageColumn editarColumn = new DataGridViewImageColumn();
@@ -58,13 +65,7 @@ namespace CapaPresentacion.Formularios.Clientes
             // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet.clientes' Puede moverla o quitarla según sea necesario.
             this.clientesTableAdapter.Fill(this.dB_TECHGOALDataSet.clientes);
 
-            // ---------------------------- CARGA DE COMBOBOX ESTADO ----------------------------
-            cmbEstadoFilter.Items.Add(new opcionCombo { texto = "Activo", valor = 1 });
-            cmbEstadoFilter.Items.Add(new opcionCombo { texto = "Inactivo", valor = 0 });
-            cmbEstadoFilter.DisplayMember = "texto";
-            cmbEstadoFilter.ValueMember = "valor";
 
-            
 
         }
 
@@ -77,14 +78,21 @@ namespace CapaPresentacion.Formularios.Clientes
 
         private void filtrar()
         {
-            bool valorSeleccionado = true;
-            if (cmbEstadoFilter.SelectedValue != null)
-            {
-                valorSeleccionado = (bool)cmbEstadoFilter.SelectedValue;
+            string filtro = $"nombre LIKE '%{txtNombreFilter.Text}%' AND apellido LIKE '%{txtApellidoFilter.Text}%' AND dni LIKE '%{txtDocumentoFilter.Text}%'";
 
+            if (cmbEstadoFilter.SelectedIndex >= 0)
+            {
+
+                opcionCombo a = cmbEstadoFilter.Items[cmbEstadoFilter.SelectedIndex] as opcionCombo;
+
+                if (a != null)
+                {
+                    filtro += " AND estado = " + a.valor;
+                    
+                }
             }
 
-            clientesBindingSource.Filter = $"nombre LIKE '%{txtNombreFilter.Text}%' AND apellido LIKE '%{txtApellidoFilter.Text}%' AND dni LIKE '%{txtDocumentoFilter.Text}%' AND estado = '{valorSeleccionado}'";
+            clientesBindingSource.Filter = filtro;
         }
 
         private void txtNombreFilter_TextChanged(object sender, EventArgs e)
@@ -226,11 +234,16 @@ namespace CapaPresentacion.Formularios.Clientes
 
         private void dgvClientes_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvClientes.Columns[e.ColumnIndex].Name == "editar" && e.RowIndex != -1 || dgvClientes.Columns[e.ColumnIndex].Name == "borrar" && e.RowIndex != -1)
+            {
+                Cursor = Cursors.Hand;
+            }
 
         }
 
         private void dgvClientes_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
+            Cursor = Cursors.Default;
 
         }
     }
