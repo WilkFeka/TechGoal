@@ -1,5 +1,6 @@
 ﻿using CapaControladora;
 using CapaEntidad;
+using CapaPresentacion.Formularios.Reservas;
 using CapaPresentacion.Personalizacion;
 using System;
 using System.Collections.Generic;
@@ -84,6 +85,16 @@ namespace CapaPresentacion.Formularios.Canchas
                 // Evento click del boton dependiendo el modo
                 button.Click += (senderB, eB) =>
                 {
+                    if (horarioReservado != null)
+                    {
+                        formReservaModificar formReservaModificar = new formReservaModificar(canchaSeleccionada, dtpFecha.Value, horario, this, horarioReservado.objCliente, horarioReservado );
+                        formReservaModificar.ShowDialog();
+                    } else
+                    {
+                        formReservaNueva formReservaNueva = new formReservaNueva(canchaSeleccionada, dtpFecha.Value, horario, this);
+                        formReservaNueva.ShowDialog();
+                    }
+                    
                 };
             }
 

@@ -1,5 +1,7 @@
 ﻿using CapaControladora;
 using CapaEntidad;
+using CapaPresentacion.Formularios.Reservas;
+using CapaPresentacion.Personalizacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +18,23 @@ namespace CapaPresentacion.Formularios.Clientes
     {
         CC_Cliente ClienteControladora = CC_Cliente.getInstance;
         formClientes formClientesC;
-        public formClientesAgregar(formClientes formClientes)
+        formReservaNueva formReservaNuevaC;
+        Funcionalidades Funcionalidades = Funcionalidades.getInstance;
+        public formClientesAgregar()
         {
             InitializeComponent();
+        }
+
+        public formClientesAgregar(formClientes formClientes) : this()
+        {
             formClientesC = formClientes;
+            
+        }
+
+        public formClientesAgregar(formReservaNueva formReservaNueva) : this()
+        {
+            
+            formReservaNuevaC = formReservaNueva;
         }
 
         private void formClientesAgregar_Load(object sender, EventArgs e)
@@ -87,7 +102,37 @@ namespace CapaPresentacion.Formularios.Clientes
 
         private void formClientesAgregar_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formClientesC.llenarTabla();
+            if (formClientesC == null)
+            {
+                formReservaNuevaC.llenarTabla();
+            } else
+            {
+                 formClientesC.llenarTabla();
+
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Funcionalidades.soloLetras(sender, e);
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Funcionalidades.soloLetras(sender, e);
+
+        }
+
+        private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Funcionalidades.soloNumeros(sender, e);
+
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Funcionalidades.soloNumeros(sender, e);
+
         }
     }
 }
