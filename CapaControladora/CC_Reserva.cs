@@ -42,5 +42,43 @@ namespace CapaControladora
             return reserva;
 
         }
+
+        public Reserva EncontrarReservaID(int id)
+        {
+            Reserva buscandoReserva = new CC_Reserva().Listar().Where(r => r.id_reserva == id).FirstOrDefault();
+
+            if (buscandoReserva != null)
+            {
+                return buscandoReserva;
+            }
+            else
+            {
+                return buscandoReserva;
+            }
+
+        }
+
+        public bool AgregarReserva(Reserva reserva)
+        {
+            bool resultado = new CD_Reserva().AgregarReserva(reserva);
+
+            return resultado;
+        }
+
+        public bool ModificarReserva(Reserva reserva)
+        {
+            bool resultado = new CD_Reserva().ModificarReserva(reserva);
+
+            return resultado;
+        }
+
+        public bool EliminarReserva(int id)
+        {
+            bool resultado = new CD_Reserva().EliminarReserva(id);
+
+            return resultado;
+        }
+
+
     }
 }

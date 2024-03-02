@@ -96,3 +96,5 @@ C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Form
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Clientes.formClientes.resources
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Clientes.formClientesAgregar.resources
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Clientes.formClientesModificar.resources
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Reservas.formReservaNueva.resources
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Reservas.formReservaModificar.resources
