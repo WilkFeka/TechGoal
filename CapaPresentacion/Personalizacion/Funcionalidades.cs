@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using CapaControladora;
 using CapaEntidad;
 using System.Windows.Documents;
+using System.IO;
+using ClosedXML.Excel;
 
 namespace CapaPresentacion.Personalizacion
 {
@@ -161,7 +163,68 @@ namespace CapaPresentacion.Personalizacion
             return respuesta;
         }
 
-       
+        public void ExportarDataGridViewAExcel(DataGridView dataGridView, string rutaArchivo)
+        {
+            var workbook = new XLWorkbook();
+            var worksheet = workbook.Worksheets.Add("Datos");
+
+            // Ajustar el estilo de la fuente para todas las celdas
+            worksheet.Style.Font.FontName = "Roboto";
+            worksheet.Style.Font.FontSize = 14;
+
+            // Agregar encabezados de columna visibles y formatear en negrita
+            int columnaIndex = 1;
+            foreach (DataGridViewColumn columna in dataGridView.Columns)
+            {
+                if (columna.Visible && columna.HeaderText != "")
+                {
+                    worksheet.Cell(1, columnaIndex).Value = columna.HeaderText;
+                    worksheet.Cell(1, columnaIndex).Style.Font.Bold = true;
+                    columnaIndex++;
+                }
+            }
+
+            worksheet.Cell(1, columnaIndex).Value = "Fecha Exportacion";
+            worksheet.Cell(1, columnaIndex).Style.Font.Bold = true;
+
+            worksheet.Cell(2, columnaIndex).Value = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+            // Agregar datos filtrados
+            int filaIndex = 2;
+            foreach (DataGridViewRow fila in dataGridView.Rows)
+            {
+                if (fila.Visible)
+                {
+                    columnaIndex = 1;
+                    foreach (DataGridViewCell celda in fila.Cells)
+                    {
+                        if (dataGridView.Columns[celda.ColumnIndex].Visible && dataGridView.Columns[celda.ColumnIndex].HeaderText != "")
+                        {
+                            worksheet.Cell(filaIndex, columnaIndex).Value = celda.Value?.ToString();
+                            columnaIndex++;
+                        }
+                    }
+                    filaIndex++;
+                }
+
+
+            }
+
+
+
+
+            // Ajustar ancho de columnas para que se ajusten al contenido
+            worksheet.Columns().AdjustToContents();
+
+
+            // Guardar el libro de Excel
+            workbook.SaveAs(rutaArchivo);
+
+            MessageBox.Show("Archivo exportado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+
 
 
     }

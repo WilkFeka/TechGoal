@@ -304,5 +304,18 @@ namespace CapaPresentacion
             formInicioC.picLogoText.Show();
             Close();
         }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        { // Seleccionar la ubicación para guardar el archivo Excel
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivos de Excel (*.xlsx)|*.xlsx";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string rutaArchivo = saveFileDialog.FileName;
+
+                // Exportar el DataGridView actualmente filtrado a Excel
+                funcionalidades.ExportarDataGridViewAExcel(dgvUsuarios, rutaArchivo);
+            }
+        }
     }
 }

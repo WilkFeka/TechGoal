@@ -550,6 +550,7 @@
             this.btnExportar.TabIndex = 4;
             this.btnExportar.TextColor = System.Drawing.Color.White;
             this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // pictureBox1
             // 
