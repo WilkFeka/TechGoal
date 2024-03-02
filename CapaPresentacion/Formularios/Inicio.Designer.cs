@@ -36,6 +36,12 @@
             this.menuCanchas = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCanchas = new CapaPresentacion.Personalizacion.MSButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnHorarios = new CapaPresentacion.Personalizacion.MSButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnClientes = new CapaPresentacion.Personalizacion.MSButton();
+            this.label8 = new System.Windows.Forms.Label();
             this.menuTorneos = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTorneos = new CapaPresentacion.Personalizacion.MSButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,6 +69,8 @@
             this.flwPanelButons.SuspendLayout();
             this.menuUsuarios.SuspendLayout();
             this.menuCanchas.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.menuTorneos.SuspendLayout();
             this.menuEquipos.SuspendLayout();
             this.menuPantalla.SuspendLayout();
@@ -85,15 +93,16 @@
             this.flwPanelButons.BackColor = System.Drawing.Color.White;
             this.flwPanelButons.Controls.Add(this.menuUsuarios);
             this.flwPanelButons.Controls.Add(this.menuCanchas);
+            this.flwPanelButons.Controls.Add(this.flowLayoutPanel1);
+            this.flwPanelButons.Controls.Add(this.flowLayoutPanel2);
             this.flwPanelButons.Controls.Add(this.menuTorneos);
             this.flwPanelButons.Controls.Add(this.menuEquipos);
             this.flwPanelButons.Controls.Add(this.menuPantalla);
             this.flwPanelButons.Controls.Add(this.menuReportes);
             this.flwPanelButons.Location = new System.Drawing.Point(3, 41);
-            this.flwPanelButons.MaximumSize = new System.Drawing.Size(778, 0);
             this.flwPanelButons.Name = "flwPanelButons";
             this.flwPanelButons.Padding = new System.Windows.Forms.Padding(10);
-            this.flwPanelButons.Size = new System.Drawing.Size(741, 646);
+            this.flwPanelButons.Size = new System.Drawing.Size(1061, 959);
             this.flwPanelButons.TabIndex = 0;
             // 
             // menuUsuarios
@@ -188,12 +197,104 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Canchas";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnHorarios);
+            this.flowLayoutPanel1.Controls.Add(this.label7);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(500, 20);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 293);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // btnHorarios
+            // 
+            this.btnHorarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            this.btnHorarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            this.btnHorarios.BackgroundImage = global::CapaPresentacion.Properties.Resources.clockW;
+            this.btnHorarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHorarios.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.btnHorarios.BorderRadius = 80;
+            this.btnHorarios.BorderSize = 0;
+            this.btnHorarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHorarios.FlatAppearance.BorderSize = 0;
+            this.btnHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHorarios.ForeColor = System.Drawing.Color.White;
+            this.btnHorarios.Location = new System.Drawing.Point(0, 0);
+            this.btnHorarios.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHorarios.Name = "btnHorarios";
+            this.btnHorarios.Size = new System.Drawing.Size(220, 220);
+            this.btnHorarios.TabIndex = 1;
+            this.btnHorarios.TextColor = System.Drawing.Color.White;
+            this.btnHorarios.UseVisualStyleBackColor = false;
+            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Roboto", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(46, 230);
+            this.label7.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 35);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Horarios";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnClientes);
+            this.flowLayoutPanel2.Controls.Add(this.label8);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(740, 20);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(220, 293);
+            this.flowLayoutPanel2.TabIndex = 5;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(26)))));
+            this.btnClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(26)))));
+            this.btnClientes.BackgroundImage = global::CapaPresentacion.Properties.Resources.clientW;
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClientes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnClientes.BorderRadius = 80;
+            this.btnClientes.BorderSize = 0;
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.ForeColor = System.Drawing.Color.White;
+            this.btnClientes.Location = new System.Drawing.Point(0, 0);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(220, 220);
+            this.btnClientes.TabIndex = 1;
+            this.btnClientes.TextColor = System.Drawing.Color.White;
+            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Roboto", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(51, 230);
+            this.label8.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 35);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Clientes";
+            // 
             // menuTorneos
             // 
             this.menuTorneos.Controls.Add(this.btnTorneos);
             this.menuTorneos.Controls.Add(this.label3);
             this.menuTorneos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.menuTorneos.Location = new System.Drawing.Point(500, 20);
+            this.menuTorneos.Location = new System.Drawing.Point(20, 333);
             this.menuTorneos.Margin = new System.Windows.Forms.Padding(10);
             this.menuTorneos.Name = "menuTorneos";
             this.menuTorneos.Size = new System.Drawing.Size(220, 293);
@@ -238,7 +339,7 @@
             this.menuEquipos.Controls.Add(this.btnEquipos);
             this.menuEquipos.Controls.Add(this.label4);
             this.menuEquipos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.menuEquipos.Location = new System.Drawing.Point(20, 333);
+            this.menuEquipos.Location = new System.Drawing.Point(260, 333);
             this.menuEquipos.Margin = new System.Windows.Forms.Padding(10);
             this.menuEquipos.Name = "menuEquipos";
             this.menuEquipos.Size = new System.Drawing.Size(220, 293);
@@ -283,11 +384,12 @@
             this.menuPantalla.Controls.Add(this.btnPantalla);
             this.menuPantalla.Controls.Add(this.label5);
             this.menuPantalla.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.menuPantalla.Location = new System.Drawing.Point(260, 333);
+            this.menuPantalla.Location = new System.Drawing.Point(500, 333);
             this.menuPantalla.Margin = new System.Windows.Forms.Padding(10);
             this.menuPantalla.Name = "menuPantalla";
             this.menuPantalla.Size = new System.Drawing.Size(220, 293);
             this.menuPantalla.TabIndex = 4;
+            this.menuPantalla.Visible = false;
             // 
             // btnPantalla
             // 
@@ -328,7 +430,7 @@
             this.menuReportes.Controls.Add(this.btnReportes);
             this.menuReportes.Controls.Add(this.label6);
             this.menuReportes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.menuReportes.Location = new System.Drawing.Point(500, 333);
+            this.menuReportes.Location = new System.Drawing.Point(740, 333);
             this.menuReportes.Margin = new System.Windows.Forms.Padding(10);
             this.menuReportes.Name = "menuReportes";
             this.menuReportes.Size = new System.Drawing.Size(220, 293);
@@ -373,9 +475,9 @@
             this.pnlContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlContainer.BackColor = System.Drawing.Color.White;
             this.pnlContainer.Controls.Add(this.flwPanelButons);
-            this.pnlContainer.Location = new System.Drawing.Point(134, 175);
+            this.pnlContainer.Location = new System.Drawing.Point(80, 183);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(781, 690);
+            this.pnlContainer.Size = new System.Drawing.Size(1101, 690);
             this.pnlContainer.TabIndex = 3;
             // 
             // panel3
@@ -493,7 +595,7 @@
             this.pnlGrande.Controls.Add(this.pnlContainer);
             this.pnlGrande.Location = new System.Drawing.Point(277, 41);
             this.pnlGrande.Name = "pnlGrande";
-            this.pnlGrande.Size = new System.Drawing.Size(1049, 989);
+            this.pnlGrande.Size = new System.Drawing.Size(1256, 989);
             this.pnlGrande.TabIndex = 5;
             // 
             // picLogoText
@@ -503,7 +605,7 @@
             this.picLogoText.Image = global::CapaPresentacion.Properties.Resources.TextDark;
             this.picLogoText.Location = new System.Drawing.Point(80, 73);
             this.picLogoText.Name = "picLogoText";
-            this.picLogoText.Size = new System.Drawing.Size(904, 85);
+            this.picLogoText.Size = new System.Drawing.Size(1111, 85);
             this.picLogoText.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogoText.TabIndex = 0;
             this.picLogoText.TabStop = false;
@@ -516,7 +618,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(277, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1049, 44);
+            this.panel2.Size = new System.Drawing.Size(1256, 44);
             this.panel2.TabIndex = 4;
             // 
             // btnCerrar
@@ -532,7 +634,7 @@
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(1012, 5);
+            this.btnCerrar.Location = new System.Drawing.Point(1219, 5);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(32, 32);
             this.btnCerrar.TabIndex = 6;
@@ -553,7 +655,7 @@
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.ForeColor = System.Drawing.Color.White;
-            this.btnMinimizar.Location = new System.Drawing.Point(974, 5);
+            this.btnMinimizar.Location = new System.Drawing.Point(1181, 5);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(32, 32);
             this.btnMinimizar.TabIndex = 5;
@@ -568,7 +670,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(1326, 1030);
+            this.ClientSize = new System.Drawing.Size(1533, 1030);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlGrande);
             this.Controls.Add(this.panel3);
@@ -590,6 +692,10 @@
             this.menuUsuarios.PerformLayout();
             this.menuCanchas.ResumeLayout(false);
             this.menuCanchas.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.menuTorneos.ResumeLayout(false);
             this.menuTorneos.PerformLayout();
             this.menuEquipos.ResumeLayout(false);
@@ -643,6 +749,12 @@
         private Personalizacion.MSButton btnMinimizar;
         private System.Windows.Forms.Panel panel2;
         private Personalizacion.MSButton btnCerrar;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Personalizacion.MSButton btnHorarios;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private Personalizacion.MSButton btnClientes;
+        private System.Windows.Forms.Label label8;
     }
 }
 

@@ -107,6 +107,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -155,6 +156,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_TECHGOALDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_TECHGOALDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_TECHGOALDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Canchas\Cancha - Individual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Canchas\Cancha - Individual.Designer.cs">
+      <DependentUpon>Cancha - Individual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Canchas\Canchas - Agregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +184,24 @@
     </Compile>
     <Compile Include="Formularios\Canchas\Canchas.Designer.cs">
       <DependentUpon>Canchas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Clientes\Clientes - Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\Clientes - Agregar.Designer.cs">
+      <DependentUpon>Clientes - Agregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Clientes\Clientes - Modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\Clientes - Modificar.Designer.cs">
+      <DependentUpon>Clientes - Modificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Clientes\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Horarios\Horarios.cs">
       <SubType>Form</SubType>
@@ -196,6 +226,18 @@
     </Compile>
     <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reservas\Reserva - Modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reservas\Reserva - Modificar.Designer.cs">
+      <DependentUpon>Reserva - Modificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reservas\Reserva - Nueva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reservas\Reserva - Nueva.Designer.cs">
+      <DependentUpon>Reserva - Nueva.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Usuarios\Perfil - Nueva Clave.cs">
       <SubType>Form</SubType>
@@ -263,6 +305,9 @@
     <Compile Include="Formularios\Usuarios\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\Canchas\Cancha - Individual.resx">
+      <DependentUpon>Cancha - Individual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Canchas\Canchas - Agregar.resx">
       <DependentUpon>Canchas - Agregar.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +316,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Canchas\Canchas.resx">
       <DependentUpon>Canchas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\Clientes - Agregar.resx">
+      <DependentUpon>Clientes - Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\Clientes - Modificar.resx">
+      <DependentUpon>Clientes - Modificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Horarios\Horarios.resx">
       <DependentUpon>Horarios.cs</DependentUpon>
@@ -283,6 +337,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reservas\Reserva - Modificar.resx">
+      <DependentUpon>Reserva - Modificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reservas\Reserva - Nueva.resx">
+      <DependentUpon>Reserva - Nueva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios\Perfil - Nueva Clave.resx">
       <DependentUpon>Perfil - Nueva Clave.cs</DependentUpon>
@@ -327,6 +387,17 @@
     </None>
     <None Include="DB_TECHGOALDataSet.xss">
       <DependentUpon>DB_TECHGOALDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DB_TECHGOALDataSet1.xsc">
+      <DependentUpon>DB_TECHGOALDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DB_TECHGOALDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_TECHGOALDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_TECHGOALDataSet1.xss">
+      <DependentUpon>DB_TECHGOALDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -445,6 +516,47 @@
   <ItemGroup>
     <None Include="Resources\eyeW %281%29.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\clockG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clockW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forwardW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tickW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firstItemW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firstItemG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lastItemG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previusG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nextG.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

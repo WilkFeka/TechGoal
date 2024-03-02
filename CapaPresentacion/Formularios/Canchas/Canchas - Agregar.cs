@@ -39,9 +39,9 @@ namespace CapaPresentacion.Formularios
                 return;
             }
 
-            Cancha ecnontrarCancha = CanchaControladora.EncontrarCanchaNum(Convert.ToInt32(txtNumero.Text));
+            Cancha encontrarCancha = CanchaControladora.EncontrarCanchaNum(Convert.ToInt32(txtNumero.Text));
 
-            if (ecnontrarCancha != null)
+            if (encontrarCancha != null)
             {
                 MessageBox.Show("Numero de cancha existente, por favoir ingrese otro numero", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -56,6 +56,19 @@ namespace CapaPresentacion.Formularios
                 return;
             }
 
+
+            // Asociar cancha con horarios
+
+            Cancha canchaNueva = CanchaControladora.EncontrarCanchaNum(Convert.ToInt32(txtNumero.Text));
+
+            bool asociarCanchaHorarios = CanchaControladora.AgregarCanchaHorarios(canchaNueva.id_cancha);
+
+            if (asociarCanchaHorarios == false)
+            {
+                MessageBox.Show("Hubo un error al asociar cancha con horarios. Por favor contacte a un administrador", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             MessageBox.Show("Cancha agregada con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
 
@@ -64,11 +77,25 @@ namespace CapaPresentacion.Formularios
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcionalidades.soloNumeros(sender, e);
+            if (txtNumero.Text.Length == 4)
+            {
+                // Permitir teclas de control como retroceso o eliminar
+                if (!char.IsControl(e.KeyChar))
+                {
+                    // Evitar que se escriba el quinto carácter
+                    e.Handled = true;
+                }
+            }
         }
 
         private void formCanchasAgregar_FormClosed(object sender, FormClosedEventArgs e)
         {
             formCanchasC.formCanchas_Load(sender, e);
+        }
+
+        private void formCanchasAgregar_Load(object sender, EventArgs e)
+        {
+                       
         }
     }
 }

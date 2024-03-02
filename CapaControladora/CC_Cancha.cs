@@ -56,6 +56,7 @@ namespace CapaControladora
 
         }
 
+        // ---------------------- AGREGAR CANCHA --------------------
         public bool AgregarCancha(int numero)
         {
             if (numero != 0)
@@ -74,6 +75,45 @@ namespace CapaControladora
             }
         }
 
+        public bool AgregarCanchaHorarios(int id_cancha)
+        {
+            if (id_cancha != 0)
+            {
+                if (CD_Cancha.AgregarCanchaHorarios(id_cancha))
+                {
+                    return true;
+
+                }
+                else return false;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        // ---------------------- MODIFICAR CANCHA --------------------
+
+        public bool ModificarCancha(Cancha cancha)
+        {
+            if (cancha != null)
+            {
+                if (CD_Cancha.ModificarCancha(cancha))
+                {
+                    return true;
+
+                }
+                else return false;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        // ---------------------- ELIMINAR CANCHA --------------------
         public bool EliminarCancha(int id)
         {
             if (id != 0)
@@ -90,6 +130,17 @@ namespace CapaControladora
             {
                 return false;
             }
+        }
+
+        public bool EliminarCanchaHorarios(int id_cancha)
+        {
+            if (CD_Cancha.EliminarCanchaHorarios(id_cancha))
+            {
+                return true;
+
+            }
+            else return false;
+
         }
     }
 }
