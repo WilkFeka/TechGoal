@@ -43,6 +43,16 @@ namespace CapaControladora
 
         }
 
+        public List<Reserva> EncontrarReservasCanchaFIFF(Cancha cancha, DateTime fechaInicio,DateTime fechaFinal)
+        {
+            List<Reserva> reserva = new CC_Reserva().Listar().Where(r => r.objCancha.id_cancha == cancha.id_cancha && r.fechaReserva >= fechaInicio && r.fechaReserva <= fechaFinal).ToList();
+
+            return reserva;
+
+        }
+
+
+
         public Reserva EncontrarReservaID(int id)
         {
             Reserva buscandoReserva = new CC_Reserva().Listar().Where(r => r.id_reserva == id).FirstOrDefault();
