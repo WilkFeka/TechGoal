@@ -142,8 +142,20 @@
   <data name="clockG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clockG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clockW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clockW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nextG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nextG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="screenBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\screenBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Inactive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inactive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,9 +172,6 @@
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="canchaBlanca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\canchaBlanca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="trophyBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trophyBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,8 +181,8 @@
   <data name="lastItemG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lastItemG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clientG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clientG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eliminarBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminarBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -186,9 +195,6 @@
   </data>
   <data name="userWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\userWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="userBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\userBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Inactive1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inactive1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,9 +223,6 @@
   <data name="RolesWhite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RolesWhite1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ButtonStroke" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ButtonStroke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="screenBlanca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\screenBlanca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -244,8 +247,8 @@
   <data name="firstItemG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\firstItemG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="canchaBlanca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\canchaBlanca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rolesOscuro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rolesOscuro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,11 +277,14 @@
   <data name="genteBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\genteBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eliminarBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eliminarBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="previusG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\previusG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clockW" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clockW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="userBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ButtonStroke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ButtonStroke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TextDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TextDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,13 +301,10 @@
   <data name="LogoGradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoGradient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LogoWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LogoWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clientG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clientG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="previusG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\previusG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nextG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nextG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="reporteG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reporteG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

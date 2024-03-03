@@ -14,6 +14,7 @@ using CapaControladora;
 using CapaEntidad;
 using CapaPresentacion.Formularios;
 using CapaPresentacion.Formularios.Clientes;
+using CapaPresentacion.Formularios.Reportes;
 
 namespace CapaPresentacion
 {
@@ -213,6 +214,13 @@ namespace CapaPresentacion
             pnlContainer.Hide();
             picLogoText.Hide();
             AbrirFormulario(new formClientes(this));
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            pnlContainer.Hide();
+            picLogoText.Hide();
+            AbrirFormulario(new formReportes(this));
         }
     }
     }
