@@ -21,6 +21,7 @@ namespace CapaPresentacion
         private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
         private Funcionalidades funcionalidades = Funcionalidades.getInstance;
         private formInicio formInicioC;
+
         public formUsuarios(formInicio formInicio)
         {
             InitializeComponent();
@@ -43,6 +44,9 @@ namespace CapaPresentacion
             LlenarTabla();
 
             limpiarFiltros();
+
+            
+
         }
 
         public void LlenarTabla()
@@ -124,6 +128,8 @@ namespace CapaPresentacion
 
 
         }
+
+
 
         private void txtCorreoFilter_TextChanged(object sender, EventArgs e)
         {
@@ -303,6 +309,19 @@ namespace CapaPresentacion
             formInicioC.pnlContainer.Show();
             formInicioC.picLogoText.Show();
             Close();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        { // Seleccionar la ubicación para guardar el archivo Excel
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivos de Excel (*.xlsx)|*.xlsx";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string rutaArchivo = saveFileDialog.FileName;
+
+                // Exportar el DataGridView actualmente filtrado a Excel
+                funcionalidades.ExportarDataGridViewAExcel(dgvUsuarios, rutaArchivo);
+            }
         }
     }
 }
