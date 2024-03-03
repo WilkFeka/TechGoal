@@ -165,6 +165,8 @@ namespace CapaPresentacion.Personalizacion
 
         public void ExportarDataGridViewAExcel(DataGridView dataGridView, string rutaArchivo)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             var workbook = new XLWorkbook();
             var worksheet = workbook.Worksheets.Add("Datos");
 
@@ -218,9 +220,14 @@ namespace CapaPresentacion.Personalizacion
 
 
             // Guardar el libro de Excel
+
             workbook.SaveAs(rutaArchivo);
 
+
             MessageBox.Show("Archivo exportado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Cursor.Current = Cursors.Default;
+
 
         }
 

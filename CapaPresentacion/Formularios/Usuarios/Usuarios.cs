@@ -21,6 +21,7 @@ namespace CapaPresentacion
         private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
         private Funcionalidades funcionalidades = Funcionalidades.getInstance;
         private formInicio formInicioC;
+
         public formUsuarios(formInicio formInicio)
         {
             InitializeComponent();
@@ -43,6 +44,9 @@ namespace CapaPresentacion
             LlenarTabla();
 
             limpiarFiltros();
+
+            
+
         }
 
         public void LlenarTabla()
@@ -124,6 +128,8 @@ namespace CapaPresentacion
 
 
         }
+
+
 
         private void txtCorreoFilter_TextChanged(object sender, EventArgs e)
         {

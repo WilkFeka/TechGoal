@@ -27,6 +27,9 @@ namespace CapaPresentacion.Formularios.Reservas
         CC_Reserva ReservaControladora = CC_Reserva.getInstance;
         Cliente clienteSeleccionado;
         formCanchaIndividual formCanchaIndividualC;
+        private int paginaActual = 1;
+        private int registrosPorPagina = 15;
+
 
         bool clientesAbierto = false;
         public formReservaNueva(Cancha cancha, DateTime fecha, Horario horario, formCanchaIndividual formCanchaIndividual)
@@ -62,8 +65,23 @@ namespace CapaPresentacion.Formularios.Reservas
         {
             clientesTableAdapter.Fill(dB_TECHGOALDataSet1.clientes);
 
-            filtrar();
+            MostrarPagina(paginaActual);
 
+
+
+        }
+
+        private void MostrarPagina(int numeroPagina)
+        {
+            int primerRegistro = (numeroPagina - 1) * registrosPorPagina;
+
+            clientesBindingSource.DataSource = dB_TECHGOALDataSet1.clientes
+                .AsEnumerable()
+                .Skip(primerRegistro)
+                .Take(registrosPorPagina)
+                .CopyToDataTable();
+
+            bindingNavigatorCountItem.Text = $"Página {numeroPagina}";
         }
 
 
@@ -89,6 +107,8 @@ namespace CapaPresentacion.Formularios.Reservas
 
         }
 
+
+
         public void AbrirClientes()
         {
             clientesAbierto = !clientesAbierto;
@@ -98,6 +118,9 @@ namespace CapaPresentacion.Formularios.Reservas
 
         private void filtrar()
         {
+            clientesBindingSource.DataSource = dB_TECHGOALDataSet1.clientes;
+            clientesTableAdapter.Fill(dB_TECHGOALDataSet1.clientes);
+
             string filtro = $"nombre LIKE '%{txtNombreFilter.Text}%' AND apellido LIKE '%{txtApellidoFilter.Text}%' AND dni LIKE '%{txtDocumentoFilter.Text}%' AND estado = 1";
 
             clientesBindingSource.Filter = filtro;
@@ -150,10 +173,19 @@ namespace CapaPresentacion.Formularios.Reservas
 
         private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
         {
+            if (paginaActual > 1)
+            {
+                paginaActual--;
+                MostrarPagina(paginaActual);
+                bindingNavigatorMoveNextItem.Enabled = true;
+            }
         }
 
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
+            paginaActual++;
+            MostrarPagina(paginaActual);
+            bindingNavigatorMoveNextItem.Enabled = (paginaActual * registrosPorPagina) < dB_TECHGOALDataSet1.clientes.Rows.Count;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
