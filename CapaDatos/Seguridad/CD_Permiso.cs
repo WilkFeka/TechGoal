@@ -23,7 +23,7 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
                    
-                    query.AppendLine("SELECT p.id_rol, p.nombreMenu FROM permisos p");
+                    query.AppendLine("SELECT p.id_rol, p.id_modulo FROM permisos p");
                     query.AppendLine("INNER JOIN rol r ON r.id_rol = p.id_rol");
                     query.AppendLine("INNER JOIN usuarios u ON u.id_rol = r.id_rol");
                     query.AppendLine("WHERE u.id_usuario = @id_usuario");
