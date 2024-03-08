@@ -42,7 +42,8 @@ namespace CapaDatos
                                 lista.Add(new Permiso()
                                 {
                                     obj_rol = new Rol() { id_rol = Convert.ToInt32(reader["id_rol"]) },
-                                    nombreMenu = reader["nombreMenu"].ToString(),
+                                    obj_modulo = new Modulo() { id_modulo = Convert.ToInt32(reader["id_modulo"]) },
+
                                 });
 
                             }
@@ -77,7 +78,7 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("SELECT id_rol, nombreMenu FROM permisos");
+                    query.AppendLine("SELECT id_rol, id_modulo FROM permisos");
                     
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
@@ -92,7 +93,7 @@ namespace CapaDatos
                                 lista.Add(new Permiso()
                                 {
                                     obj_rol = new Rol() { id_rol = Convert.ToInt32(reader["id_rol"]) },
-                                    nombreMenu = reader["nombreMenu"].ToString(),
+                                    obj_modulo = new Modulo() { id_modulo = Convert.ToInt32(reader["id_modulo"]) },
                                 });
 
                             }
@@ -124,12 +125,12 @@ namespace CapaDatos
                 using (SqlConnection conection = new SqlConnection(Conection.cadena))
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("INSERT INTO permisos (id_rol, nombreMenu) VALUES (@id_rol, @nombreMenu)");
+                    query.AppendLine("INSERT INTO permisos (id_rol, id_modulo) VALUES (@id_rol, @id_modulo)");
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
                     {
                         cmd.Parameters.AddWithValue("@id_rol", nuevoPermiso.obj_rol.id_rol);
-                        cmd.Parameters.AddWithValue("@nombreMenu", nuevoPermiso.nombreMenu);
+                        cmd.Parameters.AddWithValue("@id_modulo", nuevoPermiso.obj_modulo.id_modulo);
 
                         conection.Open();
 

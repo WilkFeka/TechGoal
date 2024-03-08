@@ -32,43 +32,59 @@ namespace CapaPresentacion.Formularios
 
             List<Permiso> listaPermisos = permisoControladora.BuscarPermisoID_Rol(rolSeleccionado.id_rol);
 
+
+
+
+
             foreach (Permiso permiso in listaPermisos)
             {
-                switch (permiso.nombreMenu)
+                switch (permiso.id_permiso)
                 {
-                    case "menuUsuarios":
+                    case 1:
                         btnUsuarios.BackgroundImage = Properties.Resources.Active;
                         activadoUsuarios = true;
                         break;
-                    case "menuCanchas":
+                    case 2:
                         btnCanchas.BackgroundImage = Properties.Resources.Active;
                         activadoCanchas = true;
                         break;
-                    case "menuTorneos":
+                    case 3:
+                        btnCanchas.BackgroundImage = Properties.Resources.Active;
+                        activadoCanchas = true;
+                        break;
+                    case 4:
+                        btnCanchas.BackgroundImage = Properties.Resources.Active;
+                        activadoCanchas = true;
+                        break;
+                    case 5:
                         btnTorneos.BackgroundImage = Properties.Resources.Active;
                         activadoTorneos = true;
                         break;
-                    case "menuEquipos":
+                    case 6:
                         btnEquipos.BackgroundImage = Properties.Resources.Active;
                         activadoEquipos = true;
                         break;
-                    case "menuPantalla":
+                    case 7:
                         btnPantalla.BackgroundImage = Properties.Resources.Active;
                         activadoPantalla = true;
                         break;
-                    case "menuReportes":
+                    case 8:
                         btnReportes.BackgroundImage = Properties.Resources.Active;
                         activadoReportes = true;
                         break;
-                    case "menuRoles":
+                    case 9:
                         btnRoles.BackgroundImage = Properties.Resources.Active;
                         activadoRoles = true;
+                        break;
+                    case 10:
+                        btnCanchas.BackgroundImage = Properties.Resources.Active;
+                        activadoCanchas = true;
                         break;
                 }
             }
 
-            
-            
+
+
 
         }
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -133,7 +149,7 @@ namespace CapaPresentacion.Formularios
                 Rol buscarRol = rolControladora.BuscarRol(txtNombre.Text);
 
                 // Nombres de los menus. Tienen que tener el mismo index que las variables en 'activados'
-                string[] nombreMenus = { "menuUsuarios", "menuCanchas", "menuEquipos", "menuPantalla", "menuReportes", "menuRoles", "menuTorneos" };
+                /*string[] nombreMenus = { "menuUsuarios", "menuCanchas", "menuEquipos", "menuPantalla", "menuReportes", "menuRoles", "menuTorneos" };
 
                 bool eliminarPermisos = permisoControladora.EliminarPermiso(buscarRol.id_rol);
 
@@ -165,7 +181,7 @@ namespace CapaPresentacion.Formularios
                         }
 
                     }
-                }
+                }*/
 
                 MessageBox.Show("Rol modificado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
