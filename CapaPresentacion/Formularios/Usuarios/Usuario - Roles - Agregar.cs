@@ -39,6 +39,8 @@ namespace CapaPresentacion.Formularios
             }
         }
 
+
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
@@ -183,13 +185,21 @@ namespace CapaPresentacion.Formularios
 
         }
 
+
+
         private void formRolesAgregar_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Recarga la tabla al cerrar el formulario
             formRolesC.formUsuarioRoles_Load(sender, e); 
         }
 
+
         // ---------------------------- FUNCIONALIDADES Y VISTAS DE BOTONES ----------------------------
+        private void btnABMCanchas_Click(object sender, EventArgs e)
+        {
+            btnABMCanchas.BackgroundImage = activadoABMCanchas ? Properties.Resources.Inactive : Properties.Resources.Active;
+            activadoABMCanchas = !activadoABMCanchas;
+        }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
@@ -237,6 +247,18 @@ namespace CapaPresentacion.Formularios
         {
             btnTorneos.BackgroundImage = activadoTorneos ? Properties.Resources.Inactive : Properties.Resources.Active;
             activadoTorneos = !activadoTorneos;
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            btnClientes.BackgroundImage = activadoClientes ? Properties.Resources.Inactive : Properties.Resources.Active;
+            activadoClientes = !activadoClientes;
+
+        }
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            btnHorarios.BackgroundImage = activadoHorarios ? Properties.Resources.Inactive : Properties.Resources.Active;
+            activadoHorarios = !activadoHorarios;
         }
     }
 }

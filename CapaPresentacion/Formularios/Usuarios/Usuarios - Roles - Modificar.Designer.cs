@@ -50,6 +50,12 @@
             this.btnCancelar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnAceptar = new CapaPresentacion.Personalizacion.MSButton();
             this.msButton3 = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnHorarios = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnABMCanchas = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -368,6 +374,90 @@
             this.msButton3.TextColor = System.Drawing.Color.White;
             this.msButton3.UseVisualStyleBackColor = false;
             // 
+            // btnHorarios
+            // 
+            this.btnHorarios.BackgroundImage = global::CapaPresentacion.Properties.Resources.Inactivo;
+            this.btnHorarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHorarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHorarios.FlatAppearance.BorderSize = 0;
+            this.btnHorarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnHorarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHorarios.Location = new System.Drawing.Point(168, 490);
+            this.btnHorarios.Name = "btnHorarios";
+            this.btnHorarios.Size = new System.Drawing.Size(62, 35);
+            this.btnHorarios.TabIndex = 128;
+            this.btnHorarios.UseVisualStyleBackColor = true;
+            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label11.Location = new System.Drawing.Point(58, 490);
+            this.label11.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(105, 29);
+            this.label11.TabIndex = 129;
+            this.label11.Text = "Horarios";
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackgroundImage = global::CapaPresentacion.Properties.Resources.Inactivo;
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Location = new System.Drawing.Point(394, 436);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(62, 35);
+            this.btnClientes.TabIndex = 126;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label10.Location = new System.Drawing.Point(284, 436);
+            this.label10.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 29);
+            this.label10.TabIndex = 127;
+            this.label10.Text = "Clientes";
+            // 
+            // btnABMCanchas
+            // 
+            this.btnABMCanchas.BackgroundImage = global::CapaPresentacion.Properties.Resources.Inactivo;
+            this.btnABMCanchas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnABMCanchas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnABMCanchas.FlatAppearance.BorderSize = 0;
+            this.btnABMCanchas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnABMCanchas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnABMCanchas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnABMCanchas.Location = new System.Drawing.Point(392, 490);
+            this.btnABMCanchas.Name = "btnABMCanchas";
+            this.btnABMCanchas.Size = new System.Drawing.Size(62, 35);
+            this.btnABMCanchas.TabIndex = 130;
+            this.btnABMCanchas.UseVisualStyleBackColor = true;
+            this.btnABMCanchas.Click += new System.EventHandler(this.btnABMCanchas_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label12.Location = new System.Drawing.Point(253, 496);
+            this.label12.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(136, 23);
+            this.label12.TabIndex = 131;
+            this.label12.Text = "Editar Canchas";
+            // 
             // formRolesModificar
             // 
             this.AcceptButton = this.btnAceptar;
@@ -376,6 +466,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(509, 636);
+            this.Controls.Add(this.btnABMCanchas);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.btnHorarios);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.btnClientes);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnEquipos);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox1);
@@ -437,5 +533,11 @@
         private Personalizacion.MSButton msButton3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnHorarios;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnABMCanchas;
+        private System.Windows.Forms.Label label12;
     }
 }

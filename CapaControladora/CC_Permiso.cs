@@ -70,9 +70,9 @@ namespace CapaControladora
 
         }
 
-        public bool EliminarPermiso(int id_permiso)
+        public bool EliminarPermiso(int id_rol)
         {
-            if (CD_Permiso.EliminarPermiso(id_permiso))
+            if (CD_Permiso.EliminarPermiso(id_rol))
             {
                 return true;
             }

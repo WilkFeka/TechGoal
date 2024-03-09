@@ -78,7 +78,7 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("SELECT id_rol, id_modulo FROM permisos");
+                    query.AppendLine("SELECT id_permiso, id_rol, id_modulo FROM permisos");
                     
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
