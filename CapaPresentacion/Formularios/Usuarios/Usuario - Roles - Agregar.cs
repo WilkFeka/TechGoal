@@ -20,7 +20,7 @@ namespace CapaPresentacion.Formularios
         CC_Modulo moduloControladora = CC_Modulo.getInstance;
         formRoles formRolesC;
 
-        private bool activadoUsuarios, activadoCanchas, activadoTorneos, activadoEquipos, activadoPantalla, activadoReportes, activadoRoles, activadoClientes, activadoABMCanchas, activadoHorarios  = false;
+        private bool activadoUsuarios, activadoCanchas, activadoTorneos, activadoEquipos, activadoPantalla, activadoReportes, activadoClientes, activadoABMCanchas, activadoHorarios  = false;
         Dictionary<Modulo, bool> modulosActivados = new Dictionary<Modulo, bool>();
 
 
@@ -75,10 +75,6 @@ namespace CapaPresentacion.Formularios
                     modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaReportes")] = true;
                 }
 
-                if (activadoRoles)
-                {
-                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaRoles")] = true;
-                }
 
                 if (activadoTorneos)
                 {
@@ -233,8 +229,7 @@ namespace CapaPresentacion.Formularios
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
-            btnRoles.BackgroundImage = activadoRoles ? Properties.Resources.Inactive : Properties.Resources.Active;
-            activadoRoles = !activadoRoles;
+            
         }
 
         private void btnEquipos_Click(object sender, EventArgs e)

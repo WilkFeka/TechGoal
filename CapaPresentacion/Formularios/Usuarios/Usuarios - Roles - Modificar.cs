@@ -22,7 +22,7 @@ namespace CapaPresentacion.Formularios
         formRoles formRolesC;
         Rol rolSeleccionadoC;
 
-        private bool activadoUsuarios, activadoCanchas, activadoTorneos, activadoEquipos, activadoPantalla, activadoReportes, activadoRoles, activadoClientes, activadoABMCanchas, activadoHorarios;
+        private bool activadoUsuarios, activadoCanchas, activadoTorneos, activadoEquipos, activadoPantalla, activadoReportes, activadoClientes, activadoABMCanchas, activadoHorarios;
         Dictionary<Modulo, bool> modulosActivados = new Dictionary<Modulo, bool>();
 
 
@@ -82,10 +82,6 @@ namespace CapaPresentacion.Formularios
                         btnReportes.BackgroundImage = Properties.Resources.Active;
                         activadoReportes = true;
                         break;
-                    case 9:
-                        btnRoles.BackgroundImage = Properties.Resources.Active;
-                        activadoRoles = true;
-                        break;
                     case 10:
                         btnABMCanchas.BackgroundImage = Properties.Resources.Active;
                         activadoABMCanchas = true;
@@ -132,11 +128,6 @@ namespace CapaPresentacion.Formularios
                 if (activadoReportes)
                 {
                     modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaReportes")] = true;
-                }
-
-                if (activadoRoles)
-                {
-                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaRoles")] = true;
                 }
 
                 if (activadoTorneos)
@@ -292,8 +283,7 @@ namespace CapaPresentacion.Formularios
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
-            btnRoles.BackgroundImage = activadoRoles ? Properties.Resources.Inactive : Properties.Resources.Active;
-            activadoRoles = !activadoRoles;
+            
         }
 
         private void btnPantalla_Click(object sender, EventArgs e)
