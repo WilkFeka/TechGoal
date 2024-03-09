@@ -31,6 +31,23 @@ namespace CapaControladora
 
         }
 
+        public Modulo EncontrarModuloID(int id)
+        {
+
+            Modulo buscandoModulo = new CC_Modulo().Listar().Where(u => u.id_modulo == id).FirstOrDefault();
+
+            if (buscandoModulo != null)
+            {
+                return buscandoModulo;
+            }
+            else
+            {
+                return buscandoModulo;
+            }
+
+
+        }
        
     }
+
 }

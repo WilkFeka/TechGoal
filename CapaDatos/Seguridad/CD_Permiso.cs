@@ -23,9 +23,10 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
                    
-                    query.AppendLine("SELECT p.id_rol, p.id_modulo FROM permisos p");
+                    query.AppendLine("SELECT p.id_rol, p.id_modulo, m.modulo FROM permisos p");
                     query.AppendLine("INNER JOIN rol r ON r.id_rol = p.id_rol");
                     query.AppendLine("INNER JOIN usuarios u ON u.id_rol = r.id_rol");
+                    query.AppendLine("INNER JOIN modulos m ON p.id_modulo = m.id_modulo");
                     query.AppendLine("WHERE u.id_usuario = @id_usuario");
 
 
@@ -42,7 +43,7 @@ namespace CapaDatos
                                 lista.Add(new Permiso()
                                 {
                                     obj_rol = new Rol() { id_rol = Convert.ToInt32(reader["id_rol"]) },
-                                    obj_modulo = new Modulo() { id_modulo = Convert.ToInt32(reader["id_modulo"]) },
+                                    obj_modulo = new Modulo() { id_modulo = Convert.ToInt32(reader["id_modulo"]), modulo = Convert.ToString(reader["modulo"])  }
 
                                 });
 

@@ -22,6 +22,7 @@ namespace CapaPresentacion
     {
         CC_Sesion SesionControladora = CC_Sesion.getInstance;
         CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
+        CC_Modulo moduloControladora = CC_Modulo.getInstance;
         private static Form formularioActual = null;
         public static Usuario usuarioActual;
         public formInicio(Usuario usuario)
@@ -114,26 +115,30 @@ namespace CapaPresentacion
 
             //// ---------------------------- PERMISOS DE USUARIO ----------------------------
 
-            //List<Permiso> listaPermisos = new CC_Permiso().ListarPermisosUsuario(usuarioActual.id_usuario);
+            List<Permiso> listaPermisos = new CC_Permiso().ListarPermisosUsuario(usuarioActual.id_usuario);
 
-            //var panelMenus = flwPanelButons.Controls;
+            var panelMenus = flwPanelButons.Controls;
 
 
 
-            //foreach (System.Windows.Forms.Control control in panelMenus )
-            //{
-            //    bool encontrado = listaPermisos.Any(p => p.nombreMenu == control.Name);
+            foreach (System.Windows.Forms.Control control in panelMenus)
+            {
+                foreach (Permiso permiso in listaPermisos)
+                {
+                    bool encontrado = listaPermisos.Exists(p => p.obj_modulo.modulo == control.Name);
 
-            //    if (encontrado)
-            //    {
-            //        control.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        control.Visible = false;
-            //    }
-
-            //}
+                    if (encontrado)
+                    {
+                        control.Visible = true;
+                    }
+                    else
+                    {
+                        control.Visible = false;
+                    }
+                    continue;
+                }
+            }
+            
 
         }
 

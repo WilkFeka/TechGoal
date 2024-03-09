@@ -30,28 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInicio));
             this.flwPanelButons = new System.Windows.Forms.FlowLayoutPanel();
-            this.menuUsuarios = new System.Windows.Forms.FlowLayoutPanel();
+            this.vistaUsuario = new System.Windows.Forms.FlowLayoutPanel();
             this.btnUsuarios = new CapaPresentacion.Personalizacion.MSButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.menuCanchas = new System.Windows.Forms.FlowLayoutPanel();
+            this.vistaCanchas = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCanchas = new CapaPresentacion.Personalizacion.MSButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.vistaHorarios = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHorarios = new CapaPresentacion.Personalizacion.MSButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.vistaClientes = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClientes = new CapaPresentacion.Personalizacion.MSButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.menuTorneos = new System.Windows.Forms.FlowLayoutPanel();
+            this.vistaTorneos = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTorneos = new CapaPresentacion.Personalizacion.MSButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.menuEquipos = new System.Windows.Forms.FlowLayoutPanel();
+            this.vistaEquipos = new System.Windows.Forms.FlowLayoutPanel();
             this.btnEquipos = new CapaPresentacion.Personalizacion.MSButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.menuPantalla = new System.Windows.Forms.FlowLayoutPanel();
+            this.vistaPantalla = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPantalla = new CapaPresentacion.Personalizacion.MSButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.menuReportes = new System.Windows.Forms.FlowLayoutPanel();
+            this.vistaReportes = new System.Windows.Forms.FlowLayoutPanel();
             this.btnReportes = new CapaPresentacion.Personalizacion.MSButton();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
@@ -67,14 +67,14 @@
             this.btnCerrar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnMinimizar = new CapaPresentacion.Personalizacion.MSButton();
             this.flwPanelButons.SuspendLayout();
-            this.menuUsuarios.SuspendLayout();
-            this.menuCanchas.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.menuTorneos.SuspendLayout();
-            this.menuEquipos.SuspendLayout();
-            this.menuPantalla.SuspendLayout();
-            this.menuReportes.SuspendLayout();
+            this.vistaUsuario.SuspendLayout();
+            this.vistaCanchas.SuspendLayout();
+            this.vistaHorarios.SuspendLayout();
+            this.vistaClientes.SuspendLayout();
+            this.vistaTorneos.SuspendLayout();
+            this.vistaEquipos.SuspendLayout();
+            this.vistaPantalla.SuspendLayout();
+            this.vistaReportes.SuspendLayout();
             this.pnlContainer.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -91,30 +91,30 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flwPanelButons.AutoSize = true;
             this.flwPanelButons.BackColor = System.Drawing.Color.White;
-            this.flwPanelButons.Controls.Add(this.menuUsuarios);
-            this.flwPanelButons.Controls.Add(this.menuCanchas);
-            this.flwPanelButons.Controls.Add(this.flowLayoutPanel1);
-            this.flwPanelButons.Controls.Add(this.flowLayoutPanel2);
-            this.flwPanelButons.Controls.Add(this.menuTorneos);
-            this.flwPanelButons.Controls.Add(this.menuEquipos);
-            this.flwPanelButons.Controls.Add(this.menuPantalla);
-            this.flwPanelButons.Controls.Add(this.menuReportes);
+            this.flwPanelButons.Controls.Add(this.vistaUsuario);
+            this.flwPanelButons.Controls.Add(this.vistaCanchas);
+            this.flwPanelButons.Controls.Add(this.vistaHorarios);
+            this.flwPanelButons.Controls.Add(this.vistaClientes);
+            this.flwPanelButons.Controls.Add(this.vistaTorneos);
+            this.flwPanelButons.Controls.Add(this.vistaEquipos);
+            this.flwPanelButons.Controls.Add(this.vistaPantalla);
+            this.flwPanelButons.Controls.Add(this.vistaReportes);
             this.flwPanelButons.Location = new System.Drawing.Point(3, 41);
             this.flwPanelButons.Name = "flwPanelButons";
             this.flwPanelButons.Padding = new System.Windows.Forms.Padding(10);
             this.flwPanelButons.Size = new System.Drawing.Size(1061, 959);
             this.flwPanelButons.TabIndex = 0;
             // 
-            // menuUsuarios
+            // vistaUsuario
             // 
-            this.menuUsuarios.Controls.Add(this.btnUsuarios);
-            this.menuUsuarios.Controls.Add(this.label2);
-            this.menuUsuarios.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.menuUsuarios.Location = new System.Drawing.Point(20, 20);
-            this.menuUsuarios.Margin = new System.Windows.Forms.Padding(10);
-            this.menuUsuarios.Name = "menuUsuarios";
-            this.menuUsuarios.Size = new System.Drawing.Size(220, 293);
-            this.menuUsuarios.TabIndex = 3;
+            this.vistaUsuario.Controls.Add(this.btnUsuarios);
+            this.vistaUsuario.Controls.Add(this.label2);
+            this.vistaUsuario.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.vistaUsuario.Location = new System.Drawing.Point(20, 20);
+            this.vistaUsuario.Margin = new System.Windows.Forms.Padding(10);
+            this.vistaUsuario.Name = "vistaUsuario";
+            this.vistaUsuario.Size = new System.Drawing.Size(220, 293);
+            this.vistaUsuario.TabIndex = 3;
             // 
             // btnUsuarios
             // 
@@ -151,16 +151,16 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Usuarios";
             // 
-            // menuCanchas
+            // vistaCanchas
             // 
-            this.menuCanchas.Controls.Add(this.btnCanchas);
-            this.menuCanchas.Controls.Add(this.label1);
-            this.menuCanchas.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.menuCanchas.Location = new System.Drawing.Point(260, 20);
-            this.menuCanchas.Margin = new System.Windows.Forms.Padding(10);
-            this.menuCanchas.Name = "menuCanchas";
-            this.menuCanchas.Size = new System.Drawing.Size(220, 293);
-            this.menuCanchas.TabIndex = 0;
+            this.vistaCanchas.Controls.Add(this.btnCanchas);
+            this.vistaCanchas.Controls.Add(this.label1);
+            this.vistaCanchas.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.vistaCanchas.Location = new System.Drawing.Point(260, 20);
+            this.vistaCanchas.Margin = new System.Windows.Forms.Padding(10);
+            this.vistaCanchas.Name = "vistaCanchas";
+            this.vistaCanchas.Size = new System.Drawing.Size(220, 293);
+            this.vistaCanchas.TabIndex = 0;
             // 
             // btnCanchas
             // 
@@ -197,16 +197,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Canchas";
             // 
-            // flowLayoutPanel1
+            // vistaHorarios
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btnHorarios);
-            this.flowLayoutPanel1.Controls.Add(this.label7);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(500, 20);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 293);
-            this.flowLayoutPanel1.TabIndex = 4;
+            this.vistaHorarios.Controls.Add(this.btnHorarios);
+            this.vistaHorarios.Controls.Add(this.label7);
+            this.vistaHorarios.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.vistaHorarios.Location = new System.Drawing.Point(500, 20);
+            this.vistaHorarios.Margin = new System.Windows.Forms.Padding(10);
+            this.vistaHorarios.Name = "vistaHorarios";
+            this.vistaHorarios.Size = new System.Drawing.Size(220, 293);
+            this.vistaHorarios.TabIndex = 4;
             // 
             // btnHorarios
             // 
@@ -243,16 +243,16 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Horarios";
             // 
-            // flowLayoutPanel2
+            // vistaClientes
             // 
-            this.flowLayoutPanel2.Controls.Add(this.btnClientes);
-            this.flowLayoutPanel2.Controls.Add(this.label8);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(740, 20);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(220, 293);
-            this.flowLayoutPanel2.TabIndex = 5;
+            this.vistaClientes.Controls.Add(this.btnClientes);
+            this.vistaClientes.Controls.Add(this.label8);
+            this.vistaClientes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.vistaClientes.Location = new System.Drawing.Point(740, 20);
+            this.vistaClientes.Margin = new System.Windows.Forms.Padding(10);
+            this.vistaClientes.Name = "vistaClientes";
+            this.vistaClientes.Size = new System.Drawing.Size(220, 293);
+            this.vistaClientes.TabIndex = 5;
             // 
             // btnClientes
             // 
@@ -289,16 +289,16 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Clientes";
             // 
-            // menuTorneos
+            // vistaTorneos
             // 
-            this.menuTorneos.Controls.Add(this.btnTorneos);
-            this.menuTorneos.Controls.Add(this.label3);
-            this.menuTorneos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.menuTorneos.Location = new System.Drawing.Point(20, 333);
-            this.menuTorneos.Margin = new System.Windows.Forms.Padding(10);
-            this.menuTorneos.Name = "menuTorneos";
-            this.menuTorneos.Size = new System.Drawing.Size(220, 293);
-            this.menuTorneos.TabIndex = 1;
+            this.vistaTorneos.Controls.Add(this.btnTorneos);
+            this.vistaTorneos.Controls.Add(this.label3);
+            this.vistaTorneos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.vistaTorneos.Location = new System.Drawing.Point(20, 333);
+            this.vistaTorneos.Margin = new System.Windows.Forms.Padding(10);
+            this.vistaTorneos.Name = "vistaTorneos";
+            this.vistaTorneos.Size = new System.Drawing.Size(220, 293);
+            this.vistaTorneos.TabIndex = 1;
             // 
             // btnTorneos
             // 
@@ -334,16 +334,16 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Torneos";
             // 
-            // menuEquipos
+            // vistaEquipos
             // 
-            this.menuEquipos.Controls.Add(this.btnEquipos);
-            this.menuEquipos.Controls.Add(this.label4);
-            this.menuEquipos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.menuEquipos.Location = new System.Drawing.Point(260, 333);
-            this.menuEquipos.Margin = new System.Windows.Forms.Padding(10);
-            this.menuEquipos.Name = "menuEquipos";
-            this.menuEquipos.Size = new System.Drawing.Size(220, 293);
-            this.menuEquipos.TabIndex = 3;
+            this.vistaEquipos.Controls.Add(this.btnEquipos);
+            this.vistaEquipos.Controls.Add(this.label4);
+            this.vistaEquipos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.vistaEquipos.Location = new System.Drawing.Point(260, 333);
+            this.vistaEquipos.Margin = new System.Windows.Forms.Padding(10);
+            this.vistaEquipos.Name = "vistaEquipos";
+            this.vistaEquipos.Size = new System.Drawing.Size(220, 293);
+            this.vistaEquipos.TabIndex = 3;
             // 
             // btnEquipos
             // 
@@ -379,17 +379,17 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Equipos";
             // 
-            // menuPantalla
+            // vistaPantalla
             // 
-            this.menuPantalla.Controls.Add(this.btnPantalla);
-            this.menuPantalla.Controls.Add(this.label5);
-            this.menuPantalla.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.menuPantalla.Location = new System.Drawing.Point(500, 333);
-            this.menuPantalla.Margin = new System.Windows.Forms.Padding(10);
-            this.menuPantalla.Name = "menuPantalla";
-            this.menuPantalla.Size = new System.Drawing.Size(220, 293);
-            this.menuPantalla.TabIndex = 4;
-            this.menuPantalla.Visible = false;
+            this.vistaPantalla.Controls.Add(this.btnPantalla);
+            this.vistaPantalla.Controls.Add(this.label5);
+            this.vistaPantalla.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.vistaPantalla.Location = new System.Drawing.Point(500, 333);
+            this.vistaPantalla.Margin = new System.Windows.Forms.Padding(10);
+            this.vistaPantalla.Name = "vistaPantalla";
+            this.vistaPantalla.Size = new System.Drawing.Size(220, 293);
+            this.vistaPantalla.TabIndex = 4;
+            this.vistaPantalla.Visible = false;
             // 
             // btnPantalla
             // 
@@ -425,16 +425,16 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Pantalla";
             // 
-            // menuReportes
+            // vistaReportes
             // 
-            this.menuReportes.Controls.Add(this.btnReportes);
-            this.menuReportes.Controls.Add(this.label6);
-            this.menuReportes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.menuReportes.Location = new System.Drawing.Point(740, 333);
-            this.menuReportes.Margin = new System.Windows.Forms.Padding(10);
-            this.menuReportes.Name = "menuReportes";
-            this.menuReportes.Size = new System.Drawing.Size(220, 293);
-            this.menuReportes.TabIndex = 4;
+            this.vistaReportes.Controls.Add(this.btnReportes);
+            this.vistaReportes.Controls.Add(this.label6);
+            this.vistaReportes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.vistaReportes.Location = new System.Drawing.Point(740, 333);
+            this.vistaReportes.Margin = new System.Windows.Forms.Padding(10);
+            this.vistaReportes.Name = "vistaReportes";
+            this.vistaReportes.Size = new System.Drawing.Size(220, 293);
+            this.vistaReportes.TabIndex = 4;
             // 
             // btnReportes
             // 
@@ -689,22 +689,22 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Inicio_FormClosed);
             this.Load += new System.EventHandler(this.formInicio_Load);
             this.flwPanelButons.ResumeLayout(false);
-            this.menuUsuarios.ResumeLayout(false);
-            this.menuUsuarios.PerformLayout();
-            this.menuCanchas.ResumeLayout(false);
-            this.menuCanchas.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.menuTorneos.ResumeLayout(false);
-            this.menuTorneos.PerformLayout();
-            this.menuEquipos.ResumeLayout(false);
-            this.menuEquipos.PerformLayout();
-            this.menuPantalla.ResumeLayout(false);
-            this.menuPantalla.PerformLayout();
-            this.menuReportes.ResumeLayout(false);
-            this.menuReportes.PerformLayout();
+            this.vistaUsuario.ResumeLayout(false);
+            this.vistaUsuario.PerformLayout();
+            this.vistaCanchas.ResumeLayout(false);
+            this.vistaCanchas.PerformLayout();
+            this.vistaHorarios.ResumeLayout(false);
+            this.vistaHorarios.PerformLayout();
+            this.vistaClientes.ResumeLayout(false);
+            this.vistaClientes.PerformLayout();
+            this.vistaTorneos.ResumeLayout(false);
+            this.vistaTorneos.PerformLayout();
+            this.vistaEquipos.ResumeLayout(false);
+            this.vistaEquipos.PerformLayout();
+            this.vistaPantalla.ResumeLayout(false);
+            this.vistaPantalla.PerformLayout();
+            this.vistaReportes.ResumeLayout(false);
+            this.vistaReportes.PerformLayout();
             this.pnlContainer.ResumeLayout(false);
             this.pnlContainer.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -720,22 +720,22 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flwPanelButons;
-        private System.Windows.Forms.FlowLayoutPanel menuUsuarios;
+        private System.Windows.Forms.FlowLayoutPanel vistaUsuario;
         private Personalizacion.MSButton btnUsuarios;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.FlowLayoutPanel menuCanchas;
+        private System.Windows.Forms.FlowLayoutPanel vistaCanchas;
         private Personalizacion.MSButton btnCanchas;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel menuTorneos;
+        private System.Windows.Forms.FlowLayoutPanel vistaTorneos;
         private Personalizacion.MSButton btnTorneos;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.FlowLayoutPanel menuEquipos;
+        private System.Windows.Forms.FlowLayoutPanel vistaEquipos;
         private Personalizacion.MSButton btnEquipos;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.FlowLayoutPanel menuPantalla;
+        private System.Windows.Forms.FlowLayoutPanel vistaPantalla;
         private Personalizacion.MSButton btnPantalla;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.FlowLayoutPanel menuReportes;
+        private System.Windows.Forms.FlowLayoutPanel vistaReportes;
         private Personalizacion.MSButton btnReportes;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Panel pnlContainer;
@@ -750,10 +750,10 @@
         private Personalizacion.MSButton btnMinimizar;
         private System.Windows.Forms.Panel panel2;
         private Personalizacion.MSButton btnCerrar;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel vistaHorarios;
         private Personalizacion.MSButton btnHorarios;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel vistaClientes;
         private Personalizacion.MSButton btnClientes;
         private System.Windows.Forms.Label label8;
     }
