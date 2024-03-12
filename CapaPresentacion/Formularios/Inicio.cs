@@ -185,6 +185,7 @@ namespace CapaPresentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Close();
+
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)

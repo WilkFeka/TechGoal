@@ -26,6 +26,9 @@ namespace CapaPresentacion
         public formLogin()
         {
             InitializeComponent();
+            txtClave.Text = "";
+            txtCorreo.Text = "";
+
         }
 
         private void LoginV2_Load(object sender, EventArgs e)
@@ -243,6 +246,12 @@ namespace CapaPresentacion
             formLoginRecuperar formLoginRecuperar = new formLoginRecuperar();
             Hide();
             formLoginRecuperar.Show();
+        }
+
+        private void formLogin_VisibleChanged(object sender, EventArgs e)
+        {
+            txtCorreo.Text = "";
+            txtClave.Text = "";
         }
     }
 }

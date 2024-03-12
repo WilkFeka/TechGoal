@@ -295,6 +295,7 @@
             this.Text = "Iniciar Sesion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.Load += new System.EventHandler(this.LoginV2_Load);
+            this.VisibleChanged += new System.EventHandler(this.formLogin_VisibleChanged);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
             this.pnlLogo.ResumeLayout(false);
