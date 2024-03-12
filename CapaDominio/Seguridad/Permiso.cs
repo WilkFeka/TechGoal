@@ -11,7 +11,7 @@ namespace CapaEntidad
         public int id_permiso { get; set; }
         public Rol obj_rol { get; set; }
 
-        public string nombreMenu { get; set; }
+        public Modulo obj_modulo { get; set; }
         public string fechaRegistro { get; set; }
     }
 }

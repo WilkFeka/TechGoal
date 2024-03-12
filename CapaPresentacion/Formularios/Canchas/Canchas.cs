@@ -19,6 +19,7 @@ namespace CapaPresentacion.Formularios
     public partial class formCanchas : Form
     {
         CC_Cancha canchaControladora = CC_Cancha.getInstance;
+        CC_Permiso permisoControladora = CC_Permiso.getInstance;
         bool modoModificar  = false;
         bool modoEliminar = false;
         formInicio formInicioC;
@@ -33,6 +34,25 @@ namespace CapaPresentacion.Formularios
         {
             // Modo normal es 0
             CargarCanchas(0);
+
+            List<Permiso> listaPermisos = permisoControladora.ListarPermisosUsuario(formInicio.usuarioActual.id_usuario);
+
+            foreach (Permiso permiso in listaPermisos)
+            {
+                if (permiso.obj_modulo.modulo == "ABMCanchas")
+                {
+                    fpnlBotones.Size = new Size(320, 77);
+
+                    btnAgregarCancha.Visible = true;
+                    btnEditar.Visible = true;
+                    btnEliminar.Visible = true;
+                } else
+                {
+                    fpnlBotones.Size = new Size(84, 77);
+                }
+            }
+
+
             
         }
 
