@@ -54,6 +54,7 @@
     <Compile Include="CanchaHorario.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Horario.cs" />
+    <Compile Include="Modulo.cs" />
     <Compile Include="Reserva.cs" />
     <Compile Include="Seguridad\Permiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

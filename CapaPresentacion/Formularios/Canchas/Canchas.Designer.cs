@@ -32,11 +32,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblSeleccion = new System.Windows.Forms.Label();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
             this.btnAgregarCancha = new CapaPresentacion.Personalizacion.MSButton();
             this.btnEditar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnEliminar = new CapaPresentacion.Personalizacion.MSButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnFondo = new CapaPresentacion.Personalizacion.MSButton();
             this.fpnlBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,16 +92,6 @@
             this.fpnlBotones.Size = new System.Drawing.Size(320, 77);
             this.fpnlBotones.TabIndex = 72;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.football_field_6162391;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnVolver
             // 
             this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -146,6 +136,7 @@
             this.btnAgregarCancha.TabIndex = 3;
             this.btnAgregarCancha.TextColor = System.Drawing.Color.White;
             this.btnAgregarCancha.UseVisualStyleBackColor = false;
+            this.btnAgregarCancha.Visible = false;
             this.btnAgregarCancha.Click += new System.EventHandler(this.btnAgregarCancha_Click);
             // 
             // btnEditar
@@ -169,6 +160,7 @@
             this.btnEditar.TabIndex = 2;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Visible = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
@@ -192,7 +184,18 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.football_field_6162391;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // btnFondo
             // 

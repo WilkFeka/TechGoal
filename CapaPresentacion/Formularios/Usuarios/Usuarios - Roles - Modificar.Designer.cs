@@ -31,7 +31,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             this.btnEquipos = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnPantalla = new System.Windows.Forms.Button();
-            this.btnRoles = new System.Windows.Forms.Button();
             this.btnTorneos = new System.Windows.Forms.Button();
             this.btnCanchas = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
@@ -50,6 +48,12 @@
             this.btnCancelar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnAceptar = new CapaPresentacion.Personalizacion.MSButton();
             this.msButton3 = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnHorarios = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnABMCanchas = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +74,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label8.Location = new System.Drawing.Point(282, 384);
+            this.label8.Location = new System.Drawing.Point(295, 332);
             this.label8.Margin = new System.Windows.Forms.Padding(0, 19, 0, 5);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 29);
@@ -82,24 +86,12 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label7.Location = new System.Drawing.Point(282, 333);
+            this.label7.Location = new System.Drawing.Point(295, 281);
             this.label7.Margin = new System.Windows.Forms.Padding(0, 19, 0, 5);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 29);
             this.label7.TabIndex = 121;
             this.label7.Text = "Pantalla";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label6.Location = new System.Drawing.Point(282, 280);
-            this.label6.Margin = new System.Windows.Forms.Padding(0, 19, 0, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 29);
-            this.label6.TabIndex = 119;
-            this.label6.Text = "Roles";
             // 
             // label5
             // 
@@ -210,7 +202,7 @@
             this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Location = new System.Drawing.Point(392, 384);
+            this.btnReportes.Location = new System.Drawing.Point(405, 332);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(62, 34);
             this.btnReportes.TabIndex = 8;
@@ -226,28 +218,12 @@
             this.btnPantalla.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnPantalla.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPantalla.Location = new System.Drawing.Point(392, 333);
+            this.btnPantalla.Location = new System.Drawing.Point(405, 281);
             this.btnPantalla.Name = "btnPantalla";
             this.btnPantalla.Size = new System.Drawing.Size(62, 34);
             this.btnPantalla.TabIndex = 7;
             this.btnPantalla.UseVisualStyleBackColor = true;
             this.btnPantalla.Click += new System.EventHandler(this.btnPantalla_Click);
-            // 
-            // btnRoles
-            // 
-            this.btnRoles.BackgroundImage = global::CapaPresentacion.Properties.Resources.Inactivo;
-            this.btnRoles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRoles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRoles.FlatAppearance.BorderSize = 0;
-            this.btnRoles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnRoles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoles.Location = new System.Drawing.Point(392, 280);
-            this.btnRoles.Name = "btnRoles";
-            this.btnRoles.Size = new System.Drawing.Size(62, 34);
-            this.btnRoles.TabIndex = 6;
-            this.btnRoles.UseVisualStyleBackColor = true;
-            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // btnTorneos
             // 
@@ -368,6 +344,90 @@
             this.msButton3.TextColor = System.Drawing.Color.White;
             this.msButton3.UseVisualStyleBackColor = false;
             // 
+            // btnHorarios
+            // 
+            this.btnHorarios.BackgroundImage = global::CapaPresentacion.Properties.Resources.Inactivo;
+            this.btnHorarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHorarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHorarios.FlatAppearance.BorderSize = 0;
+            this.btnHorarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnHorarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHorarios.Location = new System.Drawing.Point(168, 490);
+            this.btnHorarios.Name = "btnHorarios";
+            this.btnHorarios.Size = new System.Drawing.Size(62, 35);
+            this.btnHorarios.TabIndex = 128;
+            this.btnHorarios.UseVisualStyleBackColor = true;
+            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label11.Location = new System.Drawing.Point(58, 490);
+            this.label11.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(105, 29);
+            this.label11.TabIndex = 129;
+            this.label11.Text = "Horarios";
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackgroundImage = global::CapaPresentacion.Properties.Resources.Inactivo;
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Location = new System.Drawing.Point(407, 384);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(62, 35);
+            this.btnClientes.TabIndex = 126;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label10.Location = new System.Drawing.Point(297, 384);
+            this.label10.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 29);
+            this.label10.TabIndex = 127;
+            this.label10.Text = "Clientes";
+            // 
+            // btnABMCanchas
+            // 
+            this.btnABMCanchas.BackgroundImage = global::CapaPresentacion.Properties.Resources.Inactivo;
+            this.btnABMCanchas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnABMCanchas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnABMCanchas.FlatAppearance.BorderSize = 0;
+            this.btnABMCanchas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnABMCanchas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnABMCanchas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnABMCanchas.Location = new System.Drawing.Point(405, 438);
+            this.btnABMCanchas.Name = "btnABMCanchas";
+            this.btnABMCanchas.Size = new System.Drawing.Size(62, 35);
+            this.btnABMCanchas.TabIndex = 130;
+            this.btnABMCanchas.UseVisualStyleBackColor = true;
+            this.btnABMCanchas.Click += new System.EventHandler(this.btnABMCanchas_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label12.Location = new System.Drawing.Point(266, 444);
+            this.label12.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(136, 23);
+            this.label12.TabIndex = 131;
+            this.label12.Text = "Editar Canchas";
+            // 
             // formRolesModificar
             // 
             this.AcceptButton = this.btnAceptar;
@@ -376,6 +436,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(509, 636);
+            this.Controls.Add(this.btnABMCanchas);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.btnHorarios);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.btnClientes);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnEquipos);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox1);
@@ -386,9 +452,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.btnRoles);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnTorneos);
             this.Controls.Add(this.label2);
@@ -421,8 +485,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnPantalla;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnRoles;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnTorneos;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCanchas;
@@ -437,5 +499,11 @@
         private Personalizacion.MSButton msButton3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnHorarios;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnABMCanchas;
+        private System.Windows.Forms.Label label12;
     }
 }

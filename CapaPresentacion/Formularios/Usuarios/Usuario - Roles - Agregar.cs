@@ -1,5 +1,6 @@
 ﻿using CapaControladora;
 using CapaEntidad;
+using CapaEntidad.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,11 @@ namespace CapaPresentacion.Formularios
     {
         CC_Rol rolControladora = CC_Rol.getInstance;
         CC_Permiso permisoControladora = CC_Permiso.getInstance;
+        CC_Modulo moduloControladora = CC_Modulo.getInstance;
         formRoles formRolesC;
 
-        private bool activadoUsuarios, activadoCanchas, activadoTorneos, activadoEquipos, activadoPantalla, activadoReportes, activadoRoles  = false;
+        private bool activadoUsuarios, activadoCanchas, activadoTorneos, activadoEquipos, activadoPantalla, activadoReportes, activadoClientes, activadoABMCanchas, activadoHorarios  = false;
+        Dictionary<Modulo, bool> modulosActivados = new Dictionary<Modulo, bool>();
 
 
 
@@ -26,7 +29,17 @@ namespace CapaPresentacion.Formularios
         {
             InitializeComponent();
             formRolesC = formRoles;
+
+            List<Modulo> listaModulos = moduloControladora.Listar();
+
+            foreach (Modulo modulo in listaModulos)
+            {
+                modulosActivados.Add(modulo, false);
+
+            }
         }
+
+
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -42,12 +55,55 @@ namespace CapaPresentacion.Formularios
                     return;
                 }
 
-                bool[] activados = { activadoUsuarios, activadoCanchas, activadoEquipos, activadoPantalla, activadoReportes, activadoRoles, activadoTorneos };
+                if (activadoCanchas)
+                {
+                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaCanchas")] = true;
+                }
+
+                if (activadoEquipos)
+                {
+                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaEquipos")] = true;
+                }
+
+                if (activadoPantalla)
+                {
+                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaPantalla")] = true;
+                }
+
+                if (activadoReportes)
+                {
+                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaReportes")] = true;
+                }
 
 
-                
+                if (activadoTorneos)
+                {
+                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaTorneos")] = true;
+                }
 
-                if (activados.All(a => !a))
+                if (activadoUsuarios)
+                {
+                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaUsuario")] = true;
+                }
+
+                if (activadoClientes)
+                {
+                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaClientes")] = true;
+                }
+
+                if (activadoABMCanchas)
+                {
+                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "ABMCanchas")] = true;
+                }
+
+                if (activadoHorarios)
+                {
+                    modulosActivados[modulosActivados.Keys.First(m => m.modulo == "vistaHorarios")] = true;
+                }
+
+
+
+                if (modulosActivados.All(a => !a.Value))
                 {
                     MessageBox.Show("Por favor seleccione al menos un permiso", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -89,31 +145,28 @@ namespace CapaPresentacion.Formularios
 
                 Rol buscarRol = rolControladora.BuscarRol(txtNombre.Text);
 
-                // Nombres de los menus. Tienen que tener el mismo index que las variables en 'activados'
-                string[] nombreMenus = { "menuUsuarios", "menuCanchas", "menuEquipos", "menuPantalla", "menuReportes", "menuRoles", "menuTorneos" }; 
-
-                for (int i = 0; i < activados.Length; i++)
+                foreach (KeyValuePair<Modulo, bool> modulo in modulosActivados)
                 {
-                    if (activados[i])
+                    if (modulo.Value)
                     {
-                        string nombreMenu = nombreMenus[i];
-
                         Permiso permiso = new Permiso()
                         {
                             obj_rol = buscarRol,
-                            nombreMenu = nombreMenu
+                            obj_modulo = modulo.Key
                         };
 
                         bool agregarPermiso = permisoControladora.AgregarPermiso(permiso);
 
                         if (agregarPermiso == false)
                         {
-                            MessageBox.Show("Hubo un error al agregar nuevo permiso. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Hubo un error al agregar permiso. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
-
                     }
                 }
+
+
+
 
                 MessageBox.Show("Rol agregado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
@@ -128,19 +181,28 @@ namespace CapaPresentacion.Formularios
 
         }
 
+
+
         private void formRolesAgregar_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Recarga la tabla al cerrar el formulario
             formRolesC.formUsuarioRoles_Load(sender, e); 
         }
 
+
         // ---------------------------- FUNCIONALIDADES Y VISTAS DE BOTONES ----------------------------
+        private void btnABMCanchas_Click(object sender, EventArgs e)
+        {
+            btnABMCanchas.BackgroundImage = activadoABMCanchas ? Properties.Resources.Inactive : Properties.Resources.Active;
+            activadoABMCanchas = !activadoABMCanchas;
+        }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
 
             btnUsuarios.BackgroundImage = activadoUsuarios ? Properties.Resources.Inactive : Properties.Resources.Active;
             activadoUsuarios = !activadoUsuarios;
+            
 
         }
 
@@ -148,6 +210,8 @@ namespace CapaPresentacion.Formularios
         {
             btnCanchas.BackgroundImage = activadoCanchas ? Properties.Resources.Inactive : Properties.Resources.Active;
             activadoCanchas = !activadoCanchas;
+
+            
 
         }
 
@@ -165,8 +229,7 @@ namespace CapaPresentacion.Formularios
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
-            btnRoles.BackgroundImage = activadoRoles ? Properties.Resources.Inactive : Properties.Resources.Active;
-            activadoRoles = !activadoRoles;
+            
         }
 
         private void btnEquipos_Click(object sender, EventArgs e)
@@ -179,6 +242,18 @@ namespace CapaPresentacion.Formularios
         {
             btnTorneos.BackgroundImage = activadoTorneos ? Properties.Resources.Inactive : Properties.Resources.Active;
             activadoTorneos = !activadoTorneos;
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            btnClientes.BackgroundImage = activadoClientes ? Properties.Resources.Inactive : Properties.Resources.Active;
+            activadoClientes = !activadoClientes;
+
+        }
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            btnHorarios.BackgroundImage = activadoHorarios ? Properties.Resources.Inactive : Properties.Resources.Active;
+            activadoHorarios = !activadoHorarios;
         }
     }
 }
