@@ -41,6 +41,8 @@ namespace CapaPresentacion.Formularios
             {
                 if (permiso.obj_modulo.modulo == "ABMCanchas")
                 {
+                    fpnlBotones.Size = new Size(320, 77);
+
                     btnAgregarCancha.Visible = true;
                     btnEditar.Visible = true;
                     btnEliminar.Visible = true;

@@ -87,9 +87,9 @@
             this.fpnlBotones.Controls.Add(this.btnAgregarCancha);
             this.fpnlBotones.Controls.Add(this.btnEditar);
             this.fpnlBotones.Controls.Add(this.btnEliminar);
-            this.fpnlBotones.Location = new System.Drawing.Point(1260, 12);
+            this.fpnlBotones.Location = new System.Drawing.Point(1024, 12);
             this.fpnlBotones.Name = "fpnlBotones";
-            this.fpnlBotones.Size = new System.Drawing.Size(84, 77);
+            this.fpnlBotones.Size = new System.Drawing.Size(320, 77);
             this.fpnlBotones.TabIndex = 72;
             // 
             // btnVolver
@@ -129,7 +129,7 @@
             this.btnAgregarCancha.FlatAppearance.BorderSize = 0;
             this.btnAgregarCancha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCancha.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCancha.Location = new System.Drawing.Point(10, 73);
+            this.btnAgregarCancha.Location = new System.Drawing.Point(87, 3);
             this.btnAgregarCancha.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.btnAgregarCancha.Name = "btnAgregarCancha";
             this.btnAgregarCancha.Size = new System.Drawing.Size(64, 64);
@@ -153,7 +153,7 @@
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(10, 143);
+            this.btnEditar.Location = new System.Drawing.Point(164, 3);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(64, 64);
@@ -177,7 +177,7 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(10, 213);
+            this.btnEliminar.Location = new System.Drawing.Point(241, 3);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(64, 64);
