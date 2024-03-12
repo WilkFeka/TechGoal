@@ -241,6 +241,13 @@ namespace CapaPresentacion
                     }
                     else
                     {
+                        if (usuarioSeleccionado.id_usuario == 12)
+                        {
+                            MessageBox.Show("No es posible borrar el usuario administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+
+
+                        }
 
                         bool eliminarUsuario = UsuarioControladora.EliminarUsuario(usuarioSeleccionado.id_usuario);
 
