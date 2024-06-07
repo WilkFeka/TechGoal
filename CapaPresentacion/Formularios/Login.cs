@@ -26,8 +26,8 @@ namespace CapaPresentacion
         public formLogin()
         {
             InitializeComponent();
-            txtClave.Text = "";
-            txtCorreo.Text = "";
+
+
 
         }
 
@@ -48,20 +48,14 @@ namespace CapaPresentacion
         {
 
 
-            if (txtCorreo.Text == "ejemplo@gmail.com.ar") 
-            {
-                txtCorreo.Text = "";
-                txtCorreo.ForeColor = Color.WhiteSmoke;
 
-                
-            }
 
         }
 
         private void form_closing(object sender, FormClosingEventArgs e)
         {
-            txtClave.Text = "ejemplo123";
-            txtCorreo.Text = "ejemplo@gmail.com.ar";
+            txtClave.Text = "";
+            txtCorreo.Text = "";
             txtCorreo.ForeColor = Color.DimGray;
 
             Show();
@@ -69,11 +63,7 @@ namespace CapaPresentacion
 
         private void txtClave_Enter(object sender, EventArgs e)
         {
-            if (txtClave.Text == "ejemplo123")
-            {
-                txtClave.Text = "";
 
-            }
             
             txtClave.ForeColor = Color.WhiteSmoke;
 
@@ -250,8 +240,7 @@ namespace CapaPresentacion
 
         private void formLogin_VisibleChanged(object sender, EventArgs e)
         {
-            txtCorreo.Text = "";
-            txtClave.Text = "";
+            
         }
     }
 }

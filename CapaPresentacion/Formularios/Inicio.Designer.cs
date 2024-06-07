@@ -365,6 +365,7 @@
             this.btnEquipos.TabIndex = 1;
             this.btnEquipos.TextColor = System.Drawing.Color.White;
             this.btnEquipos.UseVisualStyleBackColor = false;
+            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
             // 
             // label4
             // 

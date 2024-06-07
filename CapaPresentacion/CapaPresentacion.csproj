@@ -227,6 +227,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_TECHGOALDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_TECHGOALDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_TECHGOALDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Canchas\Cancha - Individual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +273,12 @@
     </Compile>
     <Compile Include="Formularios\Clientes\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Equipos\Equipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Equipos\Equipos.Designer.cs">
+      <DependentUpon>Equipos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Horarios\Horarios.cs">
       <SubType>Form</SubType>
@@ -398,6 +409,9 @@
     <EmbeddedResource Include="Formularios\Clientes\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Equipos\Equipos.resx">
+      <DependentUpon>Equipos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Horarios\Horarios.resx">
       <DependentUpon>Horarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,6 +487,17 @@
     </None>
     <None Include="DB_TECHGOALDataSet1.xss">
       <DependentUpon>DB_TECHGOALDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DB_TECHGOALDataSet2.xsc">
+      <DependentUpon>DB_TECHGOALDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DB_TECHGOALDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_TECHGOALDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_TECHGOALDataSet2.xss">
+      <DependentUpon>DB_TECHGOALDataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
