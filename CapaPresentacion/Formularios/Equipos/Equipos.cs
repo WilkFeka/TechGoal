@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace CapaPresentacion.Formularios.Equipos
 {
     public partial class formEquipos : Form
@@ -26,6 +26,10 @@ namespace CapaPresentacion.Formularios.Equipos
             // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet2.equipos' Puede moverla o quitarla según sea necesario.
             this.equiposTableAdapter.Fill(this.dB_TECHGOALDataSet2.equipos);
 
+
+
+
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -34,5 +38,15 @@ namespace CapaPresentacion.Formularios.Equipos
             formInicioC.picLogoText.Show();
             Close();
         }
+
+        private void btnAgregarEquipo_Click(object sender, EventArgs e)
+        {
+            formAgregarEquipos formAgregarEquipos = new formAgregarEquipos();
+            formAgregarEquipos.ShowDialog();
+
+           
+
+        }
+
     }
 }
