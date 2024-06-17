@@ -53,6 +53,7 @@
     <Compile Include="Cancha.cs" />
     <Compile Include="CanchaHorario.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Equipo.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="Modulo.cs" />
     <Compile Include="Reserva.cs" />

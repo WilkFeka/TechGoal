@@ -34,14 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.Paginator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
             this.btnAgregarEquipo = new CapaPresentacion.Personalizacion.MSButton();
@@ -52,19 +44,16 @@
             this.dB_TECHGOALDataSet2 = new CapaPresentacion.DB_TECHGOALDataSet2();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.rolTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.rolTableAdapter();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtCorreoFilter = new System.Windows.Forms.TextBox();
+            this.txtNombreFilter = new System.Windows.Forms.TextBox();
             this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtDNIFilter = new System.Windows.Forms.TextBox();
-            this.msButton3 = new CapaPresentacion.Personalizacion.MSButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtNombreFilter = new System.Windows.Forms.TextBox();
+            this.txtTorneoFilter = new System.Windows.Forms.TextBox();
             this.msButton2 = new CapaPresentacion.Personalizacion.MSButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -72,19 +61,10 @@
             this.cmbEstadoFilter = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
-            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
             this.permisosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.permisosTableAdapter();
             this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.equiposTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet2TableAdapters.equiposTableAdapter();
-            this.idequipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.escudo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaagregadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Paginator)).BeginInit();
-            this.Paginator.SuspendLayout();
             this.fpnlBotones.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
@@ -93,92 +73,11 @@
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel6.Controls.Add(this.Paginator);
-            this.panel6.Location = new System.Drawing.Point(12, 704);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1113, 46);
-            this.panel6.TabIndex = 72;
-            // 
-            // Paginator
-            // 
-            this.Paginator.AddNewItem = null;
-            this.Paginator.BackColor = System.Drawing.Color.White;
-            this.Paginator.CanOverflow = false;
-            this.Paginator.CountItem = null;
-            this.Paginator.CountItemFormat = "";
-            this.Paginator.DeleteItem = null;
-            this.Paginator.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Paginator.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Paginator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.Paginator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorSeparator2});
-            this.Paginator.Location = new System.Drawing.Point(0, 0);
-            this.Paginator.MoveFirstItem = null;
-            this.Paginator.MoveLastItem = null;
-            this.Paginator.MoveNextItem = null;
-            this.Paginator.MovePreviousItem = null;
-            this.Paginator.Name = "Paginator";
-            this.Paginator.PositionItem = null;
-            this.Paginator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.Paginator.Size = new System.Drawing.Size(1113, 46);
-            this.Paginator.TabIndex = 131;
-            this.Paginator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = global::CapaPresentacion.Properties.Resources.previusG;
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 43);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 46);
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(39, 43);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 46);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = global::CapaPresentacion.Properties.Resources.nextG;
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 43);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 46);
             // 
             // fpnlBotones
             // 
@@ -283,7 +182,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvEquipos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEquipos.AutoGenerateColumns = false;
             this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEquipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEquipos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -301,13 +199,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEquipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idequipoDataGridViewTextBoxColumn,
-            this.escudo,
-            this.nombreDataGridViewTextBoxColumn,
-            this.fechaagregadoDataGridViewTextBoxColumn,
-            this.estadoDataGridViewCheckBoxColumn});
-            this.dgvEquipos.DataSource = this.equiposBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -375,14 +266,9 @@
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // rolTableAdapter
-            // 
-            this.rolTableAdapter.ClearBeforeFill = true;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.fpnlBotones);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label1);
@@ -417,9 +303,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.dtpFechaFinal, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
@@ -433,10 +319,29 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1375, 98);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
+            // dtpFechaFinal
+            // 
+            this.dtpFechaFinal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpFechaFinal.CalendarFont = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.CalendarForeColor = System.Drawing.Color.Lime;
+            this.dtpFechaFinal.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
+            this.dtpFechaFinal.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
+            this.dtpFechaFinal.CalendarTitleForeColor = System.Drawing.Color.DarkOrange;
+            this.dtpFechaFinal.CalendarTrailingForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dtpFechaFinal.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpFechaFinal.CustomFormat = "";
+            this.dtpFechaFinal.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFinal.Location = new System.Drawing.Point(738, 52);
+            this.dtpFechaFinal.Name = "dtpFechaFinal";
+            this.dtpFechaFinal.Size = new System.Drawing.Size(238, 46);
+            this.dtpFechaFinal.TabIndex = 87;
+            this.dtpFechaFinal.TabStop = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.txtCorreoFilter);
+            this.panel3.Controls.Add(this.txtNombreFilter);
             this.panel3.Controls.Add(this.msButton1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(10, 49);
@@ -445,16 +350,17 @@
             this.panel3.Size = new System.Drawing.Size(323, 49);
             this.panel3.TabIndex = 18;
             // 
-            // txtCorreoFilter
+            // txtNombreFilter
             // 
-            this.txtCorreoFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtCorreoFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCorreoFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.txtCorreoFilter.Location = new System.Drawing.Point(13, 11);
-            this.txtCorreoFilter.Name = "txtCorreoFilter";
-            this.txtCorreoFilter.Size = new System.Drawing.Size(307, 29);
-            this.txtCorreoFilter.TabIndex = 5;
+            this.txtNombreFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtNombreFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtNombreFilter.Location = new System.Drawing.Point(13, 11);
+            this.txtNombreFilter.Name = "txtNombreFilter";
+            this.txtNombreFilter.Size = new System.Drawing.Size(307, 29);
+            this.txtNombreFilter.TabIndex = 5;
+            this.txtNombreFilter.TextChanged += new System.EventHandler(this.txtNombreFilter_TextChanged);
             // 
             // msButton1
             // 
@@ -489,52 +395,10 @@
             this.label3.Text = "Fecha Agregado";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.txtDNIFilter);
-            this.panel2.Controls.Add(this.msButton3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(696, 49);
-            this.panel2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(323, 49);
-            this.panel2.TabIndex = 15;
-            // 
-            // txtDNIFilter
-            // 
-            this.txtDNIFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtDNIFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDNIFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNIFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.txtDNIFilter.Location = new System.Drawing.Point(13, 11);
-            this.txtDNIFilter.Name = "txtDNIFilter";
-            this.txtDNIFilter.Size = new System.Drawing.Size(307, 29);
-            this.txtDNIFilter.TabIndex = 7;
-            // 
-            // msButton3
-            // 
-            this.msButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.msButton3.BorderRadius = 20;
-            this.msButton3.BorderSize = 0;
-            this.msButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msButton3.Enabled = false;
-            this.msButton3.FlatAppearance.BorderSize = 0;
-            this.msButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton3.ForeColor = System.Drawing.Color.Transparent;
-            this.msButton3.Location = new System.Drawing.Point(0, 0);
-            this.msButton3.Name = "msButton3";
-            this.msButton3.Size = new System.Drawing.Size(323, 49);
-            this.msButton3.TabIndex = 23;
-            this.msButton3.TextColor = System.Drawing.Color.Transparent;
-            this.msButton3.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.txtNombreFilter);
+            this.panel1.Controls.Add(this.txtTorneoFilter);
             this.panel1.Controls.Add(this.msButton2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(353, 49);
@@ -543,16 +407,16 @@
             this.panel1.Size = new System.Drawing.Size(323, 49);
             this.panel1.TabIndex = 11;
             // 
-            // txtNombreFilter
+            // txtTorneoFilter
             // 
-            this.txtNombreFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtNombreFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombreFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.txtNombreFilter.Location = new System.Drawing.Point(13, 10);
-            this.txtNombreFilter.Name = "txtNombreFilter";
-            this.txtNombreFilter.Size = new System.Drawing.Size(296, 29);
-            this.txtNombreFilter.TabIndex = 6;
+            this.txtTorneoFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtTorneoFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTorneoFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTorneoFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtTorneoFilter.Location = new System.Drawing.Point(13, 10);
+            this.txtTorneoFilter.Name = "txtTorneoFilter";
+            this.txtTorneoFilter.Size = new System.Drawing.Size(296, 29);
+            this.txtTorneoFilter.TabIndex = 6;
             // 
             // msButton2
             // 
@@ -660,11 +524,6 @@
             this.btnLimpiar.TextColor = System.Drawing.Color.White;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
-            // rolBindingSource
-            // 
-            this.rolBindingSource.DataMember = "rol";
-            this.rolBindingSource.DataSource = this.dB_TECHGOALDataSet;
-            // 
             // dB_TECHGOALDataSet
             // 
             this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
@@ -683,47 +542,6 @@
             // 
             this.equiposTableAdapter.ClearBeforeFill = true;
             // 
-            // idequipoDataGridViewTextBoxColumn
-            // 
-            this.idequipoDataGridViewTextBoxColumn.DataPropertyName = "id_equipo";
-            this.idequipoDataGridViewTextBoxColumn.HeaderText = "id_equipo";
-            this.idequipoDataGridViewTextBoxColumn.Name = "idequipoDataGridViewTextBoxColumn";
-            this.idequipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idequipoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // escudo
-            // 
-            this.escudo.DataPropertyName = "escudo";
-            this.escudo.FillWeight = 116.4129F;
-            this.escudo.HeaderText = "Equipo";
-            this.escudo.Name = "escudo";
-            this.escudo.ReadOnly = true;
-            this.escudo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.FillWeight = 116.4129F;
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaagregadoDataGridViewTextBoxColumn
-            // 
-            this.fechaagregadoDataGridViewTextBoxColumn.DataPropertyName = "fecha_agregado";
-            this.fechaagregadoDataGridViewTextBoxColumn.FillWeight = 116.4129F;
-            this.fechaagregadoDataGridViewTextBoxColumn.HeaderText = "Fecha Agregado";
-            this.fechaagregadoDataGridViewTextBoxColumn.Name = "fechaagregadoDataGridViewTextBoxColumn";
-            this.fechaagregadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadoDataGridViewCheckBoxColumn
-            // 
-            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewCheckBoxColumn.FillWeight = 50.76142F;
-            this.estadoDataGridViewCheckBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
-            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
             // formEquipos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -734,11 +552,6 @@
             this.Name = "formEquipos";
             this.Text = "Equipos";
             this.Load += new System.EventHandler(this.formEquipos_Load);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Paginator)).EndInit();
-            this.Paginator.ResumeLayout(false);
-            this.Paginator.PerformLayout();
             this.fpnlBotones.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
@@ -750,12 +563,9 @@
             this.tableLayoutPanel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -763,15 +573,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.BindingNavigator Paginator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.FlowLayoutPanel fpnlBotones;
         private Personalizacion.MSButton btnVolver;
         private Personalizacion.MSButton btnAgregarEquipo;
@@ -782,23 +583,18 @@
         private Personalizacion.MSButton btnLimpiar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private DB_TECHGOALDataSetTableAdapters.rolTableAdapter rolTableAdapter;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtCorreoFilter;
+        private System.Windows.Forms.TextBox txtNombreFilter;
         private Personalizacion.MSButton msButton1;
         private System.Windows.Forms.ComboBox cmbEstadoFilter;
-        private System.Windows.Forms.BindingSource rolBindingSource;
         private DB_TECHGOALDataSet dB_TECHGOALDataSet;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtDNIFilter;
-        private Personalizacion.MSButton msButton3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtNombreFilter;
+        private System.Windows.Forms.TextBox txtTorneoFilter;
         private Personalizacion.MSButton msButton2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
@@ -807,10 +603,6 @@
         private DB_TECHGOALDataSet2 dB_TECHGOALDataSet2;
         private System.Windows.Forms.BindingSource equiposBindingSource;
         private DB_TECHGOALDataSet2TableAdapters.equiposTableAdapter equiposTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idequipoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn escudo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaagregadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinal;
     }
 }
