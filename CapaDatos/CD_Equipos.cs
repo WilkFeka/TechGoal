@@ -5,11 +5,61 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaEntidad;
 
 namespace CapaDatos
 {
     public class CD_Equipos
     {
+        public List<Equipo> Listar()
+        {
+            List<Equipo> lista = new List<Equipo>();
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("SELECT * FROM equipos");
+
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        conection.Open();
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                lista.Add(new Equipo()
+                                {
+                                    id_equipo = Convert.ToInt32(reader["id_equipo"]),
+                                    nombre = Convert.ToString(reader["nombre"]),
+                                    fecha_agregado = DateTime.Parse(Convert.ToString(reader["fecha_agregado"])),
+                                    escudo = Convert.ToString(reader["escudo"]),
+                                    estado = Convert.ToBoolean(reader["estado"])
+                                });
+
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                lista = new List<Equipo>();
+                Console.WriteLine(ex.Message);
+            }
+
+            return lista;
+
+        }
         public DataTable CargarTablaEquipos(DataTable tablaEquiposP, string nombreP, string torneoP, string estadoP)
         {
             try

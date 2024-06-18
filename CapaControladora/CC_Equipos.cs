@@ -24,13 +24,13 @@ namespace CapaControladora
             }
         }
 
-        //public List<Equipo> Listar()
-        //{
-        //    List<Equipo> listaEquipos = new CD_Equipos().Listar();
+        public List<Equipo> Listar()
+       {
+            List<Equipo> listaEquipos = new CD_Equipos().Listar();
 
-        //    return listaEquipos;
+            return listaEquipos;
 
-        //}
+        }
 
         public DataTable CargarTablaEquipos(DataTable tablaEquiposP, string nombreP, string torneoP, string estadoP)
         {
@@ -39,19 +39,19 @@ namespace CapaControladora
 
         }
 
-        //public Equipo EncontrarEquipoNum(int num)
-        //{
+       public Equipo EncontrarEquipoNombre(string nombre)
+        {
 
-        //    Equipo buscandoEquipo = new CC_Equipos().Listar().Where(c => c.numero == num).FirstOrDefault();
+            Equipo buscandoEquipoNombre = new CC_Equipos().Listar().Where(c => c.nombre == nombre).FirstOrDefault();
 
-        //    if (buscandoEquipo != null)
-        //    {
-        //        return buscandoEquipo;
-        //    }
-        //    else
-        //    {
-        //        return buscandoEquipo;
-        //    }
-        //}
+            if (buscandoEquipoNombre != null)
+            {
+                return buscandoEquipoNombre;
+            }
+            else
+            {
+                return buscandoEquipoNombre;
+            }
+        }
     }
 }

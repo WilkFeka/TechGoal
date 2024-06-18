@@ -38,6 +38,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAgregarEscudo = new CapaPresentacion.Personalizacion.MSButton();
+            this.txtPathEscudo = new System.Windows.Forms.TextBox();
+            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,6 +111,7 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -131,6 +134,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // msButton3
             // 
@@ -166,7 +170,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label3.Location = new System.Drawing.Point(48, 290);
+            this.label3.Location = new System.Drawing.Point(47, 332);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 29);
@@ -188,19 +192,56 @@
             this.btnAgregarEscudo.FlatAppearance.BorderSize = 0;
             this.btnAgregarEscudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarEscudo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarEscudo.Location = new System.Drawing.Point(52, 217);
+            this.btnAgregarEscudo.Location = new System.Drawing.Point(52, 236);
             this.btnAgregarEscudo.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnAgregarEscudo.Name = "btnAgregarEscudo";
             this.btnAgregarEscudo.Size = new System.Drawing.Size(50, 50);
             this.btnAgregarEscudo.TabIndex = 100;
             this.btnAgregarEscudo.TextColor = System.Drawing.Color.White;
             this.btnAgregarEscudo.UseVisualStyleBackColor = false;
+            this.btnAgregarEscudo.Click += new System.EventHandler(this.btnAgregarEscudo_Click);
+            // 
+            // txtPathEscudo
+            // 
+            this.txtPathEscudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtPathEscudo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPathEscudo.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPathEscudo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtPathEscudo.Location = new System.Drawing.Point(131, 248);
+            this.txtPathEscudo.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPathEscudo.Name = "txtPathEscudo";
+            this.txtPathEscudo.ReadOnly = true;
+            this.txtPathEscudo.Size = new System.Drawing.Size(350, 29);
+            this.txtPathEscudo.TabIndex = 101;
+            // 
+            // msButton1
+            // 
+            this.msButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.msButton1.BorderRadius = 20;
+            this.msButton1.BorderSize = 0;
+            this.msButton1.Enabled = false;
+            this.msButton1.FlatAppearance.BorderSize = 0;
+            this.msButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.msButton1.ForeColor = System.Drawing.Color.White;
+            this.msButton1.Location = new System.Drawing.Point(120, 236);
+            this.msButton1.Margin = new System.Windows.Forms.Padding(15, 0, 3, 30);
+            this.msButton1.Name = "msButton1";
+            this.msButton1.Size = new System.Drawing.Size(377, 50);
+            this.msButton1.TabIndex = 102;
+            this.msButton1.TextColor = System.Drawing.Color.White;
+            this.msButton1.UseVisualStyleBackColor = false;
             // 
             // formAgregarEquipos
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(553, 600);
+            this.Controls.Add(this.txtPathEscudo);
+            this.Controls.Add(this.msButton1);
             this.Controls.Add(this.btnAgregarEscudo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -218,6 +259,7 @@
             this.Name = "formAgregarEquipos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Equipo";
+            this.Load += new System.EventHandler(this.formAgregarEquipos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,5 +278,7 @@
         private Personalizacion.MSButton msButton3;
         private System.Windows.Forms.Label label3;
         private Personalizacion.MSButton btnAgregarEscudo;
+        private System.Windows.Forms.TextBox txtPathEscudo;
+        private Personalizacion.MSButton msButton1;
     }
 }
