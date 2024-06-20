@@ -54,9 +54,30 @@ namespace CapaControladora
             }
         }
 
+        public Equipo EncontrarEquipoID(int id)
+        {
+
+            Equipo buscandoEquipoID = new CC_Equipos().Listar().Where(c => c.id_equipo == id).FirstOrDefault();
+
+            if (buscandoEquipoID != null)
+            {
+                return buscandoEquipoID;
+            }
+            else
+            {
+                return buscandoEquipoID;
+            }
+        }
+
         public bool AgregarEquipo(Equipo equipo)
         {
             bool resultado = new CD_Equipos().AgregarEquipo(equipo);
+            return resultado;
+        }
+
+        public bool EliminarEquipo(int id)
+        {
+            bool resultado = new CD_Equipos().EliminarEquipo(id);
             return resultado;
         }
     }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using CapaControladora;
 using CapaPresentacion.Personalizacion;
+using CapaEntidad;
 
 namespace CapaPresentacion.Formularios.Equipos
 {
@@ -17,6 +18,7 @@ namespace CapaPresentacion.Formularios.Equipos
     {
         private formInicio formInicioC;
         private CC_Equipos EquiposControladora = CC_Equipos.getInstance;
+        private CC_Jugador JugadorControladora = CC_Jugador.getInstance;
 
 
         public formEquipos(formInicio formInicio)
@@ -66,7 +68,7 @@ namespace CapaPresentacion.Formularios.Equipos
             if (dgvEquipos.Columns.Contains("editar")) dgvEquipos.Columns.Remove("editar");
 
 
-
+            string rutaCompleta;
 
             if (cmbEstadoFilter.SelectedItem != null)
             {
@@ -94,7 +96,7 @@ namespace CapaPresentacion.Formularios.Equipos
                     string rutaEscudo = row["escudo"].ToString();
                     string equipo = row["nombre"].ToString();
 
-                    string rutaCompleta = Path.Combine(Application.StartupPath, "equipos", equipo, rutaEscudo);
+                    rutaCompleta = Path.Combine(Application.StartupPath, "equipos", equipo, rutaEscudo);
 
 
                     // Cargar la imagen
@@ -197,6 +199,62 @@ namespace CapaPresentacion.Formularios.Equipos
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiarFiltros();
+        }
+
+        private void dgvEquipos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvEquipos.Columns[e.ColumnIndex].Name == "borrar" && e.RowIndex != -1)
+                {
+                    DataGridViewRow filaSeleccionada = dgvEquipos.CurrentRow;
+
+                    DataGridViewCell celda = filaSeleccionada.Cells["id_equipo"];
+
+                    int id = Convert.ToInt32(celda.Value);
+
+                    Equipo equipoEncontrado = EquiposControladora.EncontrarEquipoID(id);
+
+                    var mensaje = MessageBox.Show("¿Esta seguro de que desea borrar el equipo " + equipoEncontrado.nombre + "?", "Borrando equipo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (mensaje == DialogResult.No)
+                    {
+                        return;
+                    }
+                    else
+                    {
+
+                        // PRIMERO BORRAR JUGADORES DEL EQUIPO
+
+                        bool eliminarJugadores = JugadorControladora.EliminarJugadoresEquipo(equipoEncontrado.id_equipo);
+
+
+                        bool eliminarEquipo = EquiposControladora.EliminarEquipo(equipoEncontrado.id_equipo);
+
+                        if (eliminarEquipo)
+                        {
+                            MessageBox.Show("Equipo eliminado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            llenarTabla();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hubo un error al eliminar equipo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+
+
+
+
+                }
+
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+
+            }
         }
     }
 

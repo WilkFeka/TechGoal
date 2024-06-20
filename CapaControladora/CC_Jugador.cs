@@ -29,13 +29,38 @@ namespace CapaControladora
             return agregado;
         }
 
-        //public List<Jugador> Listar()
-        //{
-        //    List<Jugador> listaJugadores = new CD_Jugador().Listar();
+        public List<Jugador> Listar()
+        {
+            List<Jugador> listaJugadores = new CD_Jugador().Listar();
 
-        //    return listaJugadores;
+            return listaJugadores;
 
-        //}
+        }
+
+        public Jugador EncontrarJugadorID(int id)
+        {
+
+            Jugador buscandoJugadorID = new CC_Jugador().Listar().Where(c => c.id_jugador == id).FirstOrDefault();
+
+            if (buscandoJugadorID != null)
+            {
+                return buscandoJugadorID;
+            }
+            else
+            {
+                return buscandoJugadorID;
+            }
+        }
+
+        public bool EliminarJugadoresEquipo(int id_equipo)
+        {
+            bool eliminado = new CD_Jugador().EliminarJugadoresEquipo(id_equipo);
+
+            return eliminado;
+        }
+
+
+
 
         //public Jugador EncontrarJugadorNombre(string nombre)
         //{
