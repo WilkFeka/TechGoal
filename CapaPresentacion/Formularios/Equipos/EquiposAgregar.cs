@@ -146,19 +146,26 @@ namespace CapaPresentacion.Formularios.Equipos
 
                 if (agregarEquipo)
                 {
+                    string newFileName = txtNombre.Text + ".png";
+                    // Especificar la ruta donde se guardará el archivo
+                    targetFolder = Path.Combine(Application.StartupPath, "equipos", txtNombre.Text);
+                    targetFilePath = Path.Combine(targetFolder, newFileName);
                     // Asegurarse de que el directorio de destino existe
-                    if (!Directory.Exists(targetFolder))
+                    if (Directory.Exists(targetFolder))
                     {
-                        // Generar un nombre único para la imagen
-                        string newFileName = txtNombre.Text + ".png";
+                        File.Delete(targetFilePath);
+                        File.Copy(sourceFilePath, targetFilePath);
 
-                        // Especificar la ruta donde se guardará el archivo
-                        targetFolder = Path.Combine(Application.StartupPath, "equipos", txtNombre.Text);
-                        targetFilePath = Path.Combine(targetFolder, newFileName);
+                    }
+                    else
+                    {
                         Directory.CreateDirectory(targetFolder);
                         // Copiar el archivo a la nueva ubicación con el nuevo nombre
                         File.Copy(sourceFilePath, targetFilePath);
+
                     }
+
+
 
 
 

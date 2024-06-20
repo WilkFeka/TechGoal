@@ -231,6 +231,11 @@ namespace CapaPresentacion.Formularios.Equipos
 
                         bool eliminarEquipo = EquiposControladora.EliminarEquipo(equipoEncontrado.id_equipo);
 
+                        string folderEquipo = Path.Combine(Application.StartupPath, "equipos", equipoEncontrado.nombre);
+
+                       
+
+
                         if (eliminarEquipo)
                         {
                             MessageBox.Show("Equipo eliminado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -242,6 +247,8 @@ namespace CapaPresentacion.Formularios.Equipos
                             MessageBox.Show("Hubo un error al eliminar equipo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
+
+                    llenarTabla();
                     }
 
 
