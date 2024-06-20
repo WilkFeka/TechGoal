@@ -46,6 +46,7 @@
     <Compile Include="CC_Cliente.cs" />
     <Compile Include="CC_Equipos.cs" />
     <Compile Include="CC_Horario.cs" />
+    <Compile Include="CC_Jugador.cs" />
     <Compile Include="CC_Modulo.cs" />
     <Compile Include="CC_Permiso.cs" />
     <Compile Include="CC_Reserva.cs" />

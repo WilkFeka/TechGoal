@@ -47,11 +47,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNombreFilter = new System.Windows.Forms.TextBox();
             this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTorneoFilter = new System.Windows.Forms.TextBox();
             this.msButton2 = new CapaPresentacion.Personalizacion.MSButton();
@@ -297,20 +295,17 @@
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.dtpFechaFinal, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cmbEstadoFilter, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cmbEstadoFilter, 2, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 103);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -318,25 +313,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1375, 98);
             this.tableLayoutPanel1.TabIndex = 17;
-            // 
-            // dtpFechaFinal
-            // 
-            this.dtpFechaFinal.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpFechaFinal.CalendarFont = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFinal.CalendarForeColor = System.Drawing.Color.Lime;
-            this.dtpFechaFinal.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
-            this.dtpFechaFinal.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
-            this.dtpFechaFinal.CalendarTitleForeColor = System.Drawing.Color.DarkOrange;
-            this.dtpFechaFinal.CalendarTrailingForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dtpFechaFinal.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpFechaFinal.CustomFormat = "";
-            this.dtpFechaFinal.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFinal.Location = new System.Drawing.Point(738, 52);
-            this.dtpFechaFinal.Name = "dtpFechaFinal";
-            this.dtpFechaFinal.Size = new System.Drawing.Size(238, 46);
-            this.dtpFechaFinal.TabIndex = 87;
-            this.dtpFechaFinal.TabStop = false;
             // 
             // panel3
             // 
@@ -347,7 +323,7 @@
             this.panel3.Location = new System.Drawing.Point(10, 49);
             this.panel3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(323, 49);
+            this.panel3.Size = new System.Drawing.Size(438, 49);
             this.panel3.TabIndex = 18;
             // 
             // txtNombreFilter
@@ -358,7 +334,7 @@
             this.txtNombreFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.txtNombreFilter.Location = new System.Drawing.Point(13, 11);
             this.txtNombreFilter.Name = "txtNombreFilter";
-            this.txtNombreFilter.Size = new System.Drawing.Size(307, 29);
+            this.txtNombreFilter.Size = new System.Drawing.Size(410, 29);
             this.txtNombreFilter.TabIndex = 5;
             this.txtNombreFilter.TextChanged += new System.EventHandler(this.txtNombreFilter_TextChanged);
             // 
@@ -376,24 +352,10 @@
             this.msButton1.ForeColor = System.Drawing.Color.White;
             this.msButton1.Location = new System.Drawing.Point(0, 0);
             this.msButton1.Name = "msButton1";
-            this.msButton1.Size = new System.Drawing.Size(323, 49);
+            this.msButton1.Size = new System.Drawing.Size(438, 49);
             this.msButton1.TabIndex = 22;
             this.msButton1.TextColor = System.Drawing.Color.White;
             this.msButton1.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label3.Location = new System.Drawing.Point(696, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(330, 49);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Fecha Agregado";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
@@ -401,10 +363,10 @@
             this.panel1.Controls.Add(this.txtTorneoFilter);
             this.panel1.Controls.Add(this.msButton2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(353, 49);
+            this.panel1.Location = new System.Drawing.Point(468, 49);
             this.panel1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 49);
+            this.panel1.Size = new System.Drawing.Size(438, 49);
             this.panel1.TabIndex = 11;
             // 
             // txtTorneoFilter
@@ -415,8 +377,9 @@
             this.txtTorneoFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.txtTorneoFilter.Location = new System.Drawing.Point(13, 10);
             this.txtTorneoFilter.Name = "txtTorneoFilter";
-            this.txtTorneoFilter.Size = new System.Drawing.Size(296, 29);
+            this.txtTorneoFilter.Size = new System.Drawing.Size(407, 29);
             this.txtTorneoFilter.TabIndex = 6;
+            this.txtTorneoFilter.TextChanged += new System.EventHandler(this.txtTorneoFilter_TextChanged);
             // 
             // msButton2
             // 
@@ -432,7 +395,7 @@
             this.msButton2.ForeColor = System.Drawing.Color.Transparent;
             this.msButton2.Location = new System.Drawing.Point(0, 0);
             this.msButton2.Name = "msButton2";
-            this.msButton2.Size = new System.Drawing.Size(323, 49);
+            this.msButton2.Size = new System.Drawing.Size(438, 49);
             this.msButton2.TabIndex = 23;
             this.msButton2.TextColor = System.Drawing.Color.Transparent;
             this.msButton2.UseVisualStyleBackColor = false;
@@ -443,10 +406,10 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label2.Location = new System.Drawing.Point(353, 0);
+            this.label2.Location = new System.Drawing.Point(468, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(330, 49);
+            this.label2.Size = new System.Drawing.Size(445, 49);
             this.label2.TabIndex = 6;
             this.label2.Text = "Torneo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -460,7 +423,7 @@
             this.label6.Location = new System.Drawing.Point(10, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(330, 49);
+            this.label6.Size = new System.Drawing.Size(445, 49);
             this.label6.TabIndex = 17;
             this.label6.Text = "Nombre";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -471,10 +434,10 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label5.Location = new System.Drawing.Point(1039, 0);
+            this.label5.Location = new System.Drawing.Point(926, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(333, 49);
+            this.label5.Size = new System.Drawing.Size(446, 49);
             this.label5.TabIndex = 14;
             this.label5.Text = "Estado";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -486,11 +449,12 @@
             this.cmbEstadoFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstadoFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cmbEstadoFilter.FormattingEnabled = true;
-            this.cmbEstadoFilter.Location = new System.Drawing.Point(1039, 49);
+            this.cmbEstadoFilter.Location = new System.Drawing.Point(926, 49);
             this.cmbEstadoFilter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.cmbEstadoFilter.Name = "cmbEstadoFilter";
-            this.cmbEstadoFilter.Size = new System.Drawing.Size(326, 37);
+            this.cmbEstadoFilter.Size = new System.Drawing.Size(439, 37);
             this.cmbEstadoFilter.TabIndex = 9;
+            this.cmbEstadoFilter.SelectedIndexChanged += new System.EventHandler(this.cmbEstadoFilter_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -523,6 +487,7 @@
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.TextColor = System.Drawing.Color.White;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // dB_TECHGOALDataSet
             // 
@@ -592,7 +557,6 @@
         private Personalizacion.MSButton msButton1;
         private System.Windows.Forms.ComboBox cmbEstadoFilter;
         private DB_TECHGOALDataSet dB_TECHGOALDataSet;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtTorneoFilter;
         private Personalizacion.MSButton msButton2;
@@ -603,6 +567,5 @@
         private DB_TECHGOALDataSet2 dB_TECHGOALDataSet2;
         private System.Windows.Forms.BindingSource equiposBindingSource;
         private DB_TECHGOALDataSet2TableAdapters.equiposTableAdapter equiposTableAdapter;
-        private System.Windows.Forms.DateTimePicker dtpFechaFinal;
     }
 }

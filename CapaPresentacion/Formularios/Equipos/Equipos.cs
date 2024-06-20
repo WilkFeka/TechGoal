@@ -35,6 +35,7 @@ namespace CapaPresentacion.Formularios.Equipos
             cmbEstadoFilter.ValueMember = "valor";
 
             llenarTabla();
+            limpiarFiltros();
             
 
 
@@ -49,14 +50,14 @@ namespace CapaPresentacion.Formularios.Equipos
 
         private void btnAgregarEquipo_Click(object sender, EventArgs e)
         {
-            formAgregarEquipos formAgregarEquipos = new formAgregarEquipos();
+            formAgregarEquipos formAgregarEquipos = new formAgregarEquipos(this);
             formAgregarEquipos.ShowDialog();
 
            
 
         }
 
-        private void llenarTabla()
+        public void llenarTabla()
         {
             string estadoSeleccionado = "";
 
@@ -172,6 +173,30 @@ namespace CapaPresentacion.Formularios.Equipos
         private void txtNombreFilter_TextChanged(object sender, EventArgs e)
         {
             Filtrar();
+        }
+
+        private void txtTorneoFilter_TextChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+
+        }
+
+        private void cmbEstadoFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+
+        }
+
+        private void limpiarFiltros()
+        {
+            txtNombreFilter.Text = "";
+            txtTorneoFilter.Text = "";
+            cmbEstadoFilter.SelectedIndex = -1;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarFiltros();
         }
     }
 

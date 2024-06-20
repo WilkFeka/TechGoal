@@ -68,11 +68,28 @@ namespace CapaDatos
                 {
 
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT equipos.id_equipo, equipos.nombre, equipos.fecha_agregado, equipos.escudo, torneos.id_torneo, torneos.nombre AS nombre_torneo , equipos.estado  ");
-                    query.AppendLine("FROM equipos ");
-                    query.AppendLine("LEFT JOIN torneos_equipos ON equipos.id_equipo = torneos_equipos.id_equipo ");
-                    query.AppendLine("LEFT JOIN torneos ON torneos_equipos.id_torneo = torneos.id_torneo ");
-                    query.AppendLine("WHERE equipos.nombre LIKE @nombreP AND (torneos.nombre IS NULL OR torneos.nombre LIKE @torneoP) AND equipos.estado LIKE @estadoP");
+
+                    if (torneoP != "")
+                    {
+                        query.AppendLine("SELECT equipos.id_equipo, equipos.nombre, equipos.fecha_agregado, equipos.escudo, torneos.id_torneo, torneos.nombre AS nombre_torneo , equipos.estado  ");
+                        query.AppendLine("FROM equipos ");
+                        query.AppendLine("LEFT JOIN torneos_equipos ON equipos.id_equipo = torneos_equipos.id_equipo ");
+                        query.AppendLine("LEFT JOIN torneos ON torneos_equipos.id_torneo = torneos.id_torneo ");
+                        query.AppendLine("WHERE equipos.nombre LIKE @nombreP AND torneos.nombre LIKE @torneoP AND equipos.estado LIKE @estadoP");
+
+                    }
+
+                    else
+                    {
+                        query.AppendLine("SELECT equipos.id_equipo, equipos.nombre, equipos.fecha_agregado, equipos.escudo, torneos.id_torneo, torneos.nombre AS nombre_torneo , equipos.estado  ");
+                        query.AppendLine("FROM equipos ");
+                        query.AppendLine("LEFT JOIN torneos_equipos ON equipos.id_equipo = torneos_equipos.id_equipo ");
+                        query.AppendLine("LEFT JOIN torneos ON torneos_equipos.id_torneo = torneos.id_torneo ");
+                        query.AppendLine("WHERE equipos.nombre LIKE @nombreP AND (torneos.nombre IS NULL OR torneos.nombre LIKE @torneoP) AND equipos.estado LIKE @estadoP");
+
+
+                    }
+
 
 
 
@@ -105,6 +122,46 @@ namespace CapaDatos
                 return tablaEquiposP;
 
             }
+        }
+
+        public bool AgregarEquipo(Equipo equipo)
+        {
+            bool agregado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("INSERT INTO equipos (nombre, escudo, estado)");
+                    query.AppendLine("VALUES (@nombre, @escudo, @estado)");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", equipo.nombre);
+                        cmd.Parameters.AddWithValue("@escudo", equipo.escudo);
+                        cmd.Parameters.AddWithValue("@estado", equipo.estado);
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            agregado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return agregado;
+
+
         }
     }
 }

@@ -53,5 +53,11 @@ namespace CapaControladora
                 return buscandoEquipoNombre;
             }
         }
+
+        public bool AgregarEquipo(Equipo equipo)
+        {
+            bool resultado = new CD_Equipos().AgregarEquipo(equipo);
+            return resultado;
+        }
     }
 }
