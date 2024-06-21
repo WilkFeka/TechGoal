@@ -38,6 +38,7 @@ namespace CapaDatos
                                     id_jugador = Convert.ToInt32(reader["id_jugador"]),
                                     nombre = Convert.ToString(reader["nombre"]),
                                     apellido = Convert.ToString(reader["apellido"]),
+                                    dorsal = Convert.ToInt32(reader["dorsal"]),
                                     id_equipo = Convert.ToInt32(reader["id_equipo"]),
 
                                 });

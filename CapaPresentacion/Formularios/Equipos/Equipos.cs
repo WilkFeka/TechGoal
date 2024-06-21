@@ -223,18 +223,12 @@ namespace CapaPresentacion.Formularios.Equipos
                     }
                     else
                     {
-
-                        // PRIMERO BORRAR JUGADORES DEL EQUIPO
-
+                       // PRIMERO BORRAR JUGADORES DEL EQUIPO
                         bool eliminarJugadores = JugadorControladora.EliminarJugadoresEquipo(equipoEncontrado.id_equipo);
-
 
                         bool eliminarEquipo = EquiposControladora.EliminarEquipo(equipoEncontrado.id_equipo);
 
                         string folderEquipo = Path.Combine(Application.StartupPath, "equipos", equipoEncontrado.nombre);
-
-                       
-
 
                         if (eliminarEquipo)
                         {
@@ -253,6 +247,22 @@ namespace CapaPresentacion.Formularios.Equipos
 
 
 
+
+                }
+
+                if (dgvEquipos.Columns[e.ColumnIndex].Name == "editar" && e.RowIndex != -1)
+                {
+                    // ------------- Obtiene el valor de la celda ID ---------------------
+                    DataGridViewRow filaSeleccionada = dgvEquipos.CurrentRow;
+
+                    DataGridViewCell celda = filaSeleccionada.Cells["id_equipo"];
+
+                    int id = Convert.ToInt32(celda.Value);
+
+                    Equipo equipoSeleccionado = EquiposControladora.EncontrarEquipoID(id);
+
+                    formEquipoModificar formEquipoModificar = new formEquipoModificar(this, equipoSeleccionado);
+                    formEquipoModificar.ShowDialog();
 
                 }
 

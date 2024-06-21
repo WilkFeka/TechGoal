@@ -117,3 +117,4 @@ C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Form
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Equipos.formEquipos.resources
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Equipos.formAgregarEquipos.resources
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Equipos.formAgregarJugador.resources
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Equipos.formEquipoModificar.resources

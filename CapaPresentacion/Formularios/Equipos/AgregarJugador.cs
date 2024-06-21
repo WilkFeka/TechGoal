@@ -1,4 +1,5 @@
-﻿using CapaPresentacion.Personalizacion;
+﻿using CapaEntidad;
+using CapaPresentacion.Personalizacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,14 @@ namespace CapaPresentacion.Formularios.Equipos
     public partial class formAgregarJugador : Form
     {
         Funcionalidades funcionalidades = Funcionalidades.getInstance;
+        public formAgregarJugador(Jugador jugador)
+        {
+            InitializeComponent();
+            txtNombreJug.Text = jugador.nombre;
+            txtApellidoJug.Text = jugador.apellido;
+            txtDorsalJug.Text = jugador.dorsal.ToString();
+        }
+
         public formAgregarJugador()
         {
             InitializeComponent();

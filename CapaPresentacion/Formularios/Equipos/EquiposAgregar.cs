@@ -164,11 +164,6 @@ namespace CapaPresentacion.Formularios.Equipos
                         File.Copy(sourceFilePath, targetFilePath);
 
                     }
-
-
-
-
-
                 }
 
                 MessageBox.Show("Equipo agregado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);

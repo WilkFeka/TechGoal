@@ -280,6 +280,12 @@
     <Compile Include="Formularios\Equipos\AgregarJugador.Designer.cs">
       <DependentUpon>AgregarJugador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Equipos\Equipo - Modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Equipos\Equipo - Modificar.Designer.cs">
+      <DependentUpon>Equipo - Modificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Equipos\Equipos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -423,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Equipos\AgregarJugador.resx">
       <DependentUpon>AgregarJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Equipos\Equipo - Modificar.resx">
+      <DependentUpon>Equipo - Modificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Equipos\Equipos.resx">
       <DependentUpon>Equipos.cs</DependentUpon>

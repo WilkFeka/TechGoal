@@ -52,6 +52,21 @@ namespace CapaControladora
             }
         }
 
+        public List<Jugador> EncontrarJugadoresEquipo(int id)
+        {
+
+            List<Jugador> buscandoJugadores = new CC_Jugador().Listar().Where(c => c.id_equipo == id).ToList();
+
+            if (buscandoJugadores != null)
+            {
+                return buscandoJugadores;
+            }
+            else
+            {
+                return buscandoJugadores;
+            }
+        }
+
         public bool EliminarJugadoresEquipo(int id_equipo)
         {
             bool eliminado = new CD_Jugador().EliminarJugadoresEquipo(id_equipo);
@@ -77,10 +92,5 @@ namespace CapaControladora
         //    }
         //}
 
-        //public bool AgregarJugador(Jugador jugador)
-        //{
-        //    bool resultado = new CD_Jugador().AgregarJugador(jugador);
-        //    return resultado;
-        //}
     }
 }
