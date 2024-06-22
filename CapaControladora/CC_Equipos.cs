@@ -80,5 +80,13 @@ namespace CapaControladora
             bool resultado = new CD_Equipos().EliminarEquipo(id);
             return resultado;
         }
+
+        public bool ModificarEquipo(Equipo equipo)
+        {
+            bool resultado = new CD_Equipos().ModificarEquipo(equipo);
+            return resultado;
+        }
+
+
     }
 }

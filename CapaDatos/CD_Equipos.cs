@@ -198,5 +198,52 @@ namespace CapaDatos
 
             return eliminado;
         }
+
+        public bool ModificarEquipo(Equipo equipo)
+        {
+            bool modificar = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("update equipos set ");
+                    query.AppendLine("nombre = @nombre, ");
+                    query.AppendLine("escudo = @escudo, ");
+                    query.AppendLine("estado = @estado ");
+                    query.AppendLine("where id_equipo = @id_equipo");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", equipo.nombre);
+                        cmd.Parameters.AddWithValue("@escudo", equipo.escudo);
+                        cmd.Parameters.AddWithValue("@estado", equipo.estado);
+                        cmd.Parameters.AddWithValue("@id_equipo", equipo.id_equipo);
+
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            modificar = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return modificar;
+
+
+        }
+
+
     }
 }

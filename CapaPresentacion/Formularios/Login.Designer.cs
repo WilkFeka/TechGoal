@@ -296,6 +296,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formLogin_FormClosed);
             this.Load += new System.EventHandler(this.LoginV2_Load);
             this.VisibleChanged += new System.EventHandler(this.formLogin_VisibleChanged);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);

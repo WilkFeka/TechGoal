@@ -11,6 +11,7 @@ using System.IO;
 using CapaControladora;
 using CapaPresentacion.Personalizacion;
 using CapaEntidad;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CapaPresentacion.Formularios.Equipos
 {
@@ -23,6 +24,8 @@ namespace CapaPresentacion.Formularios.Equipos
 
         public formEquipos(formInicio formInicio)
         {
+            borrarCarpetasEquipos();
+
             InitializeComponent();
             formInicioC = formInicio;
 
@@ -161,10 +164,7 @@ namespace CapaPresentacion.Formularios.Equipos
                 // Eliminar la columna de texto original si ya no es necesaria
                 dgvEquipos.Columns["escudo"].Visible = false;
                 dgvEquipos.Columns["ImagenEscudo"].Visible = false;
-
-
-
-
+    
         }
 
         private void Filtrar()
@@ -261,6 +261,8 @@ namespace CapaPresentacion.Formularios.Equipos
 
                     Equipo equipoSeleccionado = EquiposControladora.EncontrarEquipoID(id);
 
+                    dgvEquipos.DataSource = null;
+
                     formEquipoModificar formEquipoModificar = new formEquipoModificar(this, equipoSeleccionado);
                     formEquipoModificar.ShowDialog();
 
@@ -273,6 +275,51 @@ namespace CapaPresentacion.Formularios.Equipos
 
             }
         }
+
+        private void formEquipos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        public void borrarCarpetasEquipos()
+        {
+            // Suponiendo que EquiposControladora.Listar() devuelve una lista de objetos Equipo
+            List<Equipo> listaEquipos = EquiposControladora.Listar();
+
+            // Obtener los nombres de los equipos
+            HashSet<string> nombresEquipos = new HashSet<string>(listaEquipos.Select(e => e.nombre));
+
+            // Ruta del directorio que contiene las carpetas
+            string rutaDirectorio = Path.Combine(Application.StartupPath, "equipos");
+
+            // Obtener todas las carpetas en el directorio
+            string[] carpetas = Directory.GetDirectories(rutaDirectorio);
+
+            foreach (string carpeta in carpetas)
+            {
+                // Obtener el nombre de la carpeta
+                string nombreCarpeta = Path.GetFileName(carpeta);
+
+                // Verificar si el nombre de la carpeta está en la lista de nombres de equipos
+                if (!nombresEquipos.Contains(nombreCarpeta))
+                {
+                    try
+                    {
+                        // Eliminar la carpeta y todo su contenido
+                        Directory.Delete(carpeta, true);
+                        Console.WriteLine($"Carpeta eliminada: {nombreCarpeta}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"No se pudo eliminar la carpeta {nombreCarpeta}: {ex.Message}");
+                    }
+                }
+            }
+
+
+        }
+
+
     }
 
 }

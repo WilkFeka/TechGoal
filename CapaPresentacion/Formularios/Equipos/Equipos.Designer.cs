@@ -35,6 +35,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnAgregarEquipo = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnExportar = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.equiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,23 +49,20 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNombreFilter = new System.Windows.Forms.TextBox();
+            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTorneoFilter = new System.Windows.Forms.TextBox();
+            this.msButton2 = new CapaPresentacion.Personalizacion.MSButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbEstadoFilter = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
             this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
             this.permisosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.permisosTableAdapter();
             this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.equiposTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet2TableAdapters.equiposTableAdapter();
-            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnAgregarEquipo = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnExportar = new CapaPresentacion.Personalizacion.MSButton();
-            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
-            this.msButton2 = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
             this.fpnlBotones.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
@@ -87,6 +87,74 @@
             this.fpnlBotones.Name = "fpnlBotones";
             this.fpnlBotones.Size = new System.Drawing.Size(238, 77);
             this.fpnlBotones.TabIndex = 71;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundImage = global::CapaPresentacion.Properties.Resources.back;
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnVolver.BorderRadius = 25;
+            this.btnVolver.BorderSize = 0;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(10, 3);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(64, 64);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.TextColor = System.Drawing.Color.White;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnAgregarEquipo
+            // 
+            this.btnAgregarEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAgregarEquipo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAgregarEquipo.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
+            this.btnAgregarEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregarEquipo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnAgregarEquipo.BorderRadius = 25;
+            this.btnAgregarEquipo.BorderSize = 0;
+            this.btnAgregarEquipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarEquipo.FlatAppearance.BorderSize = 0;
+            this.btnAgregarEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarEquipo.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarEquipo.Location = new System.Drawing.Point(87, 3);
+            this.btnAgregarEquipo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnAgregarEquipo.Name = "btnAgregarEquipo";
+            this.btnAgregarEquipo.Size = new System.Drawing.Size(64, 64);
+            this.btnAgregarEquipo.TabIndex = 3;
+            this.btnAgregarEquipo.TextColor = System.Drawing.Color.White;
+            this.btnAgregarEquipo.UseVisualStyleBackColor = false;
+            this.btnAgregarEquipo.Click += new System.EventHandler(this.btnAgregarEquipo_Click);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            this.btnExportar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            this.btnExportar.BackgroundImage = global::CapaPresentacion.Properties.Resources.excelBlanco;
+            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExportar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnExportar.BorderRadius = 25;
+            this.btnExportar.BorderSize = 0;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.Location = new System.Drawing.Point(164, 3);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(64, 64);
+            this.btnExportar.TabIndex = 4;
+            this.btnExportar.TextColor = System.Drawing.Color.White;
+            this.btnExportar.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -271,6 +339,25 @@
             this.txtNombreFilter.TabIndex = 5;
             this.txtNombreFilter.TextChanged += new System.EventHandler(this.txtNombreFilter_TextChanged);
             // 
+            // msButton1
+            // 
+            this.msButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.msButton1.BorderRadius = 20;
+            this.msButton1.BorderSize = 0;
+            this.msButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msButton1.Enabled = false;
+            this.msButton1.FlatAppearance.BorderSize = 0;
+            this.msButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.msButton1.ForeColor = System.Drawing.Color.White;
+            this.msButton1.Location = new System.Drawing.Point(0, 0);
+            this.msButton1.Name = "msButton1";
+            this.msButton1.Size = new System.Drawing.Size(438, 49);
+            this.msButton1.TabIndex = 22;
+            this.msButton1.TextColor = System.Drawing.Color.White;
+            this.msButton1.UseVisualStyleBackColor = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -294,6 +381,25 @@
             this.txtTorneoFilter.Size = new System.Drawing.Size(407, 29);
             this.txtTorneoFilter.TabIndex = 6;
             this.txtTorneoFilter.TextChanged += new System.EventHandler(this.txtTorneoFilter_TextChanged);
+            // 
+            // msButton2
+            // 
+            this.msButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.msButton2.BorderRadius = 20;
+            this.msButton2.BorderSize = 0;
+            this.msButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msButton2.Enabled = false;
+            this.msButton2.FlatAppearance.BorderSize = 0;
+            this.msButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.msButton2.ForeColor = System.Drawing.Color.Transparent;
+            this.msButton2.Location = new System.Drawing.Point(0, 0);
+            this.msButton2.Name = "msButton2";
+            this.msButton2.Size = new System.Drawing.Size(438, 49);
+            this.msButton2.TabIndex = 23;
+            this.msButton2.TextColor = System.Drawing.Color.Transparent;
+            this.msButton2.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -361,130 +467,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // dB_TECHGOALDataSet
-            // 
-            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
-            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // permisosTableAdapter
-            // 
-            this.permisosTableAdapter.ClearBeforeFill = true;
-            // 
-            // dBTECHGOALDataSetBindingSource
-            // 
-            this.dBTECHGOALDataSetBindingSource.DataSource = this.dB_TECHGOALDataSet;
-            this.dBTECHGOALDataSetBindingSource.Position = 0;
-            // 
-            // equiposTableAdapter
-            // 
-            this.equiposTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVolver.BackgroundImage = global::CapaPresentacion.Properties.Resources.back;
-            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnVolver.BorderRadius = 25;
-            this.btnVolver.BorderSize = 0;
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(10, 3);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(64, 64);
-            this.btnVolver.TabIndex = 1;
-            this.btnVolver.TextColor = System.Drawing.Color.White;
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnAgregarEquipo
-            // 
-            this.btnAgregarEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAgregarEquipo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAgregarEquipo.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
-            this.btnAgregarEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregarEquipo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnAgregarEquipo.BorderRadius = 25;
-            this.btnAgregarEquipo.BorderSize = 0;
-            this.btnAgregarEquipo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarEquipo.FlatAppearance.BorderSize = 0;
-            this.btnAgregarEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarEquipo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarEquipo.Location = new System.Drawing.Point(87, 3);
-            this.btnAgregarEquipo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnAgregarEquipo.Name = "btnAgregarEquipo";
-            this.btnAgregarEquipo.Size = new System.Drawing.Size(64, 64);
-            this.btnAgregarEquipo.TabIndex = 3;
-            this.btnAgregarEquipo.TextColor = System.Drawing.Color.White;
-            this.btnAgregarEquipo.UseVisualStyleBackColor = false;
-            this.btnAgregarEquipo.Click += new System.EventHandler(this.btnAgregarEquipo_Click);
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
-            this.btnExportar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
-            this.btnExportar.BackgroundImage = global::CapaPresentacion.Properties.Resources.excelBlanco;
-            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExportar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnExportar.BorderRadius = 25;
-            this.btnExportar.BorderSize = 0;
-            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportar.FlatAppearance.BorderSize = 0;
-            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.Location = new System.Drawing.Point(164, 3);
-            this.btnExportar.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(64, 64);
-            this.btnExportar.TabIndex = 4;
-            this.btnExportar.TextColor = System.Drawing.Color.White;
-            this.btnExportar.UseVisualStyleBackColor = false;
-            // 
-            // msButton1
-            // 
-            this.msButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.msButton1.BorderRadius = 20;
-            this.msButton1.BorderSize = 0;
-            this.msButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msButton1.Enabled = false;
-            this.msButton1.FlatAppearance.BorderSize = 0;
-            this.msButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton1.ForeColor = System.Drawing.Color.White;
-            this.msButton1.Location = new System.Drawing.Point(0, 0);
-            this.msButton1.Name = "msButton1";
-            this.msButton1.Size = new System.Drawing.Size(438, 49);
-            this.msButton1.TabIndex = 22;
-            this.msButton1.TextColor = System.Drawing.Color.White;
-            this.msButton1.UseVisualStyleBackColor = false;
-            // 
-            // msButton2
-            // 
-            this.msButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.msButton2.BorderRadius = 20;
-            this.msButton2.BorderSize = 0;
-            this.msButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msButton2.Enabled = false;
-            this.msButton2.FlatAppearance.BorderSize = 0;
-            this.msButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton2.ForeColor = System.Drawing.Color.Transparent;
-            this.msButton2.Location = new System.Drawing.Point(0, 0);
-            this.msButton2.Name = "msButton2";
-            this.msButton2.Size = new System.Drawing.Size(438, 49);
-            this.msButton2.TabIndex = 23;
-            this.msButton2.TextColor = System.Drawing.Color.Transparent;
-            this.msButton2.UseVisualStyleBackColor = false;
-            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -508,6 +490,24 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // dB_TECHGOALDataSet
+            // 
+            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
+            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // permisosTableAdapter
+            // 
+            this.permisosTableAdapter.ClearBeforeFill = true;
+            // 
+            // dBTECHGOALDataSetBindingSource
+            // 
+            this.dBTECHGOALDataSetBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            this.dBTECHGOALDataSetBindingSource.Position = 0;
+            // 
+            // equiposTableAdapter
+            // 
+            this.equiposTableAdapter.ClearBeforeFill = true;
+            // 
             // formEquipos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -517,6 +517,7 @@
             this.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "formEquipos";
             this.Text = "Equipos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formEquipos_FormClosed);
             this.Load += new System.EventHandler(this.formEquipos_Load);
             this.fpnlBotones.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -539,34 +540,34 @@
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel fpnlBotones;
-        private Personalizacion.MSButton btnVolver;
-        private Personalizacion.MSButton btnAgregarEquipo;
-        private Personalizacion.MSButton btnExportar;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dgvEquipos;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Personalizacion.MSButton btnLimpiar;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtNombreFilter;
-        private Personalizacion.MSButton msButton1;
-        private System.Windows.Forms.ComboBox cmbEstadoFilter;
-        private DB_TECHGOALDataSet dB_TECHGOALDataSet;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtTorneoFilter;
-        private Personalizacion.MSButton msButton2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
-        private DB_TECHGOALDataSetTableAdapters.permisosTableAdapter permisosTableAdapter;
-        private System.Windows.Forms.BindingSource dBTECHGOALDataSetBindingSource;
-        private DB_TECHGOALDataSet2 dB_TECHGOALDataSet2;
-        private System.Windows.Forms.BindingSource equiposBindingSource;
-        private DB_TECHGOALDataSet2TableAdapters.equiposTableAdapter equiposTableAdapter;
+        public System.Windows.Forms.FlowLayoutPanel fpnlBotones;
+        public Personalizacion.MSButton btnVolver;
+        public Personalizacion.MSButton btnAgregarEquipo;
+        public Personalizacion.MSButton btnExportar;
+        public System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.DataGridView dgvEquipos;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public Personalizacion.MSButton btnLimpiar;
+        public System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        public System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        public System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.TextBox txtNombreFilter;
+        public Personalizacion.MSButton msButton1;
+        public System.Windows.Forms.ComboBox cmbEstadoFilter;
+        public DB_TECHGOALDataSet dB_TECHGOALDataSet;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.TextBox txtTorneoFilter;
+        public Personalizacion.MSButton msButton2;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label6;
+        public DB_TECHGOALDataSetTableAdapters.permisosTableAdapter permisosTableAdapter;
+        public System.Windows.Forms.BindingSource dBTECHGOALDataSetBindingSource;
+        public DB_TECHGOALDataSet2 dB_TECHGOALDataSet2;
+        public System.Windows.Forms.BindingSource equiposBindingSource;
+        public DB_TECHGOALDataSet2TableAdapters.equiposTableAdapter equiposTableAdapter;
     }
 }

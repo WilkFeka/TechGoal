@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -21,6 +22,7 @@ namespace CapaPresentacion
 
         private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
         private CC_Sesion SesionControladora = CC_Sesion.getInstance;
+        private CC_Equipos EquiposControladora = CC_Equipos.getInstance;
 
 
         public formLogin()
@@ -242,5 +244,11 @@ namespace CapaPresentacion
         {
             
         }
+
+        private void formLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
     }
 }

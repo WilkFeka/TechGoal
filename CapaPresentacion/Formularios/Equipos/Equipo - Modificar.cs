@@ -18,7 +18,7 @@ namespace CapaPresentacion.Formularios.Equipos
         formEquipos formEquiposP;
         Equipo equipoSeleccionadoP;
         CC_Jugador JugadorControladora = CC_Jugador.getInstance;
-        CC_Equipos EquipoControladora = CC_Equipos.getInstance;
+        CC_Equipos EquiposControladora = CC_Equipos.getInstance;
         string estadoEquipo;
         string targetFolder;
         string targetFilePath;
@@ -59,10 +59,6 @@ namespace CapaPresentacion.Formularios.Equipos
 
         }
 
-        private void formEquipoModificar_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formEquiposP.llenarTabla();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -132,6 +128,109 @@ namespace CapaPresentacion.Formularios.Equipos
                     }
                 }
             }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (Control control in Controls)
+                {
+                    if (control is TextBox)
+                    {
+                        if (string.IsNullOrEmpty(control.Text) && control != txtPathEscudo)
+                        {
+
+                            MessageBox.Show("Por favor complete todos los campos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+
+                        }
+                    }
+
+                }
+
+                foreach (Control control in flpControles.Controls)
+                {
+                    if (control is formAgregarJugador)
+                    {
+                        formAgregarJugador formJug = (formAgregarJugador)control;
+                        if (string.IsNullOrEmpty(formJug.txtNombreJug.Text) || string.IsNullOrEmpty(formJug.txtApellidoJug.Text) || string.IsNullOrEmpty(formJug.txtDorsalJug.Text))
+                        {
+                            MessageBox.Show("Por favor complete todos los campos de los jugadores", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                }
+
+
+                Equipo buscarEquipoNombre = EquiposControladora.EncontrarEquipoNombre(txtNombre.Text);
+
+                if (buscarEquipoNombre != null && buscarEquipoNombre.nombre != equipoSeleccionadoP.nombre)
+
+                {
+                    MessageBox.Show("Ya existe un Equipo con ese nombre.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+
+                }
+
+
+                if (txtNombre.Text != equipoSeleccionadoP.nombre && txtPathEscudo.Text == "")
+                {
+                    targetFolder = Path.Combine(Application.StartupPath, "equipos", txtNombre.Text);
+                    targetFilePath = Path.Combine(targetFolder, txtNombre.Text + ".png");
+                    Directory.CreateDirectory(targetFolder);
+                    File.Copy(Path.Combine(Application.StartupPath, "equipos", equipoSeleccionadoP.nombre,  equipoSeleccionadoP.nombre + ".png"), targetFilePath);
+
+                } else if (txtNombre.Text != equipoSeleccionadoP.nombre && txtPathEscudo.Text != "")
+                {
+                    targetFolder = Path.Combine(Application.StartupPath, "equipos", txtNombre.Text);
+                    targetFilePath = Path.Combine(targetFolder, txtNombre.Text + ".png");
+                    Directory.CreateDirectory(targetFolder);
+                    File.Copy(sourceFilePath, targetFilePath);
+
+                } else if (txtPathEscudo.Text != "")
+                {
+                    targetFolder = Path.Combine(Application.StartupPath, "equipos", equipoSeleccionadoP.nombre);
+                    targetFilePath = Path.Combine(targetFolder, equipoSeleccionadoP.nombre);
+                    File.WriteAllText(targetFilePath, sourceFilePath);
+
+
+                }
+
+
+
+                Equipo modificarEquipo = new Equipo()
+                {
+                    id_equipo = equipoSeleccionadoP.id_equipo,
+                    nombre = txtNombre.Text,
+                    fecha_agregado = equipoSeleccionadoP.fecha_agregado,
+                    escudo = txtNombre.Text + ".png",
+                    estado = true
+                };
+
+                bool modificarEquipoBool = EquiposControladora.ModificarEquipo(modificarEquipo);
+
+                if (modificarEquipoBool == false)
+                {
+                    MessageBox.Show("Hubo un error al modificar equipo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+
+
+            } catch
+            {
+
+            }
+        }
+
+
+        private void formEquipoModificar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            formEquiposP.llenarTabla();
+
         }
     }
 }
