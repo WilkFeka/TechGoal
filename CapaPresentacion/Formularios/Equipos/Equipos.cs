@@ -261,7 +261,6 @@ namespace CapaPresentacion.Formularios.Equipos
 
                     Equipo equipoSeleccionado = EquiposControladora.EncontrarEquipoID(id);
 
-                    dgvEquipos.DataSource = null;
 
                     formEquipoModificar formEquipoModificar = new formEquipoModificar(this, equipoSeleccionado);
                     formEquipoModificar.ShowDialog();

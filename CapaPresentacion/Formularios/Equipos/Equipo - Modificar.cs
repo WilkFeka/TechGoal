@@ -191,8 +191,8 @@ namespace CapaPresentacion.Formularios.Equipos
                 } else if (txtPathEscudo.Text != "")
                 {
                     targetFolder = Path.Combine(Application.StartupPath, "equipos", equipoSeleccionadoP.nombre);
-                    targetFilePath = Path.Combine(targetFolder, equipoSeleccionadoP.nombre);
-                    File.WriteAllText(targetFilePath, sourceFilePath);
+                    targetFilePath = Path.Combine(targetFolder, equipoSeleccionadoP.escudo);
+                    File.Create(sourceFilePath);
 
 
                 }
@@ -216,11 +216,11 @@ namespace CapaPresentacion.Formularios.Equipos
                     return;
                 }
 
+                Close();
 
-
-
-            } catch
+            } catch (Exception ex)
             {
+                MessageBox.Show("Hubo un error al modificar equipo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
