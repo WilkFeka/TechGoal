@@ -71,54 +71,65 @@ namespace CapaPresentacion.Formularios.Equipos
             if (dgvEquipos.Columns.Contains("editar")) dgvEquipos.Columns.Remove("editar");
 
 
-            string rutaCompleta;
 
-            if (cmbEstadoFilter.SelectedItem != null)
+            // Crear una lista para almacenar las rutas de los archivos temporales
+            List<string> archivosTemporales = new List<string>();
+
+            DataTable tablaEquipos = new DataTable();
+            EquiposControladora.CargarTablaEquipos(tablaEquipos, txtNombreFilter.Text, txtTorneoFilter.Text, estadoSeleccionado);
+
+            // Establecer el DataSource del DataGridView
+            dgvEquipos.DataSource = tablaEquipos;
+
+            // Agregar una columna de imagen al DataTable
+            DataColumn imgCol = new DataColumn("ImagenEscudo", typeof(Image));
+            tablaEquipos.Columns.Add(imgCol);
+
+            // Llenar la columna de imagen en el DataTable
+            foreach (DataRow row in tablaEquipos.Rows)
             {
-                opcionCombo estado = (opcionCombo)cmbEstadoFilter.SelectedItem;
-                int valorSeleccionado = estado.valor;
+                // Obtener la ruta relativa del escudo
+                string rutaEscudo = row["escudo"].ToString();
+                string equipo = row["nombre"].ToString();
 
-                estadoSeleccionado = valorSeleccionado.ToString();
+                string rutaCompleta = Path.Combine(Application.StartupPath, "equipos", equipo, rutaEscudo);
 
-            }
-
-                DataTable tablaEquipos = new DataTable();
-                EquiposControladora.CargarTablaEquipos(tablaEquipos, txtNombreFilter.Text, txtTorneoFilter.Text, estadoSeleccionado);
-                // Establecer el DataSource del DataGridView
-                dgvEquipos.DataSource = tablaEquipos;
-
-                // Agregar una columna de imagen al DataTable
-                DataColumn imgCol = new DataColumn("ImagenEscudo", typeof(Image));
-
-                tablaEquipos.Columns.Add(imgCol);
-
-                // Llenar la columna de imagen en el DataTable
-                foreach (DataRow row in tablaEquipos.Rows)
+                // Cargar la imagen
+                if (File.Exists(rutaCompleta))
                 {
-                    // Obtener la ruta relativa del escudo
-                    string rutaEscudo = row["escudo"].ToString();
-                    string equipo = row["nombre"].ToString();
-
-                    rutaCompleta = Path.Combine(Application.StartupPath, "equipos", equipo, rutaEscudo);
-
-
-                    // Cargar la imagen
-                    if (File.Exists(rutaCompleta))
+                    try
                     {
-                        row["ImagenEscudo"] = Image.FromFile(rutaCompleta);
+                        // Cargar la imagen desde la ruta original
+                        using (Image imagenOriginal = Image.FromFile(rutaCompleta))
+                        {
+                            // Crear un archivo temporal para la imagen
+                            string archivoTemporal = Path.GetTempFileName();
+                            imagenOriginal.Save(archivoTemporal);
 
+                            // Añadir la ruta del archivo temporal a la lista
+                            archivosTemporales.Add(archivoTemporal);
+
+                            // Establecer la imagen en la columna del DataTable
+                            row["ImagenEscudo"] = Image.FromFile(archivoTemporal);
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        // Opcional: Manejar si la imagen no existe
+                        // Manejar excepciones de carga de imagen
                         row["ImagenEscudo"] = null; // O una imagen por defecto
                     }
                 }
+                else
+                {
+                    // Opcional: Manejar si la imagen no existe
+                    row["ImagenEscudo"] = null; // O una imagen por defecto
+                }
+            }
 
 
 
-                // Configurar las columnas del DataGridView
-                dgvEquipos.Columns["id_equipo"].Visible = false;
+            // Configurar las columnas del DataGridView
+            dgvEquipos.Columns["id_equipo"].Visible = false;
                 dgvEquipos.Columns["id_torneo"].Visible = false;
 
 
@@ -164,6 +175,7 @@ namespace CapaPresentacion.Formularios.Equipos
                 // Eliminar la columna de texto original si ya no es necesaria
                 dgvEquipos.Columns["escudo"].Visible = false;
                 dgvEquipos.Columns["ImagenEscudo"].Visible = false;
+
     
         }
 

@@ -36,7 +36,34 @@ namespace CapaPresentacion.Formularios.Equipos
             estadoEquipo = equipoSeleccionadoP.estado ? "Activo" : "Inactivo";
             txtEstado.Text = estadoEquipo;
             string rutaCompleta = Path.Combine(Application.StartupPath, "equipos", equipoSeleccionadoP.nombre, equipoSeleccionadoP.escudo);
-            picEscudo.Image = Image.FromFile(rutaCompleta);
+
+            if (File.Exists(rutaCompleta))
+            {
+                try
+                {
+                    // Cargar la imagen desde la ruta original
+                    using (Image imagenOriginal = Image.FromFile(rutaCompleta))
+                    {
+                        // Crear un archivo temporal para la imagen
+                        string archivoTemporal = Path.GetTempFileName();
+                        imagenOriginal.Save(archivoTemporal);
+
+                        // Cargar la imagen temporal en el PictureBox
+                        picEscudo.Image = Image.FromFile(archivoTemporal);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejar excepciones de carga de imagen
+                    MessageBox.Show($"Error al cargar la imagen: {ex.Message}");
+                    picEscudo.Image = null; // O una imagen por defecto
+                }
+            }
+            else
+            {
+                // Opcional: Manejar si la imagen no existe
+                picEscudo.Image = null; // O una imagen por defecto
+            }
             LoadJugadoresActuales();
         }
 
@@ -192,8 +219,11 @@ namespace CapaPresentacion.Formularios.Equipos
                 {
                     targetFolder = Path.Combine(Application.StartupPath, "equipos", equipoSeleccionadoP.nombre);
                     targetFilePath = Path.Combine(targetFolder, equipoSeleccionadoP.escudo);
-                    File.Create(sourceFilePath);
-
+                    if (File.Exists(targetFilePath))
+                    {
+                        File.Delete(targetFilePath);
+                        File.Copy(sourceFilePath, targetFilePath);
+                    }
 
                 }
 
