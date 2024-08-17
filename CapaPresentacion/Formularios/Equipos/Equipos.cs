@@ -66,6 +66,14 @@ namespace CapaPresentacion.Formularios.Equipos
         {
             string estadoSeleccionado = "";
 
+            var selectedItem = cmbEstadoFilter.SelectedItem as opcionCombo;
+            if (selectedItem != null)
+            {
+                int valor = selectedItem.valor;
+                estadoSeleccionado = Convert.ToString(valor);
+            }
+
+
             dgvEquipos.DataSource = null;
             if (dgvEquipos.Columns.Contains("borrar")) dgvEquipos.Columns.Remove("borrar");
             if (dgvEquipos.Columns.Contains("editar")) dgvEquipos.Columns.Remove("editar");

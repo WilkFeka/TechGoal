@@ -19,7 +19,7 @@ namespace CapaPresentacion.Formularios.Equipos
         Equipo equipoSeleccionadoP;
         CC_Jugador JugadorControladora = CC_Jugador.getInstance;
         CC_Equipos EquiposControladora = CC_Equipos.getInstance;
-        string estadoEquipo;
+        bool estadoEquipo;
         string targetFolder;
         string targetFilePath;
         string sourceFilePath;
@@ -33,8 +33,9 @@ namespace CapaPresentacion.Formularios.Equipos
         private void formEquipoModificar_Load(object sender, EventArgs e)
         {
             txtNombre.Text = equipoSeleccionadoP.nombre;
-            estadoEquipo = equipoSeleccionadoP.estado ? "Activo" : "Inactivo";
-            txtEstado.Text = estadoEquipo;
+            estadoEquipo = equipoSeleccionadoP.estado;
+            txtEstado.Text = equipoSeleccionadoP.estado ? "Activo" : "Inactivo";
+            button1.BackgroundImage = txtEstado.Text == "Activo" ? Properties.Resources.Active : Properties.Resources.Inactive;
             string rutaCompleta = Path.Combine(Application.StartupPath, "equipos", equipoSeleccionadoP.nombre, equipoSeleccionadoP.escudo);
 
             if (File.Exists(rutaCompleta))
@@ -92,6 +93,8 @@ namespace CapaPresentacion.Formularios.Equipos
             button1.BackgroundImage = txtEstado.Text == "Activo" ? Properties.Resources.Inactive : Properties.Resources.Active;
 
             txtEstado.Text = txtEstado.Text == "Activo" ? "Inactivo" : "Activo";
+            estadoEquipo = !estadoEquipo;
+
         }
 
         public void agregarFormJugador()
@@ -235,7 +238,7 @@ namespace CapaPresentacion.Formularios.Equipos
                     nombre = txtNombre.Text,
                     fecha_agregado = equipoSeleccionadoP.fecha_agregado,
                     escudo = txtNombre.Text + ".png",
-                    estado = true
+                    estado = estadoEquipo
                 };
 
                 bool modificarEquipoBool = EquiposControladora.ModificarEquipo(modificarEquipo);
@@ -246,6 +249,34 @@ namespace CapaPresentacion.Formularios.Equipos
                     return;
                 }
 
+                JugadorControladora.EliminarJugadoresEquipo(equipoSeleccionadoP.id_equipo);
+
+
+
+                foreach (Control control in flpControles.Controls)
+                {
+                    if (control is formAgregarJugador)
+                    {
+                        formAgregarJugador formJug = (formAgregarJugador)control;
+                        Jugador nuevoJugador = new Jugador()
+                        {
+                            nombre = formJug.txtNombreJug.Text,
+                            apellido = formJug.txtApellidoJug.Text,
+                            dorsal = Convert.ToInt32(formJug.txtDorsalJug.Text),
+                            id_equipo = equipoSeleccionadoP.id_equipo
+                        };
+
+                        bool agregarJugador = JugadorControladora.AgregarJugador(nuevoJugador);
+
+                        if (agregarJugador == false)
+                        {
+                            MessageBox.Show("Hubo un error al agregar jugador. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                }
+
+                MessageBox.Show("Equipo modificado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
 
             } catch (Exception ex)
