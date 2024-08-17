@@ -55,6 +55,14 @@
             this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.Paginator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
             this.btnRoles = new CapaPresentacion.Personalizacion.MSButton();
@@ -68,14 +76,6 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.permisosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.permisosTableAdapter();
             this.rolTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.rolTableAdapter();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.Paginator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
             this.panel2.SuspendLayout();
@@ -83,13 +83,13 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Paginator)).BeginInit();
+            this.Paginator.SuspendLayout();
             this.fpnlBotones.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Paginator)).BeginInit();
-            this.Paginator.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -339,7 +339,7 @@
             this.txtCorreoFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.txtCorreoFilter.Location = new System.Drawing.Point(13, 11);
             this.txtCorreoFilter.Name = "txtCorreoFilter";
-            this.txtCorreoFilter.Size = new System.Drawing.Size(246, 29);
+            this.txtCorreoFilter.Size = new System.Drawing.Size(253, 29);
             this.txtCorreoFilter.TabIndex = 5;
             this.txtCorreoFilter.TextChanged += new System.EventHandler(this.txtCorreoFilter_TextChanged);
             // 
@@ -390,6 +390,85 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1548, 712);
             this.panel4.TabIndex = 18;
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.Controls.Add(this.Paginator);
+            this.panel6.Location = new System.Drawing.Point(12, 654);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1113, 46);
+            this.panel6.TabIndex = 72;
+            // 
+            // Paginator
+            // 
+            this.Paginator.AddNewItem = null;
+            this.Paginator.BackColor = System.Drawing.Color.White;
+            this.Paginator.CanOverflow = false;
+            this.Paginator.CountItem = null;
+            this.Paginator.CountItemFormat = "";
+            this.Paginator.DeleteItem = null;
+            this.Paginator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Paginator.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Paginator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.Paginator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorSeparator2});
+            this.Paginator.Location = new System.Drawing.Point(0, 0);
+            this.Paginator.MoveFirstItem = null;
+            this.Paginator.MoveLastItem = null;
+            this.Paginator.MoveNextItem = null;
+            this.Paginator.MovePreviousItem = null;
+            this.Paginator.Name = "Paginator";
+            this.Paginator.PositionItem = null;
+            this.Paginator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.Paginator.Size = new System.Drawing.Size(1113, 46);
+            this.Paginator.TabIndex = 131;
+            this.Paginator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = global::CapaPresentacion.Properties.Resources.previusG;
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 43);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 46);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(39, 43);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 46);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = global::CapaPresentacion.Properties.Resources.nextG;
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 43);
+            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 46);
             // 
             // fpnlBotones
             // 
@@ -637,85 +716,6 @@
             // 
             this.rolTableAdapter.ClearBeforeFill = true;
             // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel6.Controls.Add(this.Paginator);
-            this.panel6.Location = new System.Drawing.Point(12, 654);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1113, 46);
-            this.panel6.TabIndex = 72;
-            // 
-            // Paginator
-            // 
-            this.Paginator.AddNewItem = null;
-            this.Paginator.BackColor = System.Drawing.Color.White;
-            this.Paginator.CanOverflow = false;
-            this.Paginator.CountItem = null;
-            this.Paginator.CountItemFormat = "";
-            this.Paginator.DeleteItem = null;
-            this.Paginator.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Paginator.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Paginator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.Paginator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorSeparator2});
-            this.Paginator.Location = new System.Drawing.Point(0, 0);
-            this.Paginator.MoveFirstItem = null;
-            this.Paginator.MoveLastItem = null;
-            this.Paginator.MoveNextItem = null;
-            this.Paginator.MovePreviousItem = null;
-            this.Paginator.Name = "Paginator";
-            this.Paginator.PositionItem = null;
-            this.Paginator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.Paginator.Size = new System.Drawing.Size(1113, 46);
-            this.Paginator.TabIndex = 131;
-            this.Paginator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = global::CapaPresentacion.Properties.Resources.previusG;
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 43);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 46);
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(39, 43);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 46);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = global::CapaPresentacion.Properties.Resources.nextG;
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 43);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 46);
-            // 
             // formUsuarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -741,15 +741,15 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.fpnlBotones.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Paginator)).EndInit();
             this.Paginator.ResumeLayout(false);
             this.Paginator.PerformLayout();
+            this.fpnlBotones.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

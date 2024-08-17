@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -21,11 +22,15 @@ namespace CapaPresentacion
 
         private CC_Usuario UsuarioControladora = CC_Usuario.getInstance;
         private CC_Sesion SesionControladora = CC_Sesion.getInstance;
+        private CC_Equipos EquiposControladora = CC_Equipos.getInstance;
 
 
         public formLogin()
         {
             InitializeComponent();
+
+
+
         }
 
         private void LoginV2_Load(object sender, EventArgs e)
@@ -45,20 +50,14 @@ namespace CapaPresentacion
         {
 
 
-            if (txtCorreo.Text == "ejemplo@gmail.com.ar") 
-            {
-                txtCorreo.Text = "";
-                txtCorreo.ForeColor = Color.WhiteSmoke;
 
-                
-            }
 
         }
 
         private void form_closing(object sender, FormClosingEventArgs e)
         {
-            txtClave.Text = "ejemplo123";
-            txtCorreo.Text = "ejemplo@gmail.com.ar";
+            txtClave.Text = "";
+            txtCorreo.Text = "";
             txtCorreo.ForeColor = Color.DimGray;
 
             Show();
@@ -66,11 +65,7 @@ namespace CapaPresentacion
 
         private void txtClave_Enter(object sender, EventArgs e)
         {
-            if (txtClave.Text == "ejemplo123")
-            {
-                txtClave.Text = "";
 
-            }
             
             txtClave.ForeColor = Color.WhiteSmoke;
 
@@ -244,5 +239,16 @@ namespace CapaPresentacion
             Hide();
             formLoginRecuperar.Show();
         }
+
+        private void formLogin_VisibleChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void formLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
     }
 }
