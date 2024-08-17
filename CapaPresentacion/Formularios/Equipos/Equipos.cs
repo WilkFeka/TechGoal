@@ -21,6 +21,12 @@ namespace CapaPresentacion.Formularios.Equipos
         private CC_Equipos EquiposControladora = CC_Equipos.getInstance;
         private CC_Jugador JugadorControladora = CC_Jugador.getInstance;
 
+        private int paginaActual = 1;
+        private int totalPaginas;
+        private int registrosPorPagina = 20;
+        private DataTable tablaCompleta; // Almacena la tabla completa de datos
+
+
 
         public formEquipos(formInicio formInicio)
         {
@@ -28,6 +34,7 @@ namespace CapaPresentacion.Formularios.Equipos
 
             InitializeComponent();
             formInicioC = formInicio;
+
 
         }
 
@@ -73,119 +80,118 @@ namespace CapaPresentacion.Formularios.Equipos
                 estadoSeleccionado = Convert.ToString(valor);
             }
 
-
             dgvEquipos.DataSource = null;
             if (dgvEquipos.Columns.Contains("borrar")) dgvEquipos.Columns.Remove("borrar");
             if (dgvEquipos.Columns.Contains("editar")) dgvEquipos.Columns.Remove("editar");
 
-
-
-            // Crear una lista para almacenar las rutas de los archivos temporales
             List<string> archivosTemporales = new List<string>();
 
-            DataTable tablaEquipos = new DataTable();
-            EquiposControladora.CargarTablaEquipos(tablaEquipos, txtNombreFilter.Text, txtTorneoFilter.Text, estadoSeleccionado);
+            tablaCompleta = new DataTable();
+            EquiposControladora.CargarTablaEquipos(tablaCompleta, txtNombreFilter.Text, txtTorneoFilter.Text, estadoSeleccionado);
 
-            // Establecer el DataSource del DataGridView
-            dgvEquipos.DataSource = tablaEquipos;
+            totalPaginas = (int)Math.Ceiling((double)tablaCompleta.Rows.Count / registrosPorPagina);
 
-            // Agregar una columna de imagen al DataTable
+            DataTable paginaTabla = ObtenerPagina(paginaActual);
+
             DataColumn imgCol = new DataColumn("ImagenEscudo", typeof(Image));
-            tablaEquipos.Columns.Add(imgCol);
+            paginaTabla.Columns.Add(imgCol);
 
-            // Llenar la columna de imagen en el DataTable
-            foreach (DataRow row in tablaEquipos.Rows)
+            foreach (DataRow row in paginaTabla.Rows)
             {
-                // Obtener la ruta relativa del escudo
                 string rutaEscudo = row["escudo"].ToString();
                 string equipo = row["nombre"].ToString();
-
                 string rutaCompleta = Path.Combine(Application.StartupPath, "equipos", equipo, rutaEscudo);
 
-                // Cargar la imagen
                 if (File.Exists(rutaCompleta))
                 {
                     try
                     {
-                        // Cargar la imagen desde la ruta original
                         using (Image imagenOriginal = Image.FromFile(rutaCompleta))
                         {
-                            // Crear un archivo temporal para la imagen
                             string archivoTemporal = Path.GetTempFileName();
                             imagenOriginal.Save(archivoTemporal);
-
-                            // Añadir la ruta del archivo temporal a la lista
                             archivosTemporales.Add(archivoTemporal);
-
-                            // Establecer la imagen en la columna del DataTable
                             row["ImagenEscudo"] = Image.FromFile(archivoTemporal);
                         }
                     }
                     catch (Exception ex)
                     {
-                        // Manejar excepciones de carga de imagen
-                        row["ImagenEscudo"] = null; // O una imagen por defecto
+                        row["ImagenEscudo"] = null;
                     }
                 }
                 else
                 {
-                    // Opcional: Manejar si la imagen no existe
-                    row["ImagenEscudo"] = null; // O una imagen por defecto
+                    row["ImagenEscudo"] = null;
                 }
             }
 
+            dgvEquipos.DataSource = paginaTabla;
 
-
-            // Configurar las columnas del DataGridView
             dgvEquipos.Columns["id_equipo"].Visible = false;
-                dgvEquipos.Columns["id_torneo"].Visible = false;
+            dgvEquipos.Columns["id_torneo"].Visible = false;
+            dgvEquipos.Columns["nombre"].HeaderText = "Nombre";
+            dgvEquipos.Columns["escudo"].HeaderText = "Escudo";
+            dgvEquipos.Columns["estado"].HeaderText = "Estado";
+            dgvEquipos.Columns["fecha_agregado"].HeaderText = "Fecha Registro";
+            dgvEquipos.Columns["nombre_torneo"].HeaderText = "Torneo Actual";
+            dgvEquipos.Columns["estado"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
+            DataGridViewImageColumn imgColDGV = new DataGridViewImageColumn();
+            imgColDGV.Name = "Escudo";
+            imgColDGV.HeaderText = " -- ";
+            imgColDGV.DataPropertyName = "ImagenEscudo";
+            imgColDGV.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            imgColDGV.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dgvEquipos.Columns.Add(imgColDGV);
 
-                dgvEquipos.Columns["nombre"].HeaderText = "Nombre";
-                dgvEquipos.Columns["escudo"].HeaderText = "Escudo";
+            DataGridViewImageColumn editarColumn = new DataGridViewImageColumn();
+            editarColumn.HeaderText = "";
+            editarColumn.Name = "editar";
+            editarColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            editarColumn.Image = Properties.Resources.New_Project;
+            editarColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvEquipos.Columns.Add(editarColumn);
 
-                dgvEquipos.Columns["estado"].HeaderText = "Estado";
-                dgvEquipos.Columns["fecha_agregado"].HeaderText = "Fecha Registro";
-                dgvEquipos.Columns["nombre_torneo"].HeaderText = "Torneo Actual";
+            DataGridViewImageColumn borrarColumn = new DataGridViewImageColumn();
+            borrarColumn.HeaderText = "";
+            borrarColumn.Name = "borrar";
+            borrarColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            borrarColumn.Image = Properties.Resources.trash_561125;
+            borrarColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvEquipos.Columns.Add(borrarColumn);
 
+            dgvEquipos.Columns["escudo"].Visible = false;
+            dgvEquipos.Columns["ImagenEscudo"].Visible = false;
 
-                dgvEquipos.Columns["estado"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
-                // ---------------------------- COLUMNA IMAGEN ESCUDO ----------------------------
-                DataGridViewImageColumn imgColDGV = new DataGridViewImageColumn();
-                imgColDGV.Name = "Escudo";
-                imgColDGV.HeaderText = " -- ";
-                imgColDGV.DataPropertyName = "ImagenEscudo"; // Vincular la columna de imagen del DataTable
-                imgColDGV.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                imgColDGV.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-                dgvEquipos.Columns.Add(imgColDGV);
-
-                // ---------------------------- COLUMNA EDITAR ----------------------------
-
-                DataGridViewImageColumn editarColumn = new DataGridViewImageColumn();
-                editarColumn.HeaderText = "";
-                editarColumn.Name = "editar";
-                editarColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                editarColumn.Image = Properties.Resources.New_Project;
-                editarColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgvEquipos.Columns.Add(editarColumn);
-
-                // ---------------------------- COLUMNA BORRAR ----------------------------
-
-                DataGridViewImageColumn borrarColumn = new DataGridViewImageColumn();
-                borrarColumn.HeaderText = "";
-                borrarColumn.Name = "borrar";
-                borrarColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                borrarColumn.Image = Properties.Resources.trash_561125;
-                borrarColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgvEquipos.Columns.Add(borrarColumn);
-
-                // Eliminar la columna de texto original si ya no es necesaria
-                dgvEquipos.Columns["escudo"].Visible = false;
-                dgvEquipos.Columns["ImagenEscudo"].Visible = false;
-
-    
+            // Actualizar el bindingNavigatorCountItem
+            bindingNavigatorCountItem.ForeColor = Color.Black;
+            bindingNavigatorCountItem.Text = $"Página {paginaActual} de {totalPaginas}";
         }
+
+        private DataTable ObtenerPagina(int numeroPagina)
+        {
+            DataTable paginaTabla = tablaCompleta.Clone();
+            int inicio = (numeroPagina - 1) * registrosPorPagina;
+            int fin = Math.Min(inicio + registrosPorPagina, tablaCompleta.Rows.Count);
+
+            for (int i = inicio; i < fin; i++)
+            {
+                paginaTabla.ImportRow(tablaCompleta.Rows[i]);
+            }
+
+            return paginaTabla;
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+   
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+           
+        }
+
 
         private void Filtrar()
         {
@@ -338,7 +344,23 @@ namespace CapaPresentacion.Formularios.Equipos
 
         }
 
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            if (paginaActual > 1)
+            {
+                paginaActual--;
+                llenarTabla();
+            }
+        }
 
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            if (paginaActual < totalPaginas)
+            {
+                paginaActual++;
+                llenarTabla();
+            }
+        }
     }
 
 }
