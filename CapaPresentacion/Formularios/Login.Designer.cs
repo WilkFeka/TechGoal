@@ -109,6 +109,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(473, 39);
             this.txtClave.TabIndex = 1;
+            this.txtClave.Text = "admin123123";
             this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
             // 
             // txtCorreo
@@ -122,6 +123,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(506, 39);
             this.txtCorreo.TabIndex = 0;
+            this.txtCorreo.Text = "Administrador@gmail.com";
             this.txtCorreo.Enter += new System.EventHandler(this.txtCorreo_Enter);
             // 
             // lblRestablecerClave
@@ -294,6 +296,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formLogin_FormClosed);
             this.Load += new System.EventHandler(this.LoginV2_Load);
             this.VisibleChanged += new System.EventHandler(this.formLogin_VisibleChanged);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
