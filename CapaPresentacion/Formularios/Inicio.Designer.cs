@@ -320,6 +320,7 @@
             this.btnTorneos.TabIndex = 1;
             this.btnTorneos.TextColor = System.Drawing.Color.White;
             this.btnTorneos.UseVisualStyleBackColor = false;
+            this.btnTorneos.Click += new System.EventHandler(this.btnTorneos_Click);
             // 
             // label3
             // 
