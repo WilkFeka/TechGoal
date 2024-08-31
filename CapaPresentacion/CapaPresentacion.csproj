@@ -340,6 +340,12 @@
     <Compile Include="Formularios\Reservas\Reserva - Nueva.Designer.cs">
       <DependentUpon>Reserva - Nueva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Torneos\AgregarTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneos\AgregarTorneo.Designer.cs">
+      <DependentUpon>AgregarTorneo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Torneos\Torneos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -465,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reservas\Reserva - Nueva.resx">
       <DependentUpon>Reserva - Nueva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneos\AgregarTorneo.resx">
+      <DependentUpon>AgregarTorneo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Torneos\Torneos.resx">
       <DependentUpon>Torneos.cs</DependentUpon>

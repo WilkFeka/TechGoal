@@ -29,26 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNombreFilter = new System.Windows.Forms.TextBox();
             this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.cmbEstadoFilter = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbTipoFiter = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
             this.permisosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSetTableAdapters.permisosTableAdapter();
             this.equiposTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet2TableAdapters.equiposTableAdapter();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.equiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -58,25 +66,18 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.Paginator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnAgregarEquipo = new CapaPresentacion.Personalizacion.MSButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
-            this.cmbTipoFiter = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
+            this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
             this.fpnlBotones.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -87,9 +88,8 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Paginator)).BeginInit();
             this.Paginator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -157,6 +157,25 @@
             this.panel1.Size = new System.Drawing.Size(225, 49);
             this.panel1.TabIndex = 11;
             // 
+            // dtpFechaFinal
+            // 
+            this.dtpFechaFinal.CalendarFont = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.CalendarForeColor = System.Drawing.Color.Lime;
+            this.dtpFechaFinal.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
+            this.dtpFechaFinal.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
+            this.dtpFechaFinal.CalendarTitleForeColor = System.Drawing.Color.DarkOrange;
+            this.dtpFechaFinal.CalendarTrailingForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dtpFechaFinal.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpFechaFinal.CustomFormat = "";
+            this.dtpFechaFinal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpFechaFinal.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFinal.Location = new System.Drawing.Point(0, 0);
+            this.dtpFechaFinal.Name = "dtpFechaFinal";
+            this.dtpFechaFinal.Size = new System.Drawing.Size(225, 46);
+            this.dtpFechaFinal.TabIndex = 87;
+            this.dtpFechaFinal.TabStop = false;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -185,19 +204,35 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1226, 98);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
-            // label2
+            // panel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label2.Location = new System.Drawing.Point(745, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 49);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Tipo Torneo";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.dtpFechaInicio);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(255, 49);
+            this.panel2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(225, 49);
+            this.panel2.TabIndex = 22;
+            // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.CalendarFont = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaInicio.CalendarForeColor = System.Drawing.Color.Lime;
+            this.dtpFechaInicio.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
+            this.dtpFechaInicio.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
+            this.dtpFechaInicio.CalendarTitleForeColor = System.Drawing.Color.DarkOrange;
+            this.dtpFechaInicio.CalendarTrailingForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dtpFechaInicio.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpFechaInicio.CustomFormat = "";
+            this.dtpFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpFechaInicio.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(0, 0);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(225, 46);
+            this.dtpFechaInicio.TabIndex = 88;
+            this.dtpFechaInicio.TabStop = false;
             // 
             // label6
             // 
@@ -213,6 +248,19 @@
             this.label6.Text = "Nombre";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cmbEstadoFilter
+            // 
+            this.cmbEstadoFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbEstadoFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstadoFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstadoFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.cmbEstadoFilter.FormattingEnabled = true;
+            this.cmbEstadoFilter.Location = new System.Drawing.Point(990, 49);
+            this.cmbEstadoFilter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.cmbEstadoFilter.Name = "cmbEstadoFilter";
+            this.cmbEstadoFilter.Size = new System.Drawing.Size(226, 37);
+            this.cmbEstadoFilter.TabIndex = 9;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -227,18 +275,60 @@
             this.label5.Text = "Estado";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cmbEstadoFilter
+            // label2
             // 
-            this.cmbEstadoFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbEstadoFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstadoFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEstadoFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.cmbEstadoFilter.FormattingEnabled = true;
-            this.cmbEstadoFilter.Location = new System.Drawing.Point(990, 49);
-            this.cmbEstadoFilter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.cmbEstadoFilter.Name = "cmbEstadoFilter";
-            this.cmbEstadoFilter.Size = new System.Drawing.Size(226, 37);
-            this.cmbEstadoFilter.TabIndex = 9;
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label2.Location = new System.Drawing.Point(745, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(232, 49);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Tipo Torneo";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cmbTipoFiter
+            // 
+            this.cmbTipoFiter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbTipoFiter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoFiter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoFiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.cmbTipoFiter.FormattingEnabled = true;
+            this.cmbTipoFiter.Location = new System.Drawing.Point(745, 49);
+            this.cmbTipoFiter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.cmbTipoFiter.Name = "cmbTipoFiter";
+            this.cmbTipoFiter.Size = new System.Drawing.Size(225, 37);
+            this.cmbTipoFiter.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label3.Location = new System.Drawing.Point(255, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(232, 49);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Desde";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label4.Location = new System.Drawing.Point(500, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(232, 49);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Hasta";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dB_TECHGOALDataSet
             // 
@@ -262,11 +352,57 @@
             // 
             this.fpnlBotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fpnlBotones.Controls.Add(this.btnVolver);
-            this.fpnlBotones.Controls.Add(this.btnAgregarEquipo);
+            this.fpnlBotones.Controls.Add(this.btnAgregarTorneo);
             this.fpnlBotones.Location = new System.Drawing.Point(1135, 23);
             this.fpnlBotones.Name = "fpnlBotones";
             this.fpnlBotones.Size = new System.Drawing.Size(161, 77);
             this.fpnlBotones.TabIndex = 71;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundImage = global::CapaPresentacion.Properties.Resources.back;
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnVolver.BorderRadius = 25;
+            this.btnVolver.BorderSize = 0;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(10, 3);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(64, 64);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.TextColor = System.Drawing.Color.White;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnAgregarTorneo
+            // 
+            this.btnAgregarTorneo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarTorneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAgregarTorneo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAgregarTorneo.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
+            this.btnAgregarTorneo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregarTorneo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnAgregarTorneo.BorderRadius = 25;
+            this.btnAgregarTorneo.BorderSize = 0;
+            this.btnAgregarTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarTorneo.FlatAppearance.BorderSize = 0;
+            this.btnAgregarTorneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarTorneo.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarTorneo.Location = new System.Drawing.Point(87, 3);
+            this.btnAgregarTorneo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnAgregarTorneo.Name = "btnAgregarTorneo";
+            this.btnAgregarTorneo.Size = new System.Drawing.Size(64, 64);
+            this.btnAgregarTorneo.TabIndex = 3;
+            this.btnAgregarTorneo.TextColor = System.Drawing.Color.White;
+            this.btnAgregarTorneo.UseVisualStyleBackColor = false;
+            this.btnAgregarTorneo.Click += new System.EventHandler(this.btnAgregarTorneo_Click);
             // 
             // panel5
             // 
@@ -285,13 +421,13 @@
             this.dgvEquipos.AllowUserToDeleteRows = false;
             this.dgvEquipos.AllowUserToResizeColumns = false;
             this.dgvEquipos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEquipos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEquipos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEquipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEquipos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -299,24 +435,24 @@
             this.dgvEquipos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dgvEquipos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvEquipos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEquipos.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEquipos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEquipos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEquipos.EnableHeadersVisualStyles = false;
             this.dgvEquipos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -324,24 +460,24 @@
             this.dgvEquipos.MultiSelect = false;
             this.dgvEquipos.Name = "dgvEquipos";
             this.dgvEquipos.ReadOnly = true;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquipos.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquipos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEquipos.Size = new System.Drawing.Size(1304, 363);
             this.dgvEquipos.TabIndex = 11;
@@ -431,6 +567,15 @@
             this.Paginator.TabIndex = 130;
             this.Paginator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = global::CapaPresentacion.Properties.Resources.previusG;
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 32);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
@@ -448,20 +593,6 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 35);
             // 
-            // dBTECHGOALDataSetBindingSource
-            // 
-            this.dBTECHGOALDataSetBindingSource.DataSource = this.dB_TECHGOALDataSet;
-            this.dBTECHGOALDataSetBindingSource.Position = 0;
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = global::CapaPresentacion.Properties.Resources.previusG;
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 32);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -470,51 +601,6 @@
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 32);
             this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVolver.BackgroundImage = global::CapaPresentacion.Properties.Resources.back;
-            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnVolver.BorderRadius = 25;
-            this.btnVolver.BorderSize = 0;
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(10, 3);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(64, 64);
-            this.btnVolver.TabIndex = 1;
-            this.btnVolver.TextColor = System.Drawing.Color.White;
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnAgregarEquipo
-            // 
-            this.btnAgregarEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAgregarEquipo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAgregarEquipo.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
-            this.btnAgregarEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregarEquipo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnAgregarEquipo.BorderRadius = 25;
-            this.btnAgregarEquipo.BorderSize = 0;
-            this.btnAgregarEquipo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarEquipo.FlatAppearance.BorderSize = 0;
-            this.btnAgregarEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarEquipo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarEquipo.Location = new System.Drawing.Point(87, 3);
-            this.btnAgregarEquipo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnAgregarEquipo.Name = "btnAgregarEquipo";
-            this.btnAgregarEquipo.Size = new System.Drawing.Size(64, 64);
-            this.btnAgregarEquipo.TabIndex = 3;
-            this.btnAgregarEquipo.TextColor = System.Drawing.Color.White;
-            this.btnAgregarEquipo.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -548,95 +634,10 @@
             this.btnLimpiar.TextColor = System.Drawing.Color.White;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
-            // cmbTipoFiter
+            // dBTECHGOALDataSetBindingSource
             // 
-            this.cmbTipoFiter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbTipoFiter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoFiter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoFiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.cmbTipoFiter.FormattingEnabled = true;
-            this.cmbTipoFiter.Location = new System.Drawing.Point(745, 49);
-            this.cmbTipoFiter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.cmbTipoFiter.Name = "cmbTipoFiter";
-            this.cmbTipoFiter.Size = new System.Drawing.Size(225, 37);
-            this.cmbTipoFiter.TabIndex = 19;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label3.Location = new System.Drawing.Point(255, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(232, 49);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Desde";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label4.Location = new System.Drawing.Point(500, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(232, 49);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Hasta";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.dtpFechaInicio);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(255, 49);
-            this.panel2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(225, 49);
-            this.panel2.TabIndex = 22;
-            // 
-            // dtpFechaInicio
-            // 
-            this.dtpFechaInicio.CalendarFont = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaInicio.CalendarForeColor = System.Drawing.Color.Lime;
-            this.dtpFechaInicio.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
-            this.dtpFechaInicio.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
-            this.dtpFechaInicio.CalendarTitleForeColor = System.Drawing.Color.DarkOrange;
-            this.dtpFechaInicio.CalendarTrailingForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dtpFechaInicio.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpFechaInicio.CustomFormat = "";
-            this.dtpFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpFechaInicio.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(0, 0);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(225, 46);
-            this.dtpFechaInicio.TabIndex = 88;
-            this.dtpFechaInicio.TabStop = false;
-            // 
-            // dtpFechaFinal
-            // 
-            this.dtpFechaFinal.CalendarFont = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFinal.CalendarForeColor = System.Drawing.Color.Lime;
-            this.dtpFechaFinal.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
-            this.dtpFechaFinal.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
-            this.dtpFechaFinal.CalendarTitleForeColor = System.Drawing.Color.DarkOrange;
-            this.dtpFechaFinal.CalendarTrailingForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dtpFechaFinal.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpFechaFinal.CustomFormat = "";
-            this.dtpFechaFinal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpFechaFinal.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFinal.Location = new System.Drawing.Point(0, 0);
-            this.dtpFechaFinal.Name = "dtpFechaFinal";
-            this.dtpFechaFinal.Size = new System.Drawing.Size(225, 46);
-            this.dtpFechaFinal.TabIndex = 87;
-            this.dtpFechaFinal.TabStop = false;
+            this.dBTECHGOALDataSetBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            this.dBTECHGOALDataSetBindingSource.Position = 0;
             // 
             // formTorneos
             // 
@@ -653,6 +654,7 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
             this.fpnlBotones.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -666,9 +668,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Paginator)).EndInit();
             this.Paginator.ResumeLayout(false);
             this.Paginator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -693,7 +694,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         public System.Windows.Forms.FlowLayoutPanel fpnlBotones;
         public Personalizacion.MSButton btnVolver;
-        public Personalizacion.MSButton btnAgregarEquipo;
+        public Personalizacion.MSButton btnAgregarTorneo;
         public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.DataGridView dgvEquipos;
         public System.Windows.Forms.BindingSource equiposBindingSource;

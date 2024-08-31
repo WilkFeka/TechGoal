@@ -27,5 +27,11 @@ namespace CapaPresentacion.Formularios.Torneos
             formInicioC.picLogoText.Show();
             Close();
         }
+
+        private void btnAgregarTorneo_Click(object sender, EventArgs e)
+        {
+            formAgregarTorneo formAgregarEquipos = new formAgregarTorneo();
+            formAgregarEquipos.Show();
+        }
     }
 }
