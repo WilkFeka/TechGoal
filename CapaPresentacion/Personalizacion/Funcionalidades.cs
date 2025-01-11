@@ -231,6 +231,11 @@ namespace CapaPresentacion.Personalizacion
 
         }
 
+        public bool IsPowerOfTwo(int number)
+        {
+            return (number & (number - 1)) == 0 && number > 0;
+        }
+
 
 
 
@@ -243,5 +248,7 @@ namespace CapaPresentacion.Personalizacion
         public string texto { get; set; }
         public int valor { get; set; }
     }
+
+
   
 }

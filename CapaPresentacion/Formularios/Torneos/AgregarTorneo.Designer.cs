@@ -36,16 +36,15 @@
             this.btnCancelar = new CapaPresentacion.Personalizacion.MSButton();
             this.msButton3 = new CapaPresentacion.Personalizacion.MSButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCantEquipos = new System.Windows.Forms.TextBox();
             this.msButton2 = new CapaPresentacion.Personalizacion.MSButton();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,6 +114,7 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.White;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -137,6 +137,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.White;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // msButton3
             // 
@@ -169,37 +170,6 @@
             this.label2.TabIndex = 107;
             this.label2.Text = "Tipo";
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox1.Location = new System.Drawing.Point(35, 226);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 29);
-            this.textBox1.TabIndex = 105;
-            // 
-            // msButton1
-            // 
-            this.msButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.msButton1.BorderRadius = 20;
-            this.msButton1.BorderSize = 0;
-            this.msButton1.Enabled = false;
-            this.msButton1.FlatAppearance.BorderSize = 0;
-            this.msButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton1.ForeColor = System.Drawing.Color.White;
-            this.msButton1.Location = new System.Drawing.Point(24, 214);
-            this.msButton1.Margin = new System.Windows.Forms.Padding(15, 0, 3, 30);
-            this.msButton1.Name = "msButton1";
-            this.msButton1.Size = new System.Drawing.Size(233, 50);
-            this.msButton1.TabIndex = 106;
-            this.msButton1.TextColor = System.Drawing.Color.White;
-            this.msButton1.UseVisualStyleBackColor = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -212,17 +182,18 @@
             this.label3.TabIndex = 110;
             this.label3.Text = "Cant. Equipos *";
             // 
-            // textBox2
+            // txtCantEquipos
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox2.Location = new System.Drawing.Point(287, 226);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(187, 29);
-            this.textBox2.TabIndex = 108;
+            this.txtCantEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtCantEquipos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCantEquipos.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantEquipos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtCantEquipos.Location = new System.Drawing.Point(287, 226);
+            this.txtCantEquipos.Margin = new System.Windows.Forms.Padding(0);
+            this.txtCantEquipos.Name = "txtCantEquipos";
+            this.txtCantEquipos.Size = new System.Drawing.Size(187, 29);
+            this.txtCantEquipos.TabIndex = 108;
+            this.txtCantEquipos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantEquipos_KeyPress);
             // 
             // msButton2
             // 
@@ -260,6 +231,7 @@
             this.dtpFechaInicio.Size = new System.Drawing.Size(209, 36);
             this.dtpFechaInicio.TabIndex = 111;
             this.dtpFechaInicio.TabStop = false;
+            this.dtpFechaInicio.ValueChanged += new System.EventHandler(this.dtpFechaInicio_ValueChanged);
             // 
             // label4
             // 
@@ -285,23 +257,23 @@
             this.label5.TabIndex = 113;
             this.label5.Text = "Fecha Final";
             // 
-            // dateTimePicker1
+            // dtpFechaFinal
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.Lime;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DarkOrange;
-            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(276, 378);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(209, 36);
-            this.dateTimePicker1.TabIndex = 114;
-            this.dateTimePicker1.TabStop = false;
+            this.dtpFechaFinal.CalendarFont = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.CalendarForeColor = System.Drawing.Color.Lime;
+            this.dtpFechaFinal.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
+            this.dtpFechaFinal.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
+            this.dtpFechaFinal.CalendarTitleForeColor = System.Drawing.Color.DarkOrange;
+            this.dtpFechaFinal.CalendarTrailingForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dtpFechaFinal.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpFechaFinal.CustomFormat = "";
+            this.dtpFechaFinal.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFinal.Location = new System.Drawing.Point(276, 378);
+            this.dtpFechaFinal.Name = "dtpFechaFinal";
+            this.dtpFechaFinal.Size = new System.Drawing.Size(209, 36);
+            this.dtpFechaFinal.TabIndex = 114;
+            this.dtpFechaFinal.TabStop = false;
             // 
             // label6
             // 
@@ -314,6 +286,18 @@
             this.label6.TabIndex = 115;
             this.label6.Text = "*En caso de ser llaves, la cantidad debe ser potencia de 2";
             // 
+            // cmbTipo
+            // 
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(35, 220);
+            this.cmbTipo.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(215, 37);
+            this.cmbTipo.TabIndex = 116;
+            // 
             // formAgregarTorneo
             // 
             this.AcceptButton = this.btnAceptar;
@@ -321,17 +305,16 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(512, 521);
+            this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFechaFinal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpFechaInicio);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCantEquipos);
             this.Controls.Add(this.msButton2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.msButton1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNombre);
@@ -346,6 +329,7 @@
             this.Name = "formAgregarTorneo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Torneo";
+            this.Load += new System.EventHandler(this.formAgregarTorneo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -362,15 +346,14 @@
         private Personalizacion.MSButton btnCancelar;
         private Personalizacion.MSButton msButton3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private Personalizacion.MSButton msButton1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCantEquipos;
         private Personalizacion.MSButton msButton2;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinal;
         private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.ComboBox cmbTipo;
     }
 }
