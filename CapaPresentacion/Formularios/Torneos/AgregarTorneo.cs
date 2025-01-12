@@ -63,6 +63,17 @@ namespace CapaPresentacion.Formularios.Torneos
                         }
                     }
 
+                    if (control is ComboBox)
+                    {
+                        if (string.IsNullOrEmpty((control as ComboBox).Text))
+                        {
+
+                            MessageBox.Show("Por favor complete todos los campos", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+
+                        }
+                    }
+
                 }
 
 
@@ -75,10 +86,35 @@ namespace CapaPresentacion.Formularios.Torneos
                 }
 
                 bool potencia2 = funcionalidades.IsPowerOfTwo(Convert.ToInt32(txtCantEquipos.Text));
+                opcionCombo seleccionado = (opcionCombo)cmbTipo.SelectedItem;
 
-                if (potencia2 == false)
+                if (potencia2 == false && seleccionado.valor == 0)
                 {
                     MessageBox.Show("La cantidad de equipos debe ser potencia de 2.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return;
+                }
+
+                
+
+
+
+
+                Torneo nuevoTorneo = new Torneo()
+                {
+                    nombre = txtNombre.Text,
+                    fechaInicio = dtpFechaInicio.Value,
+                    fechaFinal = dtpFechaFinal.Value,
+                    tipo = seleccionado.valor,
+                    cantEquipos = Convert.ToInt32(txtCantEquipos.Text),
+                    estado = true
+                };
+
+                bool agregarTorneo = TorneosControladora.AgregarTorneo(nuevoTorneo);
+
+                if (agregarTorneo == false)
+                {
+                    MessageBox.Show("Hubo un error al agregar torneo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 

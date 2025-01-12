@@ -45,5 +45,11 @@ namespace CapaControladora
                 return buscandoTorneoNombre;
             }
         }
+
+        public bool AgregarTorneo(Torneo torneo)
+        {
+            bool resultado = new CD_Torneos().AgregarTorneo(torneo);
+            return resultado;
+        }
     }
 }
