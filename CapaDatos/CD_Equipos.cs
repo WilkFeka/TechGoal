@@ -244,6 +244,58 @@ namespace CapaDatos
 
         }
 
+        public List<Equipo> EquiposLibres()
+        {
+            List<Equipo> lista = new List<Equipo>();
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("SELECT equipos.id_equipo, equipos.nombre, equipos.escudo FROM equipos ");
+                    query.AppendLine("LEFT JOIN torneos_equipos ON equipos.id_equipo = torneos_equipos.id_equipo ");
+                    query.AppendLine("LEFT JOIN torneos ON torneos_equipos.id_torneo = torneos.id_torneo ");
+                    query.AppendLine("WHERE equipos.estado = 1 AND (torneos_equipos.estado = 0 OR torneos_equipos.id_torneo IS NULL);");
+                        
+
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        conection.Open();
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                lista.Add(new Equipo()
+                                {
+                                    id_equipo = Convert.ToInt32(reader["id_equipo"]),
+                                    nombre = Convert.ToString(reader["nombre"]),
+                                    escudo = Convert.ToString(reader["escudo"]),
+                                });
+
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                lista = new List<Equipo>();
+                Console.WriteLine(ex.Message);
+            }
+
+            return lista;
+
+        }
+
 
     }
 }

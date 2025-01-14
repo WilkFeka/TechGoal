@@ -352,6 +352,12 @@
     <Compile Include="Formularios\Torneos\Torneos.Designer.cs">
       <DependentUpon>Torneos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Torneos\VincularTorneoEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneos\VincularTorneoEquipos.Designer.cs">
+      <DependentUpon>VincularTorneoEquipos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Usuarios\Perfil - Nueva Clave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -477,6 +483,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Torneos\Torneos.resx">
       <DependentUpon>Torneos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneos\VincularTorneoEquipos.resx">
+      <DependentUpon>VincularTorneoEquipos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios\Perfil - Nueva Clave.resx">
       <DependentUpon>Perfil - Nueva Clave.cs</DependentUpon>

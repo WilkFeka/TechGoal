@@ -27,7 +27,7 @@ namespace CapaPresentacion.Formularios.Torneos
         {
             // ---------------------------- CARGA DE COMBOBOX ESTADO ----------------------------
             cmbTipo.Items.Add(new opcionCombo { texto = "Liga", valor = 1 });
-            cmbTipo.Items.Add(new opcionCombo { texto = "Llave", valor = 0 });
+            cmbTipo.Items.Add(new opcionCombo { texto = "Llaves", valor = 2 });
             cmbTipo.DisplayMember = "texto";
             cmbTipo.ValueMember = "valor";
 
@@ -88,34 +88,54 @@ namespace CapaPresentacion.Formularios.Torneos
                 bool potencia2 = funcionalidades.IsPowerOfTwo(Convert.ToInt32(txtCantEquipos.Text));
                 opcionCombo seleccionado = (opcionCombo)cmbTipo.SelectedItem;
 
-                if (potencia2 == false && seleccionado.valor == 0)
+                if (potencia2 == false && seleccionado.valor == 2)
                 {
                     MessageBox.Show("La cantidad de equipos debe ser potencia de 2.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     return;
                 }
 
-                
 
-
-
-
-                Torneo nuevoTorneo = new Torneo()
+                formVincularTorneoEquipos formVincularEquipos = new formVincularTorneoEquipos(Convert.ToInt32(txtCantEquipos.Text));
+                if (formVincularEquipos.ShowDialog() == DialogResult.OK)
                 {
-                    nombre = txtNombre.Text,
-                    fechaInicio = dtpFechaInicio.Value,
-                    fechaFinal = dtpFechaFinal.Value,
-                    tipo = seleccionado.valor,
-                    cantEquipos = Convert.ToInt32(txtCantEquipos.Text),
-                    estado = true
-                };
+                    Torneo nuevoTorneo = new Torneo()
+                    {
+                        nombre = txtNombre.Text,
+                        fechaInicio = dtpFechaInicio.Value,
+                        fechaFinal = dtpFechaFinal.Value,
+                        tipo = seleccionado.valor,
+                        cantEquipos = Convert.ToInt32(txtCantEquipos.Text),
+                        estado = true
+                    };
 
-                bool agregarTorneo = TorneosControladora.AgregarTorneo(nuevoTorneo);
+                    bool agregarTorneo = TorneosControladora.AgregarTorneo(nuevoTorneo);
 
-                if (agregarTorneo == false)
-                {
-                    MessageBox.Show("Hubo un error al agregar torneo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (agregarTorneo == false)
+                    {
+                        MessageBox.Show("Hubo un error al agregar torneo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    List<ListViewItem> resultados = formVincularEquipos.Resultados;
+
+                    foreach (ListViewItem item in resultados)
+                    {
+                        int idEquipo = (int)item.Tag;
+
+                        // Muestra el id_equipo (puedes usarlo para otra lógica también)
+                        MessageBox.Show($"ID Equipo: {idEquipo}");
+                    }
+
+                    //TorneoEquipos torneoEquipos = new TorneoEquipos()
+                    //{
+                    //    id_torneo = nuevoTorneo.id_torneo,
+                    //    equipos = formVincularEquipos.equipos
+                    //};
+
+
+
+
                 }
 
 

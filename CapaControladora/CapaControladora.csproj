@@ -52,6 +52,7 @@
     <Compile Include="CC_Reserva.cs" />
     <Compile Include="CC_Rol.cs" />
     <Compile Include="CC_Sesion.cs" />
+    <Compile Include="CC_TorneoEquipos.cs" />
     <Compile Include="CC_Torneos.cs" />
     <Compile Include="CC_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
