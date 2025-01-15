@@ -58,5 +58,45 @@ namespace CapaDatos
             return lista;
 
         }
+
+        public bool AgregarTorneoEquipo(TorneoEquipos TE)
+        {
+            bool agregado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("INSERT INTO torneos_equipos (id_torneo, id_equipo, estado)");
+                    query.AppendLine("VALUES (@id_torneo, @id_equipo, @estado)");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@id_torneo", TE.id_torneo);
+                        cmd.Parameters.AddWithValue("@id_equipo", TE.id_equipo);
+                        cmd.Parameters.AddWithValue("@estado", TE.estado);
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            agregado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return agregado;
+
+
+        }
     }
 }

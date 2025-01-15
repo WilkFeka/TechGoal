@@ -33,5 +33,11 @@ namespace CapaControladora
             return listaTorneoEquipos;
 
         }
+
+        public bool AgregarTorneoEquipo(TorneoEquipos TE)
+        {
+            bool resultado = new CD_TorneoEquipos().AgregarTorneoEquipo(TE);
+            return resultado;
+        }
     }
 }

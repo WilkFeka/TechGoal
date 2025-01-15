@@ -18,6 +18,8 @@ namespace CapaPresentacion.Formularios.Torneos
         Funcionalidades funcionalidades = Funcionalidades.getInstance;
         CC_Torneos TorneosControladora = CC_Torneos.getInstance;
 
+        CC_TorneoEquipos TorneoEquiposControladora = CC_TorneoEquipos.getInstance;
+
         public formAgregarTorneo()
         {
             InitializeComponent();
@@ -111,11 +113,14 @@ namespace CapaPresentacion.Formularios.Torneos
 
                     bool agregarTorneo = TorneosControladora.AgregarTorneo(nuevoTorneo);
 
+
                     if (agregarTorneo == false)
                     {
                         MessageBox.Show("Hubo un error al agregar torneo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+
+                    Torneo torneo = TorneosControladora.EncontrarTorneoNombre(txtNombre.Text);
 
                     List<ListViewItem> resultados = formVincularEquipos.Resultados;
 
@@ -123,15 +128,28 @@ namespace CapaPresentacion.Formularios.Torneos
                     {
                         int idEquipo = (int)item.Tag;
 
+
+
                         // Muestra el id_equipo (puedes usarlo para otra lógica también)
                         MessageBox.Show($"ID Equipo: {idEquipo}");
+                        TorneoEquipos torneoEquipo = new TorneoEquipos()
+                        {
+                            id_torneo = torneo.id_torneo,
+                            id_equipo = idEquipo,
+                            estado = true
+                        };
+
+                        bool agregarTorneoEquipo = TorneoEquiposControladora.AgregarTorneoEquipo(torneoEquipo);
+
+                        if (agregarTorneoEquipo == false)
+                        {
+                            MessageBox.Show("Hubo un error al agregar torneo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
                     }
 
-                    //TorneoEquipos torneoEquipos = new TorneoEquipos()
-                    //{
-                    //    id_torneo = nuevoTorneo.id_torneo,
-                    //    equipos = formVincularEquipos.equipos
-                    //};
+                    MessageBox.Show("Torneo agregado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
