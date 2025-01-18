@@ -33,5 +33,12 @@ namespace CapaPresentacion.Formularios.Torneos
             formAgregarTorneo formAgregarEquipos = new formAgregarTorneo();
             formAgregarEquipos.Show();
         }
+
+        private void formTorneos_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet3.torneos' Puede moverla o quitarla según sea necesario.
+            this.torneosTableAdapter.Fill(this.dB_TECHGOALDataSet3.torneos);
+
+        }
     }
 }

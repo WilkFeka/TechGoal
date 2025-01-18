@@ -19,8 +19,10 @@ namespace CapaPresentacion.Formularios.Torneos
         Funcionalidades funcionalidades = Funcionalidades.getInstance;
         CC_Equipos EquiposControladora = CC_Equipos.getInstance;
         CC_Torneos TorneosControladora = CC_Torneos.getInstance;
+
         public List<ListViewItem> Resultados;
         int cantEquipos;
+        int Seleccionados = 0;
         public formVincularTorneoEquipos(int cantidadEquipos)
         {
             InitializeComponent();
@@ -52,9 +54,13 @@ namespace CapaPresentacion.Formularios.Torneos
 
         private void listViewLibres_MouseClick(object sender, MouseEventArgs e)
         {
+
             var clickedItem = listViewLibres.GetItemAt(e.X, e.Y);
             if (clickedItem != null)
-                clickedItem.Checked = clickedItem.Checked || listViewLibres.CheckedItems.Count < cantEquipos;
+                clickedItem.Checked = clickedItem.Checked || (listViewLibres.CheckedItems.Count + listViewAgregados.Items.Count) < cantEquipos;
+
+           
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

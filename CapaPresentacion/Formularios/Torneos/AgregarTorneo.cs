@@ -128,10 +128,6 @@ namespace CapaPresentacion.Formularios.Torneos
                     {
                         int idEquipo = (int)item.Tag;
 
-
-
-                        // Muestra el id_equipo (puedes usarlo para otra lógica también)
-                        MessageBox.Show($"ID Equipo: {idEquipo}");
                         TorneoEquipos torneoEquipo = new TorneoEquipos()
                         {
                             id_torneo = torneo.id_torneo,
@@ -152,10 +148,10 @@ namespace CapaPresentacion.Formularios.Torneos
                     MessageBox.Show("Torneo agregado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
+                    this.Close();
 
 
                 }
-
 
             }
 

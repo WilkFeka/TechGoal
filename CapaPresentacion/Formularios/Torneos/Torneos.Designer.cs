@@ -74,6 +74,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
             this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dB_TECHGOALDataSet3 = new CapaPresentacion.DB_TECHGOALDataSet3();
+            this.torneosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.torneosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter();
+            this.idtorneoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantEquiposDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaFinalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -90,6 +100,8 @@
             this.Paginator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.torneosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -428,6 +440,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvEquipos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEquipos.AutoGenerateColumns = false;
             this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEquipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEquipos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -445,6 +458,15 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idtorneoDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
+            this.cantEquiposDataGridViewTextBoxColumn,
+            this.fechaInicioDataGridViewTextBoxColumn,
+            this.fechaFinalDataGridViewTextBoxColumn,
+            this.estadoDataGridViewCheckBoxColumn});
+            this.dgvEquipos.DataSource = this.torneosBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -639,6 +661,70 @@
             this.dBTECHGOALDataSetBindingSource.DataSource = this.dB_TECHGOALDataSet;
             this.dBTECHGOALDataSetBindingSource.Position = 0;
             // 
+            // dB_TECHGOALDataSet3
+            // 
+            this.dB_TECHGOALDataSet3.DataSetName = "DB_TECHGOALDataSet3";
+            this.dB_TECHGOALDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // torneosBindingSource
+            // 
+            this.torneosBindingSource.DataMember = "torneos";
+            this.torneosBindingSource.DataSource = this.dB_TECHGOALDataSet3;
+            // 
+            // torneosTableAdapter
+            // 
+            this.torneosTableAdapter.ClearBeforeFill = true;
+            // 
+            // idtorneoDataGridViewTextBoxColumn
+            // 
+            this.idtorneoDataGridViewTextBoxColumn.DataPropertyName = "id_torneo";
+            this.idtorneoDataGridViewTextBoxColumn.HeaderText = "id_torneo";
+            this.idtorneoDataGridViewTextBoxColumn.Name = "idtorneoDataGridViewTextBoxColumn";
+            this.idtorneoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idtorneoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantEquiposDataGridViewTextBoxColumn
+            // 
+            this.cantEquiposDataGridViewTextBoxColumn.DataPropertyName = "cantEquipos";
+            this.cantEquiposDataGridViewTextBoxColumn.HeaderText = "Cantidad Equipos";
+            this.cantEquiposDataGridViewTextBoxColumn.Name = "cantEquiposDataGridViewTextBoxColumn";
+            this.cantEquiposDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaInicioDataGridViewTextBoxColumn
+            // 
+            this.fechaInicioDataGridViewTextBoxColumn.DataPropertyName = "fechaInicio";
+            this.fechaInicioDataGridViewTextBoxColumn.HeaderText = "Fecha de Inicio";
+            this.fechaInicioDataGridViewTextBoxColumn.Name = "fechaInicioDataGridViewTextBoxColumn";
+            this.fechaInicioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaFinalDataGridViewTextBoxColumn
+            // 
+            this.fechaFinalDataGridViewTextBoxColumn.DataPropertyName = "fechaFinal";
+            this.fechaFinalDataGridViewTextBoxColumn.HeaderText = "Fecha de Finalizacion";
+            this.fechaFinalDataGridViewTextBoxColumn.Name = "fechaFinalDataGridViewTextBoxColumn";
+            this.fechaFinalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estadoDataGridViewCheckBoxColumn
+            // 
+            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "Finalizado";
+            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
+            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
             // formTorneos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -649,6 +735,7 @@
             this.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "formTorneos";
             this.Text = "Torneos";
+            this.Load += new System.EventHandler(this.formTorneos_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -670,6 +757,8 @@
             this.Paginator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.torneosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -716,5 +805,15 @@
         public System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.DateTimePicker dtpFechaFinal;
+        private DB_TECHGOALDataSet3 dB_TECHGOALDataSet3;
+        private System.Windows.Forms.BindingSource torneosBindingSource;
+        private DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter torneosTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtorneoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantEquiposDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaFinalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
     }
 }
