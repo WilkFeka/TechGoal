@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNombreFilter = new System.Windows.Forms.TextBox();
@@ -63,20 +63,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.Paginator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_TECHGOALDataSet3 = new CapaPresentacion.DB_TECHGOALDataSet3();
             this.torneosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.torneosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter();
-            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
-            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
             this.idtorneoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +77,13 @@
             this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
+            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -98,10 +98,10 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Paginator)).BeginInit();
             this.Paginator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.torneosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -375,13 +375,13 @@
             this.dgvTorneos.AllowUserToDeleteRows = false;
             this.dgvTorneos.AllowUserToResizeColumns = false;
             this.dgvTorneos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvTorneos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTorneos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvTorneos.AutoGenerateColumns = false;
             this.dgvTorneos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTorneos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -390,15 +390,15 @@
             this.dgvTorneos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dgvTorneos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvTorneos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTorneos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvTorneos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTorneos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtorneoDataGridViewTextBoxColumn,
@@ -409,14 +409,14 @@
             this.fechaFinal,
             this.estadoDataGridViewCheckBoxColumn});
             this.dgvTorneos.DataSource = this.torneosBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTorneos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTorneos.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvTorneos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTorneos.EnableHeadersVisualStyles = false;
             this.dgvTorneos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -424,28 +424,30 @@
             this.dgvTorneos.MultiSelect = false;
             this.dgvTorneos.Name = "dgvTorneos";
             this.dgvTorneos.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTorneos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneos.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvTorneos.RowHeadersVisible = false;
             this.dgvTorneos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvTorneos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTorneos.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvTorneos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTorneos.Size = new System.Drawing.Size(1304, 363);
             this.dgvTorneos.TabIndex = 11;
             this.dgvTorneos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTorneos_CellFormatting);
+            this.dgvTorneos.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTorneos_CellMouseEnter);
+            this.dgvTorneos.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTorneos_CellMouseLeave);
             this.dgvTorneos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvTorneos_DataBindingComplete);
             // 
             // equiposBindingSource
@@ -507,7 +509,7 @@
             // 
             this.Paginator.AddNewItem = null;
             this.Paginator.BackColor = System.Drawing.Color.White;
-            this.Paginator.BindingSource = this.equiposBindingSource;
+            this.Paginator.BindingSource = this.torneosBindingSource;
             this.Paginator.CountItem = null;
             this.Paginator.CountItemFormat = "";
             this.Paginator.DeleteItem = null;
@@ -530,17 +532,8 @@
             this.Paginator.PositionItem = null;
             this.Paginator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.Paginator.Size = new System.Drawing.Size(617, 35);
-            this.Paginator.TabIndex = 130;
+            this.Paginator.TabIndex = 5;
             this.Paginator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = global::CapaPresentacion.Properties.Resources.previusG;
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 32);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
@@ -549,6 +542,7 @@
             // 
             // bindingNavigatorCountItem
             // 
+            this.bindingNavigatorCountItem.ForeColor = System.Drawing.Color.Black;
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(39, 32);
             this.bindingNavigatorCountItem.Text = "de {0}";
@@ -558,25 +552,6 @@
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 35);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = global::CapaPresentacion.Properties.Resources.nextG;
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 32);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.trophyBlack;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // dBTECHGOALDataSetBindingSource
             // 
@@ -596,6 +571,86 @@
             // torneosTableAdapter
             // 
             this.torneosTableAdapter.ClearBeforeFill = true;
+            // 
+            // idtorneoDataGridViewTextBoxColumn
+            // 
+            this.idtorneoDataGridViewTextBoxColumn.DataPropertyName = "id_torneo";
+            this.idtorneoDataGridViewTextBoxColumn.HeaderText = "id_torneo";
+            this.idtorneoDataGridViewTextBoxColumn.Name = "idtorneoDataGridViewTextBoxColumn";
+            this.idtorneoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idtorneoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.DataPropertyName = "tipo";
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // cantEquiposDataGridViewTextBoxColumn
+            // 
+            this.cantEquiposDataGridViewTextBoxColumn.DataPropertyName = "cantEquipos";
+            this.cantEquiposDataGridViewTextBoxColumn.HeaderText = "Cantidad Equipos";
+            this.cantEquiposDataGridViewTextBoxColumn.Name = "cantEquiposDataGridViewTextBoxColumn";
+            this.cantEquiposDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaInicio
+            // 
+            this.fechaInicio.DataPropertyName = "fechaInicio";
+            this.fechaInicio.HeaderText = "Fecha de Inicio";
+            this.fechaInicio.Name = "fechaInicio";
+            this.fechaInicio.ReadOnly = true;
+            // 
+            // fechaFinal
+            // 
+            this.fechaFinal.DataPropertyName = "fechaFinal";
+            this.fechaFinal.HeaderText = "Fecha de Finalizacion";
+            this.fechaFinal.Name = "fechaFinal";
+            this.fechaFinal.ReadOnly = true;
+            // 
+            // estadoDataGridViewCheckBoxColumn
+            // 
+            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "Finalizado";
+            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
+            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = global::CapaPresentacion.Properties.Resources.previusG;
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 32);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = global::CapaPresentacion.Properties.Resources.nextG;
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 32);
+            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.trophyBlack;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // btnVolver
             // 
@@ -685,56 +740,6 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // idtorneoDataGridViewTextBoxColumn
-            // 
-            this.idtorneoDataGridViewTextBoxColumn.DataPropertyName = "id_torneo";
-            this.idtorneoDataGridViewTextBoxColumn.HeaderText = "id_torneo";
-            this.idtorneoDataGridViewTextBoxColumn.Name = "idtorneoDataGridViewTextBoxColumn";
-            this.idtorneoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idtorneoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipo
-            // 
-            this.tipo.DataPropertyName = "tipo";
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            // 
-            // cantEquiposDataGridViewTextBoxColumn
-            // 
-            this.cantEquiposDataGridViewTextBoxColumn.DataPropertyName = "cantEquipos";
-            this.cantEquiposDataGridViewTextBoxColumn.HeaderText = "Cantidad Equipos";
-            this.cantEquiposDataGridViewTextBoxColumn.Name = "cantEquiposDataGridViewTextBoxColumn";
-            this.cantEquiposDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaInicio
-            // 
-            this.fechaInicio.DataPropertyName = "fechaInicio";
-            this.fechaInicio.HeaderText = "Fecha de Inicio";
-            this.fechaInicio.Name = "fechaInicio";
-            this.fechaInicio.ReadOnly = true;
-            // 
-            // fechaFinal
-            // 
-            this.fechaFinal.DataPropertyName = "fechaFinal";
-            this.fechaFinal.HeaderText = "Fecha de Finalizacion";
-            this.fechaFinal.Name = "fechaFinal";
-            this.fechaFinal.ReadOnly = true;
-            // 
-            // estadoDataGridViewCheckBoxColumn
-            // 
-            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewCheckBoxColumn.HeaderText = "Finalizado";
-            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
-            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
             // formTorneos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -765,10 +770,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.Paginator)).EndInit();
             this.Paginator.ResumeLayout(false);
             this.Paginator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.torneosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

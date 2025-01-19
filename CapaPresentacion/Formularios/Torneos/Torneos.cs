@@ -1,4 +1,5 @@
 ﻿using CapaPresentacion.Personalizacion;
+using ClosedXML.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,13 @@ namespace CapaPresentacion.Formularios.Torneos
     public partial class formTorneos : Form
     {
         private formInicio formInicioC;
+
+        private BindingSource bindingSource = new BindingSource();
+        private int currentPage = 1; // Página actual
+        private int pageSize = 20;  // Tamaño de la página
+        private int totalRecords = 0; // Total de registros
+        private DataTable originalData; // Datos originales sin paginar
+
 
         public formTorneos(formInicio formInicio)
         {
@@ -36,12 +44,62 @@ namespace CapaPresentacion.Formularios.Torneos
             formAgregarEquipos.Show();
         }
 
+        private void ConfigurarBindingNavigator()
+        {
+            Paginator.BindingSource = bindingSource;
+        }
+
+        private void CargarDatos()
+        {
+            // Supongamos que usas un TableAdapter para llenar datos
+            this.torneosTableAdapter.Fill(this.dB_TECHGOALDataSet3.torneos);
+            originalData = dB_TECHGOALDataSet3.torneos.Copy(); // Guardar datos originales
+            totalRecords = originalData.Rows.Count; // Total de registros
+            MostrarPagina(1); // Mostrar la primera página
+        }
+
+        private void MostrarPagina(int pageNumber)
+        {
+            // Calcular índices
+            int startIndex = (pageNumber - 1) * pageSize;
+            int endIndex = Math.Min(startIndex + pageSize, totalRecords);
+
+            // Crear un DataTable para la página actual
+            DataTable pageData = originalData.Clone();
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                pageData.ImportRow(originalData.Rows[i]);
+            }
+
+            // Vincular datos al BindingSource
+            bindingSource.DataSource = pageData;
+            dgvTorneos.DataSource = bindingSource;
+
+            // Actualizar variables
+            currentPage = pageNumber;
+            ActualizarEstadoBindingNavigator();
+        }
+
+        private void ActualizarEstadoBindingNavigator()
+        {
+            int totalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+
+            // Actualizar el texto del BindingNavigatorCountItem
+            bindingNavigatorCountItem.Text = $"Página {currentPage} de {totalPages}";
+
+            // Deshabilitar los botones "Siguiente" y "Anterior" según la página actual
+            bindingNavigatorMovePreviousItem.Enabled = currentPage > 1;
+            bindingNavigatorMoveNextItem.Enabled = currentPage < totalPages;
+        }
+
         private void formTorneos_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dB_TECHGOALDataSet3.torneos' Puede moverla o quitarla según sea necesario.
-            this.torneosTableAdapter.Fill(this.dB_TECHGOALDataSet3.torneos);
-            dgvTorneos.DataSource = dB_TECHGOALDataSet3.torneos;
+            CargarDatos();
 
+            ConfigurarBindingNavigator();
+
+            // Mostrar la primera página
+            MostrarPagina(1);
 
             cmbEstadoFilter.Items.Add(new opcionCombo { texto = "En curso", valor = 1 });
             cmbEstadoFilter.Items.Add(new opcionCombo { texto = "Finalizado", valor = 0 });
@@ -58,6 +116,15 @@ namespace CapaPresentacion.Formularios.Torneos
 
             dtpFechaFinal.Format = DateTimePickerFormat.Custom;
             dtpFechaFinal.CustomFormat = "dd/MM/yyyy";
+
+            // COLUMNA INFO
+            DataGridViewImageColumn infoColumn = new DataGridViewImageColumn();
+            infoColumn.HeaderText = "";
+            infoColumn.Name = "info";
+            infoColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            infoColumn.Image = Properties.Resources.info;
+            //infoColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvTorneos.Columns.Add(infoColumn);
 
 
 
@@ -158,5 +225,38 @@ namespace CapaPresentacion.Formularios.Torneos
                 }
             }
         }
+
+        private void dgvTorneos_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvTorneos.Columns[e.ColumnIndex].Name == "info" && e.RowIndex != -1)
+            {
+                Cursor = Cursors.Hand;
+            }
+        }
+
+        private void dgvTorneos_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            Cursor = Cursors.Default;
+
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            int totalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+            if (currentPage < totalPages)
+            {
+                MostrarPagina(currentPage + 1);
+            }
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                MostrarPagina(currentPage - 1);
+            }
+        }
+
+        
     }
 }

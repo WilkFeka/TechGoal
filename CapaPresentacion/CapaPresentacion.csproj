@@ -763,9 +763,20 @@
   <ItemGroup>
     <None Include="Resources\camisetaNegra.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\tournament_37856901.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trophyBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writing_116175731.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_13409827.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
