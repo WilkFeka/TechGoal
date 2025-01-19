@@ -37,7 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNombreFilter = new System.Windows.Forms.TextBox();
-            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,7 +46,7 @@
             this.cmbEstadoFilter = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbTipoFiter = new System.Windows.Forms.ComboBox();
+            this.cmbTipoFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
@@ -55,10 +54,8 @@
             this.equiposTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet2TableAdapters.equiposTableAdapter();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dgvEquipos = new System.Windows.Forms.DataGridView();
+            this.dgvTorneos = new System.Windows.Forms.DataGridView();
             this.equiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_TECHGOALDataSet2 = new CapaPresentacion.DB_TECHGOALDataSet2();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -72,17 +69,20 @@
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
             this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_TECHGOALDataSet3 = new CapaPresentacion.DB_TECHGOALDataSet3();
             this.torneosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.torneosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter();
+            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
+            this.msButton1 = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
             this.idtorneoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantEquiposDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFinalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -91,7 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
             this.fpnlBotones.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTorneos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equiposBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -138,25 +138,7 @@
             this.txtNombreFilter.Name = "txtNombreFilter";
             this.txtNombreFilter.Size = new System.Drawing.Size(410, 29);
             this.txtNombreFilter.TabIndex = 5;
-            // 
-            // msButton1
-            // 
-            this.msButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.msButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.msButton1.BorderRadius = 20;
-            this.msButton1.BorderSize = 0;
-            this.msButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msButton1.Enabled = false;
-            this.msButton1.FlatAppearance.BorderSize = 0;
-            this.msButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.msButton1.ForeColor = System.Drawing.Color.White;
-            this.msButton1.Location = new System.Drawing.Point(0, 0);
-            this.msButton1.Name = "msButton1";
-            this.msButton1.Size = new System.Drawing.Size(225, 49);
-            this.msButton1.TabIndex = 22;
-            this.msButton1.TextColor = System.Drawing.Color.White;
-            this.msButton1.UseVisualStyleBackColor = false;
+            this.txtNombreFilter.TextChanged += new System.EventHandler(this.txtNombreFilter_TextChanged);
             // 
             // panel1
             // 
@@ -187,6 +169,8 @@
             this.dtpFechaFinal.Size = new System.Drawing.Size(225, 46);
             this.dtpFechaFinal.TabIndex = 87;
             this.dtpFechaFinal.TabStop = false;
+            this.dtpFechaFinal.Value = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+            this.dtpFechaFinal.ValueChanged += new System.EventHandler(this.dtpFechaFinal_ValueChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -205,7 +189,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cmbEstadoFilter, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cmbTipoFiter, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbTipoFilter, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 103);
@@ -245,6 +229,8 @@
             this.dtpFechaInicio.Size = new System.Drawing.Size(225, 46);
             this.dtpFechaInicio.TabIndex = 88;
             this.dtpFechaInicio.TabStop = false;
+            this.dtpFechaInicio.Value = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
+            this.dtpFechaInicio.ValueChanged += new System.EventHandler(this.dtpFechaInicio_ValueChanged);
             // 
             // label6
             // 
@@ -272,6 +258,7 @@
             this.cmbEstadoFilter.Name = "cmbEstadoFilter";
             this.cmbEstadoFilter.Size = new System.Drawing.Size(226, 37);
             this.cmbEstadoFilter.TabIndex = 9;
+            this.cmbEstadoFilter.SelectedIndexChanged += new System.EventHandler(this.cmbEstadoFilter_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -301,18 +288,19 @@
             this.label2.Text = "Tipo Torneo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cmbTipoFiter
+            // cmbTipoFilter
             // 
-            this.cmbTipoFiter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbTipoFiter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoFiter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoFiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.cmbTipoFiter.FormattingEnabled = true;
-            this.cmbTipoFiter.Location = new System.Drawing.Point(745, 49);
-            this.cmbTipoFiter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.cmbTipoFiter.Name = "cmbTipoFiter";
-            this.cmbTipoFiter.Size = new System.Drawing.Size(225, 37);
-            this.cmbTipoFiter.TabIndex = 19;
+            this.cmbTipoFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbTipoFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoFilter.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.cmbTipoFilter.FormattingEnabled = true;
+            this.cmbTipoFilter.Location = new System.Drawing.Point(745, 49);
+            this.cmbTipoFilter.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.cmbTipoFilter.Name = "cmbTipoFilter";
+            this.cmbTipoFilter.Size = new System.Drawing.Size(225, 37);
+            this.cmbTipoFilter.TabIndex = 19;
+            this.cmbTipoFilter.SelectedIndexChanged += new System.EventHandler(this.cmbTipoFiter_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -370,84 +358,38 @@
             this.fpnlBotones.Size = new System.Drawing.Size(161, 77);
             this.fpnlBotones.TabIndex = 71;
             // 
-            // btnVolver
-            // 
-            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVolver.BackgroundImage = global::CapaPresentacion.Properties.Resources.back;
-            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnVolver.BorderRadius = 25;
-            this.btnVolver.BorderSize = 0;
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(10, 3);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(64, 64);
-            this.btnVolver.TabIndex = 1;
-            this.btnVolver.TextColor = System.Drawing.Color.White;
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnAgregarTorneo
-            // 
-            this.btnAgregarTorneo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarTorneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAgregarTorneo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAgregarTorneo.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
-            this.btnAgregarTorneo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregarTorneo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnAgregarTorneo.BorderRadius = 25;
-            this.btnAgregarTorneo.BorderSize = 0;
-            this.btnAgregarTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarTorneo.FlatAppearance.BorderSize = 0;
-            this.btnAgregarTorneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarTorneo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarTorneo.Location = new System.Drawing.Point(87, 3);
-            this.btnAgregarTorneo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnAgregarTorneo.Name = "btnAgregarTorneo";
-            this.btnAgregarTorneo.Size = new System.Drawing.Size(64, 64);
-            this.btnAgregarTorneo.TabIndex = 3;
-            this.btnAgregarTorneo.TextColor = System.Drawing.Color.White;
-            this.btnAgregarTorneo.UseVisualStyleBackColor = false;
-            this.btnAgregarTorneo.Click += new System.EventHandler(this.btnAgregarTorneo_Click);
-            // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.Controls.Add(this.dgvEquipos);
+            this.panel5.Controls.Add(this.dgvTorneos);
             this.panel5.Location = new System.Drawing.Point(12, 218);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1304, 363);
             this.panel5.TabIndex = 19;
             // 
-            // dgvEquipos
+            // dgvTorneos
             // 
-            this.dgvEquipos.AllowUserToAddRows = false;
-            this.dgvEquipos.AllowUserToDeleteRows = false;
-            this.dgvEquipos.AllowUserToResizeColumns = false;
-            this.dgvEquipos.AllowUserToResizeRows = false;
+            this.dgvTorneos.AllowUserToAddRows = false;
+            this.dgvTorneos.AllowUserToDeleteRows = false;
+            this.dgvTorneos.AllowUserToResizeColumns = false;
+            this.dgvTorneos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEquipos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEquipos.AutoGenerateColumns = false;
-            this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEquipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvEquipos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.dgvEquipos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEquipos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
-            this.dgvEquipos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvEquipos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dgvTorneos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTorneos.AutoGenerateColumns = false;
+            this.dgvTorneos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTorneos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTorneos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.dgvTorneos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTorneos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
+            this.dgvTorneos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvTorneos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -456,17 +398,17 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEquipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTorneos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTorneos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTorneos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtorneoDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
-            this.tipoDataGridViewTextBoxColumn,
+            this.tipo,
             this.cantEquiposDataGridViewTextBoxColumn,
-            this.fechaInicioDataGridViewTextBoxColumn,
-            this.fechaFinalDataGridViewTextBoxColumn,
+            this.fechaInicio,
+            this.fechaFinal,
             this.estadoDataGridViewCheckBoxColumn});
-            this.dgvEquipos.DataSource = this.torneosBindingSource;
+            this.dgvTorneos.DataSource = this.torneosBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -474,14 +416,14 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEquipos.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEquipos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEquipos.EnableHeadersVisualStyles = false;
-            this.dgvEquipos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.dgvEquipos.Location = new System.Drawing.Point(0, 0);
-            this.dgvEquipos.MultiSelect = false;
-            this.dgvEquipos.Name = "dgvEquipos";
-            this.dgvEquipos.ReadOnly = true;
+            this.dgvTorneos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTorneos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTorneos.EnableHeadersVisualStyles = false;
+            this.dgvTorneos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.dgvTorneos.Location = new System.Drawing.Point(0, 0);
+            this.dgvTorneos.MultiSelect = false;
+            this.dgvTorneos.Name = "dgvTorneos";
+            this.dgvTorneos.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -490,19 +432,21 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquipos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvEquipos.RowHeadersVisible = false;
-            this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvTorneos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvTorneos.RowHeadersVisible = false;
+            this.dgvTorneos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(1304, 363);
-            this.dgvEquipos.TabIndex = 11;
+            this.dgvTorneos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvTorneos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTorneos.Size = new System.Drawing.Size(1304, 363);
+            this.dgvTorneos.TabIndex = 11;
+            this.dgvTorneos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTorneos_CellFormatting);
+            this.dgvTorneos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvTorneos_DataBindingComplete);
             // 
             // equiposBindingSource
             // 
@@ -634,6 +578,90 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // dBTECHGOALDataSetBindingSource
+            // 
+            this.dBTECHGOALDataSetBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            this.dBTECHGOALDataSetBindingSource.Position = 0;
+            // 
+            // dB_TECHGOALDataSet3
+            // 
+            this.dB_TECHGOALDataSet3.DataSetName = "DB_TECHGOALDataSet3";
+            this.dB_TECHGOALDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // torneosBindingSource
+            // 
+            this.torneosBindingSource.DataMember = "torneos";
+            this.torneosBindingSource.DataSource = this.dB_TECHGOALDataSet3;
+            // 
+            // torneosTableAdapter
+            // 
+            this.torneosTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundImage = global::CapaPresentacion.Properties.Resources.back;
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnVolver.BorderRadius = 25;
+            this.btnVolver.BorderSize = 0;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(10, 3);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(64, 64);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.TextColor = System.Drawing.Color.White;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnAgregarTorneo
+            // 
+            this.btnAgregarTorneo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarTorneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAgregarTorneo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAgregarTorneo.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
+            this.btnAgregarTorneo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregarTorneo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnAgregarTorneo.BorderRadius = 25;
+            this.btnAgregarTorneo.BorderSize = 0;
+            this.btnAgregarTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarTorneo.FlatAppearance.BorderSize = 0;
+            this.btnAgregarTorneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarTorneo.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarTorneo.Location = new System.Drawing.Point(87, 3);
+            this.btnAgregarTorneo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnAgregarTorneo.Name = "btnAgregarTorneo";
+            this.btnAgregarTorneo.Size = new System.Drawing.Size(64, 64);
+            this.btnAgregarTorneo.TabIndex = 3;
+            this.btnAgregarTorneo.TextColor = System.Drawing.Color.White;
+            this.btnAgregarTorneo.UseVisualStyleBackColor = false;
+            this.btnAgregarTorneo.Click += new System.EventHandler(this.btnAgregarTorneo_Click);
+            // 
+            // msButton1
+            // 
+            this.msButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.msButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.msButton1.BorderRadius = 20;
+            this.msButton1.BorderSize = 0;
+            this.msButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msButton1.Enabled = false;
+            this.msButton1.FlatAppearance.BorderSize = 0;
+            this.msButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.msButton1.ForeColor = System.Drawing.Color.White;
+            this.msButton1.Location = new System.Drawing.Point(0, 0);
+            this.msButton1.Name = "msButton1";
+            this.msButton1.Size = new System.Drawing.Size(225, 49);
+            this.msButton1.TabIndex = 22;
+            this.msButton1.TextColor = System.Drawing.Color.White;
+            this.msButton1.UseVisualStyleBackColor = false;
+            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -655,25 +683,7 @@
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.TextColor = System.Drawing.Color.White;
             this.btnLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // dBTECHGOALDataSetBindingSource
-            // 
-            this.dBTECHGOALDataSetBindingSource.DataSource = this.dB_TECHGOALDataSet;
-            this.dBTECHGOALDataSetBindingSource.Position = 0;
-            // 
-            // dB_TECHGOALDataSet3
-            // 
-            this.dB_TECHGOALDataSet3.DataSetName = "DB_TECHGOALDataSet3";
-            this.dB_TECHGOALDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // torneosBindingSource
-            // 
-            this.torneosBindingSource.DataMember = "torneos";
-            this.torneosBindingSource.DataSource = this.dB_TECHGOALDataSet3;
-            // 
-            // torneosTableAdapter
-            // 
-            this.torneosTableAdapter.ClearBeforeFill = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // idtorneoDataGridViewTextBoxColumn
             // 
@@ -690,12 +700,12 @@
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // tipoDataGridViewTextBoxColumn
+            // tipo
             // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipo.DataPropertyName = "tipo";
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
             // 
             // cantEquiposDataGridViewTextBoxColumn
             // 
@@ -704,19 +714,19 @@
             this.cantEquiposDataGridViewTextBoxColumn.Name = "cantEquiposDataGridViewTextBoxColumn";
             this.cantEquiposDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // fechaInicioDataGridViewTextBoxColumn
+            // fechaInicio
             // 
-            this.fechaInicioDataGridViewTextBoxColumn.DataPropertyName = "fechaInicio";
-            this.fechaInicioDataGridViewTextBoxColumn.HeaderText = "Fecha de Inicio";
-            this.fechaInicioDataGridViewTextBoxColumn.Name = "fechaInicioDataGridViewTextBoxColumn";
-            this.fechaInicioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaInicio.DataPropertyName = "fechaInicio";
+            this.fechaInicio.HeaderText = "Fecha de Inicio";
+            this.fechaInicio.Name = "fechaInicio";
+            this.fechaInicio.ReadOnly = true;
             // 
-            // fechaFinalDataGridViewTextBoxColumn
+            // fechaFinal
             // 
-            this.fechaFinalDataGridViewTextBoxColumn.DataPropertyName = "fechaFinal";
-            this.fechaFinalDataGridViewTextBoxColumn.HeaderText = "Fecha de Finalizacion";
-            this.fechaFinalDataGridViewTextBoxColumn.Name = "fechaFinalDataGridViewTextBoxColumn";
-            this.fechaFinalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaFinal.DataPropertyName = "fechaFinal";
+            this.fechaFinal.HeaderText = "Fecha de Finalizacion";
+            this.fechaFinal.Name = "fechaFinal";
+            this.fechaFinal.ReadOnly = true;
             // 
             // estadoDataGridViewCheckBoxColumn
             // 
@@ -745,7 +755,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
             this.fpnlBotones.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTorneos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.equiposBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet2)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -785,7 +795,7 @@
         public Personalizacion.MSButton btnVolver;
         public Personalizacion.MSButton btnAgregarTorneo;
         public System.Windows.Forms.Panel panel5;
-        public System.Windows.Forms.DataGridView dgvEquipos;
+        public System.Windows.Forms.DataGridView dgvTorneos;
         public System.Windows.Forms.BindingSource equiposBindingSource;
         public DB_TECHGOALDataSet2 dB_TECHGOALDataSet2;
         public System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
@@ -800,7 +810,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         public System.Windows.Forms.BindingSource dBTECHGOALDataSetBindingSource;
         public System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.ComboBox cmbTipoFiter;
+        public System.Windows.Forms.ComboBox cmbTipoFilter;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
@@ -810,10 +820,10 @@
         private DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter torneosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtorneoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantEquiposDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaFinalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaFinal;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
     }
 }

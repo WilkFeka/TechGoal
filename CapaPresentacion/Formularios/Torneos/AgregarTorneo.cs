@@ -78,6 +78,12 @@ namespace CapaPresentacion.Formularios.Torneos
 
                 }
 
+                if (txtCantEquipos.Text == "0")
+                {
+                    MessageBox.Show("La cantidad de equipos no puede ser 0.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
 
                 Torneo buscarTorneo = TorneosControladora.EncontrarTorneoNombre(txtNombre.Text);
 
