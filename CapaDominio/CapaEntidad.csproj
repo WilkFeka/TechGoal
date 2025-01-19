@@ -57,6 +57,7 @@
     <Compile Include="Horario.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="Modulo.cs" />
+    <Compile Include="Reglas.cs" />
     <Compile Include="Reserva.cs" />
     <Compile Include="Seguridad\Permiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

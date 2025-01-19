@@ -17,6 +17,7 @@ namespace CapaPresentacion.Formularios.Torneos
     {
         Funcionalidades funcionalidades = Funcionalidades.getInstance;
         CC_Torneos TorneosControladora = CC_Torneos.getInstance;
+        CC_Reglas ReglasControladora = CC_Reglas.getInstance;
 
         CC_TorneoEquipos TorneoEquiposControladora = CC_TorneoEquipos.getInstance;
 
@@ -105,59 +106,81 @@ namespace CapaPresentacion.Formularios.Torneos
 
 
                 formVincularTorneoEquipos formVincularEquipos = new formVincularTorneoEquipos(Convert.ToInt32(txtCantEquipos.Text));
-                if (formVincularEquipos.ShowDialog() == DialogResult.OK)
+                if (formVincularEquipos.ShowDialog() != DialogResult.OK)
                 {
-                    Torneo nuevoTorneo = new Torneo()
+                    return;
+                }
+
+
+                formReglasTorneo formReglas = new formReglasTorneo();
+                if (formReglas.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+
+                Torneo nuevoTorneo = new Torneo()
+                {
+                    nombre = txtNombre.Text,
+                    fechaInicio = dtpFechaInicio.Value,
+                    fechaFinal = dtpFechaFinal.Value,
+                    tipo = seleccionado.valor,
+                    cantEquipos = Convert.ToInt32(txtCantEquipos.Text),
+                    estado = true
+                };
+
+                bool agregarTorneo = TorneosControladora.AgregarTorneo(nuevoTorneo);
+
+
+                if (agregarTorneo == false)
+                {
+                    MessageBox.Show("Hubo un error al agregar torneo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Torneo torneo = TorneosControladora.EncontrarTorneoNombre(txtNombre.Text);
+
+                List<ListViewItem> resultados = formVincularEquipos.Resultados;
+
+                foreach (ListViewItem item in resultados)
+                {
+                    int idEquipo = (int)item.Tag;
+
+                    TorneoEquipos torneoEquipo = new TorneoEquipos()
                     {
-                        nombre = txtNombre.Text,
-                        fechaInicio = dtpFechaInicio.Value,
-                        fechaFinal = dtpFechaFinal.Value,
-                        tipo = seleccionado.valor,
-                        cantEquipos = Convert.ToInt32(txtCantEquipos.Text),
+                        id_torneo = torneo.id_torneo,
+                        id_equipo = idEquipo,
                         estado = true
                     };
 
-                    bool agregarTorneo = TorneosControladora.AgregarTorneo(nuevoTorneo);
+                    bool agregarTorneoEquipo = TorneoEquiposControladora.AgregarTorneoEquipo(torneoEquipo);
 
-
-                    if (agregarTorneo == false)
+                    if (agregarTorneoEquipo == false)
                     {
                         MessageBox.Show("Hubo un error al agregar torneo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
-                    Torneo torneo = TorneosControladora.EncontrarTorneoNombre(txtNombre.Text);
-
-                    List<ListViewItem> resultados = formVincularEquipos.Resultados;
-
-                    foreach (ListViewItem item in resultados)
-                    {
-                        int idEquipo = (int)item.Tag;
-
-                        TorneoEquipos torneoEquipo = new TorneoEquipos()
-                        {
-                            id_torneo = torneo.id_torneo,
-                            id_equipo = idEquipo,
-                            estado = true
-                        };
-
-                        bool agregarTorneoEquipo = TorneoEquiposControladora.AgregarTorneoEquipo(torneoEquipo);
-
-                        if (agregarTorneoEquipo == false)
-                        {
-                            MessageBox.Show("Hubo un error al agregar torneo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                    }
-
-                    MessageBox.Show("Torneo agregado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                    this.Close();
-
-
                 }
+
+                string reglas = formReglas.reglas;
+
+                Reglas regla = new Reglas()
+                {
+                    id_torneo = torneo.id_torneo,
+                    reglas = reglas
+                };
+
+                bool agregarReglas = ReglasControladora.AgregarReglas(regla);
+
+
+
+                MessageBox.Show("Torneo agregado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                this.Close();
+
+
 
             }
 

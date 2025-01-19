@@ -351,6 +351,12 @@
     <Compile Include="Formularios\Torneos\AgregarTorneo.Designer.cs">
       <DependentUpon>AgregarTorneo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Torneos\ReglasTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneos\ReglasTorneo.Designer.cs">
+      <DependentUpon>ReglasTorneo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Torneos\Torneos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -485,6 +491,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Torneos\AgregarTorneo.resx">
       <DependentUpon>AgregarTorneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneos\ReglasTorneo.resx">
+      <DependentUpon>ReglasTorneo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Torneos\Torneos.resx">
       <DependentUpon>Torneos.cs</DependentUpon>
