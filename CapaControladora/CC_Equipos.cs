@@ -87,6 +87,15 @@ namespace CapaControladora
             return resultado;
         }
 
+        public List<Equipo> EncontrarEquiposLibres()
+        {
+
+            List<Equipo> buscandoEquiposLibres = new CD_Equipos().EquiposLibres();
+            return buscandoEquiposLibres;
+           
+        }
+
+
 
     }
 }

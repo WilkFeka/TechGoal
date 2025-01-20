@@ -16,6 +16,7 @@ using CapaPresentacion.Formularios;
 using CapaPresentacion.Formularios.Clientes;
 using CapaPresentacion.Formularios.Equipos;
 using CapaPresentacion.Formularios.Reportes;
+using CapaPresentacion.Formularios.Torneos;
 
 namespace CapaPresentacion
 {
@@ -235,6 +236,13 @@ namespace CapaPresentacion
             pnlContainer.Hide();
             picLogoText.Hide();
             AbrirFormulario(new formEquipos(this));
+        }
+
+        private void btnTorneos_Click(object sender, EventArgs e)
+        {
+            pnlContainer.Hide();
+            picLogoText.Hide();
+            AbrirFormulario(new formTorneos(this));
         }
     }
     }

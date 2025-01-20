@@ -49,7 +49,10 @@
     <Compile Include="CD_Horario.cs" />
     <Compile Include="CD_Jugador.cs" />
     <Compile Include="CD_Modulo.cs" />
+    <Compile Include="CD_Reglas.cs" />
     <Compile Include="CD_Reserva.cs" />
+    <Compile Include="CD_TorneoEquipos.cs" />
+    <Compile Include="CD_Torneos.cs" />
     <Compile Include="Seguridad\CD_Permiso.cs" />
     <Compile Include="Seguridad\CD_Rol.cs" />
     <Compile Include="Conection.cs" />
