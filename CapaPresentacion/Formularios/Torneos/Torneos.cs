@@ -1,4 +1,6 @@
-﻿using CapaPresentacion.Personalizacion;
+﻿using CapaControladora;
+using CapaEntidad;
+using CapaPresentacion.Personalizacion;
 using ClosedXML.Excel;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,7 @@ namespace CapaPresentacion.Formularios.Torneos
     public partial class formTorneos : Form
     {
         private formInicio formInicioC;
+        public  CC_Torneos torneoControladora = CC_Torneos.getInstance;
 
         private BindingSource bindingSource = new BindingSource();
         private int currentPage = 1; // Página actual
@@ -123,7 +126,7 @@ namespace CapaPresentacion.Formularios.Torneos
             infoColumn.Name = "info";
             infoColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
             infoColumn.Image = Properties.Resources.info;
-            //infoColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            infoColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvTorneos.Columns.Add(infoColumn);
 
 
@@ -257,6 +260,31 @@ namespace CapaPresentacion.Formularios.Torneos
             }
         }
 
-        
+        private void dgvTorneos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                if (dgvTorneos.Columns[e.ColumnIndex].Name == "info" && e.RowIndex != -1)
+                {
+                    // ------------- Obtiene el valor de la celda ID ---------------------
+                    DataGridViewRow filaSeleccionada = dgvTorneos.CurrentRow;
+
+                    DataGridViewCell celda = filaSeleccionada.Cells["id_torneo"];
+
+                    int id = Convert.ToInt32(celda.Value);
+
+                    Torneo torneoSeleccionado = torneoControladora.EncontrarTorneoID(id);
+
+                    
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

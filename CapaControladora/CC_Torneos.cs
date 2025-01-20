@@ -46,6 +46,21 @@ namespace CapaControladora
             }
         }
 
+        public Torneo EncontrarTorneoID(int id)
+        {
+
+            Torneo buscandoTorneoNombre = new CC_Torneos().Listar().Where(c => c.id_torneo == id).FirstOrDefault();
+
+            if (buscandoTorneoNombre != null)
+            {
+                return buscandoTorneoNombre;
+            }
+            else
+            {
+                return buscandoTorneoNombre;
+            }
+        }
+
         public bool AgregarTorneo(Torneo torneo)
         {
             bool resultado = new CD_Torneos().AgregarTorneo(torneo);
