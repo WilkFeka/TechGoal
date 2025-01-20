@@ -232,6 +232,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_TECHGOALDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_TECHGOALDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_TECHGOALDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Canchas\Cancha - Individual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +344,36 @@
     </Compile>
     <Compile Include="Formularios\Reservas\Reserva - Nueva.Designer.cs">
       <DependentUpon>Reserva - Nueva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Torneos\AgregarTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneos\AgregarTorneo.Designer.cs">
+      <DependentUpon>AgregarTorneo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Torneos\InfoTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneos\InfoTorneo.Designer.cs">
+      <DependentUpon>InfoTorneo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Torneos\ReglasTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneos\ReglasTorneo.Designer.cs">
+      <DependentUpon>ReglasTorneo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Torneos\Torneos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneos\Torneos.Designer.cs">
+      <DependentUpon>Torneos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Torneos\VincularTorneoEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneos\VincularTorneoEquipos.Designer.cs">
+      <DependentUpon>VincularTorneoEquipos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Usuarios\Perfil - Nueva Clave.cs">
       <SubType>Form</SubType>
@@ -460,6 +495,21 @@
     <EmbeddedResource Include="Formularios\Reservas\Reserva - Nueva.resx">
       <DependentUpon>Reserva - Nueva.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneos\AgregarTorneo.resx">
+      <DependentUpon>AgregarTorneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneos\InfoTorneo.resx">
+      <DependentUpon>InfoTorneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneos\ReglasTorneo.resx">
+      <DependentUpon>ReglasTorneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneos\Torneos.resx">
+      <DependentUpon>Torneos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneos\VincularTorneoEquipos.resx">
+      <DependentUpon>VincularTorneoEquipos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios\Perfil - Nueva Clave.resx">
       <DependentUpon>Perfil - Nueva Clave.cs</DependentUpon>
     </EmbeddedResource>
@@ -525,6 +575,17 @@
     </None>
     <None Include="DB_TECHGOALDataSet2.xss">
       <DependentUpon>DB_TECHGOALDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DB_TECHGOALDataSet3.xsc">
+      <DependentUpon>DB_TECHGOALDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DB_TECHGOALDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_TECHGOALDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_TECHGOALDataSet3.xss">
+      <DependentUpon>DB_TECHGOALDataSet3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -719,6 +780,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\camisetaNegra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tournament_37856901.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophyBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writing_116175731.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_13409827.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -299,5 +299,10 @@ namespace CapaPresentacion.Formularios.Clientes
                 bindingNavigatorMoveNextItem.Enabled = true;
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

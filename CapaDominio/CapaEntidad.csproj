@@ -57,6 +57,7 @@
     <Compile Include="Horario.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="Modulo.cs" />
+    <Compile Include="Reglas.cs" />
     <Compile Include="Reserva.cs" />
     <Compile Include="Seguridad\Permiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +69,8 @@
     <Compile Include="Seguridad\Rol.cs" />
     <Compile Include="Seguridad\Sesion.cs" />
     <Compile Include="Seguridad\Usuario.cs" />
+    <Compile Include="Torneo.cs" />
+    <Compile Include="TorneoEquipos.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
