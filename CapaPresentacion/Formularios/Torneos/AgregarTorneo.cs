@@ -18,6 +18,8 @@ namespace CapaPresentacion.Formularios.Torneos
         Funcionalidades funcionalidades = Funcionalidades.getInstance;
         CC_Torneos TorneosControladora = CC_Torneos.getInstance;
         CC_Reglas ReglasControladora = CC_Reglas.getInstance;
+        CC_Llave LlavesControladora = CC_Llave.getInstance;
+
 
         CC_TorneoEquipos TorneoEquiposControladora = CC_TorneoEquipos.getInstance;
 
@@ -142,9 +144,13 @@ namespace CapaPresentacion.Formularios.Torneos
 
                 List<ListViewItem> resultados = formVincularEquipos.Resultados;
 
+                List<int> equiposLlaves = new List<int>();
+
                 foreach (ListViewItem item in resultados)
                 {
                     int idEquipo = (int)item.Tag;
+                    equiposLlaves.Add(idEquipo);
+                    
 
                     TorneoEquipos torneoEquipo = new TorneoEquipos()
                     {
@@ -173,6 +179,21 @@ namespace CapaPresentacion.Formularios.Torneos
 
                 bool agregarReglas = ReglasControladora.AgregarReglas(regla);
 
+                // Crear el generador de torneo para llaves
+                var generadorDeLlaves = new GeneradorFixture.GeneradorDeTorneo(new GeneradorFixture.GeneradorLlaves());
+
+                List<Llave> llavesGeneradas = generadorDeLlaves.CrearFixture(equiposLlaves, torneo.cantEquipos, torneo.id_torneo);
+
+                foreach (Llave llave in llavesGeneradas)
+                {
+                    bool agregarLlave = LlavesControladora.AgregarLlave(llave);
+
+                    if (agregarLlave == false)
+                    {
+                        MessageBox.Show("Hubo un error al agregar torneo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
 
 
                 MessageBox.Show("Torneo agregado con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);

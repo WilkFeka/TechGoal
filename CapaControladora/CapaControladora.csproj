@@ -47,6 +47,7 @@
     <Compile Include="CC_Equipos.cs" />
     <Compile Include="CC_Horario.cs" />
     <Compile Include="CC_Jugador.cs" />
+    <Compile Include="CC_Llave.cs" />
     <Compile Include="CC_Modulo.cs" />
     <Compile Include="CC_Permiso.cs" />
     <Compile Include="CC_Reglas.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="CC_TorneoEquipos.cs" />
     <Compile Include="CC_Torneos.cs" />
     <Compile Include="CC_Usuario.cs" />
+    <Compile Include="GeneradorFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
