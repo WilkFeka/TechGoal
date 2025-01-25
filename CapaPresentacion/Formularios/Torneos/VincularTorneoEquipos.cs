@@ -55,10 +55,11 @@ namespace CapaPresentacion.Formularios.Torneos
         private void listViewLibres_MouseClick(object sender, MouseEventArgs e)
         {
 
-            var clickedItem = listViewLibres.GetItemAt(e.X, e.Y);
-            if (clickedItem != null)
-                clickedItem.Checked = clickedItem.Checked || (listViewLibres.CheckedItems.Count + listViewAgregados.Items.Count) < cantEquipos;
 
+            var clickedItem = listViewLibres.GetItemAt(e.X, e.Y);
+            if (clickedItem.Checked == false)
+                clickedItem.Checked = (listViewLibres.CheckedItems.Count + listViewAgregados.Items.Count) < cantEquipos;
+            else clickedItem.Checked = false;
            
             
         }
@@ -119,6 +120,21 @@ namespace CapaPresentacion.Formularios.Torneos
                 this.Close(); // Cierra el formulario
             }
 
+        }
+
+        private void listViewAgregados_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var clickedItem = listViewLibres.GetItemAt(e.X, e.Y);
+
+
+        }
+
+        private void listViewLibres_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (Control.MouseButtons == MouseButtons.Left && e.NewValue != e.CurrentValue)
+            {
+                e.NewValue = e.CurrentValue; // Cancela el cambio de check
+            }
         }
     }
 }

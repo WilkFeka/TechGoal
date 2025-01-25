@@ -19,13 +19,14 @@ namespace CapaPresentacion.Formularios.Torneos
         CC_Torneos TorneosControladora = CC_Torneos.getInstance;
         CC_Reglas ReglasControladora = CC_Reglas.getInstance;
         CC_Llave LlavesControladora = CC_Llave.getInstance;
-
-
         CC_TorneoEquipos TorneoEquiposControladora = CC_TorneoEquipos.getInstance;
 
-        public formAgregarTorneo()
+        private formTorneos recargarTabla;
+
+        public formAgregarTorneo(formTorneos formTorneos)
         {
             InitializeComponent();
+            recargarTabla = formTorneos;
         }
 
         private void formAgregarTorneo_Load(object sender, EventArgs e)
@@ -96,6 +97,13 @@ namespace CapaPresentacion.Formularios.Torneos
                     return;
                 }
 
+                if (txtCantEquipos.Text == "1")
+                {
+                    MessageBox.Show("No es posible elejir solo 1 equipo.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return;
+                } 
+
                 bool potencia2 = funcionalidades.IsPowerOfTwo(Convert.ToInt32(txtCantEquipos.Text));
                 opcionCombo seleccionado = (opcionCombo)cmbTipo.SelectedItem;
 
@@ -105,6 +113,7 @@ namespace CapaPresentacion.Formularios.Torneos
 
                     return;
                 }
+                
 
 
                 formVincularTorneoEquipos formVincularEquipos = new formVincularTorneoEquipos(Convert.ToInt32(txtCantEquipos.Text));
@@ -179,6 +188,8 @@ namespace CapaPresentacion.Formularios.Torneos
 
                 bool agregarReglas = ReglasControladora.AgregarReglas(regla);
 
+
+
                 // Crear el generador de torneo para llaves
                 var generadorDeLlaves = new GeneradorFixture.GeneradorDeTorneo(new GeneradorFixture.GeneradorLlaves());
 
@@ -223,6 +234,11 @@ namespace CapaPresentacion.Formularios.Torneos
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void formAgregarTorneo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            recargarTabla.RecargarTabla();
         }
     }
 }
