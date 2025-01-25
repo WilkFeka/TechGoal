@@ -329,6 +329,7 @@
             this.Name = "formAgregarTorneo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Torneo";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formAgregarTorneo_FormClosed);
             this.Load += new System.EventHandler(this.formAgregarTorneo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

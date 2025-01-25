@@ -43,7 +43,7 @@ namespace CapaPresentacion.Formularios.Torneos
 
         private void btnAgregarTorneo_Click(object sender, EventArgs e)
         {
-            formAgregarTorneo formAgregarEquipos = new formAgregarTorneo();
+            formAgregarTorneo formAgregarEquipos = new formAgregarTorneo(this);
             formAgregarEquipos.Show();
         }
 
@@ -54,11 +54,10 @@ namespace CapaPresentacion.Formularios.Torneos
 
         private void CargarDatos()
         {
-            // Supongamos que usas un TableAdapter para llenar datos
             this.torneosTableAdapter.Fill(this.dB_TECHGOALDataSet3.torneos);
-            originalData = dB_TECHGOALDataSet3.torneos.Copy(); // Guardar datos originales
-            totalRecords = originalData.Rows.Count; // Total de registros
-            MostrarPagina(1); // Mostrar la primera página
+            originalData = dB_TECHGOALDataSet3.torneos.Copy(); 
+            totalRecords = originalData.Rows.Count; 
+            MostrarPagina(1); 
         }
 
         private void MostrarPagina(int pageNumber)
@@ -161,8 +160,15 @@ namespace CapaPresentacion.Formularios.Torneos
             // Combinar filtros con AND
             string filtroCompleto = string.Join(" AND ", filtros);
 
-            // Aplicar el filtro
+            // Aplicar el filtro al DefaultView
             dB_TECHGOALDataSet3.torneos.DefaultView.RowFilter = filtroCompleto;
+
+            // Actualizar el conjunto de datos originalData con los datos filtrados
+            originalData = dB_TECHGOALDataSet3.torneos.DefaultView.ToTable();
+
+            // Actualizar el total de registros y mostrar la primera página
+            totalRecords = originalData.Rows.Count;
+            MostrarPagina(1);
         }
 
         private void txtNombreFilter_TextChanged(object sender, EventArgs e)
@@ -285,6 +291,24 @@ namespace CapaPresentacion.Formularios.Torneos
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public void RecargarTabla()
+        {
+            // Limpiar el DataGridView
+            dgvTorneos.DataSource = null;
+
+            // Recargar los datos desde la base de datos
+            this.torneosTableAdapter.Fill(this.dB_TECHGOALDataSet3.torneos);
+
+            // Actualizar los datos originales y totales
+            originalData = dB_TECHGOALDataSet3.torneos.Copy();
+            totalRecords = originalData.Rows.Count;
+
+
+            // Mostrar la primera página después de recargar
+            MostrarPagina(1);
+            ActualizarFiltro();
         }
     }
 }

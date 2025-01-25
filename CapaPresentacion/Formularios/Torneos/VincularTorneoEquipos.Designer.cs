@@ -93,6 +93,7 @@
             this.listViewLibres.TabIndex = 104;
             this.listViewLibres.UseCompatibleStateImageBehavior = false;
             this.listViewLibres.View = System.Windows.Forms.View.Details;
+            this.listViewLibres.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listViewLibres_ItemCheck);
             this.listViewLibres.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewLibres_MouseClick);
             // 
             // listViewAgregados
@@ -106,6 +107,7 @@
             this.listViewAgregados.UseCompatibleStateImageBehavior = false;
             this.listViewAgregados.View = System.Windows.Forms.View.Details;
             this.listViewAgregados.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewAgregados_MouseClick);
+            this.listViewAgregados.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewAgregados_MouseDoubleClick);
             // 
             // label1
             // 
