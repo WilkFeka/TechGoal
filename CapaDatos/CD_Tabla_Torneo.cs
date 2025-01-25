@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class CD_Llave
+    public class CD_Tabla_Torneo
     {
-        public List<Llave> Listar()
+        public List<Tabla_Torneo> Listar()
         {
-            List<Llave> lista = new List<Llave>();
+            List<Tabla_Torneo> lista = new List<Tabla_Torneo>();
 
             try
             {
@@ -21,7 +21,7 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("SELECT * FROM Llaves");
+                    query.AppendLine("SELECT * FROM Partidos");
 
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
@@ -33,16 +33,19 @@ namespace CapaDatos
                             while (reader.Read())
                             {
 
-                                lista.Add(new Llave()
+                                lista.Add(new Tabla_Torneo()
                                 {
-                                    id_llave = Convert.ToInt32(reader["id_llave"]),
+                                    id_tabla = Convert.ToInt32(reader["id_tabla"]),
                                     id_torneo = Convert.ToInt32(reader["id_torneo"]),
-                                    instancia = Convert.ToString(reader["instancia"]),
-                                    id_local = Convert.ToInt32(reader["id_local"]),
-                                    id_visitante = Convert.ToInt32(reader["id_visitante"]),
-                                    golesL = Convert.ToInt32(reader["golesL"]),
-                                    golesV = Convert.ToInt32(reader["golesV"]),
-                                    ganador = Convert.ToInt32(reader["golesV"]),
+                                    id_equipo = Convert.ToInt32(reader["id_equipo"]),
+                                    puntos = Convert.ToInt32(reader["puntos"]),
+                                    goles_a_favor = Convert.ToInt32(reader["goles_a_favor"]),
+                                    goles_en_contra = Convert.ToInt32(reader["goles_en_contra"]),
+                                    partidos_jugados = Convert.ToInt32(reader["partidos_jugados"]),
+                                    diferencia = Convert.ToInt32(reader["diferencia"]),
+                                    ganados = Convert.ToInt32(reader["ganados"]),
+                                    empatados = Convert.ToInt32(reader["empatados"]),
+                                    perdidos = Convert.ToInt32(reader["perdidos"]),
 
                                 });
 
@@ -56,7 +59,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                lista = new List<Llave>();
+                lista = new List<Tabla_Torneo>();
                 Console.WriteLine(ex.Message);
             }
 
@@ -64,7 +67,7 @@ namespace CapaDatos
 
         }
 
-        public bool AgregarLlave(Llave llave)
+        public bool AgregarEquipoTabla(Tabla_Torneo tabla_torneo)
         {
             bool agregado = false;
 
@@ -74,16 +77,13 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("INSERT INTO Llaves (instancia, id_torneo, id_local, id_visitante) ");
-                    query.AppendLine("VALUES (@instancia, @id_torneo, @id_local, @id_visitante)");
+                    query.AppendLine("INSERT INTO Tablas_Torneos (id_torneo, id_equipo)");
+                    query.AppendLine("VALUES (@id_torneo, @id_equipo)");
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
                     {
-                        cmd.Parameters.AddWithValue("@instancia", llave.instancia);
-                        cmd.Parameters.AddWithValue("@id_torneo", llave.id_torneo);
-                        cmd.Parameters.AddWithValue("@id_local", llave.id_local);
-                        cmd.Parameters.AddWithValue("@id_visitante", llave.id_visitante);
-
+                        cmd.Parameters.AddWithValue("@id_torneo", tabla_torneo.id_torneo);
+                        cmd.Parameters.AddWithValue("@id_equipo", tabla_torneo.id_equipo);
 
                         conection.Open();
 

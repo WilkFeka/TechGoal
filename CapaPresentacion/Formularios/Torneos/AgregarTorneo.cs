@@ -18,8 +18,9 @@ namespace CapaPresentacion.Formularios.Torneos
         Funcionalidades funcionalidades = Funcionalidades.getInstance;
         CC_Torneos TorneosControladora = CC_Torneos.getInstance;
         CC_Reglas ReglasControladora = CC_Reglas.getInstance;
-        CC_Llave LlavesControladora = CC_Llave.getInstance;
+        CC_Partido PartidoControladora = CC_Partido.getInstance;
         CC_TorneoEquipos TorneoEquiposControladora = CC_TorneoEquipos.getInstance;
+        CC_Tabla_Torneo Tabla_TorneoControladora = CC_Tabla_Torneo.getInstance;
 
         private formTorneos recargarTabla;
 
@@ -153,12 +154,12 @@ namespace CapaPresentacion.Formularios.Torneos
 
                 List<ListViewItem> resultados = formVincularEquipos.Resultados;
 
-                List<int> equiposLlaves = new List<int>();
+                List<int> equiposID = new List<int>();
 
                 foreach (ListViewItem item in resultados)
                 {
                     int idEquipo = (int)item.Tag;
-                    equiposLlaves.Add(idEquipo);
+                    equiposID.Add(idEquipo);
                     
 
                     TorneoEquipos torneoEquipo = new TorneoEquipos()
@@ -188,21 +189,67 @@ namespace CapaPresentacion.Formularios.Torneos
 
                 bool agregarReglas = ReglasControladora.AgregarReglas(regla);
 
+                // variable generador
+                GeneradorFixture.GeneradorDeTorneo generador;
+                List<Partido> partidosGenerados;
 
-
-                // Crear el generador de torneo para llaves
-                var generadorDeLlaves = new GeneradorFixture.GeneradorDeTorneo(new GeneradorFixture.GeneradorLlaves());
-
-                List<Llave> llavesGeneradas = generadorDeLlaves.CrearFixture(equiposLlaves, torneo.cantEquipos, torneo.id_torneo);
-
-                foreach (Llave llave in llavesGeneradas)
+                if (seleccionado.valor == 2)
                 {
-                    bool agregarLlave = LlavesControladora.AgregarLlave(llave);
+                    generador = new GeneradorFixture.GeneradorDeTorneo(new GeneradorFixture.GeneradorLlaves());
+                    partidosGenerados = generador.CrearFixture(equiposID, torneo.cantEquipos, torneo.id_torneo);
 
-                    if (agregarLlave == false)
+
+                }
+                else
+                {
+                    generador = new GeneradorFixture.GeneradorDeTorneo(new GeneradorFixture.GeneradorLiga());
+                    List<int> equiposConDescanso = new List<int>(equiposID);
+
+                    if (torneo.cantEquipos % 2 != 0)
                     {
-                        MessageBox.Show("Hubo un error al agregar torneo. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        equiposConDescanso.Add(-1);  // Agregar descanso solo a la copia
+                        torneo.cantEquipos++;  // Asegurarse de que cantEquipos se ajuste al nuevo valor
+                    }
+
+                    // Pasar la copia a GenerarFixture
+                    partidosGenerados = generador.CrearFixture(equiposConDescanso, torneo.cantEquipos, torneo.id_torneo);
+
+                }
+
+                // Crear el generador de partidos
+
+
+                foreach (Partido partido in partidosGenerados)
+                {
+                    bool agregarPartido = PartidoControladora.AgregarPartido(partido);
+
+                    if (agregarPartido == false)
+                    {
+                        MessageBox.Show("Hubo un error al generar partidos. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
+                    }
+                }
+
+                // generar tabla de posiciones
+                if (seleccionado.valor == 1)
+                {
+
+                    foreach (int equipo in equiposID)
+                    {
+
+                        Tabla_Torneo equipoTabla = new Tabla_Torneo()
+                        {
+                            id_torneo = torneo.id_torneo,
+                            id_equipo = equipo
+                        };
+
+                        bool agregarEquipo = Tabla_TorneoControladora.AgregarEquipoTabla(equipoTabla);
+
+                        if (agregarEquipo == false)
+                        {
+                            MessageBox.Show("Hubo un error al generar tablas. Por favor consulte con un administrador.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                     }
                 }
 
@@ -211,7 +258,6 @@ namespace CapaPresentacion.Formularios.Torneos
 
 
                 this.Close();
-
 
 
             }

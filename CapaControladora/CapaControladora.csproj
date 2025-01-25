@@ -47,13 +47,14 @@
     <Compile Include="CC_Equipos.cs" />
     <Compile Include="CC_Horario.cs" />
     <Compile Include="CC_Jugador.cs" />
-    <Compile Include="CC_Llave.cs" />
+    <Compile Include="CC_Partido.cs" />
     <Compile Include="CC_Modulo.cs" />
     <Compile Include="CC_Permiso.cs" />
     <Compile Include="CC_Reglas.cs" />
     <Compile Include="CC_Reserva.cs" />
     <Compile Include="CC_Rol.cs" />
     <Compile Include="CC_Sesion.cs" />
+    <Compile Include="CC_Tabla_Torneo.cs" />
     <Compile Include="CC_TorneoEquipos.cs" />
     <Compile Include="CC_Torneos.cs" />
     <Compile Include="CC_Usuario.cs" />
