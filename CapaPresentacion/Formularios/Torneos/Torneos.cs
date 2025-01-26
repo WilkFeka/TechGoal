@@ -282,7 +282,17 @@ namespace CapaPresentacion.Formularios.Torneos
 
                     Torneo torneoSeleccionado = torneoControladora.EncontrarTorneoID(id);
 
-                    
+                    if (torneoSeleccionado.tipo == 1)
+                    {
+                        //formInicioC.AbrirFormulario(new formInfoTorneoLiga(this, torneoSeleccionado, formInicioC)); // Sirve para que se pueda mostrar el formulario de roles y ocultar el de usuarios
+                    }
+                    else if (torneoSeleccionado.tipo == 2)
+                    {
+
+                        formInicioC.AbrirFormulario(new formInfoTorneoLlaves(this, torneoSeleccionado, formInicioC)); // Sirve para que se pueda mostrar el formulario de roles y ocultar el de usuarios
+                    }
+
+
 
                 }
             }

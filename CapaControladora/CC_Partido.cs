@@ -24,9 +24,9 @@ namespace CapaControladora
 
         public List<Partido> Listar()
         {
-            List<Partido> listaLlaves = new CD_Partido().Listar();
+            List<Partido> listaPartidos = new CD_Partido().Listar();
 
-            return listaLlaves;
+            return listaPartidos;
 
         }
 
@@ -36,6 +36,13 @@ namespace CapaControladora
             return resultado;
         }
 
+        public List<Partido> EncontrarPartidosTorneo(int torneoID)
+        {
+            List<Partido> listaPartidos = new CC_Partido().Listar().Where(u => u.id_torneo == torneoID).ToList();
+
+            return listaPartidos;
+
+        }
 
 
 
