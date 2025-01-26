@@ -14,14 +14,12 @@ namespace CapaPresentacion.Formularios.Torneos
 {
     public partial class formInfoTorneoLlaves : Form
     {
-        formTorneos formTorneos;
         Torneo torneoSeleccionado;
         formInicio formInicioC;
         CC_Partido partidoControladora = CC_Partido.getInstance;
-        public formInfoTorneoLlaves(formTorneos formularioTorneos, Torneo torneo, formInicio formInicio)
+        public formInfoTorneoLlaves(Torneo torneo, formInicio formInicio)
         {
             InitializeComponent();
-            formTorneos = formularioTorneos;
             torneoSeleccionado = torneo;
             formInicioC = formInicio;
         }

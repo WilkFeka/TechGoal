@@ -124,3 +124,4 @@ C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Form
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Torneos.formReglasTorneo.resources
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Torneos.formInfoTorneoLlaves.resources
 C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Torneos.formDisenioLlave.resources
+C:\Users\mauri\Desktop\TechGoal\CapaPresentacion\obj\Debug\CapaPresentacion.Formularios.Torneos.formInfoTorneoLiga.resources

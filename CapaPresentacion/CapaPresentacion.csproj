@@ -237,6 +237,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_TECHGOALDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_TECHGOALDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_TECHGOALDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Canchas\Cancha - Individual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +361,12 @@
     </Compile>
     <Compile Include="Formularios\Torneos\DisenioLlave.Designer.cs">
       <DependentUpon>DisenioLlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Torneos\InfoTorneoLiga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneos\InfoTorneoLiga.Designer.cs">
+      <DependentUpon>InfoTorneoLiga.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Torneos\InfoTorneoLlaves.cs">
       <SubType>Form</SubType>
@@ -507,6 +518,9 @@
     <EmbeddedResource Include="Formularios\Torneos\DisenioLlave.resx">
       <DependentUpon>DisenioLlave.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneos\InfoTorneoLiga.resx">
+      <DependentUpon>InfoTorneoLiga.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Torneos\InfoTorneoLlaves.resx">
       <DependentUpon>InfoTorneoLlaves.cs</DependentUpon>
     </EmbeddedResource>
@@ -595,6 +609,17 @@
     </None>
     <None Include="DB_TECHGOALDataSet3.xss">
       <DependentUpon>DB_TECHGOALDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DB_TECHGOALDataSet4.xsc">
+      <DependentUpon>DB_TECHGOALDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DB_TECHGOALDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_TECHGOALDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_TECHGOALDataSet4.xss">
+      <DependentUpon>DB_TECHGOALDataSet4.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

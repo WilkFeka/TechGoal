@@ -284,12 +284,12 @@ namespace CapaPresentacion.Formularios.Torneos
 
                     if (torneoSeleccionado.tipo == 1)
                     {
-                        //formInicioC.AbrirFormulario(new formInfoTorneoLiga(this, torneoSeleccionado, formInicioC)); // Sirve para que se pueda mostrar el formulario de roles y ocultar el de usuarios
+                        formInicioC.AbrirFormulario(new formInfoTorneoLiga(torneoSeleccionado, formInicioC)); // Sirve para que se pueda mostrar el formulario de roles y ocultar el de usuarios
                     }
                     else if (torneoSeleccionado.tipo == 2)
                     {
 
-                        formInicioC.AbrirFormulario(new formInfoTorneoLlaves(this, torneoSeleccionado, formInicioC)); // Sirve para que se pueda mostrar el formulario de roles y ocultar el de usuarios
+                        formInicioC.AbrirFormulario(new formInfoTorneoLlaves(torneoSeleccionado, formInicioC)); // Sirve para que se pueda mostrar el formulario de roles y ocultar el de usuarios
                     }
 
 
