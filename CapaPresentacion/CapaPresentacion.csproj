@@ -362,6 +362,12 @@
     <Compile Include="Formularios\Torneos\DisenioLlave.Designer.cs">
       <DependentUpon>DisenioLlave.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Torneos\DisenioPartidoLiga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneos\DisenioPartidoLiga.Designer.cs">
+      <DependentUpon>DisenioPartidoLiga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Torneos\InfoTorneoLiga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -517,6 +523,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Torneos\DisenioLlave.resx">
       <DependentUpon>DisenioLlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneos\DisenioPartidoLiga.resx">
+      <DependentUpon>DisenioPartidoLiga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Torneos\InfoTorneoLiga.resx">
       <DependentUpon>InfoTorneoLiga.cs</DependentUpon>

@@ -44,10 +44,10 @@
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvTabla = new System.Windows.Forms.DataGridView();
-            this.tablasTorneosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tablasTorneosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dB_TECHGOALDataSet4 = new CapaPresentacion.DB_TECHGOALDataSet4();
             this.lblTorneo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tablasTorneosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.torneosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter();
             this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_TECHGOALDataSet = new CapaPresentacion.DB_TECHGOALDataSet();
@@ -56,9 +56,10 @@
             this.tablasTorneosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tablas_TorneosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet4TableAdapters.Tablas_TorneosTableAdapter();
             this.dBTECHGOALDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
-            this.tablasTorneosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.sortByPtsToolStrip = new System.Windows.Forms.ToolStrip();
+            this.sortByPtsToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.fillByPuntosToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByPuntosToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.idtablaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idtorneoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idequipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +71,15 @@
             this.ganadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empatadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perdidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.flpFechas = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnFechaMenos = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnFechaMas = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
             ((System.ComponentModel.ISupportInitialize)(this.torneosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equiposBindingSource)).BeginInit();
@@ -78,14 +88,18 @@
             this.fpnlBotones.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSet3BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource2)).BeginInit();
+            this.sortByPtsToolStrip.SuspendLayout();
+            this.fillByPuntosToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // torneosBindingSource
@@ -131,6 +145,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.fpnlBotones);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.lblTorneo);
@@ -159,7 +174,7 @@
             this.panel5.Controls.Add(this.dgvTabla);
             this.panel5.Location = new System.Drawing.Point(12, 119);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(676, 588);
+            this.panel5.Size = new System.Drawing.Size(701, 542);
             this.panel5.TabIndex = 19;
             // 
             // dgvTabla
@@ -169,7 +184,7 @@
             this.dgvTabla.AllowUserToResizeColumns = false;
             this.dgvTabla.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(235)))));
@@ -190,9 +205,10 @@
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTabla.ColumnHeadersHeight = 32;
+            this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvTabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtablaDataGridViewTextBoxColumn,
             this.idtorneoDataGridViewTextBoxColumn,
@@ -225,7 +241,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -240,13 +256,13 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.dgvTabla.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTabla.Size = new System.Drawing.Size(676, 588);
+            this.dgvTabla.Size = new System.Drawing.Size(701, 542);
             this.dgvTabla.TabIndex = 11;
             // 
-            // tablasTorneosBindingSource1
+            // tablasTorneosBindingSource2
             // 
-            this.tablasTorneosBindingSource1.DataMember = "Tablas_Torneos";
-            this.tablasTorneosBindingSource1.DataSource = this.dB_TECHGOALDataSet4;
+            this.tablasTorneosBindingSource2.DataMember = "Tablas_Torneos";
+            this.tablasTorneosBindingSource2.DataSource = this.dB_TECHGOALDataSet4;
             // 
             // dB_TECHGOALDataSet4
             // 
@@ -265,15 +281,10 @@
             this.lblTorneo.TabIndex = 0;
             this.lblTorneo.Text = "Torneos";
             // 
-            // pictureBox1
+            // tablasTorneosBindingSource1
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.trophyBlack;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.tablasTorneosBindingSource1.DataMember = "Tablas_Torneos";
+            this.tablasTorneosBindingSource1.DataSource = this.dB_TECHGOALDataSet4;
             // 
             // torneosTableAdapter
             // 
@@ -310,6 +321,233 @@
             // 
             this.dBTECHGOALDataSet3BindingSource.DataSource = this.dB_TECHGOALDataSet3;
             this.dBTECHGOALDataSet3BindingSource.Position = 0;
+            // 
+            // sortByPtsToolStrip
+            // 
+            this.sortByPtsToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sortByPtsToolStripButton});
+            this.sortByPtsToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.sortByPtsToolStrip.Name = "sortByPtsToolStrip";
+            this.sortByPtsToolStrip.Size = new System.Drawing.Size(1532, 25);
+            this.sortByPtsToolStrip.TabIndex = 22;
+            this.sortByPtsToolStrip.Text = "sortByPtsToolStrip";
+            this.sortByPtsToolStrip.Visible = false;
+            // 
+            // sortByPtsToolStripButton
+            // 
+            this.sortByPtsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.sortByPtsToolStripButton.Name = "sortByPtsToolStripButton";
+            this.sortByPtsToolStripButton.Size = new System.Drawing.Size(61, 22);
+            this.sortByPtsToolStripButton.Text = "SortByPts";
+            this.sortByPtsToolStripButton.Click += new System.EventHandler(this.sortByPtsToolStripButton_Click);
+            // 
+            // fillByPuntosToolStrip
+            // 
+            this.fillByPuntosToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByPuntosToolStripButton});
+            this.fillByPuntosToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByPuntosToolStrip.Name = "fillByPuntosToolStrip";
+            this.fillByPuntosToolStrip.Size = new System.Drawing.Size(1532, 25);
+            this.fillByPuntosToolStrip.TabIndex = 23;
+            this.fillByPuntosToolStrip.Text = "fillByPuntosToolStrip";
+            this.fillByPuntosToolStrip.Visible = false;
+            // 
+            // fillByPuntosToolStripButton
+            // 
+            this.fillByPuntosToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByPuntosToolStripButton.Name = "fillByPuntosToolStripButton";
+            this.fillByPuntosToolStripButton.Size = new System.Drawing.Size(76, 22);
+            this.fillByPuntosToolStripButton.Text = "FillByPuntos";
+            this.fillByPuntosToolStripButton.Click += new System.EventHandler(this.fillByPuntosToolStripButton_Click);
+            // 
+            // idtablaDataGridViewTextBoxColumn
+            // 
+            this.idtablaDataGridViewTextBoxColumn.DataPropertyName = "id_tabla";
+            this.idtablaDataGridViewTextBoxColumn.HeaderText = "id_tabla";
+            this.idtablaDataGridViewTextBoxColumn.Name = "idtablaDataGridViewTextBoxColumn";
+            this.idtablaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idtablaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idtorneoDataGridViewTextBoxColumn
+            // 
+            this.idtorneoDataGridViewTextBoxColumn.DataPropertyName = "id_torneo";
+            this.idtorneoDataGridViewTextBoxColumn.HeaderText = "id_torneo";
+            this.idtorneoDataGridViewTextBoxColumn.Name = "idtorneoDataGridViewTextBoxColumn";
+            this.idtorneoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idtorneoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idequipo
+            // 
+            this.idequipo.DataPropertyName = "id_equipo";
+            this.idequipo.HeaderText = "id_equipo";
+            this.idequipo.Name = "idequipo";
+            this.idequipo.ReadOnly = true;
+            this.idequipo.Visible = false;
+            // 
+            // puntosDataGridViewTextBoxColumn
+            // 
+            this.puntosDataGridViewTextBoxColumn.DataPropertyName = "puntos";
+            this.puntosDataGridViewTextBoxColumn.HeaderText = "Pts";
+            this.puntosDataGridViewTextBoxColumn.Name = "puntosDataGridViewTextBoxColumn";
+            this.puntosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.puntosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // golesafavorDataGridViewTextBoxColumn
+            // 
+            this.golesafavorDataGridViewTextBoxColumn.DataPropertyName = "goles_a_favor";
+            this.golesafavorDataGridViewTextBoxColumn.HeaderText = "G +";
+            this.golesafavorDataGridViewTextBoxColumn.Name = "golesafavorDataGridViewTextBoxColumn";
+            this.golesafavorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.golesafavorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // golesencontraDataGridViewTextBoxColumn
+            // 
+            this.golesencontraDataGridViewTextBoxColumn.DataPropertyName = "goles_en_contra";
+            this.golesencontraDataGridViewTextBoxColumn.HeaderText = "G -";
+            this.golesencontraDataGridViewTextBoxColumn.Name = "golesencontraDataGridViewTextBoxColumn";
+            this.golesencontraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.golesencontraDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // partidosjugadosDataGridViewTextBoxColumn
+            // 
+            this.partidosjugadosDataGridViewTextBoxColumn.DataPropertyName = "partidos_jugados";
+            this.partidosjugadosDataGridViewTextBoxColumn.HeaderText = "J";
+            this.partidosjugadosDataGridViewTextBoxColumn.Name = "partidosjugadosDataGridViewTextBoxColumn";
+            this.partidosjugadosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.partidosjugadosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // diferenciaDataGridViewTextBoxColumn
+            // 
+            this.diferenciaDataGridViewTextBoxColumn.DataPropertyName = "diferencia";
+            this.diferenciaDataGridViewTextBoxColumn.HeaderText = "+/-";
+            this.diferenciaDataGridViewTextBoxColumn.Name = "diferenciaDataGridViewTextBoxColumn";
+            this.diferenciaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.diferenciaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ganadosDataGridViewTextBoxColumn
+            // 
+            this.ganadosDataGridViewTextBoxColumn.DataPropertyName = "ganados";
+            this.ganadosDataGridViewTextBoxColumn.HeaderText = "G";
+            this.ganadosDataGridViewTextBoxColumn.Name = "ganadosDataGridViewTextBoxColumn";
+            this.ganadosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ganadosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // empatadosDataGridViewTextBoxColumn
+            // 
+            this.empatadosDataGridViewTextBoxColumn.DataPropertyName = "empatados";
+            this.empatadosDataGridViewTextBoxColumn.HeaderText = "E";
+            this.empatadosDataGridViewTextBoxColumn.Name = "empatadosDataGridViewTextBoxColumn";
+            this.empatadosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.empatadosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // perdidosDataGridViewTextBoxColumn
+            // 
+            this.perdidosDataGridViewTextBoxColumn.DataPropertyName = "perdidos";
+            this.perdidosDataGridViewTextBoxColumn.HeaderText = "P";
+            this.perdidosDataGridViewTextBoxColumn.Name = "perdidosDataGridViewTextBoxColumn";
+            this.perdidosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.perdidosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.lblFecha.Location = new System.Drawing.Point(325, 7);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(66, 23);
+            this.lblFecha.TabIndex = 1;
+            this.lblFecha.Text = "Fecha ";
+            // 
+            // flpFechas
+            // 
+            this.flpFechas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpFechas.AutoScroll = true;
+            this.flpFechas.BackColor = System.Drawing.Color.White;
+            this.flpFechas.Location = new System.Drawing.Point(6, 54);
+            this.flpFechas.Name = "flpFechas";
+            this.flpFechas.Size = new System.Drawing.Size(750, 382);
+            this.flpFechas.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.trophyBlack;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnFechaMenos);
+            this.panel1.Controls.Add(this.btnFechaMas);
+            this.panel1.Controls.Add(this.lblFecha);
+            this.panel1.Location = new System.Drawing.Point(6, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(750, 45);
+            this.panel1.TabIndex = 74;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.flpFechas);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Location = new System.Drawing.Point(763, 119);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(766, 542);
+            this.panel2.TabIndex = 20;
+            // 
+            // btnFechaMenos
+            // 
+            this.btnFechaMenos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFechaMenos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFechaMenos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFechaMenos.BackgroundImage = global::CapaPresentacion.Properties.Resources.backW;
+            this.btnFechaMenos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFechaMenos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnFechaMenos.BorderRadius = 15;
+            this.btnFechaMenos.BorderSize = 0;
+            this.btnFechaMenos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechaMenos.FlatAppearance.BorderSize = 0;
+            this.btnFechaMenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechaMenos.ForeColor = System.Drawing.Color.White;
+            this.btnFechaMenos.Location = new System.Drawing.Point(261, 3);
+            this.btnFechaMenos.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnFechaMenos.Name = "btnFechaMenos";
+            this.btnFechaMenos.Size = new System.Drawing.Size(35, 33);
+            this.btnFechaMenos.TabIndex = 72;
+            this.btnFechaMenos.TextColor = System.Drawing.Color.White;
+            this.btnFechaMenos.UseVisualStyleBackColor = false;
+            this.btnFechaMenos.Click += new System.EventHandler(this.btnFechaMenos_Click);
+            // 
+            // btnFechaMas
+            // 
+            this.btnFechaMas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFechaMas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFechaMas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFechaMas.BackgroundImage = global::CapaPresentacion.Properties.Resources.forwardW;
+            this.btnFechaMas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFechaMas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnFechaMas.BorderRadius = 15;
+            this.btnFechaMas.BorderSize = 0;
+            this.btnFechaMas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechaMas.FlatAppearance.BorderSize = 0;
+            this.btnFechaMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechaMas.ForeColor = System.Drawing.Color.White;
+            this.btnFechaMas.Location = new System.Drawing.Point(446, 4);
+            this.btnFechaMas.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnFechaMas.Name = "btnFechaMas";
+            this.btnFechaMas.Size = new System.Drawing.Size(35, 33);
+            this.btnFechaMas.TabIndex = 73;
+            this.btnFechaMas.TextColor = System.Drawing.Color.White;
+            this.btnFechaMas.UseVisualStyleBackColor = false;
+            this.btnFechaMas.Click += new System.EventHandler(this.btnFechaMas_Click);
             // 
             // btnVolver
             // 
@@ -356,96 +594,14 @@
             this.btnAgregarTorneo.TextColor = System.Drawing.Color.White;
             this.btnAgregarTorneo.UseVisualStyleBackColor = false;
             // 
-            // tablasTorneosBindingSource2
-            // 
-            this.tablasTorneosBindingSource2.DataMember = "Tablas_Torneos";
-            this.tablasTorneosBindingSource2.DataSource = this.dB_TECHGOALDataSet4;
-            // 
-            // idtablaDataGridViewTextBoxColumn
-            // 
-            this.idtablaDataGridViewTextBoxColumn.DataPropertyName = "id_tabla";
-            this.idtablaDataGridViewTextBoxColumn.HeaderText = "id_tabla";
-            this.idtablaDataGridViewTextBoxColumn.Name = "idtablaDataGridViewTextBoxColumn";
-            this.idtablaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idtablaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idtorneoDataGridViewTextBoxColumn
-            // 
-            this.idtorneoDataGridViewTextBoxColumn.DataPropertyName = "id_torneo";
-            this.idtorneoDataGridViewTextBoxColumn.HeaderText = "id_torneo";
-            this.idtorneoDataGridViewTextBoxColumn.Name = "idtorneoDataGridViewTextBoxColumn";
-            this.idtorneoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idtorneoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idequipo
-            // 
-            this.idequipo.DataPropertyName = "id_equipo";
-            this.idequipo.HeaderText = "id_equipo";
-            this.idequipo.Name = "idequipo";
-            this.idequipo.ReadOnly = true;
-            this.idequipo.Visible = false;
-            // 
-            // puntosDataGridViewTextBoxColumn
-            // 
-            this.puntosDataGridViewTextBoxColumn.DataPropertyName = "puntos";
-            this.puntosDataGridViewTextBoxColumn.HeaderText = "puntos";
-            this.puntosDataGridViewTextBoxColumn.Name = "puntosDataGridViewTextBoxColumn";
-            this.puntosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // golesafavorDataGridViewTextBoxColumn
-            // 
-            this.golesafavorDataGridViewTextBoxColumn.DataPropertyName = "goles_a_favor";
-            this.golesafavorDataGridViewTextBoxColumn.HeaderText = "goles_a_favor";
-            this.golesafavorDataGridViewTextBoxColumn.Name = "golesafavorDataGridViewTextBoxColumn";
-            this.golesafavorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // golesencontraDataGridViewTextBoxColumn
-            // 
-            this.golesencontraDataGridViewTextBoxColumn.DataPropertyName = "goles_en_contra";
-            this.golesencontraDataGridViewTextBoxColumn.HeaderText = "goles_en_contra";
-            this.golesencontraDataGridViewTextBoxColumn.Name = "golesencontraDataGridViewTextBoxColumn";
-            this.golesencontraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // partidosjugadosDataGridViewTextBoxColumn
-            // 
-            this.partidosjugadosDataGridViewTextBoxColumn.DataPropertyName = "partidos_jugados";
-            this.partidosjugadosDataGridViewTextBoxColumn.HeaderText = "partidos_jugados";
-            this.partidosjugadosDataGridViewTextBoxColumn.Name = "partidosjugadosDataGridViewTextBoxColumn";
-            this.partidosjugadosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // diferenciaDataGridViewTextBoxColumn
-            // 
-            this.diferenciaDataGridViewTextBoxColumn.DataPropertyName = "diferencia";
-            this.diferenciaDataGridViewTextBoxColumn.HeaderText = "diferencia";
-            this.diferenciaDataGridViewTextBoxColumn.Name = "diferenciaDataGridViewTextBoxColumn";
-            this.diferenciaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ganadosDataGridViewTextBoxColumn
-            // 
-            this.ganadosDataGridViewTextBoxColumn.DataPropertyName = "ganados";
-            this.ganadosDataGridViewTextBoxColumn.HeaderText = "ganados";
-            this.ganadosDataGridViewTextBoxColumn.Name = "ganadosDataGridViewTextBoxColumn";
-            this.ganadosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // empatadosDataGridViewTextBoxColumn
-            // 
-            this.empatadosDataGridViewTextBoxColumn.DataPropertyName = "empatados";
-            this.empatadosDataGridViewTextBoxColumn.HeaderText = "empatados";
-            this.empatadosDataGridViewTextBoxColumn.Name = "empatadosDataGridViewTextBoxColumn";
-            this.empatadosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // perdidosDataGridViewTextBoxColumn
-            // 
-            this.perdidosDataGridViewTextBoxColumn.DataPropertyName = "perdidos";
-            this.perdidosDataGridViewTextBoxColumn.HeaderText = "perdidos";
-            this.perdidosDataGridViewTextBoxColumn.Name = "perdidosDataGridViewTextBoxColumn";
-            this.perdidosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // formInfoTorneoLiga
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1532, 719);
+            this.Controls.Add(this.fillByPuntosToolStrip);
+            this.Controls.Add(this.sortByPtsToolStrip);
             this.Controls.Add(this.panel4);
+            this.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "formInfoTorneoLiga";
             this.Text = "InfoTorneoLiga";
             this.Load += new System.EventHandler(this.InfoTorneoLiga_Load);
@@ -458,15 +614,23 @@
             this.fpnlBotones.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSet3BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource2)).EndInit();
+            this.sortByPtsToolStrip.ResumeLayout(false);
+            this.sortByPtsToolStrip.PerformLayout();
+            this.fillByPuntosToolStrip.ResumeLayout(false);
+            this.fillByPuntosToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -496,6 +660,11 @@
         private System.Windows.Forms.BindingSource tablasTorneosBindingSource1;
         private System.Windows.Forms.BindingSource dBTECHGOALDataSet3BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_equipo;
+        private System.Windows.Forms.BindingSource tablasTorneosBindingSource2;
+        private System.Windows.Forms.ToolStrip sortByPtsToolStrip;
+        private System.Windows.Forms.ToolStripButton sortByPtsToolStripButton;
+        private System.Windows.Forms.ToolStrip fillByPuntosToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByPuntosToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtablaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtorneoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idequipo;
@@ -507,6 +676,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ganadosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn empatadosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn perdidosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource tablasTorneosBindingSource2;
+        public Personalizacion.MSButton btnFechaMenos;
+        private System.Windows.Forms.FlowLayoutPanel flpFechas;
+        public System.Windows.Forms.Label lblFecha;
+        public Personalizacion.MSButton btnFechaMas;
+        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panel2;
     }
 }

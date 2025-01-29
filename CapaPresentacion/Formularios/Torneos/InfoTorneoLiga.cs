@@ -17,12 +17,17 @@ namespace CapaPresentacion.Formularios.Torneos
         formInicio formInicioC;
         Torneo torneoSeleccionado;
         CC_Equipos equipoControladora = CC_Equipos.getInstance;
+        CC_Partido partidoControladora = CC_Partido.getInstance;
+        int numFecha = 1;
+        List<Partido> partidos;
+        int cantidadInstancias;
 
         public formInfoTorneoLiga(Torneo torneo, formInicio formInicio)
         {
             InitializeComponent();
             torneoSeleccionado = torneo;
             formInicioC = formInicio;
+            lblTorneo.Text = torneoSeleccionado.nombre;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -32,8 +37,68 @@ namespace CapaPresentacion.Formularios.Torneos
         }
 
         private void InfoTorneoLiga_Load(object sender, EventArgs e)
-        {// Llenar el DataSet completo
+        {
+            LlenarTabla();
+            lblFecha.Text = "Fecha " + Convert.ToString(numFecha);
+
+            CargarPartidos();
+
+
+        }
+
+        public void CargarPartidos()
+        {
+            partidos = partidoControladora.EncontrarPartidosTorneo(torneoSeleccionado.id_torneo);
+            cantidadInstancias = partidos.Select(p => p.instancia).Distinct().Count();
+            partidos = partidos.Where(u => u.instancia == lblFecha.Text).ToList();
+            flpFechas.Controls.Clear();
+
+            foreach (Partido partido in partidos)
+            {
+
+                formDisenioPartidoLiga formDisenioPartidoLiga = new formDisenioPartidoLiga(partido);
+                formDisenioPartidoLiga.TopLevel = false;
+                formDisenioPartidoLiga.FormBorderStyle = FormBorderStyle.None; // Eliminar bordes del formulario
+                formDisenioPartidoLiga.Width = flpFechas.Width - 30; // Hacer que ocupe todo el ancho
+                formDisenioPartidoLiga.Dock = DockStyle.Top; // Ocupar el ancho y apilar hacia arriba
+                flpFechas.Controls.Add(formDisenioPartidoLiga);
+                formDisenioPartidoLiga.Show();
+            }
+
+
+        }
+
+        private void sortByPtsToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tablas_TorneosTableAdapter.SortByPts(this.dB_TECHGOALDataSet4.Tablas_Torneos);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByPuntosToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tablas_TorneosTableAdapter.FillByPuntos(this.dB_TECHGOALDataSet4.Tablas_Torneos);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        public void LlenarTabla()
+        {
+            // Llenar el DataSet completo
             this.tablas_TorneosTableAdapter.Fill(this.dB_TECHGOALDataSet4.Tablas_Torneos);
+            this.tablas_TorneosTableAdapter.FillByPuntos(this.dB_TECHGOALDataSet4.Tablas_Torneos);
 
             // Asegurarse de que la columna "nombre" esté en el DataTable
             if (!this.dB_TECHGOALDataSet4.Tablas_Torneos.Columns.Contains("nombre"))
@@ -64,12 +129,38 @@ namespace CapaPresentacion.Formularios.Torneos
                 DataGridViewTextBoxColumn nombreColumn = new DataGridViewTextBoxColumn
                 {
                     Name = "nombre",
-                    HeaderText = "Nombre del Equipo",
+                    HeaderText = "Nombre",
                     DataPropertyName = "nombre" // Enlazar con la columna "nombre"
                 };
                 dgvTabla.Columns.Add(nombreColumn);
             }
+
+            dgvTabla.Columns["nombre"].DisplayIndex = 0;
+            dgvTabla.Columns["nombre"].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dgvTabla.Columns["nombre"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
         }
 
+        private void btnFechaMenos_Click(object sender, EventArgs e)
+        {
+            if (numFecha > 1) {
+
+                numFecha--;
+                lblFecha.Text = "Fecha " + Convert.ToString(numFecha);
+                CargarPartidos();
+            }
+        }
+
+        private void btnFechaMas_Click(object sender, EventArgs e)
+        {
+            if (numFecha < cantidadInstancias)
+            {
+
+                numFecha++;
+                lblFecha.Text = "Fecha " + Convert.ToString(numFecha);
+                CargarPartidos();
+            }
+
+        }
     }
 }
