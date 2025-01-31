@@ -56,7 +56,7 @@ namespace CapaPresentacion.Formularios.Torneos
             foreach (Partido partido in partidos)
             {
 
-                formDisenioPartidoLiga formDisenioPartidoLiga = new formDisenioPartidoLiga(partido);
+                formDisenioPartidoLiga formDisenioPartidoLiga = new formDisenioPartidoLiga(partido, this);
                 formDisenioPartidoLiga.TopLevel = false;
                 formDisenioPartidoLiga.FormBorderStyle = FormBorderStyle.None; // Eliminar bordes del formulario
                 formDisenioPartidoLiga.Width = flpFechas.Width - 30; // Hacer que ocupe todo el ancho

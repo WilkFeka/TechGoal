@@ -36,5 +36,26 @@ namespace CapaControladora
             return resultado;
         }
 
+        public Tabla_Torneo EncontrarTablaTorneo(int id_equipo, int id_torneo)
+        {
+            Tabla_Torneo buscandoEquipo = new CC_Tabla_Torneo().Listar().Where(c => c.id_equipo == id_equipo && c.id_torneo == id_torneo).FirstOrDefault();
+
+            if (buscandoEquipo != null)
+            {
+                return buscandoEquipo;
+            }
+            else
+            {
+                return buscandoEquipo;
+            }
+
+        }
+
+        public bool ActualizarTablaTorneo(Tabla_Torneo tabla_torneo)
+        {
+            bool resultado = new CD_Tabla_Torneo().ActualizarTablaTorneo(tabla_torneo);
+            return resultado;
+        }
+
     }
 }

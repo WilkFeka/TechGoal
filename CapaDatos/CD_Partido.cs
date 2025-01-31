@@ -112,5 +112,52 @@ namespace CapaDatos
 
 
         }
+
+        public bool ActualizarPartido(Partido partido)
+        {
+            bool actualizado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("UPDATE Partidos SET golesL = @golesL, golesV = @golesV, ganador = @ganador, finalizado = @finalizado ");
+                    query.AppendLine("WHERE id_partido = @id_partido");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@golesL", partido.golesL);
+                        cmd.Parameters.AddWithValue("@golesV", partido.golesV);
+                        if (partido.ganador == 0)
+                        {
+                            cmd.Parameters.AddWithValue("@ganador", DBNull.Value); // Insertar NULL si es necesario
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@ganador", partido.ganador); // Si no es nulo, insertar el valor
+                        }
+                        cmd.Parameters.AddWithValue("@finalizado", partido.finalizado);
+                        cmd.Parameters.AddWithValue("@id_partido", partido.id_partido);
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            actualizado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return actualizado;
+        }
     }
 }

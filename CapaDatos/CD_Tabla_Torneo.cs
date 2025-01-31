@@ -21,7 +21,7 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("SELECT * FROM Partidos");
+                    query.AppendLine("SELECT * FROM Tablas_Torneos");
 
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
@@ -104,6 +104,51 @@ namespace CapaDatos
             return agregado;
 
 
+        }
+
+        public bool ActualizarTablaTorneo(Tabla_Torneo tabla_torneo)
+        {
+            bool actualizado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("UPDATE Tablas_Torneos SET puntos = @puntos, goles_a_favor = @goles_a_favor, ");
+                    query.AppendLine("goles_en_contra = @goles_en_contra, partidos_jugados = @partidos_jugados, diferencia = @diferencia, ganados = @ganados, empatados = @empatados, perdidos = @perdidos");
+                    query.AppendLine("WHERE id_tabla = @id_tabla");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@puntos", tabla_torneo.puntos);
+                        cmd.Parameters.AddWithValue("@goles_a_favor", tabla_torneo.goles_a_favor);
+                        cmd.Parameters.AddWithValue("@goles_en_contra", tabla_torneo.goles_en_contra);
+                        cmd.Parameters.AddWithValue("@partidos_jugados", tabla_torneo.partidos_jugados);
+                        cmd.Parameters.AddWithValue("@diferencia", tabla_torneo.diferencia);
+                        cmd.Parameters.AddWithValue("@ganados", tabla_torneo.ganados);
+                        cmd.Parameters.AddWithValue("@empatados", tabla_torneo.empatados);
+                        cmd.Parameters.AddWithValue("@perdidos", tabla_torneo.perdidos);
+                        cmd.Parameters.AddWithValue("@id_tabla", tabla_torneo.id_tabla);
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            actualizado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return actualizado;
         }
     }
 }

@@ -44,6 +44,12 @@ namespace CapaControladora
 
         }
 
+        public bool ActualizarPartido(Partido partido)
+        {
+            bool resultado = new CD_Partido().ActualizarPartido(partido);
+            return resultado;
+        }
+
 
 
     }
