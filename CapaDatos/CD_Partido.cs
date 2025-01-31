@@ -36,14 +36,14 @@ namespace CapaDatos
                                 lista.Add(new Partido()
                                 {
                                     id_partido = Convert.ToInt32(reader["id_partido"]),
+                                    instancia = reader["instancia"].ToString(),
                                     id_torneo = Convert.ToInt32(reader["id_torneo"]),
-                                    instancia = Convert.ToString(reader["instancia"]),
                                     id_local = Convert.ToInt32(reader["id_local"]),
-                                    id_visitante = Convert.ToInt32(reader["id_visitante"]),
-                                    golesL = Convert.ToInt32(reader["golesL"]),
-                                    golesV = Convert.ToInt32(reader["golesV"]),
-                                    ganador = Convert.ToInt32(reader["golesV"]),
-
+                                    id_visitante = reader["id_visitante"] != DBNull.Value ? Convert.ToInt32(reader["id_visitante"]) : (int?)null,
+                                    golesL = reader["golesL"] != DBNull.Value ? Convert.ToInt32(reader["golesL"]) : 0,
+                                    golesV = reader["golesV"] != DBNull.Value ? Convert.ToInt32(reader["golesV"]) : 0,
+                                    ganador = reader["ganador"] != DBNull.Value ? Convert.ToInt32(reader["ganador"]) : 0,
+                                    finalizado = Convert.ToBoolean(reader["finalizado"]) 
                                 });
 
                             }
@@ -111,6 +111,46 @@ namespace CapaDatos
             return agregado;
 
 
+        }
+
+        public bool ActualizarPartido(Partido partido)
+        {
+            bool actualizado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("UPDATE Partidos SET golesL = @golesL, golesV = @golesV, ganador = @ganador, finalizado = @finalizado ");
+                    query.AppendLine("WHERE id_partido = @id_partido");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@golesL", partido.golesL ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@golesV", partido.golesV ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@finalizado", partido.finalizado);
+                        cmd.Parameters.AddWithValue("@ganador", partido.ganador == 0 ? (object)DBNull.Value : partido.ganador);
+                        cmd.Parameters.AddWithValue("@id_partido", partido.id_partido);
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            actualizado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return actualizado;
         }
     }
 }

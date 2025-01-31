@@ -38,10 +38,13 @@ namespace CapaDatos
                                 {
                                     id_torneo = Convert.ToInt32(reader["id_torneo"]),
                                     nombre = Convert.ToString(reader["nombre"]),
+                                    tipo = Convert.ToInt32(reader["tipo"]),
                                     cantEquipos = Convert.ToInt32(reader["cantEquipos"]),
                                     fechaFinal = DateTime.Parse(Convert.ToString(reader["fechaInicio"])),
                                     fechaInicio = DateTime.Parse(Convert.ToString(reader["fechaFinal"])),
-                                    estado = Convert.ToBoolean(reader["estado"])
+                                    estado = Convert.ToBoolean(reader["estado"]),
+                                    borrado = Convert.ToBoolean(reader["borrado"])
+
                                 });
 
                             }
