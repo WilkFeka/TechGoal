@@ -41,12 +41,32 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.flpFechas = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFechaMenos = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnFechaMas = new CapaPresentacion.Personalizacion.MSButton();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvTabla = new System.Windows.Forms.DataGridView();
+            this.idtablaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtorneoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idequipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.puntosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.golesafavorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.golesencontraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.partidosjugadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diferenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ganadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empatadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perdidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tablasTorneosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dB_TECHGOALDataSet4 = new CapaPresentacion.DB_TECHGOALDataSet4();
             this.lblTorneo = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tablasTorneosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.torneosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter();
             this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,36 +80,19 @@
             this.sortByPtsToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fillByPuntosToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillByPuntosToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.idtablaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idtorneoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idequipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.puntosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.golesafavorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.golesencontraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.partidosjugadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diferenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ganadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empatadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perdidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.flpFechas = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnFechaMenos = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnFechaMas = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
             ((System.ComponentModel.ISupportInitialize)(this.torneosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equiposBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet2)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.fpnlBotones.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).BeginInit();
@@ -97,9 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSet3BindingSource)).BeginInit();
             this.sortByPtsToolStrip.SuspendLayout();
             this.fillByPuntosToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // torneosBindingSource
@@ -156,6 +156,97 @@
             this.panel4.Size = new System.Drawing.Size(1532, 719);
             this.panel4.TabIndex = 21;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.flpFechas);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Location = new System.Drawing.Point(763, 119);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(766, 542);
+            this.panel2.TabIndex = 20;
+            // 
+            // flpFechas
+            // 
+            this.flpFechas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpFechas.AutoScroll = true;
+            this.flpFechas.BackColor = System.Drawing.Color.White;
+            this.flpFechas.Location = new System.Drawing.Point(6, 54);
+            this.flpFechas.Name = "flpFechas";
+            this.flpFechas.Size = new System.Drawing.Size(750, 485);
+            this.flpFechas.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnFechaMenos);
+            this.panel1.Controls.Add(this.btnFechaMas);
+            this.panel1.Controls.Add(this.lblFecha);
+            this.panel1.Location = new System.Drawing.Point(6, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(750, 45);
+            this.panel1.TabIndex = 74;
+            // 
+            // btnFechaMenos
+            // 
+            this.btnFechaMenos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFechaMenos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFechaMenos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFechaMenos.BackgroundImage = global::CapaPresentacion.Properties.Resources.backW;
+            this.btnFechaMenos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFechaMenos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnFechaMenos.BorderRadius = 15;
+            this.btnFechaMenos.BorderSize = 0;
+            this.btnFechaMenos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechaMenos.FlatAppearance.BorderSize = 0;
+            this.btnFechaMenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechaMenos.ForeColor = System.Drawing.Color.White;
+            this.btnFechaMenos.Location = new System.Drawing.Point(261, 3);
+            this.btnFechaMenos.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnFechaMenos.Name = "btnFechaMenos";
+            this.btnFechaMenos.Size = new System.Drawing.Size(35, 33);
+            this.btnFechaMenos.TabIndex = 72;
+            this.btnFechaMenos.TextColor = System.Drawing.Color.White;
+            this.btnFechaMenos.UseVisualStyleBackColor = false;
+            this.btnFechaMenos.Click += new System.EventHandler(this.btnFechaMenos_Click);
+            // 
+            // btnFechaMas
+            // 
+            this.btnFechaMas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFechaMas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFechaMas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFechaMas.BackgroundImage = global::CapaPresentacion.Properties.Resources.forwardW;
+            this.btnFechaMas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFechaMas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnFechaMas.BorderRadius = 15;
+            this.btnFechaMas.BorderSize = 0;
+            this.btnFechaMas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechaMas.FlatAppearance.BorderSize = 0;
+            this.btnFechaMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechaMas.ForeColor = System.Drawing.Color.White;
+            this.btnFechaMas.Location = new System.Drawing.Point(446, 4);
+            this.btnFechaMas.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnFechaMas.Name = "btnFechaMas";
+            this.btnFechaMas.Size = new System.Drawing.Size(35, 33);
+            this.btnFechaMas.TabIndex = 73;
+            this.btnFechaMas.TextColor = System.Drawing.Color.White;
+            this.btnFechaMas.UseVisualStyleBackColor = false;
+            this.btnFechaMas.Click += new System.EventHandler(this.btnFechaMas_Click);
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.lblFecha.Location = new System.Drawing.Point(325, 7);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(66, 23);
+            this.lblFecha.TabIndex = 1;
+            this.lblFecha.Text = "Fecha ";
+            // 
             // fpnlBotones
             // 
             this.fpnlBotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -165,6 +256,51 @@
             this.fpnlBotones.Name = "fpnlBotones";
             this.fpnlBotones.Size = new System.Drawing.Size(161, 77);
             this.fpnlBotones.TabIndex = 71;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVolver.BackgroundImage = global::CapaPresentacion.Properties.Resources.back;
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnVolver.BorderRadius = 25;
+            this.btnVolver.BorderSize = 0;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(10, 3);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(64, 64);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.TextColor = System.Drawing.Color.White;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnAgregarTorneo
+            // 
+            this.btnAgregarTorneo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarTorneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAgregarTorneo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAgregarTorneo.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
+            this.btnAgregarTorneo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregarTorneo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnAgregarTorneo.BorderRadius = 25;
+            this.btnAgregarTorneo.BorderSize = 0;
+            this.btnAgregarTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarTorneo.FlatAppearance.BorderSize = 0;
+            this.btnAgregarTorneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarTorneo.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarTorneo.Location = new System.Drawing.Point(87, 3);
+            this.btnAgregarTorneo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnAgregarTorneo.Name = "btnAgregarTorneo";
+            this.btnAgregarTorneo.Size = new System.Drawing.Size(64, 64);
+            this.btnAgregarTorneo.TabIndex = 3;
+            this.btnAgregarTorneo.TextColor = System.Drawing.Color.White;
+            this.btnAgregarTorneo.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -259,107 +395,6 @@
             this.dgvTabla.Size = new System.Drawing.Size(701, 542);
             this.dgvTabla.TabIndex = 11;
             // 
-            // tablasTorneosBindingSource2
-            // 
-            this.tablasTorneosBindingSource2.DataMember = "Tablas_Torneos";
-            this.tablasTorneosBindingSource2.DataSource = this.dB_TECHGOALDataSet4;
-            // 
-            // dB_TECHGOALDataSet4
-            // 
-            this.dB_TECHGOALDataSet4.DataSetName = "DB_TECHGOALDataSet4";
-            this.dB_TECHGOALDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblTorneo
-            // 
-            this.lblTorneo.AutoSize = true;
-            this.lblTorneo.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTorneo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.lblTorneo.Location = new System.Drawing.Point(90, 37);
-            this.lblTorneo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblTorneo.Name = "lblTorneo";
-            this.lblTorneo.Size = new System.Drawing.Size(153, 44);
-            this.lblTorneo.TabIndex = 0;
-            this.lblTorneo.Text = "Torneos";
-            // 
-            // tablasTorneosBindingSource1
-            // 
-            this.tablasTorneosBindingSource1.DataMember = "Tablas_Torneos";
-            this.tablasTorneosBindingSource1.DataSource = this.dB_TECHGOALDataSet4;
-            // 
-            // torneosTableAdapter
-            // 
-            this.torneosTableAdapter.ClearBeforeFill = true;
-            // 
-            // dBTECHGOALDataSetBindingSource
-            // 
-            this.dBTECHGOALDataSetBindingSource.DataSource = this.dB_TECHGOALDataSet;
-            this.dBTECHGOALDataSetBindingSource.Position = 0;
-            // 
-            // dB_TECHGOALDataSet
-            // 
-            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
-            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // permisosTableAdapter
-            // 
-            this.permisosTableAdapter.ClearBeforeFill = true;
-            // 
-            // equiposTableAdapter
-            // 
-            this.equiposTableAdapter.ClearBeforeFill = true;
-            // 
-            // tablasTorneosBindingSource
-            // 
-            this.tablasTorneosBindingSource.DataMember = "Tablas_Torneos";
-            this.tablasTorneosBindingSource.DataSource = this.dB_TECHGOALDataSet4;
-            // 
-            // tablas_TorneosTableAdapter
-            // 
-            this.tablas_TorneosTableAdapter.ClearBeforeFill = true;
-            // 
-            // dBTECHGOALDataSet3BindingSource
-            // 
-            this.dBTECHGOALDataSet3BindingSource.DataSource = this.dB_TECHGOALDataSet3;
-            this.dBTECHGOALDataSet3BindingSource.Position = 0;
-            // 
-            // sortByPtsToolStrip
-            // 
-            this.sortByPtsToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sortByPtsToolStripButton});
-            this.sortByPtsToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.sortByPtsToolStrip.Name = "sortByPtsToolStrip";
-            this.sortByPtsToolStrip.Size = new System.Drawing.Size(1532, 25);
-            this.sortByPtsToolStrip.TabIndex = 22;
-            this.sortByPtsToolStrip.Text = "sortByPtsToolStrip";
-            this.sortByPtsToolStrip.Visible = false;
-            // 
-            // sortByPtsToolStripButton
-            // 
-            this.sortByPtsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.sortByPtsToolStripButton.Name = "sortByPtsToolStripButton";
-            this.sortByPtsToolStripButton.Size = new System.Drawing.Size(61, 22);
-            this.sortByPtsToolStripButton.Text = "SortByPts";
-            this.sortByPtsToolStripButton.Click += new System.EventHandler(this.sortByPtsToolStripButton_Click);
-            // 
-            // fillByPuntosToolStrip
-            // 
-            this.fillByPuntosToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByPuntosToolStripButton});
-            this.fillByPuntosToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByPuntosToolStrip.Name = "fillByPuntosToolStrip";
-            this.fillByPuntosToolStrip.Size = new System.Drawing.Size(1532, 25);
-            this.fillByPuntosToolStrip.TabIndex = 23;
-            this.fillByPuntosToolStrip.Text = "fillByPuntosToolStrip";
-            this.fillByPuntosToolStrip.Visible = false;
-            // 
-            // fillByPuntosToolStripButton
-            // 
-            this.fillByPuntosToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByPuntosToolStripButton.Name = "fillByPuntosToolStripButton";
-            this.fillByPuntosToolStripButton.Size = new System.Drawing.Size(76, 22);
-            this.fillByPuntosToolStripButton.Text = "FillByPuntos";
-            this.fillByPuntosToolStripButton.Click += new System.EventHandler(this.fillByPuntosToolStripButton_Click);
-            // 
             // idtablaDataGridViewTextBoxColumn
             // 
             this.idtablaDataGridViewTextBoxColumn.DataPropertyName = "id_tabla";
@@ -448,29 +483,27 @@
             this.perdidosDataGridViewTextBoxColumn.ReadOnly = true;
             this.perdidosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // lblFecha
+            // tablasTorneosBindingSource2
             // 
-            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.lblFecha.Location = new System.Drawing.Point(325, 7);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(66, 23);
-            this.lblFecha.TabIndex = 1;
-            this.lblFecha.Text = "Fecha ";
+            this.tablasTorneosBindingSource2.DataMember = "Tablas_Torneos";
+            this.tablasTorneosBindingSource2.DataSource = this.dB_TECHGOALDataSet4;
             // 
-            // flpFechas
+            // dB_TECHGOALDataSet4
             // 
-            this.flpFechas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpFechas.AutoScroll = true;
-            this.flpFechas.BackColor = System.Drawing.Color.White;
-            this.flpFechas.Location = new System.Drawing.Point(6, 54);
-            this.flpFechas.Name = "flpFechas";
-            this.flpFechas.Size = new System.Drawing.Size(750, 382);
-            this.flpFechas.TabIndex = 2;
+            this.dB_TECHGOALDataSet4.DataSetName = "DB_TECHGOALDataSet4";
+            this.dB_TECHGOALDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblTorneo
+            // 
+            this.lblTorneo.AutoSize = true;
+            this.lblTorneo.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTorneo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.lblTorneo.Location = new System.Drawing.Point(90, 37);
+            this.lblTorneo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblTorneo.Name = "lblTorneo";
+            this.lblTorneo.Size = new System.Drawing.Size(153, 44);
+            this.lblTorneo.TabIndex = 0;
+            this.lblTorneo.Text = "Torneos";
             // 
             // pictureBox1
             // 
@@ -482,117 +515,84 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
+            // tablasTorneosBindingSource1
             // 
-            this.panel1.Controls.Add(this.btnFechaMenos);
-            this.panel1.Controls.Add(this.btnFechaMas);
-            this.panel1.Controls.Add(this.lblFecha);
-            this.panel1.Location = new System.Drawing.Point(6, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(750, 45);
-            this.panel1.TabIndex = 74;
+            this.tablasTorneosBindingSource1.DataMember = "Tablas_Torneos";
+            this.tablasTorneosBindingSource1.DataSource = this.dB_TECHGOALDataSet4;
             // 
-            // panel2
+            // torneosTableAdapter
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.flpFechas);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(763, 119);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(766, 542);
-            this.panel2.TabIndex = 20;
+            this.torneosTableAdapter.ClearBeforeFill = true;
             // 
-            // btnFechaMenos
+            // dBTECHGOALDataSetBindingSource
             // 
-            this.btnFechaMenos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnFechaMenos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnFechaMenos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnFechaMenos.BackgroundImage = global::CapaPresentacion.Properties.Resources.backW;
-            this.btnFechaMenos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFechaMenos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnFechaMenos.BorderRadius = 15;
-            this.btnFechaMenos.BorderSize = 0;
-            this.btnFechaMenos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFechaMenos.FlatAppearance.BorderSize = 0;
-            this.btnFechaMenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechaMenos.ForeColor = System.Drawing.Color.White;
-            this.btnFechaMenos.Location = new System.Drawing.Point(261, 3);
-            this.btnFechaMenos.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnFechaMenos.Name = "btnFechaMenos";
-            this.btnFechaMenos.Size = new System.Drawing.Size(35, 33);
-            this.btnFechaMenos.TabIndex = 72;
-            this.btnFechaMenos.TextColor = System.Drawing.Color.White;
-            this.btnFechaMenos.UseVisualStyleBackColor = false;
-            this.btnFechaMenos.Click += new System.EventHandler(this.btnFechaMenos_Click);
+            this.dBTECHGOALDataSetBindingSource.DataSource = this.dB_TECHGOALDataSet;
+            this.dBTECHGOALDataSetBindingSource.Position = 0;
             // 
-            // btnFechaMas
+            // dB_TECHGOALDataSet
             // 
-            this.btnFechaMas.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnFechaMas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnFechaMas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnFechaMas.BackgroundImage = global::CapaPresentacion.Properties.Resources.forwardW;
-            this.btnFechaMas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFechaMas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnFechaMas.BorderRadius = 15;
-            this.btnFechaMas.BorderSize = 0;
-            this.btnFechaMas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFechaMas.FlatAppearance.BorderSize = 0;
-            this.btnFechaMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechaMas.ForeColor = System.Drawing.Color.White;
-            this.btnFechaMas.Location = new System.Drawing.Point(446, 4);
-            this.btnFechaMas.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnFechaMas.Name = "btnFechaMas";
-            this.btnFechaMas.Size = new System.Drawing.Size(35, 33);
-            this.btnFechaMas.TabIndex = 73;
-            this.btnFechaMas.TextColor = System.Drawing.Color.White;
-            this.btnFechaMas.UseVisualStyleBackColor = false;
-            this.btnFechaMas.Click += new System.EventHandler(this.btnFechaMas_Click);
+            this.dB_TECHGOALDataSet.DataSetName = "DB_TECHGOALDataSet";
+            this.dB_TECHGOALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnVolver
+            // permisosTableAdapter
             // 
-            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVolver.BackgroundImage = global::CapaPresentacion.Properties.Resources.back;
-            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnVolver.BorderRadius = 25;
-            this.btnVolver.BorderSize = 0;
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(10, 3);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(64, 64);
-            this.btnVolver.TabIndex = 1;
-            this.btnVolver.TextColor = System.Drawing.Color.White;
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            this.permisosTableAdapter.ClearBeforeFill = true;
             // 
-            // btnAgregarTorneo
+            // equiposTableAdapter
             // 
-            this.btnAgregarTorneo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarTorneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAgregarTorneo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAgregarTorneo.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
-            this.btnAgregarTorneo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregarTorneo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnAgregarTorneo.BorderRadius = 25;
-            this.btnAgregarTorneo.BorderSize = 0;
-            this.btnAgregarTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarTorneo.FlatAppearance.BorderSize = 0;
-            this.btnAgregarTorneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarTorneo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarTorneo.Location = new System.Drawing.Point(87, 3);
-            this.btnAgregarTorneo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnAgregarTorneo.Name = "btnAgregarTorneo";
-            this.btnAgregarTorneo.Size = new System.Drawing.Size(64, 64);
-            this.btnAgregarTorneo.TabIndex = 3;
-            this.btnAgregarTorneo.TextColor = System.Drawing.Color.White;
-            this.btnAgregarTorneo.UseVisualStyleBackColor = false;
+            this.equiposTableAdapter.ClearBeforeFill = true;
+            // 
+            // tablasTorneosBindingSource
+            // 
+            this.tablasTorneosBindingSource.DataMember = "Tablas_Torneos";
+            this.tablasTorneosBindingSource.DataSource = this.dB_TECHGOALDataSet4;
+            // 
+            // tablas_TorneosTableAdapter
+            // 
+            this.tablas_TorneosTableAdapter.ClearBeforeFill = true;
+            // 
+            // dBTECHGOALDataSet3BindingSource
+            // 
+            this.dBTECHGOALDataSet3BindingSource.DataSource = this.dB_TECHGOALDataSet3;
+            this.dBTECHGOALDataSet3BindingSource.Position = 0;
+            // 
+            // sortByPtsToolStrip
+            // 
+            this.sortByPtsToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sortByPtsToolStripButton});
+            this.sortByPtsToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.sortByPtsToolStrip.Name = "sortByPtsToolStrip";
+            this.sortByPtsToolStrip.Size = new System.Drawing.Size(1532, 25);
+            this.sortByPtsToolStrip.TabIndex = 22;
+            this.sortByPtsToolStrip.Text = "sortByPtsToolStrip";
+            this.sortByPtsToolStrip.Visible = false;
+            // 
+            // sortByPtsToolStripButton
+            // 
+            this.sortByPtsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.sortByPtsToolStripButton.Name = "sortByPtsToolStripButton";
+            this.sortByPtsToolStripButton.Size = new System.Drawing.Size(61, 22);
+            this.sortByPtsToolStripButton.Text = "SortByPts";
+            this.sortByPtsToolStripButton.Click += new System.EventHandler(this.sortByPtsToolStripButton_Click);
+            // 
+            // fillByPuntosToolStrip
+            // 
+            this.fillByPuntosToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByPuntosToolStripButton});
+            this.fillByPuntosToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByPuntosToolStrip.Name = "fillByPuntosToolStrip";
+            this.fillByPuntosToolStrip.Size = new System.Drawing.Size(1532, 25);
+            this.fillByPuntosToolStrip.TabIndex = 23;
+            this.fillByPuntosToolStrip.Text = "fillByPuntosToolStrip";
+            this.fillByPuntosToolStrip.Visible = false;
+            // 
+            // fillByPuntosToolStripButton
+            // 
+            this.fillByPuntosToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByPuntosToolStripButton.Name = "fillByPuntosToolStripButton";
+            this.fillByPuntosToolStripButton.Size = new System.Drawing.Size(76, 22);
+            this.fillByPuntosToolStripButton.Text = "FillByPuntos";
+            this.fillByPuntosToolStripButton.Click += new System.EventHandler(this.fillByPuntosToolStripButton_Click);
             // 
             // formInfoTorneoLiga
             // 
@@ -611,11 +611,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.fpnlBotones.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablasTorneosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet)).EndInit();
@@ -625,10 +629,6 @@
             this.sortByPtsToolStrip.PerformLayout();
             this.fillByPuntosToolStrip.ResumeLayout(false);
             this.fillByPuntosToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

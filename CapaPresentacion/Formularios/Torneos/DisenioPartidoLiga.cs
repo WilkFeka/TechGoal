@@ -328,5 +328,107 @@ namespace CapaPresentacion.Formularios.Torneos
 
             }
         }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Desea restablecer el partido? Esto restablecera las estadisticas", "Si", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Cancel) return;
+
+            Tabla_Torneo tabla_torneoL = tablaTorneoControladora.EncontrarTablaTorneo(partido.id_local, partido.id_torneo);
+
+            Tabla_Torneo tabla_torneoV = tablaTorneoControladora.EncontrarTablaTorneo((int)partido.id_visitante, partido.id_torneo);
+
+            if (tabla_torneoL == null || tabla_torneoV == null)
+            {
+                MessageBox.Show("Hubo un error al encontrar tabla", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (partido.ganador == partido.id_local)
+            {
+                tabla_torneoL.puntos -= 3;
+                tabla_torneoL.goles_a_favor -= (int)partido.golesL;
+                tabla_torneoL.goles_en_contra -= (int)partido.golesV;
+                tabla_torneoL.partidos_jugados -= 1;
+                tabla_torneoL.diferencia = tabla_torneoL.goles_a_favor - tabla_torneoL.goles_en_contra;
+                tabla_torneoL.ganados -= 1;
+
+                tabla_torneoV.goles_a_favor -= (int)partido.golesV;
+                tabla_torneoV.goles_en_contra -= (int)partido.golesL;
+                tabla_torneoV.partidos_jugados -= 1;
+                tabla_torneoV.diferencia = tabla_torneoV.goles_a_favor - tabla_torneoV.goles_en_contra;
+                tabla_torneoV.perdidos -= 1;
+
+            }
+            else if (partido.ganador == partido.id_visitante)
+            {
+                tabla_torneoL.goles_a_favor -= (int)partido.golesL;
+                tabla_torneoL.goles_en_contra -= (int)partido.golesV;
+                tabla_torneoL.partidos_jugados -= 1;
+                tabla_torneoL.diferencia = tabla_torneoL.goles_a_favor - tabla_torneoL.goles_en_contra;
+                tabla_torneoL.perdidos -= 1;
+
+                tabla_torneoV.goles_a_favor -= (int)partido.golesV;
+                tabla_torneoV.goles_en_contra -= (int)partido.golesL;
+                tabla_torneoV.partidos_jugados -= 1;
+                tabla_torneoV.diferencia = tabla_torneoV.goles_a_favor - tabla_torneoV.goles_en_contra;
+                tabla_torneoV.puntos -= 3;
+                tabla_torneoV.ganados -= 1;
+            }
+            else
+            {
+                tabla_torneoL.puntos -= 1;
+                tabla_torneoL.goles_a_favor -= (int)partido.golesL;
+                tabla_torneoL.goles_en_contra -= (int)partido.golesV;
+                tabla_torneoL.partidos_jugados -= 1;
+                tabla_torneoL.diferencia = tabla_torneoL.goles_a_favor - tabla_torneoL.goles_en_contra;
+                tabla_torneoL.empatados -= 1;
+
+                tabla_torneoV.puntos -= 1;
+                tabla_torneoV.goles_a_favor -= (int)partido.golesV;
+                tabla_torneoV.goles_en_contra -= (int)partido.golesL;
+                tabla_torneoV.partidos_jugados -= 1;
+                tabla_torneoV.diferencia = tabla_torneoV.goles_a_favor - tabla_torneoV.goles_en_contra;
+                tabla_torneoV.empatados -= 1;
+            }
+
+            bool restablecerTablaL = tablaTorneoControladora.ActualizarTablaTorneo(tabla_torneoL);
+            bool restablecerTablaV = tablaTorneoControladora.ActualizarTablaTorneo(tabla_torneoV);
+
+            if (restablecerTablaL == false || restablecerTablaV == false)
+            {
+                MessageBox.Show("Hubo un error al restablecer tabla", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            partido.golesL = null;
+            partido.golesV = null;
+            partido.finalizado = false;
+            partido.ganador = 0;
+
+            bool actualizar = partidoControladora.ActualizarPartido(partido);
+            
+            if (actualizar == false)
+            {
+                MessageBox.Show("Hubo un error al restablecer partido", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("Resultado restablecido con exito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            btnAceptar.Visible = false;
+            btnCancelar.Visible = false;
+            btnRestart.Visible = false;
+            btnEditar.Visible = true;
+            formInfoLigaC.LlenarTabla();
+            txtGolesL.Text = "";
+            txtGolesV.Text = "";
+            this.ActiveControl = null;
+            txtGolesL.ReadOnly = true;
+            txtGolesV.ReadOnly = true;
+
+        }
     }
 }

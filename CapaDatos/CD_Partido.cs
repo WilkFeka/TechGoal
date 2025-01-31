@@ -128,17 +128,10 @@ namespace CapaDatos
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
                     {
-                        cmd.Parameters.AddWithValue("@golesL", partido.golesL);
-                        cmd.Parameters.AddWithValue("@golesV", partido.golesV);
-                        if (partido.ganador == 0)
-                        {
-                            cmd.Parameters.AddWithValue("@ganador", DBNull.Value); // Insertar NULL si es necesario
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@ganador", partido.ganador); // Si no es nulo, insertar el valor
-                        }
+                        cmd.Parameters.AddWithValue("@golesL", partido.golesL ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@golesV", partido.golesV ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@finalizado", partido.finalizado);
+                        cmd.Parameters.AddWithValue("@ganador", partido.ganador == 0 ? (object)DBNull.Value : partido.ganador);
                         cmd.Parameters.AddWithValue("@id_partido", partido.id_partido);
 
                         conection.Open();
