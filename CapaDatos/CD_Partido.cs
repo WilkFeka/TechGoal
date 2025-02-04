@@ -38,12 +38,14 @@ namespace CapaDatos
                                     id_partido = Convert.ToInt32(reader["id_partido"]),
                                     instancia = reader["instancia"].ToString(),
                                     id_torneo = Convert.ToInt32(reader["id_torneo"]),
-                                    id_local = Convert.ToInt32(reader["id_local"]),
+                                    id_local = reader["id_local"] != DBNull.Value ? Convert.ToInt32(reader["id_local"]) : (int?)null,
                                     id_visitante = reader["id_visitante"] != DBNull.Value ? Convert.ToInt32(reader["id_visitante"]) : (int?)null,
                                     golesL = reader["golesL"] != DBNull.Value ? Convert.ToInt32(reader["golesL"]) : 0,
                                     golesV = reader["golesV"] != DBNull.Value ? Convert.ToInt32(reader["golesV"]) : 0,
                                     ganador = reader["ganador"] != DBNull.Value ? Convert.ToInt32(reader["ganador"]) : 0,
-                                    finalizado = Convert.ToBoolean(reader["finalizado"]) 
+                                    finalizado = Convert.ToBoolean(reader["finalizado"]),
+                                    id_sig_partido = reader["id_sig_partido"] != DBNull.Value ? Convert.ToInt32(reader["id_sig_partido"]) : (int?)null,
+
                                 });
 
                             }
