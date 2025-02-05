@@ -15,6 +15,7 @@ namespace CapaEntidad
         public DateTime fechaInicio { get; set; }
         public DateTime fechaFinal { get; set; }
         public bool estado { get; set; }
+        public bool borrado { get; set; }
 
 
     }

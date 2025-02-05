@@ -67,12 +67,25 @@ namespace CapaPresentacion.Formularios.Torneos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (rtxtReglas.Text == "")
+            if (string.IsNullOrWhiteSpace(rtxtReglas.Text)) // Verifica si está vacío o tiene solo espacios
             {
-                System.Windows.Forms.MessageBox.Show("Esta seguro de no agregar reglas?.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                DialogResult result = System.Windows.Forms.MessageBox.Show(
+                    "¿Está seguro de no agregar reglas?",
+                    "Atención",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
 
+                if (result == DialogResult.No)
+                {
+                    return; // No cierra el formulario si elige "No"
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK; // Indica que se aceptó
+                    this.Close(); // Cierra el formulario
+                }
+            }
             else
             {
                 reglas = rtxtReglas.Text;

@@ -49,15 +49,15 @@ namespace CapaControladora
         public Torneo EncontrarTorneoID(int id)
         {
 
-            Torneo buscandoTorneoNombre = new CC_Torneos().Listar().Where(c => c.id_torneo == id).FirstOrDefault();
+            Torneo buscandoTorneoID = new CC_Torneos().Listar().Where(c => c.id_torneo == id).FirstOrDefault();
 
-            if (buscandoTorneoNombre != null)
+            if (buscandoTorneoID != null)
             {
-                return buscandoTorneoNombre;
+                return buscandoTorneoID;
             }
             else
             {
-                return buscandoTorneoNombre;
+                return buscandoTorneoID;
             }
         }
 

@@ -59,6 +59,13 @@
             this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvTorneos = new System.Windows.Forms.DataGridView();
+            this.id_torneo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantEquiposDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.torneosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_TECHGOALDataSet3 = new CapaPresentacion.DB_TECHGOALDataSet3();
             this.equiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -77,13 +84,6 @@
             this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
             this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.torneosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter();
-            this.id_torneo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantEquiposDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -516,6 +516,56 @@
             this.dgvTorneos.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTorneos_CellMouseLeave);
             this.dgvTorneos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvTorneos_DataBindingComplete);
             // 
+            // id_torneo
+            // 
+            this.id_torneo.DataPropertyName = "id_torneo";
+            this.id_torneo.HeaderText = "id_torneo";
+            this.id_torneo.Name = "id_torneo";
+            this.id_torneo.ReadOnly = true;
+            this.id_torneo.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.DataPropertyName = "tipo";
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // cantEquiposDataGridViewTextBoxColumn
+            // 
+            this.cantEquiposDataGridViewTextBoxColumn.DataPropertyName = "cantEquipos";
+            this.cantEquiposDataGridViewTextBoxColumn.HeaderText = "Cantidad Equipos";
+            this.cantEquiposDataGridViewTextBoxColumn.Name = "cantEquiposDataGridViewTextBoxColumn";
+            this.cantEquiposDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaInicio
+            // 
+            this.fechaInicio.DataPropertyName = "fechaInicio";
+            this.fechaInicio.HeaderText = "Fecha de Inicio";
+            this.fechaInicio.Name = "fechaInicio";
+            this.fechaInicio.ReadOnly = true;
+            // 
+            // fechaFinal
+            // 
+            this.fechaFinal.DataPropertyName = "fechaFinal";
+            this.fechaFinal.HeaderText = "Fecha de Finalizacion";
+            this.fechaFinal.Name = "fechaFinal";
+            this.fechaFinal.ReadOnly = true;
+            // 
+            // estadoDataGridViewCheckBoxColumn
+            // 
+            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "Finalizado";
+            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
+            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
             // torneosBindingSource
             // 
             this.torneosBindingSource.DataMember = "torneos";
@@ -690,56 +740,6 @@
             // torneosTableAdapter
             // 
             this.torneosTableAdapter.ClearBeforeFill = true;
-            // 
-            // id_torneo
-            // 
-            this.id_torneo.DataPropertyName = "id_torneo";
-            this.id_torneo.HeaderText = "id_torneo";
-            this.id_torneo.Name = "id_torneo";
-            this.id_torneo.ReadOnly = true;
-            this.id_torneo.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipo
-            // 
-            this.tipo.DataPropertyName = "tipo";
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            // 
-            // cantEquiposDataGridViewTextBoxColumn
-            // 
-            this.cantEquiposDataGridViewTextBoxColumn.DataPropertyName = "cantEquipos";
-            this.cantEquiposDataGridViewTextBoxColumn.HeaderText = "Cantidad Equipos";
-            this.cantEquiposDataGridViewTextBoxColumn.Name = "cantEquiposDataGridViewTextBoxColumn";
-            this.cantEquiposDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaInicio
-            // 
-            this.fechaInicio.DataPropertyName = "fechaInicio";
-            this.fechaInicio.HeaderText = "Fecha de Inicio";
-            this.fechaInicio.Name = "fechaInicio";
-            this.fechaInicio.ReadOnly = true;
-            // 
-            // fechaFinal
-            // 
-            this.fechaFinal.DataPropertyName = "fechaFinal";
-            this.fechaFinal.HeaderText = "Fecha de Finalizacion";
-            this.fechaFinal.Name = "fechaFinal";
-            this.fechaFinal.ReadOnly = true;
-            // 
-            // estadoDataGridViewCheckBoxColumn
-            // 
-            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewCheckBoxColumn.HeaderText = "Finalizado";
-            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
-            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // formTorneos
             // 
