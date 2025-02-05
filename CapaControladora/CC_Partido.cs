@@ -46,8 +46,33 @@ namespace CapaControladora
 
         public bool ActualizarPartido(Partido partido)
         {
-            bool resultado = new CD_Partido().ActualizarPartido(partido);
-            return resultado;
+            return new CD_Partido().ActualizarPartido(partido);
+        }
+
+        public int ObtenerMaxIdPartido(int idTorneo, string instancia)
+        {
+            var partidos = new CC_Partido().Listar().Where(p => p.id_torneo == idTorneo && p.instancia == instancia);
+            return partidos.Any() ? partidos.Max(p => p.id_partido) : 0;
+        }
+
+        public List<Partido> ObtenerPartidosPorInstancia(int idTorneo, string instancia)
+        {
+            return new CC_Partido().Listar().Where(p => p.id_torneo == idTorneo && p.instancia == instancia).ToList();
+        }
+        public List<Partido> ObtenerPartidosPosterioresConGanador(int id_equipo, int id_torneo, int id_partido)
+        {
+            return new CC_Partido().Listar().Where(p => p.id_torneo == id_torneo 
+            && (p.id_local == id_equipo || p.id_visitante == id_equipo) && p.id_partido > id_partido).ToList();
+        }
+
+        public List<Partido> ObtenerPartidosPosteriores(int id_torneo, string instancia)
+        {
+            return new CC_Partido().Listar().Where(p => p.id_torneo == id_torneo && p.instancia == instancia).ToList();
+        }
+
+        public Partido ObtenerPartidosIdSiguiete(int id_torneo, int id_sig_partido)
+        {
+            return new CC_Partido().Listar().Where(p => p.id_torneo == id_torneo && p.id_partido == id_sig_partido).FirstOrDefault();
         }
 
 

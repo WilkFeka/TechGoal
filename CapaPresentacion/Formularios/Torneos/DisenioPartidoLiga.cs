@@ -41,7 +41,7 @@ namespace CapaPresentacion.Formularios.Torneos
 
         private void formDisenioPartidoLiga_Load(object sender, EventArgs e)
         {
-            equipoL = equiposControladora.EncontrarEquipoID(partido.id_local);
+            equipoL = equiposControladora.EncontrarEquipoID((int)partido.id_local);
             equipoV = partido.id_visitante.HasValue
             ? equiposControladora.EncontrarEquipoID(partido.id_visitante.Value)
             : new Equipo { id_equipo = 0, nombre = "Descanso" };
@@ -196,7 +196,7 @@ namespace CapaPresentacion.Formularios.Torneos
                 return;
             }
 
-            Tabla_Torneo tabla_torneoL = tablaTorneoControladora.EncontrarTablaTorneo(partido.id_local, partido.id_torneo);
+            Tabla_Torneo tabla_torneoL = tablaTorneoControladora.EncontrarTablaTorneo((int)partido.id_local, partido.id_torneo);
             Tabla_Torneo tabla_torneoV = tablaTorneoControladora.EncontrarTablaTorneo((int)partido.id_visitante, partido.id_torneo);
 
 
@@ -335,7 +335,7 @@ namespace CapaPresentacion.Formularios.Torneos
 
             if (resultado == DialogResult.Cancel) return;
 
-            Tabla_Torneo tabla_torneoL = tablaTorneoControladora.EncontrarTablaTorneo(partido.id_local, partido.id_torneo);
+            Tabla_Torneo tabla_torneoL = tablaTorneoControladora.EncontrarTablaTorneo((int)partido.id_local, partido.id_torneo);
 
             Tabla_Torneo tabla_torneoV = tablaTorneoControladora.EncontrarTablaTorneo((int)partido.id_visitante, partido.id_torneo);
 

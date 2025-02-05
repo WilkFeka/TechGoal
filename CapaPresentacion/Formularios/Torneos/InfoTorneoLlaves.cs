@@ -17,6 +17,7 @@ namespace CapaPresentacion.Formularios.Torneos
         Torneo torneoSeleccionado;
         formInicio formInicioC;
         CC_Partido partidoControladora = CC_Partido.getInstance;
+        int cantidadInstancias;
         public formInfoTorneoLlaves(Torneo torneo, formInicio formInicio)
         {
             InitializeComponent();
@@ -30,46 +31,69 @@ namespace CapaPresentacion.Formularios.Torneos
 
         }
 
-        private void formInfoTorneoLlaves_Load(object sender, EventArgs e)
+        public void formInfoTorneoLlaves_Load(object sender, EventArgs e)
         {
             lblTorneo.Text = torneoSeleccionado.nombre;
             List<Partido> listaLlaves = partidoControladora.EncontrarPartidosTorneo(torneoSeleccionado.id_torneo);
 
-            // Limpiar panel antes de agregar nuevos controles
-            panel5.Controls.Clear();
+            flp.Controls.Clear();
+            flp.AutoScroll = true;
+            flp.FlowDirection = FlowDirection.LeftToRight; // Alineación horizontal
+            flp.WrapContents = false; // Evita que los paneles bajen a una nueva línea
+            flp.Height = 604;
+            var instanciasUnicas = listaLlaves.Select(p => p.instancia).Distinct().ToList();
+            int index = 0;
+            foreach (var instancia in instanciasUnicas)
+            { 
+                Panel panelInstancia = new Panel
+                {
+                    AutoSize = true,
+                    AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                    Padding = new Padding(10),
+                    Margin = new Padding(5), // Espacio entre paneles
+                    Height = flp.Height - 20,  // Asegurarse de que ocupe toda la altura
+                    Width = 500, // Ancho calculado para cada panel
+                    AutoScroll = true,
+                };
 
-            // Calcular el número de rondas basado en el número de partidos (se asume eliminación simple)
-            int rondas = (int)Math.Ceiling(Math.Log(listaLlaves.Count) / Math.Log(2));
-            int anchoPanel = panel5.Width;
-            int altoPanel = panel5.Height;
+                panelInstancia.MinimumSize = new Size(500, 0);
 
-            // Calcular el tamaño para cada partido (considera cuántos partidos caben en el espacio disponible)
-            int alturaEspaciada = altoPanel / listaLlaves.Count;
-            int anchoControl = 150; // Ancho predeterminado para cada control de partido
+                if (index > 0)
+                {
+                    panelInstancia.Height = flp.Controls[0].Height;
+                }
 
-            // Agregar los formularios de cada partido al panel5
-            foreach (Partido partido in listaLlaves)
-            {
-                formDisenioLlave formDisenioLlave = new formDisenioLlave(partido);
-                formDisenioLlave.TopLevel = false;
-                formDisenioLlave.Dock = DockStyle.Top;
+                index++;
+                int totalHeight = 0;
+                List<Control> controles = new List<Control>();
 
-                // Cálculo de posiciones para distribuir los partidos
-                int x = (anchoPanel / rondas) * (listaLlaves.IndexOf(partido) / 2); // Distribuir horizontalmente
-                int y = listaLlaves.IndexOf(partido) * alturaEspaciada; // Distribuir verticalmente
+                foreach (Partido partido in listaLlaves.Where(p => p.instancia == instancia))
+                {
+                    formDisenioLlave formDisenioLlave = new formDisenioLlave(partido, this)
+                    {
+                        TopLevel = false,
+                        FormBorderStyle = FormBorderStyle.None,
+                        AutoSize = true,
+                    };
 
-                formDisenioLlave.Location = new Point(x, y);
+                    controles.Add(formDisenioLlave);
+                    totalHeight += formDisenioLlave.Height;
+                    formDisenioLlave.Show();
+                }
 
-                panel5.Controls.Add(formDisenioLlave);
-                formDisenioLlave.Show();
+                int spaceTop = Math.Max(10, (panelInstancia.Height - totalHeight) / 2);
+
+                foreach (Control ctrl in controles)
+                {
+                    ctrl.Top = spaceTop;
+                    ctrl.Left = (panelInstancia.Width - ctrl.Width) / 2;
+                    panelInstancia.Controls.Add(ctrl);
+                    spaceTop += ctrl.Height + 5;
+                }
+
+                flp.Controls.Add(panelInstancia);
             }
-
-
         }
-
-
-
-
 
 
     }

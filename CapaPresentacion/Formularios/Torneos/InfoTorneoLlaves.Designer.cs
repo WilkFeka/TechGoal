@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.flp = new System.Windows.Forms.FlowLayoutPanel();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.lblTorneo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             this.fpnlBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -42,8 +42,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.flp);
             this.panel4.Controls.Add(this.fpnlBotones);
-            this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.lblTorneo);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -51,6 +51,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1494, 774);
             this.panel4.TabIndex = 21;
+            // 
+            // flp
+            // 
+            this.flp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flp.BackColor = System.Drawing.Color.White;
+            this.flp.Location = new System.Drawing.Point(20, 131);
+            this.flp.Name = "flp";
+            this.flp.Size = new System.Drawing.Size(1442, 604);
+            this.flp.TabIndex = 72;
             // 
             // fpnlBotones
             // 
@@ -60,18 +71,6 @@
             this.fpnlBotones.Name = "fpnlBotones";
             this.fpnlBotones.Size = new System.Drawing.Size(87, 77);
             this.fpnlBotones.TabIndex = 71;
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.AutoScroll = true;
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(12, 106);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1470, 656);
-            this.panel5.TabIndex = 19;
             // 
             // lblTorneo
             // 
@@ -84,16 +83,6 @@
             this.lblTorneo.Size = new System.Drawing.Size(134, 44);
             this.lblTorneo.TabIndex = 0;
             this.lblTorneo.Text = "Torneo";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.trophyBlack;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // btnVolver
             // 
@@ -117,6 +106,16 @@
             this.btnVolver.TextColor = System.Drawing.Color.White;
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.trophyBlack;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // formInfoTorneoLlaves
             // 
@@ -144,8 +143,8 @@
         public System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.FlowLayoutPanel fpnlBotones;
         public Personalizacion.MSButton btnVolver;
-        public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Label lblTorneo;
         public System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FlowLayoutPanel flp;
     }
 }
