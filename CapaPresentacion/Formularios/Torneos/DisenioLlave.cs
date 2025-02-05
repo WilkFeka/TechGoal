@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using CapaPresentacion.Personalizacion;
+using CapaPresentacion.Properties;
 
 namespace CapaPresentacion.Formularios.Torneos
 {
@@ -41,10 +42,13 @@ namespace CapaPresentacion.Formularios.Torneos
 
         private void DisenioLlave_Load(object sender, EventArgs e)
         {
-            equipoL = equiposControladora.EncontrarEquipoID((int)Llave.id_local);
+            lblInstancia.Text = Llave.instancia;
+            equipoL = Llave.id_local.HasValue ? equiposControladora.EncontrarEquipoID((int)Llave.id_local) 
+            : new Equipo { id_equipo = 0, nombre = "A confirmar" };
+
             equipoV = Llave.id_visitante.HasValue
             ? equiposControladora.EncontrarEquipoID(Llave.id_visitante.Value)
-            : new Equipo { id_equipo = 0, nombre = "Descanso" };
+            : new Equipo { id_equipo = 0, nombre = "A confirmar" };
 
             lblEL.Text = equipoL.nombre;
             lblEV.Text = equipoV.nombre;
@@ -98,7 +102,7 @@ namespace CapaPresentacion.Formularios.Torneos
             else
             {
                 // Opcional: Manejar si la imagen no existe
-                picEscudoL.Image = null; // O una imagen por defecto
+                picEscudoL.Image = Resources.NoTeam; // O una imagen por defecto
             }
 
             // ESCUDO VISITANTE
@@ -127,7 +131,12 @@ namespace CapaPresentacion.Formularios.Torneos
             else
             {
                 // Opcional: Manejar si la imagen no existe
-                picEscudoV.Image = null; // O una imagen por defecto
+                picEscudoV.Image = Resources.NoTeam; // O una imagen por defecto
+            }
+
+            if (Llave.id_local == null || Llave.id_visitante == null)
+            {
+                btnEditar.Visible = false;
             }
 
         }
@@ -183,10 +192,7 @@ namespace CapaPresentacion.Formularios.Torneos
             Llave.golesV = Convert.ToInt32(txtGolesV.Text);
             Llave.finalizado = true;
 
-            if (Llave.golesL > Llave.golesV)
-                Llave.ganador = Llave.id_local;
-            else if (Llave.golesL < Llave.golesV)
-                Llave.ganador = Llave.id_visitante;
+            Llave.ganador = (Llave.golesL > Llave.golesV) ? Llave.id_local : Llave.id_visitante;
 
             // Actualizar el partido actual en la base de datos
             if (!partidoControladora.ActualizarPartido(Llave))
@@ -198,11 +204,15 @@ namespace CapaPresentacion.Formularios.Torneos
             // Obtener todos los partidos de la instancia actual
             var partidosActuales = partidoControladora.ObtenerPartidosPorInstancia(Llave.id_torneo, Llave.instancia);
 
+            string siguienteInstancia = ObtenerSiguienteInstancia(Llave.instancia);
+            List<Partido> llavesPosteriores = partidoControladora.ObtenerPartidosPosteriores( Llave.id_torneo, siguienteInstancia);
+
+
+
             // Verificar si todos los partidos de esta instancia ya se jugaron
-            if (partidosActuales.All(p => p.finalizado))
+            if (partidosActuales.All(p => p.finalizado) && llavesPosteriores.Count == 0)
             {
                 // Obtener la siguiente instancia
-                string siguienteInstancia = ObtenerSiguienteInstancia(Llave.instancia);
                 if (string.IsNullOrEmpty(siguienteInstancia)) // Si no hay más instancias (es la final), salir
                 {
                     MessageBox.Show("Resultado agregado con éxito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -213,11 +223,12 @@ namespace CapaPresentacion.Formularios.Torneos
                     btnRestart.Visible = true;
                     txtGolesL.ReadOnly = true;
                     txtGolesV.ReadOnly = true;
-                    return; 
+                    return;
                 }
 
                 // Obtener solo los ganadores de los partidos actuales
                 var ganadores = partidosActuales.OrderBy(p => p.id_partido).Select(p => p.ganador).ToList();
+
 
                 // Crear los partidos de la siguiente fase agrupando de a 2
                 for (int i = 0; i < ganadores.Count; i += 2)
@@ -236,6 +247,35 @@ namespace CapaPresentacion.Formularios.Torneos
 
                     partidoControladora.AgregarPartido(nuevoPartido);
                 }
+
+                List<Partido> nuevosPartidos = partidoControladora.ObtenerPartidosPorInstancia(Llave.id_torneo, siguienteInstancia);
+
+                // **Actualizar los partidos actuales con el id_sig_partido correspondiente**
+                for (int i = 0; i < partidosActuales.Count; i++)
+                {
+                    int index = i / 2; // Cada dos partidos deben apuntar al mismo `id_sig_partido`
+                    if (index < nuevosPartidos.Count)
+                    {
+                        partidosActuales[i].id_sig_partido = nuevosPartidos[index].id_partido;
+                        partidoControladora.ActualizarPartido(partidosActuales[i]);
+                    }
+                }
+            } else if (llavesPosteriores.Count > 0)
+            {
+                Partido sigPartido = partidoControladora.ObtenerPartidosIdSiguiete(Llave.id_torneo, (int)Llave.id_sig_partido);
+
+
+                sigPartido.id_local = sigPartido.id_local ?? Llave.ganador;
+
+                if (sigPartido.id_local == Llave.ganador)
+                {
+                    partidoControladora.ActualizarPartido(sigPartido);
+                }
+                else
+                {
+                    sigPartido.id_visitante = sigPartido.id_visitante ?? Llave.ganador;
+                    partidoControladora.ActualizarPartido(sigPartido);
+                }
             }
 
             MessageBox.Show("Resultado agregado con éxito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -246,6 +286,8 @@ namespace CapaPresentacion.Formularios.Torneos
             btnRestart.Visible = true;
             txtGolesL.ReadOnly = true;
             txtGolesV.ReadOnly = true;
+
+            formInfoLlavesC.formInfoTorneoLlaves_Load(sender, e);
         }
 
 
@@ -304,14 +346,40 @@ namespace CapaPresentacion.Formularios.Torneos
         private void btnRestart_Click(object sender, EventArgs e)
         {
 
-            DialogResult resultado = MessageBox.Show("¿Desea restablecer el partido? Esto restablecera las estadisticas", "Si", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Desea restablecer el partido? Esto restablecera las estadisticas y partidos posteriores.", "Si", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+
+
 
             if (resultado == DialogResult.Cancel) return;
+
+
+            List<Partido> llavesPosteriores = partidoControladora.ObtenerPartidosPosterioresConGanador((int)Llave.ganador, Llave.id_torneo, Llave.id_partido);
+
+            foreach (Partido partido in llavesPosteriores)
+            {
+                partido.id_local = (partido.id_local == Llave.ganador) ? null : partido.id_local;
+                partido.id_visitante = (partido.id_visitante == Llave.ganador) ? null : partido.id_visitante;
+
+                partido.golesL = null;
+                partido.golesV = null;
+                partido.finalizado = false;
+                partido.ganador = null;
+
+
+                bool actualizarPartidosPosteriores = partidoControladora.ActualizarPartido(partido);
+
+                if (actualizarPartidosPosteriores == false)
+                {
+                    MessageBox.Show("Hubo un error al restablecer partido posterior", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
             Llave.golesL = null;
             Llave.golesV = null;
             Llave.finalizado = false;
-            Llave.ganador = 0;
+            Llave.ganador = null;
 
             bool actualizar = partidoControladora.ActualizarPartido(Llave);
 
@@ -332,6 +400,8 @@ namespace CapaPresentacion.Formularios.Torneos
             this.ActiveControl = null;
             txtGolesL.ReadOnly = true;
             txtGolesV.ReadOnly = true;
+
+            formInfoLlavesC.formInfoTorneoLlaves_Load(sender, e);
 
         }
     }

@@ -42,7 +42,7 @@ namespace CapaDatos
                                     id_visitante = reader["id_visitante"] != DBNull.Value ? Convert.ToInt32(reader["id_visitante"]) : (int?)null,
                                     golesL = reader["golesL"] != DBNull.Value ? Convert.ToInt32(reader["golesL"]) : 0,
                                     golesV = reader["golesV"] != DBNull.Value ? Convert.ToInt32(reader["golesV"]) : 0,
-                                    ganador = reader["ganador"] != DBNull.Value ? Convert.ToInt32(reader["ganador"]) : 0,
+                                    ganador = reader["ganador"] != DBNull.Value ? Convert.ToInt32(reader["ganador"]) : (int?)null,
                                     finalizado = Convert.ToBoolean(reader["finalizado"]),
                                     id_sig_partido = reader["id_sig_partido"] != DBNull.Value ? Convert.ToInt32(reader["id_sig_partido"]) : (int?)null,
 
@@ -125,7 +125,8 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("UPDATE Partidos SET golesL = @golesL, golesV = @golesV, ganador = @ganador, finalizado = @finalizado ");
+                    query.AppendLine("UPDATE Partidos SET golesL = @golesL, golesV = @golesV, ganador = @ganador, finalizado = @finalizado, id_sig_partido =  @id_sig_partido, ");
+                    query.AppendLine("id_local = @id_local, id_visitante = @id_visitante ");
                     query.AppendLine("WHERE id_partido = @id_partido");
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
@@ -133,8 +134,14 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@golesL", partido.golesL ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@golesV", partido.golesV ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@finalizado", partido.finalizado);
-                        cmd.Parameters.AddWithValue("@ganador", partido.ganador == 0 ? (object)DBNull.Value : partido.ganador);
+                        cmd.Parameters.AddWithValue("@ganador", partido.ganador ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@id_partido", partido.id_partido);
+                        cmd.Parameters.AddWithValue("@id_sig_partido", partido.id_sig_partido ?? (object)DBNull.Value);
+
+                        cmd.Parameters.AddWithValue("@id_local", partido.id_local ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@id_visitante", partido.id_visitante ?? (object)DBNull.Value);
+
+
 
                         conection.Open();
 

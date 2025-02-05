@@ -55,26 +55,26 @@ namespace CapaControladora
             return partidos.Any() ? partidos.Max(p => p.id_partido) : 0;
         }
 
-        public Partido ObtenerPartidoID(int id_sig_partido)
-        {
-            return new CC_Partido().Listar().FirstOrDefault(p => p.id_sig_partido == id_sig_partido);
-        }
-
-        public Partido ObtenerPartidoEsperandoRival(int idTorneo, string instancia)
-        {
-            return new CC_Partido().Listar()
-                .FirstOrDefault(p => p.id_torneo == idTorneo
-                                     && p.instancia == instancia
-                                     && (p.id_local == null || p.id_visitante == null)); // Ahora busca si hay espacio libre
-        }
-        public int ContarPartidosEnInstancia(int idTorneo, string instancia)
-        {
-            return new CC_Partido().Listar().Count(p => p.id_torneo == idTorneo && p.instancia == instancia);
-        }
         public List<Partido> ObtenerPartidosPorInstancia(int idTorneo, string instancia)
         {
             return new CC_Partido().Listar().Where(p => p.id_torneo == idTorneo && p.instancia == instancia).ToList();
         }
+        public List<Partido> ObtenerPartidosPosterioresConGanador(int id_equipo, int id_torneo, int id_partido)
+        {
+            return new CC_Partido().Listar().Where(p => p.id_torneo == id_torneo 
+            && (p.id_local == id_equipo || p.id_visitante == id_equipo) && p.id_partido > id_partido).ToList();
+        }
+
+        public List<Partido> ObtenerPartidosPosteriores(int id_torneo, string instancia)
+        {
+            return new CC_Partido().Listar().Where(p => p.id_torneo == id_torneo && p.instancia == instancia).ToList();
+        }
+
+        public Partido ObtenerPartidosIdSiguiete(int id_torneo, int id_sig_partido)
+        {
+            return new CC_Partido().Listar().Where(p => p.id_torneo == id_torneo && p.id_partido == id_sig_partido).FirstOrDefault();
+        }
+
 
 
     }

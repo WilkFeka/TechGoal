@@ -31,7 +31,7 @@ namespace CapaPresentacion.Formularios.Torneos
 
         }
 
-        private void formInfoTorneoLlaves_Load(object sender, EventArgs e)
+        public void formInfoTorneoLlaves_Load(object sender, EventArgs e)
         {
             lblTorneo.Text = torneoSeleccionado.nombre;
             List<Partido> listaLlaves = partidoControladora.EncontrarPartidosTorneo(torneoSeleccionado.id_torneo);
@@ -40,7 +40,7 @@ namespace CapaPresentacion.Formularios.Torneos
             flp.AutoScroll = true;
             flp.FlowDirection = FlowDirection.LeftToRight; // Alineación horizontal
             flp.WrapContents = false; // Evita que los paneles bajen a una nueva línea
-
+            flp.Height = 604;
             var instanciasUnicas = listaLlaves.Select(p => p.instancia).Distinct().ToList();
             int index = 0;
             foreach (var instancia in instanciasUnicas)

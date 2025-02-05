@@ -278,7 +278,7 @@
             this.lblEV.AutoSize = true;
             this.lblEV.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.lblEV.Location = new System.Drawing.Point(273, 70);
+            this.lblEV.Location = new System.Drawing.Point(297, 70);
             this.lblEV.Margin = new System.Windows.Forms.Padding(0, 20, 0, 5);
             this.lblEV.Name = "lblEV";
             this.lblEV.Size = new System.Drawing.Size(68, 18);
