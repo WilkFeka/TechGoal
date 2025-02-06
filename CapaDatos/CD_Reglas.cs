@@ -49,5 +49,56 @@ namespace CapaDatos
 
 
         }
+
+        public List<Reglas> Listar()
+        {
+            List<Reglas> lista = new List<Reglas>();
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("SELECT * FROM reglas");
+
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        conection.Open();
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                lista.Add(new Reglas()
+                                {
+                                    id_reglas = Convert.ToInt32(reader["id_reglas"]),
+                                    id_torneo = Convert.ToInt32(reader["id_torneo"]),
+                                    reglas = Convert.ToString(reader["reglas"]),
+
+
+                                });
+
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                lista = new List<Reglas>();
+                Console.WriteLine(ex.Message);
+            }
+
+            return lista;
+
+        }
     }
+
 }

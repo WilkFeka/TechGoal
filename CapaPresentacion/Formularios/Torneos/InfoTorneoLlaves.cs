@@ -17,6 +17,7 @@ namespace CapaPresentacion.Formularios.Torneos
         Torneo torneoSeleccionado;
         formInicio formInicioC;
         CC_Partido partidoControladora = CC_Partido.getInstance;
+        CC_Reglas reglasControladora = CC_Reglas.getInstance;
         int cantidadInstancias;
         public formInfoTorneoLlaves(Torneo torneo, formInicio formInicio)
         {
@@ -95,6 +96,17 @@ namespace CapaPresentacion.Formularios.Torneos
             }
         }
 
+        private void btnRules_Click(object sender, EventArgs e)
+        {
+            Reglas reglas = reglasControladora.Listar().Where(r => r.id_torneo == torneoSeleccionado.id_torneo).FirstOrDefault();
+            if (reglas == null)
+            {
+                MessageBox.Show("No se han definido reglas para este torneo", "Reglas no definidas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            formTorneoReglas formReglasS = new formTorneoReglas(torneoSeleccionado);
+            formReglasS.ShowDialog();
+        }
     }
 }

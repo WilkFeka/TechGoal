@@ -33,6 +33,7 @@
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTorneo = new System.Windows.Forms.Label();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnRules = new CapaPresentacion.Personalizacion.MSButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             this.fpnlBotones.SuspendLayout();
@@ -67,9 +68,10 @@
             // 
             this.fpnlBotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fpnlBotones.Controls.Add(this.btnVolver);
-            this.fpnlBotones.Location = new System.Drawing.Point(1375, 23);
+            this.fpnlBotones.Controls.Add(this.btnRules);
+            this.fpnlBotones.Location = new System.Drawing.Point(1303, 23);
             this.fpnlBotones.Name = "fpnlBotones";
-            this.fpnlBotones.Size = new System.Drawing.Size(87, 77);
+            this.fpnlBotones.Size = new System.Drawing.Size(159, 77);
             this.fpnlBotones.TabIndex = 71;
             // 
             // lblTorneo
@@ -106,6 +108,29 @@
             this.btnVolver.TextColor = System.Drawing.Color.White;
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnRules
+            // 
+            this.btnRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnRules.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnRules.BackgroundImage = global::CapaPresentacion.Properties.Resources.rules;
+            this.btnRules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRules.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnRules.BorderRadius = 25;
+            this.btnRules.BorderSize = 0;
+            this.btnRules.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRules.FlatAppearance.BorderSize = 0;
+            this.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRules.ForeColor = System.Drawing.Color.White;
+            this.btnRules.Location = new System.Drawing.Point(87, 3);
+            this.btnRules.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnRules.Name = "btnRules";
+            this.btnRules.Size = new System.Drawing.Size(64, 64);
+            this.btnRules.TabIndex = 2;
+            this.btnRules.TextColor = System.Drawing.Color.White;
+            this.btnRules.UseVisualStyleBackColor = false;
+            this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
             // 
             // pictureBox1
             // 
@@ -146,5 +171,6 @@
         public System.Windows.Forms.Label lblTorneo;
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flp;
+        public Personalizacion.MSButton btnRules;
     }
 }
