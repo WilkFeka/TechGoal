@@ -147,6 +147,8 @@ namespace CapaPresentacion.Formularios.Torneos
                 ? $"tipo = {tipoSeleccionado.valor}"
                 : "";
 
+
+
             // Filtro por estado (ComboBox)
             string filtroEstado = cmbEstadoFilter.SelectedItem is opcionCombo estadoSeleccionado
                 ? $"estado = {estadoSeleccionado.valor}"

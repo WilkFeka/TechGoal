@@ -31,10 +31,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.flp = new System.Windows.Forms.FlowLayoutPanel();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblTorneo = new System.Windows.Forms.Label();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
             this.btnRules = new CapaPresentacion.Personalizacion.MSButton();
+            this.lblTorneo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEliminar = new CapaPresentacion.Personalizacion.MSButton();
             this.panel4.SuspendLayout();
             this.fpnlBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,22 +70,11 @@
             this.fpnlBotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fpnlBotones.Controls.Add(this.btnVolver);
             this.fpnlBotones.Controls.Add(this.btnRules);
-            this.fpnlBotones.Location = new System.Drawing.Point(1303, 23);
+            this.fpnlBotones.Controls.Add(this.btnEliminar);
+            this.fpnlBotones.Location = new System.Drawing.Point(1222, 23);
             this.fpnlBotones.Name = "fpnlBotones";
-            this.fpnlBotones.Size = new System.Drawing.Size(159, 77);
+            this.fpnlBotones.Size = new System.Drawing.Size(240, 77);
             this.fpnlBotones.TabIndex = 71;
-            // 
-            // lblTorneo
-            // 
-            this.lblTorneo.AutoSize = true;
-            this.lblTorneo.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTorneo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.lblTorneo.Location = new System.Drawing.Point(90, 37);
-            this.lblTorneo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblTorneo.Name = "lblTorneo";
-            this.lblTorneo.Size = new System.Drawing.Size(134, 44);
-            this.lblTorneo.TabIndex = 0;
-            this.lblTorneo.Text = "Torneo";
             // 
             // btnVolver
             // 
@@ -132,6 +122,18 @@
             this.btnRules.UseVisualStyleBackColor = false;
             this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
             // 
+            // lblTorneo
+            // 
+            this.lblTorneo.AutoSize = true;
+            this.lblTorneo.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTorneo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.lblTorneo.Location = new System.Drawing.Point(90, 37);
+            this.lblTorneo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblTorneo.Name = "lblTorneo";
+            this.lblTorneo.Size = new System.Drawing.Size(134, 44);
+            this.lblTorneo.TabIndex = 0;
+            this.lblTorneo.Text = "Torneo";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.trophyBlack;
@@ -141,6 +143,29 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.OrangeRed;
+            this.btnEliminar.BackgroundImage = global::CapaPresentacion.Properties.Resources.eliminarBlanco;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnEliminar.BorderRadius = 25;
+            this.btnEliminar.BorderSize = 0;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(164, 3);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(64, 64);
+            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.TextColor = System.Drawing.Color.White;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // formInfoTorneoLlaves
             // 
@@ -172,5 +197,6 @@
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flp;
         public Personalizacion.MSButton btnRules;
+        public Personalizacion.MSButton btnEliminar;
     }
 }

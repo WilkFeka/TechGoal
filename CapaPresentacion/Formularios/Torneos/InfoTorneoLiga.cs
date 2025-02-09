@@ -18,6 +18,9 @@ namespace CapaPresentacion.Formularios.Torneos
         Torneo torneoSeleccionado;
         CC_Equipos equipoControladora = CC_Equipos.getInstance;
         CC_Partido partidoControladora = CC_Partido.getInstance;
+        CC_Reglas reglasControladora = CC_Reglas.getInstance;
+        CC_Torneos torneoControladora = CC_Torneos.getInstance;
+        CC_TorneoEquipos torneosEquiposControladora = CC_TorneoEquipos.getInstance;
         int numFecha = 1;
         List<Partido> partidos;
         int cantidadInstancias;
@@ -160,6 +163,51 @@ namespace CapaPresentacion.Formularios.Torneos
                 lblFecha.Text = "Fecha " + Convert.ToString(numFecha);
                 CargarPartidos();
             }
+
+        }
+
+        private void btnRules_Click(object sender, EventArgs e)
+        {
+            Reglas reglas = reglasControladora.Listar().Where(r => r.id_torneo == torneoSeleccionado.id_torneo).FirstOrDefault();
+            if (reglas == null)
+            {
+                MessageBox.Show("No se han definido reglas para este torneo", "Reglas no definidas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            formTorneoReglas formReglasS = new formTorneoReglas(torneoSeleccionado);
+            formReglasS.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+                $"¿Desea elimminar el torneo {torneoSeleccionado.nombre}?",
+                "Confirmar Resultado",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Cancel) return;
+
+            bool borrar = torneoControladora.BorrarTorneo(torneoSeleccionado.id_torneo);
+
+            if (borrar == false)
+            {
+                MessageBox.Show("No se pudo eliminar el torneo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            bool borrarVinculaciones = torneosEquiposControladora.BorrarVinculaciones(torneoSeleccionado.id_torneo);
+
+            if (borrarVinculaciones == false)
+            {
+                MessageBox.Show("No se pudieron eliminar las vinculaciones", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("Torneo eliminado correctamente", "Torneo eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
 
         }
     }
