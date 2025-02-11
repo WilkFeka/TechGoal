@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CC_Backup.cs" />
     <Compile Include="CC_Cancha.cs" />
     <Compile Include="CC_CanchaHorario.cs" />
     <Compile Include="CC_Cliente.cs" />
