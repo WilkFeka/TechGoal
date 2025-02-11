@@ -570,7 +570,7 @@
             // estadoDataGridViewCheckBoxColumn
             // 
             this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewCheckBoxColumn.HeaderText = "Finalizado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "En Curso";
             this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
             this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
@@ -871,6 +871,11 @@
         private DB_TECHGOALDataSet3 dB_TECHGOALDataSet3;
         private System.Windows.Forms.BindingSource torneosBindingSource;
         private DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter torneosTableAdapter;
+        private DB_TECHGOALDataSet4 dB_TECHGOALDataSet4;
+        private System.Windows.Forms.BindingSource torneosBindingSource1;
+        private DB_TECHGOALDataSet4TableAdapters.torneosTableAdapter torneosTableAdapter1;
+        private System.Windows.Forms.ToolStrip fillBorradoToolStrip;
+        private System.Windows.Forms.ToolStripButton fillBorradoToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_torneo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
@@ -878,10 +883,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFinal;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
-        private DB_TECHGOALDataSet4 dB_TECHGOALDataSet4;
-        private System.Windows.Forms.BindingSource torneosBindingSource1;
-        private DB_TECHGOALDataSet4TableAdapters.torneosTableAdapter torneosTableAdapter1;
-        private System.Windows.Forms.ToolStrip fillBorradoToolStrip;
-        private System.Windows.Forms.ToolStripButton fillBorradoToolStripButton;
     }
 }

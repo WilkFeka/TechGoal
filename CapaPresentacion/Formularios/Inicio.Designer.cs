@@ -66,6 +66,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnMinimizar = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnBackup = new FontAwesome.Sharp.IconButton();
             this.flwPanelButons.SuspendLayout();
             this.vistaUsuario.SuspendLayout();
             this.vistaCanchas.SuspendLayout();
@@ -496,6 +497,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(20)))));
+            this.panel1.Controls.Add(this.btnBackup);
             this.panel1.Controls.Add(this.btnAjusteUsuario);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -520,7 +522,7 @@
             this.btnAjusteUsuario.IconColor = System.Drawing.Color.White;
             this.btnAjusteUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAjusteUsuario.IconSize = 64;
-            this.btnAjusteUsuario.Location = new System.Drawing.Point(182, 224);
+            this.btnAjusteUsuario.Location = new System.Drawing.Point(108, 477);
             this.btnAjusteUsuario.Name = "btnAjusteUsuario";
             this.btnAjusteUsuario.Size = new System.Drawing.Size(64, 64);
             this.btnAjusteUsuario.TabIndex = 7;
@@ -542,7 +544,7 @@
             this.btnHome.IconColor = System.Drawing.Color.White;
             this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHome.IconSize = 64;
-            this.btnHome.Location = new System.Drawing.Point(23, 224);
+            this.btnHome.Location = new System.Drawing.Point(108, 354);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(64, 64);
             this.btnHome.TabIndex = 3;
@@ -666,6 +668,26 @@
             this.btnMinimizar.UseVisualStyleBackColor = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
+            // btnBackup
+            // 
+            this.btnBackup.BackColor = System.Drawing.Color.Transparent;
+            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackup.FlatAppearance.BorderSize = 0;
+            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackup.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBackup.IconChar = FontAwesome.Sharp.IconChar.Database;
+            this.btnBackup.IconColor = System.Drawing.Color.White;
+            this.btnBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBackup.IconSize = 64;
+            this.btnBackup.Location = new System.Drawing.Point(108, 598);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(64, 64);
+            this.btnBackup.TabIndex = 8;
+            this.btnBackup.UseVisualStyleBackColor = false;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
             // formInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -758,6 +780,7 @@
         private System.Windows.Forms.FlowLayoutPanel vistaClientes;
         private Personalizacion.MSButton btnClientes;
         private System.Windows.Forms.Label label8;
+        private FontAwesome.Sharp.IconButton btnBackup;
     }
 }
 

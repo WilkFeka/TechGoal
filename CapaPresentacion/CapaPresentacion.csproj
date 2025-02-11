@@ -342,11 +342,23 @@
     <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Reportes\Reportes.cs">
+    <Compile Include="Formularios\Reportes\ReporteCanchas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Reportes\Reportes.Designer.cs">
-      <DependentUpon>Reportes.cs</DependentUpon>
+    <Compile Include="Formularios\Reportes\ReporteCanchas.Designer.cs">
+      <DependentUpon>ReporteCanchas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\ReporteEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\ReporteEquipos.Designer.cs">
+      <DependentUpon>ReporteEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\ReportesSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\ReportesSelect.Designer.cs">
+      <DependentUpon>ReportesSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Reservas\Reserva - Modificar.cs">
       <SubType>Form</SubType>
@@ -525,8 +537,14 @@
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\Reportes.resx">
-      <DependentUpon>Reportes.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Reportes\ReporteCanchas.resx">
+      <DependentUpon>ReporteCanchas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\ReporteEquipos.resx">
+      <DependentUpon>ReporteEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\ReportesSelect.resx">
+      <DependentUpon>ReportesSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reservas\Reserva - Modificar.resx">
       <DependentUpon>Reserva - Modificar.cs</DependentUpon>
@@ -885,6 +903,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rules.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag_1210023.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

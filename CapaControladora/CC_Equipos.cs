@@ -42,7 +42,7 @@ namespace CapaControladora
        public Equipo EncontrarEquipoNombre(string nombre)
         {
 
-            Equipo buscandoEquipoNombre = new CC_Equipos().Listar().Where(c => c.nombre == nombre).FirstOrDefault();
+            Equipo buscandoEquipoNombre = new CC_Equipos().Listar().Where(c => c.nombre == nombre && c.borrado == false).FirstOrDefault();
 
             if (buscandoEquipoNombre != null)
             {
@@ -93,6 +93,20 @@ namespace CapaControladora
             List<Equipo> buscandoEquiposLibres = new CD_Equipos().EquiposLibres();
             return buscandoEquiposLibres;
            
+        }
+
+        public List<Dictionary<string, object>> ObtenerEstadisticasEquipo(int idEquipo)
+        {
+            List<Dictionary<string, object>> lista = new CD_Equipos().ObtenerEstadisticasEquipo(idEquipo);  
+            return lista;
+
+        }
+
+        public List<Equipo> ListarEquiposActivosFiltrados(string filtro)
+        {
+            List<Equipo> listaEquipos = new CD_Equipos().ListarEquiposActivosFiltrados(filtro);
+            return listaEquipos;
+
         }
 
 

@@ -72,5 +72,12 @@ namespace CapaControladora
             bool resultado = new CD_Torneos().BorrarTorneo(id_torneo);
             return resultado;
         }
+
+        public bool FinalizarTorneo(int id_torneo)
+        {
+            bool resultado = new CD_Torneos().FinalizarTorneo(id_torneo);
+            return resultado;
+
+        }
     }
 }

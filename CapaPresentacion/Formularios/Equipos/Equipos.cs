@@ -20,6 +20,7 @@ namespace CapaPresentacion.Formularios.Equipos
         private formInicio formInicioC;
         private CC_Equipos EquiposControladora = CC_Equipos.getInstance;
         private CC_Jugador JugadorControladora = CC_Jugador.getInstance;
+        CC_TorneoEquipos TorneoEquiposControladora = CC_TorneoEquipos.getInstance;
 
         private int paginaActual = 1;
         private int totalPaginas;
@@ -249,12 +250,19 @@ namespace CapaPresentacion.Formularios.Equipos
                     }
                     else
                     {
-                       // PRIMERO BORRAR JUGADORES DEL EQUIPO
-                        bool eliminarJugadores = JugadorControladora.EliminarJugadoresEquipo(equipoEncontrado.id_equipo);
-
+                      
+                        TorneoEquipos torneoEquipo = TorneoEquiposControladora.Listar().Where(te => te.id_equipo == equipoEncontrado.id_equipo && te.estado == true).FirstOrDefault();
+                        
+                        if (torneoEquipo != null)
+                        {
+                            MessageBox.Show("No se puede eliminar el equipo " + equipoEncontrado.nombre + " porque está participando en un torneo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        
+                        
                         bool eliminarEquipo = EquiposControladora.EliminarEquipo(equipoEncontrado.id_equipo);
 
-                        string folderEquipo = Path.Combine(Application.StartupPath, "equipos", equipoEncontrado.nombre);
+                        //string folderEquipo = Path.Combine(Application.StartupPath, "equipos", equipoEncontrado.nombre);
 
                         if (eliminarEquipo)
                         {
