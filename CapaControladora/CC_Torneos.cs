@@ -34,7 +34,7 @@ namespace CapaControladora
         public Torneo EncontrarTorneoNombre(string nombre)
         {
 
-            Torneo buscandoTorneoNombre = new CC_Torneos().Listar().Where(c => c.nombre == nombre).FirstOrDefault();
+            Torneo buscandoTorneoNombre = new CC_Torneos().Listar().Where(c => c.nombre == nombre && c.borrado == false).FirstOrDefault();
 
             if (buscandoTorneoNombre != null)
             {
@@ -64,6 +64,12 @@ namespace CapaControladora
         public bool AgregarTorneo(Torneo torneo)
         {
             bool resultado = new CD_Torneos().AgregarTorneo(torneo);
+            return resultado;
+        }
+
+        public bool BorrarTorneo(int id_torneo)
+        {
+            bool resultado = new CD_Torneos().BorrarTorneo(id_torneo);
             return resultado;
         }
     }

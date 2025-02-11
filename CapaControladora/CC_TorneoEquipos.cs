@@ -39,5 +39,11 @@ namespace CapaControladora
             bool resultado = new CD_TorneoEquipos().AgregarTorneoEquipo(TE);
             return resultado;
         }
+
+        public bool BorrarVinculaciones(int id_torneo)
+        {
+            bool resultado = new CD_TorneoEquipos().BorrarVinculaciones(id_torneo);
+            return resultado;
+        }
     }
 }

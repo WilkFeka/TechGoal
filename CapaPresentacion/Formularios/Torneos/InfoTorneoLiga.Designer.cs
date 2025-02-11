@@ -49,7 +49,6 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvTabla = new System.Windows.Forms.DataGridView();
             this.idtablaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +79,8 @@
             this.sortByPtsToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fillByPuntosToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillByPuntosToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.btnRules = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnEliminar = new CapaPresentacion.Personalizacion.MSButton();
             ((System.ComponentModel.ISupportInitialize)(this.torneosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equiposBindingSource)).BeginInit();
@@ -251,10 +252,11 @@
             // 
             this.fpnlBotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fpnlBotones.Controls.Add(this.btnVolver);
-            this.fpnlBotones.Controls.Add(this.btnAgregarTorneo);
-            this.fpnlBotones.Location = new System.Drawing.Point(1339, 23);
+            this.fpnlBotones.Controls.Add(this.btnRules);
+            this.fpnlBotones.Controls.Add(this.btnEliminar);
+            this.fpnlBotones.Location = new System.Drawing.Point(1262, 23);
             this.fpnlBotones.Name = "fpnlBotones";
-            this.fpnlBotones.Size = new System.Drawing.Size(161, 77);
+            this.fpnlBotones.Size = new System.Drawing.Size(238, 77);
             this.fpnlBotones.TabIndex = 71;
             // 
             // btnVolver
@@ -279,28 +281,6 @@
             this.btnVolver.TextColor = System.Drawing.Color.White;
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnAgregarTorneo
-            // 
-            this.btnAgregarTorneo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarTorneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAgregarTorneo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAgregarTorneo.BackgroundImage = global::CapaPresentacion.Properties.Resources.agregarBlanco;
-            this.btnAgregarTorneo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregarTorneo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnAgregarTorneo.BorderRadius = 25;
-            this.btnAgregarTorneo.BorderSize = 0;
-            this.btnAgregarTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarTorneo.FlatAppearance.BorderSize = 0;
-            this.btnAgregarTorneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarTorneo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarTorneo.Location = new System.Drawing.Point(87, 3);
-            this.btnAgregarTorneo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnAgregarTorneo.Name = "btnAgregarTorneo";
-            this.btnAgregarTorneo.Size = new System.Drawing.Size(64, 64);
-            this.btnAgregarTorneo.TabIndex = 3;
-            this.btnAgregarTorneo.TextColor = System.Drawing.Color.White;
-            this.btnAgregarTorneo.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -594,12 +574,58 @@
             this.fillByPuntosToolStripButton.Text = "FillByPuntos";
             this.fillByPuntosToolStripButton.Click += new System.EventHandler(this.fillByPuntosToolStripButton_Click);
             // 
+            // btnRules
+            // 
+            this.btnRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnRules.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnRules.BackgroundImage = global::CapaPresentacion.Properties.Resources.rules;
+            this.btnRules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRules.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnRules.BorderRadius = 25;
+            this.btnRules.BorderSize = 0;
+            this.btnRules.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRules.FlatAppearance.BorderSize = 0;
+            this.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRules.ForeColor = System.Drawing.Color.White;
+            this.btnRules.Location = new System.Drawing.Point(87, 3);
+            this.btnRules.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnRules.Name = "btnRules";
+            this.btnRules.Size = new System.Drawing.Size(64, 64);
+            this.btnRules.TabIndex = 3;
+            this.btnRules.TextColor = System.Drawing.Color.White;
+            this.btnRules.UseVisualStyleBackColor = false;
+            this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.OrangeRed;
+            this.btnEliminar.BackgroundImage = global::CapaPresentacion.Properties.Resources.eliminarBlanco;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnEliminar.BorderRadius = 25;
+            this.btnEliminar.BorderSize = 0;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(164, 3);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(64, 64);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TextColor = System.Drawing.Color.White;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // formInfoTorneoLiga
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1532, 719);
-            this.Controls.Add(this.fillByPuntosToolStrip);
             this.Controls.Add(this.sortByPtsToolStrip);
+            this.Controls.Add(this.fillByPuntosToolStrip);
             this.Controls.Add(this.panel4);
             this.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "formInfoTorneoLiga";
@@ -644,7 +670,6 @@
         public System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.FlowLayoutPanel fpnlBotones;
         public Personalizacion.MSButton btnVolver;
-        public Personalizacion.MSButton btnAgregarTorneo;
         public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.DataGridView dgvTabla;
         public System.Windows.Forms.Label lblTorneo;
@@ -682,5 +707,7 @@
         public Personalizacion.MSButton btnFechaMas;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Panel panel2;
+        public Personalizacion.MSButton btnRules;
+        public Personalizacion.MSButton btnEliminar;
     }
 }

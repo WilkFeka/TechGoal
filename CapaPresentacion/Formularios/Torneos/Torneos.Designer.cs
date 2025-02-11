@@ -84,6 +84,11 @@
             this.btnLimpiar = new CapaPresentacion.Personalizacion.MSButton();
             this.dBTECHGOALDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.torneosTableAdapter = new CapaPresentacion.DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter();
+            this.dB_TECHGOALDataSet4 = new CapaPresentacion.DB_TECHGOALDataSet4();
+            this.torneosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.torneosTableAdapter1 = new CapaPresentacion.DB_TECHGOALDataSet4TableAdapters.torneosTableAdapter();
+            this.fillBorradoToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBorradoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -102,6 +107,9 @@
             this.Paginator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.torneosBindingSource1)).BeginInit();
+            this.fillBorradoToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -741,12 +749,46 @@
             // 
             this.torneosTableAdapter.ClearBeforeFill = true;
             // 
+            // dB_TECHGOALDataSet4
+            // 
+            this.dB_TECHGOALDataSet4.DataSetName = "DB_TECHGOALDataSet4";
+            this.dB_TECHGOALDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // torneosBindingSource1
+            // 
+            this.torneosBindingSource1.DataMember = "torneos";
+            this.torneosBindingSource1.DataSource = this.dB_TECHGOALDataSet4;
+            // 
+            // torneosTableAdapter1
+            // 
+            this.torneosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // fillBorradoToolStrip
+            // 
+            this.fillBorradoToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillBorradoToolStripButton});
+            this.fillBorradoToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillBorradoToolStrip.Name = "fillBorradoToolStrip";
+            this.fillBorradoToolStrip.Size = new System.Drawing.Size(1328, 25);
+            this.fillBorradoToolStrip.TabIndex = 21;
+            this.fillBorradoToolStrip.Text = "fillBorradoToolStrip";
+            this.fillBorradoToolStrip.Visible = false;
+            // 
+            // fillBorradoToolStripButton
+            // 
+            this.fillBorradoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBorradoToolStripButton.Name = "fillBorradoToolStripButton";
+            this.fillBorradoToolStripButton.Size = new System.Drawing.Size(68, 22);
+            this.fillBorradoToolStripButton.Text = "FillBorrado";
+            this.fillBorradoToolStripButton.Click += new System.EventHandler(this.fillBorradoToolStripButton_Click);
+            // 
             // formTorneos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1328, 645);
+            this.Controls.Add(this.fillBorradoToolStrip);
             this.Controls.Add(this.panel4);
             this.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "formTorneos";
@@ -775,7 +817,12 @@
             this.Paginator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBTECHGOALDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.torneosBindingSource1)).EndInit();
+            this.fillBorradoToolStrip.ResumeLayout(false);
+            this.fillBorradoToolStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -831,5 +878,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFinal;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
+        private DB_TECHGOALDataSet4 dB_TECHGOALDataSet4;
+        private System.Windows.Forms.BindingSource torneosBindingSource1;
+        private DB_TECHGOALDataSet4TableAdapters.torneosTableAdapter torneosTableAdapter1;
+        private System.Windows.Forms.ToolStrip fillBorradoToolStrip;
+        private System.Windows.Forms.ToolStripButton fillBorradoToolStripButton;
     }
 }

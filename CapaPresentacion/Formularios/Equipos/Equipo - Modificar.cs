@@ -19,6 +19,7 @@ namespace CapaPresentacion.Formularios.Equipos
         Equipo equipoSeleccionadoP;
         CC_Jugador JugadorControladora = CC_Jugador.getInstance;
         CC_Equipos EquiposControladora = CC_Equipos.getInstance;
+        CC_TorneoEquipos torneosEquiposControladora = CC_TorneoEquipos.getInstance;
         bool estadoEquipo;
         string targetFolder;
         string targetFilePath;
@@ -228,6 +229,18 @@ namespace CapaPresentacion.Formularios.Equipos
                         File.Copy(sourceFilePath, targetFilePath);
                     }
 
+                }
+
+                if (estadoEquipo != equipoSeleccionadoP.estado)
+                {
+
+                    TorneoEquipos buscarTorneoEquipo = torneosEquiposControladora.Listar().Where(c => c.id_equipo == equipoSeleccionadoP.id_equipo && c.estado == true).FirstOrDefault();
+
+                    if (buscarTorneoEquipo != null)
+                    {
+                        MessageBox.Show("No se puede modificar un equipo que este participando en un torneo.", "Oops! Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
 
 

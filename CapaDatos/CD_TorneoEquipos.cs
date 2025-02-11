@@ -21,7 +21,7 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("SELECT * FROM equipos");
+                    query.AppendLine("SELECT * FROM torneos_equipos");
 
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
@@ -97,6 +97,41 @@ namespace CapaDatos
             return agregado;
 
 
+        }
+
+        public bool BorrarVinculaciones(int id_torneo)
+        {
+            bool borrado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("UPDATE torneos_equipos set estado = 0 WHERE id_torneo = @id_torneo");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@id_torneo", id_torneo);
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            borrado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return borrado;
         }
     }
 }
