@@ -71,21 +71,45 @@ namespace CapaDatos
 
                     if (torneoP != "")
                     {
-                        query.AppendLine("SELECT equipos.id_equipo, equipos.nombre, equipos.fecha_agregado, equipos.escudo, torneos.id_torneo, torneos.nombre AS nombre_torneo , equipos.estado  ");
-                        query.AppendLine("FROM equipos ");
-                        query.AppendLine("LEFT JOIN torneos_equipos ON equipos.id_equipo = torneos_equipos.id_equipo ");
-                        query.AppendLine("LEFT JOIN torneos ON torneos_equipos.id_torneo = torneos.id_torneo ");
-                        query.AppendLine("WHERE equipos.nombre LIKE @nombreP AND torneos.nombre LIKE @torneoP AND equipos.estado LIKE @estadoP");
+
+
+                        query.AppendLine("SELECT e.id_equipo, e.nombre, e.fecha_agregado, e.escudo,");
+                        query.AppendLine("t.id_torneo,");
+                        query.AppendLine("t.nombre AS nombre_torneo,");
+                        query.AppendLine("e.estado");
+                        query.AppendLine("FROM equipos e");
+                        query.AppendLine("OUTER APPLY (");
+                        query.AppendLine("    SELECT TOP 1 te_sub.id_torneo, te_sub.estado");
+                        query.AppendLine("    FROM torneos_equipos te_sub");
+                        query.AppendLine("    WHERE te_sub.id_equipo = e.id_equipo AND te_sub.estado = 1"); // Filtra solo estado = 1
+                        query.AppendLine("    ORDER BY te_sub.estado DESC");
+                        query.AppendLine(") te");
+                        query.AppendLine("INNER JOIN torneos t ON te.id_torneo = t.id_torneo"); // Cambié LEFT JOIN por INNER JOIN
+                        query.AppendLine("WHERE e.nombre LIKE @nombreP");
+                        query.AppendLine("AND t.nombre LIKE @torneoP");
+                        query.AppendLine("AND e.estado LIKE @estadoP;");
+
 
                     }
 
                     else
                     {
-                        query.AppendLine("SELECT equipos.id_equipo, equipos.nombre, equipos.fecha_agregado, equipos.escudo, torneos.id_torneo, torneos.nombre AS nombre_torneo , equipos.estado  ");
-                        query.AppendLine("FROM equipos ");
-                        query.AppendLine("LEFT JOIN torneos_equipos ON equipos.id_equipo = torneos_equipos.id_equipo ");
-                        query.AppendLine("LEFT JOIN torneos ON torneos_equipos.id_torneo = torneos.id_torneo ");
-                        query.AppendLine("WHERE equipos.nombre LIKE @nombreP AND (torneos.nombre IS NULL OR torneos.nombre LIKE @torneoP) AND equipos.estado LIKE @estadoP");
+                        query.AppendLine("SELECT e.id_equipo, e.nombre, e.fecha_agregado, e.escudo,");
+                        query.AppendLine("CASE WHEN te.estado = 0 THEN NULL ELSE t.id_torneo END AS id_torneo,");
+                        query.AppendLine("CASE WHEN te.estado = 0 THEN NULL ELSE t.nombre END AS nombre_torneo,");
+                        query.AppendLine("e.estado");
+                        query.AppendLine("FROM equipos e");
+                        query.AppendLine("OUTER APPLY (");
+                        query.AppendLine("    SELECT TOP 1 te_sub.id_torneo, te_sub.estado");
+                        query.AppendLine("    FROM torneos_equipos te_sub");
+                        query.AppendLine("    WHERE te_sub.id_equipo = e.id_equipo");
+                        query.AppendLine("    ORDER BY te_sub.estado DESC"); // Prioriza estado 1 sobre 0
+                        query.AppendLine(") te");
+                        query.AppendLine("LEFT JOIN torneos t ON te.id_torneo = t.id_torneo");
+                        query.AppendLine("WHERE e.nombre LIKE @nombreP");
+                        query.AppendLine("AND (t.nombre IS NULL OR t.nombre LIKE @torneoP)");
+                        query.AppendLine("AND e.estado LIKE @estadoP;");
+
 
 
                     }
@@ -255,12 +279,15 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("SELECT equipos.id_equipo, equipos.nombre, equipos.escudo FROM equipos ");
-                    query.AppendLine("LEFT JOIN torneos_equipos ON equipos.id_equipo = torneos_equipos.id_equipo ");
-                    query.AppendLine("LEFT JOIN torneos ON torneos_equipos.id_torneo = torneos.id_torneo ");
-                    query.AppendLine("WHERE equipos.estado = 1 AND (torneos_equipos.estado = 0 OR torneos_equipos.id_torneo IS NULL);");
-                        
-
+                    query.AppendLine("SELECT e.id_equipo, e.nombre, e.escudo");
+                    query.AppendLine("FROM equipos e");
+                    query.AppendLine("WHERE e.estado = 1");
+                    query.AppendLine("AND NOT EXISTS (");
+                    query.AppendLine("    SELECT 1");
+                    query.AppendLine("    FROM torneos_equipos te");
+                    query.AppendLine("    WHERE te.id_equipo = e.id_equipo");
+                    query.AppendLine("    AND te.estado = 1");  // Evita equipos con torneos activos
+                    query.AppendLine(");");
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
                     {

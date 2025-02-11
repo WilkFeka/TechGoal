@@ -27,5 +27,11 @@ namespace CapaControladora
             bool resultado = new CD_Reglas().AgregarReglas(reglas);
             return resultado;
         }
+
+        public List<Reglas> Listar()
+        {
+            List<Reglas> listaReglas = new CD_Reglas().Listar();
+            return listaReglas;
+        }
     }
 }

@@ -107,5 +107,41 @@ namespace CapaDatos
 
 
         }
+
+        public bool BorrarTorneo(int id_torneo)
+        {
+            bool modificado = false;
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("UPDATE torneos SET borrado = 1");
+                    query.AppendLine("WHERE id_torneo = @id_torneo");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@id_torneo", id_torneo);
+
+                        conection.Open();
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            modificado = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return modificado;
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace CapaPresentacion.Formularios.Torneos
 
         private void CargarDatos()
         {
-            this.torneosTableAdapter.Fill(this.dB_TECHGOALDataSet3.torneos);
+            this.torneosTableAdapter.FillBorrado(this.dB_TECHGOALDataSet3.torneos);
             originalData = dB_TECHGOALDataSet3.torneos.Copy(); 
             totalRecords = originalData.Rows.Count; 
             MostrarPagina(1); 
@@ -146,6 +146,8 @@ namespace CapaPresentacion.Formularios.Torneos
             string filtroTipo = cmbTipoFilter.SelectedItem is opcionCombo tipoSeleccionado
                 ? $"tipo = {tipoSeleccionado.valor}"
                 : "";
+
+
 
             // Filtro por estado (ComboBox)
             string filtroEstado = cmbEstadoFilter.SelectedItem is opcionCombo estadoSeleccionado
@@ -309,7 +311,7 @@ namespace CapaPresentacion.Formularios.Torneos
             dgvTorneos.DataSource = null;
 
             // Recargar los datos desde la base de datos
-            this.torneosTableAdapter.Fill(this.dB_TECHGOALDataSet3.torneos);
+            this.torneosTableAdapter.FillBorrado(this.dB_TECHGOALDataSet3.torneos);
 
             // Actualizar los datos originales y totales
             originalData = dB_TECHGOALDataSet3.torneos.Copy();
@@ -319,6 +321,19 @@ namespace CapaPresentacion.Formularios.Torneos
             // Mostrar la primera página después de recargar
             MostrarPagina(1);
             ActualizarFiltro();
+        }
+
+        private void fillBorradoToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.torneosTableAdapter.FillBorrado(this.dB_TECHGOALDataSet3.torneos);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }
