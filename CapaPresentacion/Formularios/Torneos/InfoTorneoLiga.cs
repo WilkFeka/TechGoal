@@ -207,7 +207,7 @@ namespace CapaPresentacion.Formularios.Torneos
 
             MessageBox.Show("Torneo eliminado correctamente", "Torneo eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
+            btnVolver_Click(sender, e);
 
         }
     }

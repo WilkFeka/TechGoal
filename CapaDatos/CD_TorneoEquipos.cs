@@ -21,7 +21,7 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("SELECT * FROM equipos");
+                    query.AppendLine("SELECT * FROM torneos_equipos");
 
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
