@@ -49,6 +49,8 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.fpnlBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnVolver = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnRules = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnEliminar = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvTabla = new System.Windows.Forms.DataGridView();
             this.idtablaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,8 +81,7 @@
             this.sortByPtsToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fillByPuntosToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillByPuntosToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.btnRules = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnEliminar = new CapaPresentacion.Personalizacion.MSButton();
+            this.btnFinalizar = new CapaPresentacion.Personalizacion.MSButton();
             ((System.ComponentModel.ISupportInitialize)(this.torneosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TECHGOALDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equiposBindingSource)).BeginInit();
@@ -253,10 +254,11 @@
             this.fpnlBotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fpnlBotones.Controls.Add(this.btnVolver);
             this.fpnlBotones.Controls.Add(this.btnRules);
+            this.fpnlBotones.Controls.Add(this.btnFinalizar);
             this.fpnlBotones.Controls.Add(this.btnEliminar);
-            this.fpnlBotones.Location = new System.Drawing.Point(1262, 23);
+            this.fpnlBotones.Location = new System.Drawing.Point(1178, 23);
             this.fpnlBotones.Name = "fpnlBotones";
-            this.fpnlBotones.Size = new System.Drawing.Size(238, 77);
+            this.fpnlBotones.Size = new System.Drawing.Size(322, 77);
             this.fpnlBotones.TabIndex = 71;
             // 
             // btnVolver
@@ -281,6 +283,52 @@
             this.btnVolver.TextColor = System.Drawing.Color.White;
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnRules
+            // 
+            this.btnRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnRules.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnRules.BackgroundImage = global::CapaPresentacion.Properties.Resources.rules;
+            this.btnRules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRules.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnRules.BorderRadius = 25;
+            this.btnRules.BorderSize = 0;
+            this.btnRules.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRules.FlatAppearance.BorderSize = 0;
+            this.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRules.ForeColor = System.Drawing.Color.White;
+            this.btnRules.Location = new System.Drawing.Point(87, 3);
+            this.btnRules.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnRules.Name = "btnRules";
+            this.btnRules.Size = new System.Drawing.Size(64, 64);
+            this.btnRules.TabIndex = 3;
+            this.btnRules.TextColor = System.Drawing.Color.White;
+            this.btnRules.UseVisualStyleBackColor = false;
+            this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.OrangeRed;
+            this.btnEliminar.BackgroundImage = global::CapaPresentacion.Properties.Resources.eliminarBlanco;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnEliminar.BorderRadius = 25;
+            this.btnEliminar.BorderSize = 0;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(241, 3);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(64, 64);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TextColor = System.Drawing.Color.White;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // panel5
             // 
@@ -574,51 +622,28 @@
             this.fillByPuntosToolStripButton.Text = "FillByPuntos";
             this.fillByPuntosToolStripButton.Click += new System.EventHandler(this.fillByPuntosToolStripButton_Click);
             // 
-            // btnRules
+            // btnFinalizar
             // 
-            this.btnRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnRules.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnRules.BackgroundImage = global::CapaPresentacion.Properties.Resources.rules;
-            this.btnRules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRules.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnRules.BorderRadius = 25;
-            this.btnRules.BorderSize = 0;
-            this.btnRules.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRules.FlatAppearance.BorderSize = 0;
-            this.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRules.ForeColor = System.Drawing.Color.White;
-            this.btnRules.Location = new System.Drawing.Point(87, 3);
-            this.btnRules.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnRules.Name = "btnRules";
-            this.btnRules.Size = new System.Drawing.Size(64, 64);
-            this.btnRules.TabIndex = 3;
-            this.btnRules.TextColor = System.Drawing.Color.White;
-            this.btnRules.UseVisualStyleBackColor = false;
-            this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnEliminar.BackgroundColor = System.Drawing.Color.OrangeRed;
-            this.btnEliminar.BackgroundImage = global::CapaPresentacion.Properties.Resources.eliminarBlanco;
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
-            this.btnEliminar.BorderRadius = 25;
-            this.btnEliminar.BorderSize = 0;
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(164, 3);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(64, 64);
-            this.btnEliminar.TabIndex = 4;
-            this.btnEliminar.TextColor = System.Drawing.Color.White;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnFinalizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFinalizar.BackColor = System.Drawing.Color.Yellow;
+            this.btnFinalizar.BackgroundColor = System.Drawing.Color.Yellow;
+            this.btnFinalizar.BackgroundImage = global::CapaPresentacion.Properties.Resources.flag;
+            this.btnFinalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFinalizar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(201)))), ((int)(((byte)(236)))));
+            this.btnFinalizar.BorderRadius = 25;
+            this.btnFinalizar.BorderSize = 0;
+            this.btnFinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFinalizar.FlatAppearance.BorderSize = 0;
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizar.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizar.Location = new System.Drawing.Point(164, 3);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(64, 64);
+            this.btnFinalizar.TabIndex = 7;
+            this.btnFinalizar.TextColor = System.Drawing.Color.White;
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // formInfoTorneoLiga
             // 
@@ -709,5 +734,6 @@
         public System.Windows.Forms.Panel panel2;
         public Personalizacion.MSButton btnRules;
         public Personalizacion.MSButton btnEliminar;
+        public Personalizacion.MSButton btnFinalizar;
     }
 }

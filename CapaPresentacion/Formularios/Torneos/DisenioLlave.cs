@@ -24,6 +24,7 @@ namespace CapaPresentacion.Formularios.Torneos
         Equipo equipoV;
         formInfoTorneoLlaves formInfoLlavesC;
         Funcionalidades funcionalidades = Funcionalidades.getInstance;
+        CC_Torneos torneoControladora = CC_Torneos.getInstance;
         bool finalizado;
 
         public formDisenioLlave(Partido partido, formInfoTorneoLlaves formInfoTorneoLlaves)
@@ -33,10 +34,19 @@ namespace CapaPresentacion.Formularios.Torneos
             formInfoLlavesC = formInfoTorneoLlaves;
             finalizado = partido.finalizado;
 
+            Torneo t = torneoControladora.EncontrarTorneoID(Llave.id_torneo);
+
+            
+
             if (finalizado)
             {
                 btnEditar.Visible = false;
                 btnRestart.Visible = true;
+            }
+            if (t.estado == false)
+            {
+                btnEditar.Visible = false;
+                btnRestart.Visible = false;
             }
         }
 

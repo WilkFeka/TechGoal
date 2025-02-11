@@ -31,6 +31,11 @@ namespace CapaPresentacion.Formularios.Torneos
             torneoSeleccionado = torneo;
             formInicioC = formInicio;
             lblTorneo.Text = torneoSeleccionado.nombre;
+
+            if (torneoSeleccionado.estado == false)
+            {
+                btnFinalizar.Visible = false;
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -207,6 +212,41 @@ namespace CapaPresentacion.Formularios.Torneos
 
             MessageBox.Show("Torneo eliminado correctamente", "Torneo eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            btnVolver_Click(sender, e);
+
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+
+            DialogResult resultado = MessageBox.Show(
+               $"¿Desea finalizar el torneo {torneoSeleccionado.nombre}?",
+               "Confirmar Resultado",
+               MessageBoxButtons.OKCancel,
+               MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Cancel) return;
+
+            //esto es una baja logica por lo que no elimina
+            bool borrarVinculaciones = torneosEquiposControladora.BorrarVinculaciones(torneoSeleccionado.id_torneo);
+
+            if (borrarVinculaciones == false)
+            {
+                MessageBox.Show("No se pudo finalizar el torneo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+            bool borrar = torneoControladora.FinalizarTorneo(torneoSeleccionado.id_torneo);
+
+            if (borrar == false)
+            {
+                MessageBox.Show("No se pudo finalizar el torneo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            MessageBox.Show("Torneo finalizado correctamente", "Torneo finalizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnVolver_Click(sender, e);
 
         }

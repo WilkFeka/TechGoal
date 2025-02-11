@@ -226,9 +226,10 @@ namespace CapaPresentacion
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            pnlContainer.Hide();
-            picLogoText.Hide();
-            AbrirFormulario(new formReportes(this));
+            //pnlContainer.Hide();
+            //picLogoText.Hide();
+            formReportesSelect formReportesSelect = new formReportesSelect(this);
+            formReportesSelect.Show();
         }
 
         private void btnEquipos_Click(object sender, EventArgs e)
