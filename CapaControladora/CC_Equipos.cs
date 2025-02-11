@@ -42,7 +42,7 @@ namespace CapaControladora
        public Equipo EncontrarEquipoNombre(string nombre)
         {
 
-            Equipo buscandoEquipoNombre = new CC_Equipos().Listar().Where(c => c.nombre == nombre).FirstOrDefault();
+            Equipo buscandoEquipoNombre = new CC_Equipos().Listar().Where(c => c.nombre == nombre && c.borrado == false).FirstOrDefault();
 
             if (buscandoEquipoNombre != null)
             {

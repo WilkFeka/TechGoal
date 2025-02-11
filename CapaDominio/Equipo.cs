@@ -15,5 +15,6 @@ namespace CapaEntidad
         public string escudo { get; set; }
 
         public bool estado { get; set; }
+        public bool borrado { get; set; } = false;
     }
 }
