@@ -134,7 +134,7 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@golesL", partido.golesL ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@golesV", partido.golesV ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@finalizado", partido.finalizado);
-                        cmd.Parameters.AddWithValue("@ganador", partido.ganador == 0 ? (object)DBNull.Value : partido.ganador);
+                        cmd.Parameters.AddWithValue("@ganador", (partido.ganador == 0 || partido.ganador == null) ? (object)DBNull.Value : partido.ganador);
                         cmd.Parameters.AddWithValue("@id_partido", partido.id_partido);
                         cmd.Parameters.AddWithValue("@id_sig_partido", partido.id_sig_partido ?? (object)DBNull.Value);
 

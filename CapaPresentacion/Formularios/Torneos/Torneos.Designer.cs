@@ -59,13 +59,6 @@
             this.btnAgregarTorneo = new CapaPresentacion.Personalizacion.MSButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvTorneos = new System.Windows.Forms.DataGridView();
-            this.id_torneo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantEquiposDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.torneosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_TECHGOALDataSet3 = new CapaPresentacion.DB_TECHGOALDataSet3();
             this.equiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -89,6 +82,13 @@
             this.torneosTableAdapter1 = new CapaPresentacion.DB_TECHGOALDataSet4TableAdapters.torneosTableAdapter();
             this.fillBorradoToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillBorradoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.id_torneo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantEquiposDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -524,56 +524,6 @@
             this.dgvTorneos.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTorneos_CellMouseLeave);
             this.dgvTorneos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvTorneos_DataBindingComplete);
             // 
-            // id_torneo
-            // 
-            this.id_torneo.DataPropertyName = "id_torneo";
-            this.id_torneo.HeaderText = "id_torneo";
-            this.id_torneo.Name = "id_torneo";
-            this.id_torneo.ReadOnly = true;
-            this.id_torneo.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipo
-            // 
-            this.tipo.DataPropertyName = "tipo";
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            // 
-            // cantEquiposDataGridViewTextBoxColumn
-            // 
-            this.cantEquiposDataGridViewTextBoxColumn.DataPropertyName = "cantEquipos";
-            this.cantEquiposDataGridViewTextBoxColumn.HeaderText = "Cantidad Equipos";
-            this.cantEquiposDataGridViewTextBoxColumn.Name = "cantEquiposDataGridViewTextBoxColumn";
-            this.cantEquiposDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaInicio
-            // 
-            this.fechaInicio.DataPropertyName = "fechaInicio";
-            this.fechaInicio.HeaderText = "Fecha de Inicio";
-            this.fechaInicio.Name = "fechaInicio";
-            this.fechaInicio.ReadOnly = true;
-            // 
-            // fechaFinal
-            // 
-            this.fechaFinal.DataPropertyName = "fechaFinal";
-            this.fechaFinal.HeaderText = "Fecha de Finalizacion";
-            this.fechaFinal.Name = "fechaFinal";
-            this.fechaFinal.ReadOnly = true;
-            // 
-            // estadoDataGridViewCheckBoxColumn
-            // 
-            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewCheckBoxColumn.HeaderText = "Finalizado";
-            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
-            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
             // torneosBindingSource
             // 
             this.torneosBindingSource.DataMember = "torneos";
@@ -782,6 +732,56 @@
             this.fillBorradoToolStripButton.Text = "FillBorrado";
             this.fillBorradoToolStripButton.Click += new System.EventHandler(this.fillBorradoToolStripButton_Click);
             // 
+            // id_torneo
+            // 
+            this.id_torneo.DataPropertyName = "id_torneo";
+            this.id_torneo.HeaderText = "id_torneo";
+            this.id_torneo.Name = "id_torneo";
+            this.id_torneo.ReadOnly = true;
+            this.id_torneo.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.DataPropertyName = "tipo";
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // cantEquiposDataGridViewTextBoxColumn
+            // 
+            this.cantEquiposDataGridViewTextBoxColumn.DataPropertyName = "cantEquipos";
+            this.cantEquiposDataGridViewTextBoxColumn.HeaderText = "Cantidad Equipos";
+            this.cantEquiposDataGridViewTextBoxColumn.Name = "cantEquiposDataGridViewTextBoxColumn";
+            this.cantEquiposDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaInicio
+            // 
+            this.fechaInicio.DataPropertyName = "fechaInicio";
+            this.fechaInicio.HeaderText = "Fecha de Inicio";
+            this.fechaInicio.Name = "fechaInicio";
+            this.fechaInicio.ReadOnly = true;
+            // 
+            // fechaFinal
+            // 
+            this.fechaFinal.DataPropertyName = "fechaFinal";
+            this.fechaFinal.HeaderText = "Fecha de Finalizacion";
+            this.fechaFinal.Name = "fechaFinal";
+            this.fechaFinal.ReadOnly = true;
+            // 
+            // estadoDataGridViewCheckBoxColumn
+            // 
+            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "En Curso";
+            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
+            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
             // formTorneos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -871,6 +871,11 @@
         private DB_TECHGOALDataSet3 dB_TECHGOALDataSet3;
         private System.Windows.Forms.BindingSource torneosBindingSource;
         private DB_TECHGOALDataSet3TableAdapters.torneosTableAdapter torneosTableAdapter;
+        private DB_TECHGOALDataSet4 dB_TECHGOALDataSet4;
+        private System.Windows.Forms.BindingSource torneosBindingSource1;
+        private DB_TECHGOALDataSet4TableAdapters.torneosTableAdapter torneosTableAdapter1;
+        private System.Windows.Forms.ToolStrip fillBorradoToolStrip;
+        private System.Windows.Forms.ToolStripButton fillBorradoToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_torneo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
@@ -878,10 +883,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFinal;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
-        private DB_TECHGOALDataSet4 dB_TECHGOALDataSet4;
-        private System.Windows.Forms.BindingSource torneosBindingSource1;
-        private DB_TECHGOALDataSet4TableAdapters.torneosTableAdapter torneosTableAdapter1;
-        private System.Windows.Forms.ToolStrip fillBorradoToolStrip;
-        private System.Windows.Forms.ToolStripButton fillBorradoToolStripButton;
     }
 }

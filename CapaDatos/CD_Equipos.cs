@@ -317,6 +317,103 @@ namespace CapaDatos
 
         }
 
+        public List<Dictionary<string, object>> ObtenerEstadisticasEquipo(int idEquipo)
+        {
+            List<Dictionary<string, object>> lista = new List<Dictionary<string, object>>();
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("SELECT ");
+                    query.AppendLine("    e.id_equipo,");
+                    query.AppendLine("    e.nombre AS equipo,");
+                    query.AppendLine("    COALESCE(SUM(CASE WHEN p.ganador = e.id_equipo THEN 1 ELSE 0 END), 0) AS ganados,");
+                    query.AppendLine("    COALESCE(SUM(CASE WHEN p.ganador IS NULL AND p.finalizado = 1 AND p.golesL = p.golesV THEN 1 ELSE 0 END), 0) AS empatados,");
+                    query.AppendLine("    COALESCE(SUM(CASE WHEN p.finalizado = 1 AND p.ganador IS NOT NULL AND p.ganador <> e.id_equipo THEN 1 ELSE 0 END), 0) AS perdidos");
+                    query.AppendLine("FROM equipos e");
+                    query.AppendLine("LEFT JOIN partidos p ON e.id_equipo = p.id_local OR e.id_equipo = p.id_visitante");
+                    query.AppendLine("LEFT JOIN torneos t ON p.id_torneo = t.id_torneo");
+                    query.AppendLine("WHERE e.id_equipo = @id_equipo AND t.borrado = 0 AND e.borrado = 0");
+                    query.AppendLine("GROUP BY e.id_equipo, e.nombre;");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@id_equipo", idEquipo);
+                        conexion.Open();
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                lista.Add(new Dictionary<string, object>
+                        {
+                            { "IdEquipo", reader["id_equipo"] },
+                            { "Nombre", reader["equipo"] },
+                            { "Ganados", reader["ganados"] },
+                            { "Empatados", reader["empatados"] },
+                            { "Perdidos", reader["perdidos"] }
+                        });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lista = new List<Dictionary<string, object>>();
+                Console.WriteLine(ex.Message);
+            }
+
+            return lista;
+        }
+
+
+        public List<Equipo> ListarEquiposActivosFiltrados(string filtro)
+        {
+            List<Equipo> lista = new List<Equipo>();
+
+            try
+            {
+                using (SqlConnection conection = new SqlConnection(Conection.cadena))
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("SELECT id_equipo, nombre FROM equipos WHERE borrado = 0 AND nombre LIKE @filtro");
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conection))
+                    {
+                        cmd.Parameters.AddWithValue("@filtro", "%" + filtro + "%");
+
+                        conection.Open();
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                lista.Add(new Equipo()
+                                {
+                                    id_equipo = Convert.ToInt32(reader["id_equipo"]),
+                                    nombre = Convert.ToString(reader["nombre"])
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lista = new List<Equipo>();
+                Console.WriteLine(ex.Message);
+            }
+
+            return lista;
+        }
+
 
     }
+
+
+
+
 }

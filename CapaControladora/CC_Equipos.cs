@@ -95,6 +95,20 @@ namespace CapaControladora
            
         }
 
+        public List<Dictionary<string, object>> ObtenerEstadisticasEquipo(int idEquipo)
+        {
+            List<Dictionary<string, object>> lista = new CD_Equipos().ObtenerEstadisticasEquipo(idEquipo);  
+            return lista;
+
+        }
+
+        public List<Equipo> ListarEquiposActivosFiltrados(string filtro)
+        {
+            List<Equipo> listaEquipos = new CD_Equipos().ListarEquiposActivosFiltrados(filtro);
+            return listaEquipos;
+
+        }
+
 
 
     }
