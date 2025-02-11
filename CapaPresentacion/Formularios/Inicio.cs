@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -27,6 +28,7 @@ namespace CapaPresentacion
         CC_Modulo moduloControladora = CC_Modulo.getInstance;
         private static Form formularioActual = null;
         public static Usuario usuarioActual;
+        CC_Backup backupControladora = CC_Backup.getInstance;
         public formInicio(Usuario usuario)
         {
             InitializeComponent();
@@ -245,5 +247,25 @@ namespace CapaPresentacion
             picLogoText.Hide();
             AbrirFormulario(new formTorneos(this));
         }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+                "¿Desea realizar un backup (guardado) de la base de datos?",
+                "Confirmar Backup",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Cancel) return;
+
+            bool exito = backupControladora.HacerBackup();
+
+            if (exito)
+                MessageBox.Show("Backup realizado con éxito en C:\\Backups.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Error al realizar el backup.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
     }
-    }
+}
