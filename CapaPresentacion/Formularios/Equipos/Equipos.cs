@@ -260,7 +260,7 @@ namespace CapaPresentacion.Formularios.Equipos
                         }
                         
                         
-                        bool eliminarEquipo = EquiposControladora.EliminarEquipo(equipoEncontrado.id_equipo);
+                        bool eliminarEquipo = EquiposControladora.EliminarEquipo(equipoEncontrado);
 
                         //string folderEquipo = Path.Combine(Application.StartupPath, "equipos", equipoEncontrado.nombre);
 

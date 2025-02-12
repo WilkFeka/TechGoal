@@ -76,7 +76,7 @@ namespace CapaPresentacion
                 e.Cancel = true;
             } else
             {
-                SesionControladora.Logout();
+                SesionControladora.Logout(usuarioActual);
             }
 
 
