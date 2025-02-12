@@ -7,6 +7,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaEntidad.Seguridad;
+
 
 namespace CapaControladora
 {
@@ -72,18 +74,35 @@ namespace CapaControladora
         public bool AgregarEquipo(Equipo equipo)
         {
             bool resultado = new CD_Equipos().AgregarEquipo(equipo);
+            if (resultado)
+            {
+                Equipo equipoC = new CC_Equipos().EncontrarEquipoNombre(equipo.nombre);
+                CD_Auditoria.RegistrarMovimientoEquipo(Sesion.sesion.Usuario.id_usuario, equipoC.id_equipo, "Agregar", "Se agregó el equipo " + equipo.nombre);
+            }
+
             return resultado;
         }
 
-        public bool EliminarEquipo(int id)
+        public bool EliminarEquipo(Equipo equipo)
         {
-            bool resultado = new CD_Equipos().EliminarEquipo(id);
+            bool resultado = new CD_Equipos().EliminarEquipo(equipo.id_equipo);
+            if (resultado )
+            {
+
+                CD_Auditoria.RegistrarMovimientoEquipo(Sesion.sesion.Usuario.id_usuario, equipo.id_equipo, "Eliminar", "Se elimino el equipo " + equipo.nombre);
+            }
+
             return resultado;
         }
 
         public bool ModificarEquipo(Equipo equipo)
         {
             bool resultado = new CD_Equipos().ModificarEquipo(equipo);
+            if (resultado)
+            {
+
+                CD_Auditoria.RegistrarMovimientoEquipo(Sesion.sesion.Usuario.id_usuario, equipo.id_equipo, "Modificar", "Se modifico el equipo " + equipo.nombre);
+            }
             return resultado;
         }
 

@@ -79,5 +79,13 @@ namespace CapaControladora
             return resultado;
 
         }
+
+        public List<Torneo> ListarTorneosAFinalizar()
+        {
+            List<Torneo> listaTorneos = new CC_Torneos().Listar().Where(t => t.estado == true && t.fechaFinal < DateTime.Now).ToList();
+
+            return listaTorneos;
+
+        }
     }
 }
