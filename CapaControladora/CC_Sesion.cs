@@ -36,12 +36,12 @@ namespace CapaControladora
         public void Login(Usuario usuario)
         {
             Sesion.IniciarSesion(usuario);
-            CD_Auditoria.RegistrarMovimiento("Sesión iniciada", usuario.id_usuario, "Sesión iniciada con éxito");
+            CD_Auditorias.RegistrarMovimiento("Sesión iniciada", usuario.id_usuario, "Sesión iniciada con éxito");
         }
 
         public void Logout(Usuario usuario)
         {
-            CD_Auditoria.RegistrarMovimiento("Sesión Cerrada", usuario.id_usuario, "Sesión cerrada con éxito");
+            CD_Auditorias.RegistrarMovimiento("Sesión Cerrada", usuario.id_usuario, "Sesión cerrada con éxito");
             Sesion.CerrarSesion();
         }
     }

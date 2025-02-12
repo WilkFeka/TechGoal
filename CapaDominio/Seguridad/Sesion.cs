@@ -10,7 +10,7 @@ namespace CapaEntidad.Seguridad
     {
 
         public Usuario Usuario { get; set; }
-        private static Sesion sesion;
+        public static Sesion sesion;
 
         private Sesion()
         {

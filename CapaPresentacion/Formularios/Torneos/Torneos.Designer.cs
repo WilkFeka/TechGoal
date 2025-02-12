@@ -778,7 +778,7 @@
             // 
             this.fillBorradoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillBorradoToolStripButton.Name = "fillBorradoToolStripButton";
-            this.fillBorradoToolStripButton.Size = new System.Drawing.Size(68, 22);
+            this.fillBorradoToolStripButton.Size = new System.Drawing.Size(75, 22);
             this.fillBorradoToolStripButton.Text = "FillBorrado";
             this.fillBorradoToolStripButton.Click += new System.EventHandler(this.fillBorradoToolStripButton_Click);
             // 
