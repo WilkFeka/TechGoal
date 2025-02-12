@@ -77,7 +77,7 @@ namespace CapaControladora
             if (resultado)
             {
                 Equipo equipoC = new CC_Equipos().EncontrarEquipoNombre(equipo.nombre);
-                CD_Auditoria.RegistrarMovimientoEquipo(Sesion.sesion.Usuario.id_usuario, equipoC.id_equipo, "Agregar", "Se agregó el equipo " + equipo.nombre);
+                CD_Auditorias.RegistrarMovimientoEquipo(Sesion.sesion.Usuario.id_usuario, equipoC.id_equipo, "Agregar", "Se agregó el equipo " + equipo.nombre);
             }
 
             return resultado;
@@ -89,7 +89,7 @@ namespace CapaControladora
             if (resultado )
             {
 
-                CD_Auditoria.RegistrarMovimientoEquipo(Sesion.sesion.Usuario.id_usuario, equipo.id_equipo, "Eliminar", "Se elimino el equipo " + equipo.nombre);
+                CD_Auditorias.RegistrarMovimientoEquipo(Sesion.sesion.Usuario.id_usuario, equipo.id_equipo, "Eliminar", "Se elimino el equipo " + equipo.nombre);
             }
 
             return resultado;
@@ -101,7 +101,7 @@ namespace CapaControladora
             if (resultado)
             {
 
-                CD_Auditoria.RegistrarMovimientoEquipo(Sesion.sesion.Usuario.id_usuario, equipo.id_equipo, "Modificar", "Se modifico el equipo " + equipo.nombre);
+                CD_Auditorias.RegistrarMovimientoEquipo(Sesion.sesion.Usuario.id_usuario, equipo.id_equipo, "Modificar", "Se modifico el equipo " + equipo.nombre);
             }
             return resultado;
         }
