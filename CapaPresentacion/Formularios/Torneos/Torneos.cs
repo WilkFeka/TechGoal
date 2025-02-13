@@ -18,6 +18,7 @@ namespace CapaPresentacion.Formularios.Torneos
     {
         private formInicio formInicioC;
         public  CC_Torneos torneoControladora = CC_Torneos.getInstance;
+        public CC_TorneoEquipos torneoEquiposControladora = CC_TorneoEquipos.getInstance;
 
         private BindingSource bindingSource = new BindingSource();
         private int currentPage = 1; // Página actual
@@ -35,6 +36,14 @@ namespace CapaPresentacion.Formularios.Torneos
 
             foreach (Torneo torneo in torneosFinalizar)
             {
+                bool borrarVinculaciones = torneoEquiposControladora.BorrarVinculaciones(torneo.id_torneo);
+
+                if (borrarVinculaciones == false)
+                {
+                    MessageBox.Show("No se pudo finalizar el torneo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+
+                }
                 torneoControladora.FinalizarTorneo(torneo.id_torneo);
             }
 
