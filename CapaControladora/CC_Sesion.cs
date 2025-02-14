@@ -6,12 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Collections.Specialized.BitVector32;
 using CapaEntidad.Seguridad;
+using CapaDatos;
 
 namespace CapaControladora
 {
     public  class CC_Sesion
     {
         private static CC_Sesion instance = null;
+
 
         private CC_Sesion() { }
 
@@ -34,12 +36,12 @@ namespace CapaControladora
         public void Login(Usuario usuario)
         {
             Sesion.IniciarSesion(usuario);
-           /* AuditoriaBLL.RegistrarMovimiento("Inicio de sesión", usuario.NombreUsuario, "Inicio de sesión exitoso");*/
+            CD_Auditoria.RegistrarMovimiento("Sesión iniciada", usuario.id_usuario, "Sesión iniciada con éxito");
         }
 
-        public void Logout()
+        public void Logout(Usuario usuario)
         {
-           /* AuditoriaBLL.RegistrarMovimiento("Sesión cerrada", UsuarioEnSesion().Usuario.NombreUsuario, "Sesión cerrada con éxito");*/
+            CD_Auditoria.RegistrarMovimiento("Sesión Cerrada", usuario.id_usuario, "Sesión cerrada con éxito");
             Sesion.CerrarSesion();
         }
     }
