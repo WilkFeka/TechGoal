@@ -31,6 +31,13 @@ namespace CapaPresentacion.Formularios.Torneos
             InitializeComponent();
             formInicioC = formInicio;
 
+            List<Torneo> torneosFinalizar = torneoControladora.ListarTorneosAFinalizar();
+
+            foreach (Torneo torneo in torneosFinalizar)
+            {
+                torneoControladora.FinalizarTorneo(torneo.id_torneo);
+            }
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

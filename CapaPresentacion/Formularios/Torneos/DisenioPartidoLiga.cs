@@ -22,6 +22,8 @@ namespace CapaPresentacion.Formularios.Torneos
         CC_Equipos equiposControladora = CC_Equipos.getInstance;
         Funcionalidades funcionalidades = Funcionalidades.getInstance;
         CC_Tabla_Torneo tablaTorneoControladora = CC_Tabla_Torneo.getInstance;
+        CC_Torneos torneoControladora = CC_Torneos.getInstance;
+
         Equipo equipoL;
         Equipo equipoV;
         formInfoTorneoLiga formInfoLigaC;
@@ -36,6 +38,13 @@ namespace CapaPresentacion.Formularios.Torneos
             if (finalizado) {
                 btnEditar.Visible = false;
                 btnRestart.Visible = true;
+            }
+
+            Torneo t = torneoControladora.EncontrarTorneoID(partido.id_torneo);
+            if (t.estado == false)
+            {
+                btnEditar.Visible = false;
+                btnRestart.Visible = false;
             }
         }
 
