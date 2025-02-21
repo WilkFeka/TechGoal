@@ -266,6 +266,16 @@ namespace CapaPresentacion
                 MessageBox.Show("Error al realizar el backup.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void btnBackup_MouseEnter(object sender, EventArgs e)
+        {
+            btnBackup.IconColor = Color.FromArgb(31, 200, 236);
+            btnBackup.IconSize = 70;
+        }
 
+        private void btnBackup_MouseLeave(object sender, EventArgs e)
+        {
+            btnBackup.IconColor = Color.White;
+            btnBackup.IconSize = 64;
+        }
     }
 }

@@ -83,7 +83,7 @@ namespace CapaDatos
                         query.AppendLine("    ORDER BY te_sub.estado DESC");
                         query.AppendLine(") te");
                         query.AppendLine("INNER JOIN torneos t ON te.id_torneo = t.id_torneo"); // Se usa INNER JOIN para forzar solo equipos con torneos
-                        query.AppendLine("WHERE e.borrado = 0 AND e.estado = 1"); // Aseguramos que no estén eliminados y sean activos
+                        query.AppendLine("WHERE e.borrado = 0 and e.estado LIKE @estadoP"); // Aseguramos que no estén eliminados y sean activos
                         query.AppendLine("AND e.nombre LIKE @nombreP");
                         query.AppendLine("AND t.nombre LIKE @torneoP;");
                     }
@@ -101,7 +101,7 @@ namespace CapaDatos
                         query.AppendLine("    ORDER BY te_sub.estado DESC"); // Priorizamos estado = 1 si existe
                         query.AppendLine(") te");
                         query.AppendLine("LEFT JOIN torneos t ON te.id_torneo = t.id_torneo");
-                        query.AppendLine("WHERE e.borrado = 0 AND e.estado = 1"); // Se filtran equipos activos y no eliminados
+                        query.AppendLine("WHERE e.borrado = 0 AND e.estado LIKE @estadoP"); // Se filtran equipos activos y no eliminados
                         query.AppendLine("AND e.nombre LIKE @nombreP");
                         query.AppendLine("AND (t.nombre IS NULL OR t.nombre LIKE @torneoP);");
                     }

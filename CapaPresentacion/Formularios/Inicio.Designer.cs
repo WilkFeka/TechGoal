@@ -57,6 +57,7 @@
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBackup = new FontAwesome.Sharp.IconButton();
             this.btnAjusteUsuario = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -66,7 +67,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrar = new CapaPresentacion.Personalizacion.MSButton();
             this.btnMinimizar = new CapaPresentacion.Personalizacion.MSButton();
-            this.btnBackup = new FontAwesome.Sharp.IconButton();
             this.flwPanelButons.SuspendLayout();
             this.vistaUsuario.SuspendLayout();
             this.vistaCanchas.SuspendLayout();
@@ -509,6 +509,28 @@
             this.panel1.Size = new System.Drawing.Size(269, 1030);
             this.panel1.TabIndex = 5;
             // 
+            // btnBackup
+            // 
+            this.btnBackup.BackColor = System.Drawing.Color.Transparent;
+            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackup.FlatAppearance.BorderSize = 0;
+            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackup.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBackup.IconChar = FontAwesome.Sharp.IconChar.Database;
+            this.btnBackup.IconColor = System.Drawing.Color.White;
+            this.btnBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBackup.IconSize = 64;
+            this.btnBackup.Location = new System.Drawing.Point(108, 598);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(64, 64);
+            this.btnBackup.TabIndex = 8;
+            this.btnBackup.UseVisualStyleBackColor = false;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            this.btnBackup.MouseEnter += new System.EventHandler(this.btnBackup_MouseEnter);
+            this.btnBackup.MouseLeave += new System.EventHandler(this.btnBackup_MouseLeave);
+            // 
             // btnAjusteUsuario
             // 
             this.btnAjusteUsuario.BackColor = System.Drawing.Color.Transparent;
@@ -667,26 +689,6 @@
             this.btnMinimizar.TextColor = System.Drawing.Color.White;
             this.btnMinimizar.UseVisualStyleBackColor = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.BackColor = System.Drawing.Color.Transparent;
-            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBackup.FlatAppearance.BorderSize = 0;
-            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBackup.IconChar = FontAwesome.Sharp.IconChar.Database;
-            this.btnBackup.IconColor = System.Drawing.Color.White;
-            this.btnBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBackup.IconSize = 64;
-            this.btnBackup.Location = new System.Drawing.Point(108, 598);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(64, 64);
-            this.btnBackup.TabIndex = 8;
-            this.btnBackup.UseVisualStyleBackColor = false;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // formInicio
             // 
